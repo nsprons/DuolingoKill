@@ -1,12 +1,12 @@
-name: Process Enhanced Stats
+name: Process Daily Opens
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  process-stats:
-    if: contains(github.event.issue.labels.*.name, 'usage')
+  process-daily-opens:
+    if: contains(github.event.issue.labels.*.name, 'daily_open')
     runs-on: ubuntu-latest
     
     permissions:
@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Process enhanced stats
+    - name: Process daily open
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
@@ -25,27 +25,26 @@ jobs:
         git config --global user.email "actions@github.com"
         
         # 提取数据
-        DATE=$(echo '${{ github.event.issue.title }}' | cut -d'-' -f2 | xargs)
-        DEVICE_ID=$(echo '${{ github.event.issue.body }}' | grep 'Device ID:' | cut -d':' -f2 | xargs)
-        IP=$(echo '${{ github.event.issue.body }}' | grep 'IP Address:' | cut -d':' -f2 | xargs)
-        DURATION=$(echo '${{ github.event.issue.body }}' | grep 'Duration (minutes):' | cut -d':' -f2 | xargs)
+        TITLE="${{ github.event.issue.title }}"
+        DATE=$(echo "$TITLE" | cut -d'-' -f2 | xargs)
+        DEVICE_ID=$(echo "$TITLE" | cut -d'-' -f3 | xargs)
         
         # 创建stats目录(如果不存在)
         mkdir -p stats
         
         # 初始化CSV文件(如果不存在)
-        if [ ! -f "stats/enhanced_stats.csv" ]; then
-          echo "date,device_id,ip_address,duration_minutes,daily_opens" > stats/enhanced_stats.csv
+        if [ ! -f "stats/daily_opens.csv" ]; then
+          echo "date,device_id" > stats/daily_opens.csv
         fi
         
-        # 计算当日打开次数(简化处理)
-        DAILY_OPENS=$(grep "$DATE" stats/enhanced_stats.csv | wc -l)
-        DAILY_OPENS=$((DAILY_OPENS + 1))
+        # 删除该设备当天的旧记录(如果有)
+        grep -v "$DATE,$DEVICE_ID" stats/daily_opens.csv > temp.csv
+        mv temp.csv stats/daily_opens.csv
         
-        # 追加新记录
-        echo "$DATE,$DEVICE_ID,$IP,$DURATION,$DAILY_OPENS" >> stats/enhanced_stats.csv
+        # 添加新记录
+        echo "$DATE,$DEVICE_ID" >> stats/daily_opens.csv
         
         # 提交更改
-        git add stats/enhanced_stats.csv
-        git commit -m "Update enhanced stats for $DATE"
+        git add stats/daily_opens.csv
+        git commit -m "Update daily opens for $DATE - $DEVICE_ID"
         git push
