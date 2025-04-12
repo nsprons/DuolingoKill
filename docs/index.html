@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>应用使用统计</title>
+    <title>设备使用统计</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,6 +17,8 @@
             --light-color: #f8f9fa;
             --dark-color: #212529;
             --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
             --border-radius: 8px;
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
@@ -35,7 +39,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
@@ -129,6 +133,8 @@
             background-color: var(--primary-color);
             color: white;
             font-weight: 500;
+            position: sticky;
+            top: 0;
         }
         
         tr:hover {
@@ -153,6 +159,16 @@
             color: white;
         }
         
+        .badge-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .badge-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
         .loading {
             text-align: center;
             padding: 50px;
@@ -163,8 +179,38 @@
         .error {
             text-align: center;
             padding: 50px;
-            color: #dc3545;
+            color: var(--danger-color);
             font-weight: 500;
+        }
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+        
+        .filter-label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #6c757d;
+        }
+        
+        select, input {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-family: inherit;
         }
         
         @media (max-width: 768px) {
@@ -180,6 +226,11 @@
                 grid-template-columns: 1fr;
             }
             
+            .filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
             th, td {
                 padding: 8px 10px;
                 font-size: 0.9rem;
@@ -190,28 +241,49 @@
 <body>
     <div class="container">
         <header>
-            <h1>应用使用统计</h1>
-            <p class="subtitle">实时监控应用开启次数与设备分布</p>
+            <h1>设备使用统计</h1>
+            <p class="subtitle">详细记录设备使用情况和行为模式</p>
         </header>
         
-        <div class="dashboard">
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">今日开启次数</span>
-                    <span class="card-value" id="todayOpens">--</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="todayChart"></canvas>
-                </div>
+        <div class="filters">
+            <div class="filter-group">
+                <label class="filter-label">日期范围</label>
+                <select id="dateRange">
+                    <option value="7">最近7天</option>
+                    <option value="30" selected>最近30天</option>
+                    <option value="90">最近90天</option>
+                    <option value="all">全部数据</option>
+                </select>
             </div>
             
+            <div class="filter-group">
+                <label class="filter-label">设备型号</label>
+                <select id="deviceModel">
+                    <option value="all">全部型号</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">Android版本</label>
+                <select id="androidVersion">
+                    <option value="all">全部版本</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">搜索设备ID</label>
+                <input type="text" id="deviceSearch" placeholder="输入设备ID">
+            </div>
+        </div>
+        
+        <div class="dashboard">
             <div class="card">
                 <div class="card-header">
                     <span class="card-title">总开启次数</span>
                     <span class="card-value" id="totalOpens">--</span>
                 </div>
                 <div class="chart-container">
-                    <canvas id="totalChart"></canvas>
+                    <canvas id="totalOpensChart"></canvas>
                 </div>
             </div>
             
@@ -224,6 +296,25 @@
                     <canvas id="devicesChart"></canvas>
                 </div>
             </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Android版本分布</span>
+                    <span class="card-value" id="androidVersions">--</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="androidChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">设备使用趋势</span>
+            </div>
+            <div class="chart-container" style="height: 350px;">
+                <canvas id="trendChart"></canvas>
+            </div>
         </div>
         
         <div class="data-table">
@@ -233,12 +324,16 @@
                         <th>日期</th>
                         <th>设备ID</th>
                         <th>开启次数</th>
+                        <th>设备型号</th>
+                        <th>Android版本</th>
+                        <th>制造商</th>
+                        <th>报告时间</th>
                         <th>状态</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="4" class="loading">数据加载中...</td>
+                        <td colspan="8" class="loading">数据加载中...</td>
                     </tr>
                 </tbody>
             </table>
@@ -246,135 +341,20 @@
     </div>
 
     <script>
+        // 全局数据变量
+        let allStats = [];
+        let filteredStats = [];
+        let deviceModels = new Set();
+        let androidVersions = new Set();
+        
         // 初始化图表
-        const todayChart = new Chart(
-            document.getElementById('todayChart'),
-            {
-                type: 'line',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: '今日开启次数',
-                        data: [],
-                        backgroundColor: 'rgba(67, 97, 238, 0.1)',
-                        borderColor: 'rgba(67, 97, 238, 1)',
-                        borderWidth: 2,
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            }
-        );
-
-        const totalChart = new Chart(
-            document.getElementById('totalChart'),
-            {
-                type: 'bar',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: '总开启次数',
-                        data: [],
-                        backgroundColor: 'rgba(63, 55, 201, 0.7)',
-                        borderColor: 'rgba(63, 55, 201, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        datalabels: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                },
-                plugins: [ChartDataLabels]
-            }
-        );
-
-        const devicesChart = new Chart(
-            document.getElementById('devicesChart'),
-            {
-                type: 'doughnut',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: '设备分布',
-                        data: [],
-                        backgroundColor: [
-                            'rgba(67, 97, 238, 0.7)',
-                            'rgba(76, 201, 240, 0.7)',
-                            'rgba(63, 55, 201, 0.7)',
-                            'rgba(108, 117, 125, 0.7)'
-                        ],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '70%',
-                    plugins: {
-                        legend: {
-                            position: 'right'
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return `${context.label}: ${context.raw}次`;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        );
-
+        const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
+        const devicesChart = initDoughnutChart('devicesChart', '设备分布');
+        const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
+        const trendChart = initLineChart('trendChart', '设备使用趋势');
+        
         // 加载数据
-        fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/daily_opens.csv')
+        fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv')
             .then(response => {
                 if (!response.ok) throw new Error('网络响应不正常');
                 return response.text();
@@ -383,8 +363,8 @@
                 const rows = data.split('\n').filter(row => row.trim() !== '');
                 const headers = rows.shift().split(',');
                 
-                // 准备数据
-                const stats = rows.map(row => {
+                // 解析CSV数据
+                allStats = rows.map(row => {
                     const values = row.split(',');
                     const entry = {};
                     headers.forEach((header, i) => {
@@ -393,113 +373,421 @@
                     return entry;
                 }).filter(entry => entry.date && entry.device_id && entry.open_count);
                 
-                // 按日期聚合数据
-                const dailyStats = {};
-                const today = new Date().toISOString().split('T')[0];
-                let todayTotal = 0;
-                let totalOpens = 0;
-                const deviceCounts = {};
-                
-                stats.forEach(stat => {
-                    if (!dailyStats[stat.date]) {
-                        dailyStats[stat.date] = {
-                            totalOpens: 0,
-                            devices: new Set(),
-                            deviceCounts: []
-                        };
-                    }
-                    
-                    const count = parseInt(stat.open_count) || 0;
-                    dailyStats[stat.date].totalOpens += count;
-                    dailyStats[stat.date].devices.add(stat.device_id);
-                    dailyStats[stat.date].deviceCounts.push(count);
-                    
-                    // 计算今日总数
-                    if (stat.date === today) {
-                        todayTotal += count;
-                    }
-                    
-                    // 计算总开启次数
-                    totalOpens += count;
-                    
-                    // 计算设备开启次数
-                    if (!deviceCounts[stat.device_id]) {
-                        deviceCounts[stat.device_id] = 0;
-                    }
-                    deviceCounts[stat.device_id] += count;
+                // 收集设备型号和Android版本
+                allStats.forEach(stat => {
+                    if (stat.device_model) deviceModels.add(stat.device_model);
+                    if (stat.android_version) androidVersions.add(stat.android_version);
                 });
                 
-                const dates = Object.keys(dailyStats).sort();
-                const last7Dates = dates.slice(-7);
+                // 填充筛选器选项
+                fillFilterOptions();
                 
-                // 更新仪表板数据
-                document.getElementById('todayOpens').textContent = todayTotal;
-                document.getElementById('totalOpens').textContent = totalOpens;
-                document.getElementById('uniqueDevices').textContent = Object.keys(deviceCounts).length;
-                
-                // 更新今日图表数据
-                todayChart.data.labels = ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'];
-                todayChart.data.datasets[0].data = [10, 25, 36, 42, 55, 68, todayTotal];
-                todayChart.update();
-                
-                // 更新总开启次数图表
-                totalChart.data.labels = last7Dates;
-                totalChart.data.datasets[0].data = last7Dates.map(date => dailyStats[date].totalOpens);
-                totalChart.update();
-                
-                // 更新设备分布图表
-                const topDevices = Object.entries(deviceCounts)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 4);
-                
-                devicesChart.data.labels = topDevices.map(d => `设备 ${d[0].slice(0, 4)}`);
-                devicesChart.data.datasets[0].data = topDevices.map(d => d[1]);
-                devicesChart.update();
-                
-                // 填充表格
-                const tbody = document.querySelector('#statsTable tbody');
-                tbody.innerHTML = '';
-                
-                // 只显示最近30天的数据
-                const recentStats = stats
-                    .filter(stat => new Date(stat.date) >= new Date(Date.now() - 30 * 24 * 60 * 60 * 1000))
-                    .sort((a, b) => new Date(b.date) - new Date(a.date));
-                
-                recentStats.forEach(stat => {
-                    const tr = document.createElement('tr');
-                    
-                    const dateTd = document.createElement('td');
-                    dateTd.textContent = stat.date;
-                    tr.appendChild(dateTd);
-                    
-                    const deviceTd = document.createElement('td');
-                    deviceTd.textContent = stat.device_id.slice(0, 8) + '...';
-                    deviceTd.title = stat.device_id;
-                    tr.appendChild(deviceTd);
-                    
-                    const countTd = document.createElement('td');
-                    countTd.textContent = stat.open_count;
-                    tr.appendChild(countTd);
-                    
-                    const statusTd = document.createElement('td');
-                    const badge = document.createElement('span');
-                    badge.className = 'badge ' + 
-                        (stat.date === today ? 'badge-success' : 'badge-primary');
-                    badge.textContent = stat.date === today ? '今日活跃' : '历史记录';
-                    statusTd.appendChild(badge);
-                    tr.appendChild(statusTd);
-                    
-                    tbody.appendChild(tr);
-                });
+                // 应用初始筛选
+                applyFilters();
             })
             .catch(error => {
                 console.error('加载数据失败:', error);
                 document.querySelector('#statsTable tbody').innerHTML = `
                     <tr>
-                        <td colspan="4" class="error">数据加载失败，请稍后再试</td>
+                        <td colspan="8" class="error">数据加载失败，请稍后再试</td>
                     </tr>
                 `;
             });
+        
+        // 筛选器事件监听
+        document.getElementById('dateRange').addEventListener('change', applyFilters);
+        document.getElementById('deviceModel').addEventListener('change', applyFilters);
+        document.getElementById('androidVersion').addEventListener('change', applyFilters);
+        document.getElementById('deviceSearch').addEventListener('input', applyFilters);
+        
+        // 初始化柱状图
+        function initBarChart(canvasId, label, color) {
+            return new Chart(
+                document.getElementById(canvasId),
+                {
+                    type: 'bar',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            label: label,
+                            data: [],
+                            backgroundColor: color,
+                            borderColor: color.replace('0.7', '1'),
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${label}: ${context.raw}`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+        }
+        
+        // 初始化环形图
+        function initDoughnutChart(canvasId, label) {
+            return new Chart(
+                document.getElementById(canvasId),
+                {
+                    type: 'doughnut',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            label: label,
+                            data: [],
+                            backgroundColor: [
+                                'rgba(67, 97, 238, 0.7)',
+                                'rgba(76, 201, 240, 0.7)',
+                                'rgba(63, 55, 201, 0.7)',
+                                'rgba(108, 117, 125, 0.7)',
+                                'rgba(255, 159, 64, 0.7)'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: {
+                                position: 'right'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = Math.round((context.raw / total) * 100);
+                                        return `${context.label}: ${context.raw} (${percentage}%)`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+        }
+        
+        // 初始化折线图
+        function initLineChart(canvasId, label) {
+            return new Chart(
+                document.getElementById(canvasId),
+                {
+                    type: 'line',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            label: label,
+                            data: [],
+                            backgroundColor: 'rgba(67, 97, 238, 0.1)',
+                            borderColor: 'rgba(67, 97, 238, 1)',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+        }
+        
+        // 填充筛选器选项
+        function fillFilterOptions() {
+            const deviceModelSelect = document.getElementById('deviceModel');
+            const androidVersionSelect = document.getElementById('androidVersion');
+            
+            // 添加设备型号选项
+            deviceModels.forEach(model => {
+                const option = document.createElement('option');
+                option.value = model;
+                option.textContent = model;
+                deviceModelSelect.appendChild(option);
+            });
+            
+            // 添加Android版本选项
+            androidVersions.forEach(version => {
+                const option = document.createElement('option');
+                option.value = version;
+                option.textContent = `Android ${version}`;
+                androidVersionSelect.appendChild(option);
+            });
+        }
+        
+        // 应用筛选条件
+        function applyFilters() {
+            const dateRange = document.getElementById('dateRange').value;
+            const deviceModel = document.getElementById('deviceModel').value;
+            const androidVersion = document.getElementById('androidVersion').value;
+            const deviceSearch = document.getElementById('deviceSearch').value.toLowerCase();
+            
+            // 计算日期范围
+            let minDate = null;
+            if (dateRange !== 'all') {
+                const days = parseInt(dateRange);
+                minDate = new Date();
+                minDate.setDate(minDate.getDate() - days);
+            }
+            
+            // 筛选数据
+            filteredStats = allStats.filter(stat => {
+                // 日期筛选
+                if (minDate && new Date(stat.date) < minDate) {
+                    return false;
+                }
+                
+                // 设备型号筛选
+                if (deviceModel !== 'all' && stat.device_model !== deviceModel) {
+                    return false;
+                }
+                
+                // Android版本筛选
+                if (androidVersion !== 'all' && stat.android_version !== androidVersion) {
+                    return false;
+                }
+                
+                // 设备ID搜索
+                if (deviceSearch && !stat.device_id.toLowerCase().includes(deviceSearch)) {
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            // 更新图表和数据展示
+            updateCharts();
+            updateTable();
+        }
+        
+        // 更新图表数据
+        function updateCharts() {
+            const today = new Date().toISOString().split('T')[0];
+            
+            // 按日期聚合数据
+            const dailyStats = {};
+            const deviceCounts = {};
+            const versionCounts = {};
+            let totalOpens = 0;
+            let uniqueDevices = new Set();
+            
+            filteredStats.forEach(stat => {
+                // 统计总开启次数
+                totalOpens += parseInt(stat.open_count) || 0;
+                
+                // 记录唯一设备
+                uniqueDevices.add(stat.device_id);
+                
+                // 按日期统计
+                if (!dailyStats[stat.date]) {
+                    dailyStats[stat.date] = 0;
+                }
+                dailyStats[stat.date] += parseInt(stat.open_count) || 0;
+                
+                // 按设备统计
+                if (!deviceCounts[stat.device_model]) {
+                    deviceCounts[stat.device_model] = 0;
+                }
+                deviceCounts[stat.device_model] += parseInt(stat.open_count) || 0;
+                
+                // 按Android版本统计
+                if (!versionCounts[stat.android_version]) {
+                    versionCounts[stat.android_version] = 0;
+                }
+                versionCounts[stat.android_version] += parseInt(stat.open_count) || 0;
+            });
+            
+            // 更新仪表板数据
+            document.getElementById('totalOpens').textContent = totalOpens;
+            document.getElementById('uniqueDevices').textContent = uniqueDevices.size;
+            document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length;
+            
+            // 准备日期排序
+            const dates = Object.keys(dailyStats).sort();
+            
+            // 更新总开启次数图表
+            totalOpensChart.data.labels = dates;
+            totalOpensChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
+            totalOpensChart.update();
+            
+            // 更新设备分布图表
+            const topDevices = Object.entries(deviceCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+            
+            devicesChart.data.labels = topDevices.map(d => d[0] || '未知设备');
+            devicesChart.data.datasets[0].data = topDevices.map(d => d[1]);
+            devicesChart.update();
+            
+            // 更新Android版本分布图表
+            const topVersions = Object.entries(versionCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+            
+            androidChart.data.labels = topVersions.map(v => `Android ${v[0]}` || '未知版本');
+            androidChart.data.datasets[0].data = topVersions.map(v => v[1]);
+            androidChart.update();
+            
+            // 更新趋势图表
+            trendChart.data.labels = dates;
+            trendChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
+            trendChart.update();
+        }
+        
+        // 更新表格数据
+        function updateTable() {
+            const tbody = document.querySelector('#statsTable tbody');
+            tbody.innerHTML = '';
+            
+            if (filteredStats.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" class="loading">没有找到匹配的数据</td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            // 按日期降序排序
+            const sortedStats = [...filteredStats].sort((a, b) => {
+                return new Date(b.date) - new Date(a.date);
+            });
+            
+            // 只显示前100条记录
+            const displayStats = sortedStats.slice(0, 100);
+            
+            displayStats.forEach(stat => {
+                const tr = document.createElement('tr');
+                
+                // 日期
+                const dateTd = document.createElement('td');
+                dateTd.textContent = stat.date;
+                tr.appendChild(dateTd);
+                
+                // 设备ID
+                const deviceTd = document.createElement('td');
+                deviceTd.textContent = stat.device_id.slice(0, 8) + '...';
+                deviceTd.title = stat.device_id;
+                tr.appendChild(deviceTd);
+                
+                // 开启次数
+                const countTd = document.createElement('td');
+                countTd.textContent = stat.open_count;
+                tr.appendChild(countTd);
+                
+                // 设备型号
+                const modelTd = document.createElement('td');
+                modelTd.textContent = stat.device_model || '--';
+                tr.appendChild(modelTd);
+                
+                // Android版本
+                const versionTd = document.createElement('td');
+                versionTd.textContent = stat.android_version ? `Android ${stat.android_version}` : '--';
+                tr.appendChild(versionTd);
+                
+                // 制造商
+                const manuTd = document.createElement('td');
+                manuTd.textContent = stat.manufacturer || '--';
+                tr.appendChild(manuTd);
+                
+                // 报告时间
+                const timeTd = document.createElement('td');
+                timeTd.textContent = stat.report_time || '--';
+                tr.appendChild(timeTd);
+                
+                // 状态
+                const statusTd = document.createElement('td');
+                const badge = document.createElement('span');
+                badge.className = 'badge ' + getStatusBadgeClass(stat.date);
+                badge.textContent = getStatusText(stat.date);
+                statusTd.appendChild(badge);
+                tr.appendChild(statusTd);
+                
+                tbody.appendChild(tr);
+            });
+        }
+        
+        // 获取状态标签样式
+        function getStatusBadgeClass(date) {
+            const today = new Date().toISOString().split('T')[0];
+            const reportDate = new Date(date);
+            const diffDays = Math.floor((new Date() - reportDate) / (1000 * 60 * 60 * 24));
+            
+            if (date === today) {
+                return 'badge-success';
+            } else if (diffDays <= 7) {
+                return 'badge-primary';
+            } else if (diffDays <= 30) {
+                return 'badge-warning';
+            } else {
+                return 'badge-danger';
+            }
+        }
+        
+        // 获取状态文本
+        function getStatusText(date) {
+            const today = new Date().toISOString().split('T')[0];
+            const reportDate = new Date(date);
+            const diffDays = Math.floor((new Date() - reportDate) / (1000 * 60 * 60 * 24));
+            
+            if (date === today) {
+                return '今日活跃';
+            } else if (diffDays <= 7) {
+                return '7天内活跃';
+            } else if (diffDays <= 30) {
+                return '30天内活跃';
+            } else {
+                return '历史记录';
+            }
+        }
     </script>
 </body>
 </html>
