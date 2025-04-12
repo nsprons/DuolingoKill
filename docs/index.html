@@ -212,14 +212,50 @@
             border-radius: 4px;
             font-family: inherit;
         }
-        
+
+        /* 新增移动端优化样式 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 8px;
+            }
+            
+            .chart-container {
+                height: 180px !important;
+            }
+            
+            .card {
+                padding: 12px;
+                margin: 0 -8px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .filters {
+                gap: 8px;
+                padding: 12px;
+            }
+            
+            .filter-group {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .card-value {
+                font-size: 1.4rem;
+            }
+        }
+
         @media (max-width: 768px) {
             body {
                 padding: 10px;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .dashboard {
@@ -233,7 +269,11 @@
             
             th, td {
                 padding: 8px 10px;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+            }
+            
+            .card-title {
+                font-size: 1rem;
             }
         }
     </style>
