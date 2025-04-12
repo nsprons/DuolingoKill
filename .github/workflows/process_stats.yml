@@ -11,7 +11,7 @@ jobs:
     
     permissions:
       contents: write
-      issues: read
+      issues: write  # 需要升级为write权限才能修改/关闭issue
       pull-requests: write
     
     steps:
@@ -103,3 +103,24 @@ jobs:
           echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
           echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
           echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
+
+      - name: Clean and close issue
+        if: always()  # 确保即使前面步骤失败也会执行
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 清空并关闭issue
+          curl -s \
+            -X PATCH \
+            -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
+            -d '{
+              "title": "[Processed] Device Stats - $DEVICE_ID",
+              "body": "This issue has been automatically processed and closed.\n\n" +
+                      "**Processed Data**:\n" +
+                      "- Device ID: $DEVICE_ID\n" +
+                      "- Processed at: $(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+              "state": "closed"
+            }'
+          echo "Issue #${{ github.event.issue.number }} has been cleaned and closed"
