@@ -40,7 +40,7 @@ jobs:
           BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
 
           # 验证标题格式
-          if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
+          if ! [[ "$TITLE" =~ ^DeviceStats ]]; then
             echo "::error::Invalid issue title format: $TITLE"
             exit 1
           fi
