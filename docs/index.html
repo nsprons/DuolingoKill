@@ -1,132 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Xposed Module Usage Stats</title>
+    <title>Enhanced Usage Stats</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
         .chart-container {
-            margin: 40px 0;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
-        h1 {
-            color: #333;
-            text-align: center;
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 <body>
-    <h1>Xposed Module Usage Statistics</h1>
+    <h1>Enhanced Usage Statistics</h1>
     
     <div class="chart-container">
-        <h2>Daily Active Users</h2>
-        <canvas id="dailyUsersChart" height="300"></canvas>
+        <h2>Daily Usage Duration (Minutes)</h2>
+        <canvas id="durationChart" height="200"></canvas>
     </div>
     
     <div class="chart-container">
-        <h2>Usage Duration (minutes)</h2>
-        <canvas id="usageDurationChart" height="300"></canvas>
+        <h2>Daily Opens</h2>
+        <canvas id="opensChart" height="200"></canvas>
     </div>
+    
+    <div class="chart-container">
+        <h2>Unique Devices</h2>
+        <canvas id="devicesChart" height="200"></canvas>
+    </div>
+    
+    <table id="statsTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Device ID</th>
+                <th>IP</th>
+                <th>Duration (min)</th>
+                <th>Daily Opens</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
     
     <script>
-        // 从GitHub获取CSV数据
-        fetch('https://raw.githubusercontent.com/你的用户名/你的仓库名/main/stats/daily.csv')
+        fetch('https://raw.githubusercontent.com/你的用户名/你的仓库名/main/stats/enhanced_stats.csv')
             .then(response => response.text())
             .then(data => {
                 const rows = data.split('\n').filter(row => row.trim() !== '');
                 const headers = rows.shift().split(',');
                 
-                // 按日期聚合数据
-                const statsByDate = {};
-                
-                rows.forEach(row => {
+                // 准备数据
+                const stats = rows.map(row => {
                     const values = row.split(',');
-                    if (values.length === headers.length) {
-                        const date = values[0];
-                        const duration = parseInt(values[4]) / 60000; // 转换为分钟
-                        
-                        if (!statsByDate[date]) {
-                            statsByDate[date] = {
-                                users: 0,
-                                duration: 0
-                            };
-                        }
-                        
-                        statsByDate[date].users += parseInt(values[2]);
-                        statsByDate[date].duration += duration;
-                    }
+                    const entry = {};
+                    headers.forEach((header, i) => {
+                        entry[header] = values[i];
+                    });
+                    return entry;
                 });
                 
-                const dates = Object.keys(statsByDate).sort();
-                const userCounts = dates.map(date => statsByDate[date].users);
-                const durations = dates.map(date => statsByDate[date].duration);
+                // 按日期聚合
+                const dailyStats = {};
+                const uniqueDevices = new Set();
                 
-                // 绘制每日用户图表
-                new Chart(
-                    document.getElementById('dailyUsersChart'),
-                    {
-                        type: 'line',
-                        data: {
-                            labels: dates,
-                            datasets: [{
-                                label: 'Daily Active Users',
-                                data: userCounts,
-                                borderColor: 'rgb(75, 192, 192)',
-                                backgroundColor: 'rgba(75, 192, 192, 0.1)',
-                                borderWidth: 2,
-                                tension: 0.1,
-                                fill: true
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
+                stats.forEach(stat => {
+                    if (!dailyStats[stat.date]) {
+                        dailyStats[stat.date] = {
+                            duration: 0,
+                            opens: 0,
+                            devices: new Set()
+                        };
                     }
-                );
+                    
+                    dailyStats[stat.date].duration += parseFloat(stat.duration_minutes) || 0;
+                    dailyStats[stat.date].opens += parseInt(stat.daily_opens) || 0;
+                    dailyStats[stat.date].devices.add(stat.device_id);
+                    uniqueDevices.add(stat.device_id);
+                });
                 
-                // 绘制使用时长图表
-                new Chart(
-                    document.getElementById('usageDurationChart'),
-                    {
-                        type: 'bar',
-                        data: {
-                            labels: dates,
-                            datasets: [{
-                                label: 'Total Usage Duration (minutes)',
-                                data: durations,
-                                backgroundColor: 'rgba(54, 162, 235, 0.7)',
-                                borderColor: 'rgb(54, 162, 235)',
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    }
-                );
+                const dates = Object.keys(dailyStats).sort();
+                
+                // 绘制图表
+                renderChart('durationChart', 'bar', dates, 
+                    dates.map(date => dailyStats[date].duration.toFixed(1)), 
+                    'Usage Duration (min)');
+                
+                renderChart('opensChart', 'line', dates,
+                    dates.map(date => dailyStats[date].opens),
+                    'Daily Opens');
+                
+                renderChart('devicesChart', 'bar', dates,
+                    dates.map(date => dailyStats[date].devices.size),
+                    'Unique Devices');
+                
+                // 填充表格
+                const tbody = document.querySelector('#statsTable tbody');
+                stats.forEach(stat => {
+                    const tr = document.createElement('tr');
+                    headers.forEach(header => {
+                        const td = document.createElement('td');
+                        td.textContent = stat[header] || '-';
+                        tr.appendChild(td);
+                    });
+                    tbody.appendChild(tr);
+                });
             })
             .catch(error => {
                 console.error('Error loading stats:', error);
-                document.body.innerHTML = '<p>Error loading statistics. Please try again later.</p>';
+                document.body.innerHTML += '<p>Error loading data. Please try again later.</p>';
             });
+            
+        function renderChart(canvasId, type, labels, data, label) {
+            new Chart(
+                document.getElementById(canvasId),
+                {
+                    type: type,
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: label,
+                            data: data,
+                            backgroundColor: type === 'bar' ? 'rgba(54, 162, 235, 0.7)' : 'rgba(75, 192, 192, 0.7)',
+                            borderColor: type === 'bar' ? 'rgb(54, 162, 235)' : 'rgb(75, 192, 192)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                }
+            );
+        }
     </script>
 </body>
 </html>
