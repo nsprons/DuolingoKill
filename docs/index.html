@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daily Open Statistics</title>
+    <title>Xposed Module Daily Opens</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         .chart-container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
         }
         table {
-            width: 80%;
-            margin: 20px auto;
+            width: 100%;
+            margin: 20px 0;
             border-collapse: collapse;
         }
         th, td {
@@ -24,65 +36,91 @@
         th {
             background-color: #f2f2f2;
         }
+        .summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Daily Open Statistics</h1>
+    <h1>Xposed Module Daily Opens</h1>
     
-    <div class="chart-container">
-        <h2>Unique Devices Per Day</h2>
-        <canvas id="devicesChart" height="200"></canvas>
+    <div class="summary">
+        <h2>Statistics Summary</h2>
+        <p>Last Updated: <span id="lastUpdated"></span></p>
+        <p>Total Unique Devices: <span id="totalDevices">Loading...</span></p>
+        <p>Total Days Recorded: <span id="totalDays">Loading...</span></p>
     </div>
     
-    <table id="statsTable">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Device ID</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="chart-container">
+        <h2>Daily Unique Devices</h2>
+        <canvas id="dailyDevicesChart" height="300"></canvas>
+    </div>
+    
+    <div class="chart-container">
+        <h2>Recent Device Activity</h2>
+        <table id="recentActivity">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Device ID</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
     
     <script>
+        // 从GitHub获取CSV数据
         fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/daily_opens.csv')
             .then(response => response.text())
             .then(data => {
-                const rows = data.split('\n').filter(row => row.trim() !== '');
-                const headers = rows.shift().split(',');
+                document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
                 
-                // 准备数据
-                const stats = rows.map(row => {
-                    const values = row.split(',');
-                    const entry = {};
-                    headers.forEach((header, i) => {
-                        entry[header] = values[i];
-                    });
-                    return entry;
+                // 处理CSV数据
+                const rows = data.split('\n').filter(row => {
+                    const [date, deviceId] = row.split(',');
+                    return date && deviceId && 
+                           date.match(/^\d{4}-\d{2}-\d{2}$/) && 
+                           deviceId.trim().length > 0 &&
+                           row !== "date,device_id";
                 });
                 
-                // 按日期统计设备数
-                const dailyCounts = {};
-                stats.forEach(stat => {
-                    if (!dailyCounts[stat.date]) {
-                        dailyCounts[stat.date] = 0;
+                // 准备统计数据
+                const statsByDate = {};
+                const uniqueDevices = new Set();
+                
+                rows.forEach(row => {
+                    const [date, deviceId] = row.split(',');
+                    
+                    if (!statsByDate[date]) {
+                        statsByDate[date] = new Set();
                     }
-                    dailyCounts[stat.date]++;
+                    
+                    statsByDate[date].add(deviceId);
+                    uniqueDevices.add(deviceId);
                 });
                 
-                const dates = Object.keys(dailyCounts).sort();
-                const counts = dates.map(date => dailyCounts[date]);
+                // 更新摘要信息
+                document.getElementById('totalDevices').textContent = uniqueDevices.size;
+                document.getElementById('totalDays').textContent = Object.keys(statsByDate).length;
                 
-                // 绘制图表
+                // 准备图表数据
+                const sortedDates = Object.keys(statsByDate).sort();
+                const deviceCounts = sortedDates.map(date => statsByDate[date].size);
+                
+                // 绘制每日设备数图表
                 new Chart(
-                    document.getElementById('devicesChart'),
+                    document.getElementById('dailyDevicesChart'),
                     {
                         type: 'bar',
                         data: {
-                            labels: dates,
+                            labels: sortedDates,
                             datasets: [{
                                 label: 'Unique Devices',
-                                data: counts,
+                                data: deviceCounts,
                                 backgroundColor: 'rgba(54, 162, 235, 0.7)',
                                 borderColor: 'rgb(54, 162, 235)',
                                 borderWidth: 1
@@ -91,24 +129,47 @@
                         options: {
                             responsive: true,
                             scales: {
+                                x: {
+                                    type: 'time',
+                                    time: {
+                                        unit: 'day',
+                                        tooltipFormat: 'yyyy-MM-dd',
+                                        displayFormats: {
+                                            day: 'MMM dd'
+                                        }
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Date'
+                                    }
+                                },
                                 y: {
                                     beginAtZero: true,
-                                    precision: 0
+                                    precision: 0,
+                                    title: {
+                                        display: true,
+                                        text: 'Device Count'
+                                    }
                                 }
                             }
                         }
                     }
                 );
                 
-                // 填充表格
-                const tbody = document.querySelector('#statsTable tbody');
-                stats.forEach(stat => {
+                // 填充最近活动表格
+                const tbody = document.querySelector('#recentActivity tbody');
+                rows.slice(-20).reverse().forEach(row => {
+                    const [date, deviceId] = row.split(',');
                     const tr = document.createElement('tr');
-                    headers.forEach(header => {
-                        const td = document.createElement('td');
-                        td.textContent = stat[header] || '-';
-                        tr.appendChild(td);
-                    });
+                    
+                    const dateTd = document.createElement('td');
+                    dateTd.textContent = date;
+                    tr.appendChild(dateTd);
+                    
+                    const deviceTd = document.createElement('td');
+                    deviceTd.textContent = deviceId;
+                    tr.appendChild(deviceTd);
+                    
                     tbody.appendChild(tr);
                 });
             })
