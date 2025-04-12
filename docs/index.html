@@ -9,9 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- 添加Leaflet地图库 -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #4361ee;
@@ -39,11 +37,15 @@
             color: var(--dark-color);
             background-color: #f5f7fa;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            flex: 1;
         }
         
         header {
@@ -149,7 +151,7 @@
             padding: 3px 8px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 5
+            font-weight: 500;
         }
         
         .badge-primary {
@@ -201,6 +203,7 @@
             display: flex;
             flex-direction: column;
             min-width: 200px;
+            position: relative;
         }
         
         .filter-label {
@@ -214,85 +217,112 @@
             border: 1px solid #ced4da;
             border-radius: 4px;
             font-family: inherit;
+            width: 100%;
         }
 
-        /* 地理位置卡片样式 */
-        .geo-card {
-            grid-column: span 2;
-        }
-        
-        .map-container {
-            height: 300px;
+        .search-container {
+            position: relative;
             width: 100%;
-            margin-top: 15px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
         }
-        
-        /* IP信息弹窗 */
-        .ip-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
+
+        .search-input {
+            padding-left: 35px;
         }
-        
-        .ip-modal-content {
-            background: white;
-            border-radius: var(--border-radius);
-            width: 90%;
-            max-width: 600px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .ip-modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .ip-modal-title {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--primary-color);
-        }
-        
-        .ip-modal-close {
-            font-size: 1.5rem;
-            cursor: pointer;
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             color: #6c757d;
         }
-        
-        .ip-details {
+
+        .clear-search {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            cursor: pointer;
+            display: none;
+        }
+
+        .clear-search:hover {
+            color: var(--danger-color);
+        }
+
+        /* 底部信息栏 */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
         }
-        
-        .ip-detail-item {
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
             margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
-        
-        .ip-detail-label {
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.8rem;
             color: #6c757d;
         }
-        
-        .ip-detail-value {
-            font-weight: 500;
-            word-break: break-word;
-        }
-        
+
         /* 新增移动端优化样式 */
         @media (max-width: 480px) {
             .container {
@@ -327,9 +357,10 @@
             .card-value {
                 font-size: 1.4rem;
             }
-            
-            .geo-card {
-                grid-column: span 1;
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
@@ -395,8 +426,12 @@
             </div>
             
             <div class="filter-group">
-                <label class="filter-label">搜索设备ID</label>
-                <input type="text" id="deviceSearch" placeholder="输入设备ID">
+                <label class="filter-label">搜索设备</label>
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="deviceSearch" class="search-input" placeholder="输入设备ID或型号...">
+                    <i class="fas fa-times clear-search" id="clearSearch"></i>
+                </div>
             </div>
         </div>
         
@@ -430,19 +465,6 @@
                     <canvas id="androidChart"></canvas>
                 </div>
             </div>
-            
-            <div class="card geo-card">
-                <div class="card-header">
-                    <span class="card-title">地理位置分布</span>
-                    <span class="card-value" id="uniqueLocations">--</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="geoChart"></canvas>
-                </div>
-                <div class="map-container" id="mapContainer">
-                    <!-- 地图将通过JavaScript动态加载 -->
-                </div>
-            </div>
         </div>
         
         <div class="card">
@@ -463,8 +485,8 @@
                         <th>开启次数</th>
                         <th>设备型号</th>
                         <th>Android版本</th>
-                        <th>IP地址</th>
-                        <th>地理位置</th>
+                        <th>制造商</th>
+                        <th>报告时间</th>
                         <th>状态</th>
                     </tr>
                 </thead>
@@ -477,18 +499,50 @@
         </div>
     </div>
 
-    <!-- IP信息弹窗 -->
-    <div class="ip-modal" id="ipModal">
-        <div class="ip-modal-content">
-            <div class="ip-modal-header">
-                <div class="ip-modal-title">IP地址详细信息</div>
-                <div class="ip-modal-close" id="ipModalClose">&times;</div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>关于本项目</h3>
+                <p>多领国杀手是一款帮助用户高效学习语言的工具应用，本统计面板用于监控和分析用户设备的使用情况。</p>
+                <p>数据更新频率：每小时自动更新</p>
+                <p>最后更新时间：<span id="lastUpdateTime">--</span></p>
             </div>
-            <div class="ip-details" id="ipDetails">
-                <!-- IP详细信息将通过JavaScript动态生成 -->
+            
+            <div class="footer-section">
+                <h3>相关链接</h3>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/nspron/DuolingoKill" target="_blank">GitHub 项目</a></li>
+                    <li><a href="https://github.com/nspron/DuolingoKill/issues" target="_blank">问题反馈</a></li>
+                    <li><a href="#" id="privacyLink">隐私政策</a></li>
+                    <li><a href="#" id="termsLink">使用条款</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>技术支持</h3>
+                <p>如有任何技术问题，请联系我们的支持团队：</p>
+                <p><i class="fas fa-envelope"></i> support@duolingokiller.com</p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>数据统计</h3>
+                <p>总设备数：<span id="totalDevicesFooter">--</span></p>
+                <p>总开启次数：<span id="totalOpensFooter">--</span></p>
+                <p>覆盖国家：<span id="totalCountriesFooter">--</span></p>
+                <p>活跃用户：<span id="activeUsersFooter">--</span></p>
             </div>
         </div>
-    </div>
+        
+        <div class="copyright">
+            &copy; 2023 多领国杀手项目组. 保留所有权利。
+        </div>
+    </footer>
 
     <script>
         // 全局数据变量
@@ -496,14 +550,11 @@
         let filteredStats = [];
         let deviceModels = new Set();
         let androidVersions = new Set();
-        let map = null;
-        let markers = [];
         
         // 初始化图表
         const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
         const devicesChart = initDoughnutChart('devicesChart', '设备分布');
         const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
-        const geoChart = initDoughnutChart('geoChart', '国家分布');
         const trendChart = initLineChart('trendChart', '设备使用趋势');
         
         // 加载数据
@@ -546,12 +597,18 @@
                 
                 // 应用初始筛选
                 applyFilters();
+                
+                // 更新底部统计信息
+                updateFooterStats();
+                
+                // 设置最后更新时间
+                document.getElementById('lastUpdateTime').textContent = new Date().toLocaleString();
             })
             .catch(error => {
                 console.error('加载数据失败:', error);
                 document.querySelector('#statsTable tbody').innerHTML = `
                     <tr>
-                        <td colspan="8", class="error">数据加载失败，请稍后再试</td>
+                        <td colspan="8" class="error">数据加载失败，请稍后再试</td>
                     </tr>
                 `;
             });
@@ -560,19 +617,37 @@
         document.getElementById('dateRange').addEventListener('change', applyFilters);
         document.getElementById('deviceModel').addEventListener('change', applyFilters);
         document.getElementById('androidVersion').addEventListener('change', applyFilters);
-        document.getElementById('deviceSearch').addEventListener('input', applyFilters);
-        
-        // IP弹窗事件监听
-        document.getElementById('ipModalClose').addEventListener('click', () => {
-            document.getElementById('ipModal').style.display = 'none';
+        document.getElementById('deviceSearch').addEventListener('input', function() {
+            applyFilters();
+            toggleClearButton();
         });
         
-        // 点击地图容器外关闭弹窗
-        window.addEventListener('click', (event) => {
-            if (event.target === document.getElementById('ipModal')) {
-                document.getElementById('ipModal').style.display = 'none';
-            }
+        // 清除搜索按钮事件
+        document.getElementById('clearSearch').addEventListener('click', function() {
+            document.getElementById('deviceSearch').value = '';
+            applyFilters();
+            this.style.display = 'none';
         });
+        
+        // 底部链接事件
+        document.getElementById('privacyLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('隐私政策页面将在新窗口打开');
+            // window.open('privacy.html', '_blank');
+        });
+        
+        document.getElementById('termsLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('使用条款页面将在新窗口打开');
+            // window.open('terms.html', '_blank');
+        });
+        
+        // 显示/隐藏清除按钮
+        function toggleClearButton() {
+            const searchInput = document.getElementById('deviceSearch');
+            const clearButton = document.getElementById('clearSearch');
+            clearButton.style.display = searchInput.value ? 'block' : 'none';
+        }
         
         // 初始化柱状图
         function initBarChart(canvasId, label, color) {
@@ -770,7 +845,9 @@
                 }
                 
                 // 设备ID搜索
-                if (deviceSearch && !stat.device_id.toLowerCase().includes(deviceSearch)) {
+                if (deviceSearch && 
+                    !stat.device_id.toLowerCase().includes(deviceSearch) && 
+                    !(stat.device_model && stat.device_model.toLowerCase().includes(deviceSearch))) {
                     return false;
                 }
                 
@@ -780,6 +857,7 @@
             // 更新图表和数据展示
             updateCharts();
             updateTable();
+            updateFooterStats();
         }
         
         // 更新图表数据
@@ -790,12 +868,8 @@
             const dailyStats = {};
             const deviceCounts = {};
             const versionCounts = {};
-            const countryCounts = {};
-            const locationPoints = [];
             let totalOpens = 0;
             let uniqueDevices = new Set();
-            let uniqueCountries = new Set();
-            let uniqueLocations = new Set();
             
             filteredStats.forEach(stat => {
                 // 统计总开启次数
@@ -803,31 +877,6 @@
                 
                 // 记录唯一设备
                 uniqueDevices.add(stat.device_id);
-                
-                // 记录唯一地理位置
-                if (stat.country && stat.region && stat.city) {
-                    const locationKey = `${stat.country}-${stat.region}-${stat.city}`;
-                    uniqueLocations.add(locationKey);
-                    
-                    // 记录国家
-                    uniqueCountries.add(stat.country);
-                    if (!countryCounts[stat.country]) {
-                        countryCounts[stat.country] = 0;
-                    }
-                    countryCounts[stat.country] += parseInt(stat.open_count) || 0;
-                    
-                    // 收集坐标点
-                    if (stat.latitude && stat.longitude) {
-                        locationPoints.push({
-                            lat: parseFloat(stat.latitude),
-                            lng: parseFloat(stat.longitude),
-                            city: stat.city,
-                            region: stat.region,
-                            country: stat.country,
-                            count: parseInt(stat.open_count) || 1
-                        });
-                    }
-                }
                 
                 // 按日期统计
                 if (!dailyStats[stat.date]) {
@@ -852,7 +901,6 @@
             document.getElementById('totalOpens').textContent = totalOpens;
             document.getElementById('uniqueDevices').textContent = uniqueDevices.size;
             document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length;
-            document.getElementById('uniqueLocations').textContent = uniqueLocations.size;
             
             // 准备日期排序
             const dates = Object.keys(dailyStats).sort();
@@ -880,98 +928,39 @@
             androidChart.data.datasets[0].data = topVersions.map(v => v[1]);
             androidChart.update();
             
-            // 更新国家分布图表
-            const topCountries = Object.entries(countryCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 5);
-            
-            geoChart.data.labels = topCountries.map(c => c[0] || '未知国家');
-            geoChart.data.datasets[0].data = topCountries.map(c => c[1]);
-            geoChart.update();
-            
             // 更新趋势图表
             trendChart.data.labels = dates;
             trendChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
             trendChart.update();
-            
-            // 更新地图
-            updateMap(locationPoints);
         }
         
-        // 更新地图
-        function updateMap(locationPoints) {
-            const mapContainer = document.getElementById('mapContainer');
-            mapContainer.innerHTML = ''; // 清除旧地图
+        // 更新底部统计信息
+        function updateFooterStats() {
+            // 计算总设备数
+            const uniqueDevices = new Set(allStats.map(stat => stat.device_id));
+            document.getElementById('totalDevicesFooter').textContent = uniqueDevices.size;
             
-            if (locationPoints.length === 0) {
-                mapContainer.innerHTML = '<div style="padding: 20px; text-align: center;">没有地理位置数据</div>';
-                return;
-            }
+            // 计算总开启次数
+            const totalOpens = allStats.reduce((sum, stat) => sum + (parseInt(stat.open_count) || 0), 0);
+            document.getElementById('totalOpensFooter').textContent = totalOpens;
             
-            // 计算中心点
-            const centerLat = locationPoints.reduce((sum, point) => sum + point.lat, 0) / locationPoints.length;
-            const centerLng = locationPoints.reduce((sum, point) => sum + point.lng, 0) / locationPoints.length;
-            
-            // 初始化地图
-            map = L.map('mapContainer').setView([centerLat, centerLng], 3);
-            
-            // 添加地图图层
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            
-            // 清除旧标记
-            markers.forEach(marker => map.removeLayer(marker));
-            markers = [];
-            
-            // 添加新标记
-            locationPoints.forEach(point => {
-                const marker = L.marker([point.lat, point.lng]).addTo(map);
-                marker.bindPopup(`
-                    <b>${point.city || '未知城市'}, ${point.region || '未知地区'}, ${point.country || '未知国家'}</b><br>
-                    开启次数: ${point.count}
-                `);
-                markers.push(marker);
+            // 计算覆盖国家数
+            const countries = new Set();
+            allStats.forEach(stat => {
+                if (stat.country) countries.add(stat.country);
             });
+            document.getElementById('totalCountriesFooter').textContent = countries.size;
             
-            // 如果有多个点，调整视图以包含所有标记
-            if (locationPoints.length > 1) {
-                const group = new L.featureGroup(markers);
-                map.fitBounds(group.getBounds());
-            }
-        }
-        
-        // 显示IP详细信息
-        function showIpDetails(stat) {
-            const ipModal = document.getElementById('ipModal');
-            const ipDetails = document.getElementById('ipDetails');
-            
-            ipDetails.innerHTML = '';
-            
-            // 添加IP基本信息
-            addIpDetail('IP地址', stat.ip_address || '未知');
-            addIpDetail('国家', stat.country || '未知');
-            addIpDetail('地区', stat.region || '未知');
-            addIpDetail('城市', stat.city || '未知');
-            addIpDetail('ISP', stat.isp || '未知');
-            addIpDetail('经纬度', 
-                (stat.latitude && stat.longitude) 
-                    ? `${stat.latitude}, ${stat.longitude}` 
-                    : '未知');
-            addIpDetail('时区', stat.timezone || '未知');
-            
-            // 显示弹窗
-            ipModal.style.display = 'flex';
-            
-            function addIpDetail(label, value) {
-                const detailItem = document.createElement('div');
-                detailItem.className = 'ip-detail-item';
-                detailItem.innerHTML = `
-                    <div class="ip-detail-label">${label}</div>
-                    <div class="ip-detail-value">${value}</div>
-                `;
-                ipDetails.appendChild(detailItem);
-            }
+            // 计算活跃用户数（最近30天）
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+            const activeDevices = new Set();
+            allStats.forEach(stat => {
+                if (new Date(stat.date) >= thirtyDaysAgo) {
+                    activeDevices.add(stat.device_id);
+                }
+            });
+            document.getElementById('activeUsersFooter').textContent = activeDevices.size;
         }
         
         // 更新表格数据
@@ -1025,32 +1014,15 @@
                 versionTd.textContent = stat.android_version ? `Android ${stat.android_version}` : '--';
                 tr.appendChild(versionTd);
                 
-                // IP地址
-                const ipTd = document.createElement('td');
-                if (stat.ip_address) {
-                    const ipLink = document.createElement('a');
-                    ipLink.href = '#';
-                    ipLink.textContent = stat.ip_address;
-                    ipLink.style.color = 'var(--primary-color)';
-                    ipLink.style.textDecoration = 'none';
-                    ipLink.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        showIpDetails(stat);
-                    });
-                    ipTd.appendChild(ipLink);
-                } else {
-                    ipTd.textContent = '--';
-                }
-                tr.appendChild(ipTd);
+                // 制造商
+                const manuTd = document.createElement('td');
+                manuTd.textContent = stat.manufacturer || '--';
+                tr.appendChild(manuTd);
                 
-                // 地理位置
-                const geoTd = document.createElement('td');
-                if (stat.city && stat.region && stat.country) {
-                    geoTd.textContent = `${stat.city}, ${stat.region}, ${stat.country}`;
-                } else {
-                    geoTd.textContent = '--';
-                }
-                tr.appendChild(geoTd);
+                // 报告时间
+                const timeTd = document.createElement('td');
+                timeTd.textContent = stat.report_time || '--';
+                tr.appendChild(timeTd);
                 
                 // 状态
                 const statusTd = document.createElement('td');
