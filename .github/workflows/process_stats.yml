@@ -1,4 +1,4 @@
-name: Process Usage Stats
+name: Process Enhanced Stats
 
 on:
   issues:
@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Process new usage report
+    - name: Process enhanced stats
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
@@ -26,21 +26,26 @@ jobs:
         
         # 提取数据
         DATE=$(echo '${{ github.event.issue.title }}' | cut -d'-' -f2 | xargs)
-        MODULE=$(echo '${{ github.event.issue.body }}' | grep 'Module:' | cut -d':' -f2 | xargs)
-        DURATION=$(echo '${{ github.event.issue.body }}' | grep 'Duration:' | cut -d':' -f2 | xargs)
+        DEVICE_ID=$(echo '${{ github.event.issue.body }}' | grep 'Device ID:' | cut -d':' -f2 | xargs)
+        IP=$(echo '${{ github.event.issue.body }}' | grep 'IP Address:' | cut -d':' -f2 | xargs)
+        DURATION=$(echo '${{ github.event.issue.body }}' | grep 'Duration (minutes):' | cut -d':' -f2 | xargs)
         
         # 创建stats目录(如果不存在)
         mkdir -p stats
         
         # 初始化CSV文件(如果不存在)
-        if [ ! -f "stats/daily.csv" ]; then
-          echo "date,module,users,sessions,duration" > stats/daily.csv
+        if [ ! -f "stats/enhanced_stats.csv" ]; then
+          echo "date,device_id,ip_address,duration_minutes,daily_opens" > stats/enhanced_stats.csv
         fi
         
-        # 更新统计数据(这里简化处理)
-        echo "$DATE,$MODULE,1,1,$DURATION" >> stats/daily.csv
+        # 计算当日打开次数(简化处理)
+        DAILY_OPENS=$(grep "$DATE" stats/enhanced_stats.csv | wc -l)
+        DAILY_OPENS=$((DAILY_OPENS + 1))
+        
+        # 追加新记录
+        echo "$DATE,$DEVICE_ID,$IP,$DURATION,$DAILY_OPENS" >> stats/enhanced_stats.csv
         
         # 提交更改
-        git add stats/daily.csv
-        git commit -m "Update usage stats for $DATE"
+        git add stats/enhanced_stats.csv
+        git commit -m "Update enhanced stats for $DATE"
         git push
