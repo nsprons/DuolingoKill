@@ -30,76 +30,95 @@ jobs:
           #!/bin/bash
           set -eo pipefail
 
-          # 安全设置Git配置
+          # Configure Git
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git config --global --add safe.directory /github/workspace
 
-          # 提取并验证Issue数据
+          # Extract and validate issue data
           TITLE="${{ github.event.issue.title }}"
           BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
 
-          # 验证标题格式
+          # Validate title format
           if ! [[ "$TITLE" =~ ^DeviceStats ]]; then
             echo "::error::Invalid issue title format: $TITLE"
             exit 1
           fi
 
-          # 解析JSON数据
-          if ! DEVICE_ID=$(echo "$BODY" | jq -r '.device_id'); then
-            echo "::error::Failed to parse device_id"
-            exit 1
-          fi
+          # Parse JSON data with error handling
+          parse_field() {
+            local field_name="$1"
+            local value
+            if ! value=$(echo "$BODY" | jq -r ".${field_name}"); then
+              echo "::error::Failed to parse ${field_name}"
+              exit 1
+            fi
+            echo "$value"
+          }
 
-          DATE=$(echo "$BODY" | jq -r '.date')
-          OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
-          REPORT_TIME=$(echo "$BODY" | jq -r '.report_time')
-          DEVICE_MODEL=$(echo "$BODY" | jq -r '.device_model')
-          ANDROID_VERSION=$(echo "$BODY" | jq -r '.android_version')
-          MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
-          SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
+          DEVICE_ID=$(parse_field "device_id")
+          DATE=$(parse_field "date")
+          OPEN_COUNT=$(parse_field "open_count")
+          REPORT_TIME=$(parse_field "report_time")
+          DEVICE_MODEL=$(parse_field "device_model")
+          ANDROID_VERSION=$(parse_field "android_version")
+          MANUFACTURER=$(parse_field "manufacturer")
+          SDK_VERSION=$(parse_field "sdk_version")
+          IP_ADDRESS=$(parse_field "ip_address")
+          CITY=$(parse_field "city")
+          COUNTRY=$(parse_field "country")
+          REGION=$(parse_field "region")
 
-          # 验证必需字段
+          # Validate required fields
           REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
           for field in "${REQUIRED_FIELDS[@]}"; do
-            if [[ -z "$field" ]]; then
-              echo "::error::Missing required field in body"
+            if [[ -z "$field" || "$field" == "null" ]]; then
+              echo "::error::Missing required field: $field"
               exit 1
             fi
           done
 
-          # 准备CSV文件
-          CSV_FILE="stats/device_stats.csv"
-          mkdir -p stats
+          # Prepare CSV directory and file
+          CSV_DIR="stats"
+          CSV_FILE="${CSV_DIR}/device_stats.csv"
+          mkdir -p "$CSV_DIR"
+
+          # Create CSV header if file doesn't exist
           if [ ! -f "$CSV_FILE" ]; then
-            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
+            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,ip_address,city,country,region" > "$CSV_FILE"
           fi
 
-          # 更新记录（原子操作）- 改进的设备ID匹配
+          # Process CSV data
           TEMP_FILE=$(mktemp)
           {
-            # 使用awk精确匹配device_id字段（第2列）
-            awk -v device_id="$DEVICE_ID" -F, '
-              BEGIN { OFS=FS }
-              NR==1 { print; next }
-              $2 != "\""device_id"\"" { print }
+            # Keep header
+            head -n 1 "$CSV_FILE"
+            
+            # Filter out existing entry for this device (if any)
+            awk -F, -v device_id="$DEVICE_ID" '
+              NR > 1 && $2 != "\""device_id"\"" { print }
             ' "$CSV_FILE"
-            # 添加新记录
-            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
+            
+            # Add new record
+            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$IP_ADDRESS\",\"$CITY\",\"$COUNTRY\",\"$REGION\""
           } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
-          # 提交更改
+          # Commit changes
           git add "$CSV_FILE"
           if ! git diff-index --quiet HEAD --; then
             git commit -m "📊 Update stats for device $DEVICE_ID"
             git push origin HEAD:main
+            echo "::notice::Stats updated for device $DEVICE_ID"
           else
-            echo "No changes to commit"
+            echo "::notice::No changes to commit"
           fi
 
       - name: Create summary
         run: |
           echo "## 📈 Device Stats Updated" >> $GITHUB_STEP_SUMMARY
-          echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
-          echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
-          echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
+          echo "- **Device ID**: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
+          echo "- **Open count**: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "- **Device model**: $DEVICE_MODEL ($ANDROID_VERSION)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Location**: $CITY, $REGION, $COUNTRY" >> $GITHUB_STEP_SUMMARY
+          echo "- **IP**: $IP_ADDRESS" >> $GITHUB_STEP_SUMMARY
+          echo "- **Report time**: $REPORT_TIME" >> $GITHUB_STEP_SUMMARY
