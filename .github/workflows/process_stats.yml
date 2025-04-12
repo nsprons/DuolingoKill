@@ -26,10 +26,22 @@ jobs:
         
         # 提取数据
         TITLE="${{ github.event.issue.title }}"
-        DATE=$(echo "$TITLE" | cut -d'-' -f2 | xargs)
-        DEVICE_ID=$(echo "$TITLE" | cut -d'-' -f3 | xargs)
+        DATE=$(echo "$TITLE" | awk -F'-' '{print $2}' | xargs)
+        DEVICE_ID=$(echo "$TITLE" | awk -F'-' '{print $3}' | xargs)
         
-        # 创建stats目录(如果不存在)
+        # 检查日期格式是否正确
+        if [[ ! $DATE =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+          echo "Error: Invalid date format - $DATE"
+          exit 1
+        fi
+        
+        # 检查设备ID是否有效
+        if [[ -z "$DEVICE_ID" ]]; then
+          echo "Error: Missing device ID"
+          exit 1
+        fi
+        
+        # 创建stats目录
         mkdir -p stats
         
         # 初始化CSV文件(如果不存在)
