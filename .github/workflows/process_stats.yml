@@ -16,9 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Set up jq
+      run: sudo apt-get install -y jq
+      
     - name: Process device stats
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         # 设置Git配置
         git config --global user.name "GitHub Actions"
@@ -34,15 +37,16 @@ jobs:
           exit 1
         fi
         
-        # 解析JSON数据
-        DEVICE_ID=$(echo "$BODY" | jq -r '.device_id')
-        DATE=$(echo "$BODY" | jq -r '.date')
-        OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
-        REPORT_TIME=$(echo "$BODY" | jq -r '.report_time')
-        DEVICE_MODEL=$(echo "$BODY" | jq -r '.device_model')
-        ANDROID_VERSION=$(echo "$BODY" | jq -r '.android_version')
-        MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
-        SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
+        # 解析JSON数据 (处理可能的换行符)
+        CLEAN_BODY=$(echo "$BODY" | tr -d '\n')
+        DEVICE_ID=$(echo "$CLEAN_BODY" | jq -r '.device_id')
+        DATE=$(echo "$CLEAN_BODY" | jq -r '.date')
+        OPEN_COUNT=$(echo "$CLEAN_BODY" | jq -r '.open_count')
+        REPORT_TIME=$(echo "$CLEAN_BODY" | jq -r '.report_time')
+        DEVICE_MODEL=$(echo "$CLEAN_BODY" | jq -r '.device_model')
+        ANDROID_VERSION=$(echo "$CLEAN_BODY" | jq -r '.android_version')
+        MANUFACTURER=$(echo "$CLEAN_BODY" | jq -r '.manufacturer')
+        SDK_VERSION=$(echo "$CLEAN_BODY" | jq -r '.sdk_version')
         
         # 验证数据
         if [[ -z "$DEVICE_ID" || -z "$DATE" || -z "$OPEN_COUNT" ]]; then
@@ -54,18 +58,21 @@ jobs:
         mkdir -p stats
         
         # 初始化CSV文件(如果不存在)
-        if [ ! -f "stats/device_stats.csv" ]; then
-          echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > stats/device_stats.csv
+        CSV_FILE="stats/device_stats.csv"
+        if [ ! -f "$CSV_FILE" ]; then
+          echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
         fi
         
         # 删除该设备当天的旧记录(如果有)
-        grep -v "$DATE,$DEVICE_ID," stats/device_stats.csv > temp.csv
-        mv temp.csv stats/device_stats.csv
+        if grep -q "$DATE,$DEVICE_ID," "$CSV_FILE"; then
+          grep -v "$DATE,$DEVICE_ID," "$CSV_FILE" > temp.csv
+          mv temp.csv "$CSV_FILE"
+        fi
         
         # 添加新记录
-        echo "$DATE,$DEVICE_ID,$OPEN_COUNT,$REPORT_TIME,$DEVICE_MODEL,$ANDROID_VERSION,$MANUFACTURER,$SDK_VERSION" >> stats/device_stats.csv
+        echo "$DATE,$DEVICE_ID,$OPEN_COUNT,$REPORT_TIME,$DEVICE_MODEL,$ANDROID_VERSION,$MANUFACTURER,$SDK_VERSION" >> "$CSV_FILE"
         
         # 提交更改
-        git add stats/device_stats.csv
+        git add "$CSV_FILE"
         git commit -m "Update device stats for $DATE - $DEVICE_ID"
         git push
