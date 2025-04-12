@@ -806,11 +806,15 @@
         
         // 获取状态标签样式
         function getStatusBadgeClass(date) {
-            const today = new Date().toISOString().split('T')[0];
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
+        
             const reportDate = new Date(date);
-            const diffDays = Math.floor((new Date() - reportDate) / (1000 * 60 * 60 * 24));
+            reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
+        
+            const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
             
-            if (date === today) {
+            if (diffDays === 0) {
                 return 'badge-success';
             } else if (diffDays <= 7) {
                 return 'badge-primary';
