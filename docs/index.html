@@ -823,11 +823,16 @@
         
         // 获取状态文本
         function getStatusText(date) {
-            const today = new Date().toISOString().split('T')[0];
+            // 统一用本地时区解析日期，避免 UTC 和本地时区混淆
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
+        
             const reportDate = new Date(date);
-            const diffDays = Math.floor((new Date() - reportDate) / (1000 * 60 * 60 * 24));
-            
-            if (date === today) {
+            reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
+        
+            const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
+        
+            if (diffDays === 0) {
                 return '今日活跃';
             } else if (diffDays <= 7) {
                 return '7天内活跃';
