@@ -1,12 +1,12 @@
-name: Process Daily Opens
+name: Process Device Stats
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  process-daily-opens:
-    if: contains(github.event.issue.labels.*.name, 'daily_open')
+  process-device-stats:
+    if: contains(github.event.issue.labels.*.name, 'device_stats')
     runs-on: ubuntu-latest
     
     permissions:
@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Process daily open
+    - name: Process device stats
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
@@ -24,37 +24,29 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         
-        # 提取并验证标题格式
+        # 提取数据
         TITLE="${{ github.event.issue.title }}"
+        BODY="${{ github.event.issue.body }}"
         
-        # 使用正则表达式提取日期、设备ID和计数
-        if [[ "$TITLE" =~ ^DailyOpen\ -\ ([0-9]{4}-[0-9]{2}-[0-9]{2})\ -\ ([a-zA-Z0-9]+)\ -\ ([0-9]+)$ ]]; then
-          DATE=${BASH_REMATCH[1]}
-          DEVICE_ID=${BASH_REMATCH[2]}
-          COUNT=${BASH_REMATCH[3]}
-          
-          echo "Extracted - Date: $DATE, Device: $DEVICE_ID, Count: $COUNT"
-        else
+        # 验证标题格式
+        if [[ ! "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
           echo "Error: Invalid issue title format - '$TITLE'"
-          echo "Expected format: 'DailyOpen - YYYY-MM-DD - DEVICE_ID - COUNT'"
           exit 1
         fi
         
-        # 验证日期格式
-        if [[ ! "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-          echo "Error: Invalid date format - '$DATE'"
-          exit 1
-        fi
+        # 解析JSON数据
+        DEVICE_ID=$(echo "$BODY" | jq -r '.device_id')
+        DATE=$(echo "$BODY" | jq -r '.date')
+        OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
+        REPORT_TIME=$(echo "$BODY" | jq -r '.report_time')
+        DEVICE_MODEL=$(echo "$BODY" | jq -r '.device_model')
+        ANDROID_VERSION=$(echo "$BODY" | jq -r '.android_version')
+        MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
+        SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
         
-        # 验证设备ID非空
-        if [[ -z "$DEVICE_ID" ]]; then
-          echo "Error: Missing device ID"
-          exit 1
-        fi
-        
-        # 验证计数是数字
-        if [[ ! "$COUNT" =~ ^[0-9]+$ ]]; then
-          echo "Error: Invalid count format - '$COUNT'"
+        # 验证数据
+        if [[ -z "$DEVICE_ID" || -z "$DATE" || -z "$OPEN_COUNT" ]]; then
+          echo "Error: Missing required fields in body"
           exit 1
         fi
         
@@ -62,18 +54,18 @@ jobs:
         mkdir -p stats
         
         # 初始化CSV文件(如果不存在)
-        if [ ! -f "stats/daily_opens.csv" ]; then
-          echo "date,device_id,open_count" > stats/daily_opens.csv
+        if [ ! -f "stats/device_stats.csv" ]; then
+          echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > stats/device_stats.csv
         fi
         
         # 删除该设备当天的旧记录(如果有)
-        grep -v "$DATE,$DEVICE_ID," stats/daily_opens.csv > temp.csv
-        mv temp.csv stats/daily_opens.csv
+        grep -v "$DATE,$DEVICE_ID," stats/device_stats.csv > temp.csv
+        mv temp.csv stats/device_stats.csv
         
         # 添加新记录
-        echo "$DATE,$DEVICE_ID,$COUNT" >> stats/daily_opens.csv
+        echo "$DATE,$DEVICE_ID,$OPEN_COUNT,$REPORT_TIME,$DEVICE_MODEL,$ANDROID_VERSION,$MANUFACTURER,$SDK_VERSION" >> stats/device_stats.csv
         
         # 提交更改
-        git add stats/daily_opens.csv
-        git commit -m "Update daily opens for $DATE - $DEVICE_ID - count $COUNT"
+        git add stats/device_stats.csv
+        git commit -m "Update device stats for $DATE - $DEVICE_ID"
         git push
