@@ -1,29 +1,4 @@
-name: Process Device Stats
-
-on:
-  issues:
-    types: [opened]
-
-jobs:
-  process-device-stats:
-    if: contains(github.event.issue.labels.*.name, 'device_stats')
-    runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-      issues: read
-      pull-requests: write
-    
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-
-    - name: Set up jq
-      run: sudo apt-get install -y jq
-
-    - name: Process stats data
+      name: Process stats data
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -75,11 +50,15 @@ jobs:
           echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
         fi
 
-        # 更新记录（原子操作）- 现在基于device_id替换
+        # 更新记录（原子操作）- 改进的设备ID匹配
         TEMP_FILE=$(mktemp)
         {
-          # 保留非当前设备的记录
-          grep -v ",$DEVICE_ID," "$CSV_FILE" || true
+          # 使用awk精确匹配device_id字段（第2列）
+          awk -v device_id="$DEVICE_ID" -F, '
+            BEGIN { OFS=FS }
+            NR==1 { print; next }
+            $2 != "\""device_id"\"" { print }
+          ' "$CSV_FILE"
           # 添加新记录
           echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
         } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
@@ -92,10 +71,3 @@ jobs:
         else
           echo "No changes to commit"
         fi
-
-    - name: Create summary
-      run: |
-        echo "## 📈 Device Stats Updated" >> $GITHUB_STEP_SUMMARY
-        echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
-        echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
-        echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
