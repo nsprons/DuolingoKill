@@ -11,7 +11,7 @@ jobs:
     
     permissions:
       contents: write
-      issues: write  # 必须要有 write 权限才能修改/关闭 Issue
+      issues: read
       pull-requests: write
     
     steps:
@@ -30,12 +30,12 @@ jobs:
           #!/bin/bash
           set -eo pipefail
 
-          # 安全设置 Git 配置
+          # 安全设置Git配置
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git config --global --add safe.directory /github/workspace
 
-          # 提取并验证 Issue 数据
+          # 提取并验证Issue数据
           TITLE="${{ github.event.issue.title }}"
           BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
 
@@ -45,7 +45,7 @@ jobs:
             exit 1
           fi
 
-          # 解析 JSON 数据
+          # 解析JSON数据
           if ! DEVICE_ID=$(echo "$BODY" | jq -r '.device_id'); then
             echo "::error::Failed to parse device_id"
             exit 1
@@ -68,21 +68,23 @@ jobs:
             fi
           done
 
-          # 准备 CSV 文件
+          # 准备CSV文件
           CSV_FILE="stats/device_stats.csv"
           mkdir -p stats
           if [ ! -f "$CSV_FILE" ]; then
             echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
           fi
 
-          # 更新记录（原子操作）
+          # 更新记录（原子操作）- 改进的设备ID匹配
           TEMP_FILE=$(mktemp)
           {
+            # 使用awk精确匹配device_id字段（第2列）
             awk -v device_id="$DEVICE_ID" -F, '
               BEGIN { OFS=FS }
               NR==1 { print; next }
               $2 != "\""device_id"\"" { print }
             ' "$CSV_FILE"
+            # 添加新记录
             echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
           } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
@@ -101,40 +103,3 @@ jobs:
           echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
           echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
           echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
-
-      - name: Close and clean issue
-        if: always()  # 确保即使前面步骤失败也会执行
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # 调试：显示当前环境变量
-          echo "Repository: ${{ github.repository }}"
-          echo "Issue Number: ${{ github.event.issue.number }}"
-
-          # 清空并关闭 Issue
-          RESPONSE=$(curl -s \
-            -X PATCH \
-            -H "Authorization: token $GH_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Content-Type: application/json" \
-            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
-            -d '{
-              "title": "[Processed] Device Stats - $DEVICE_ID",
-              "body": "This issue has been automatically processed and closed.\n\n" +
-                      "**Processed Data**:\n" +
-                      "- Device ID: $DEVICE_ID\n" +
-                      "- Processed at: $(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-              "state": "closed"
-            }')
-
-          # 调试：显示 API 响应
-          echo "API Response: $RESPONSE"
-
-          # 检查是否成功
-          if echo "$RESPONSE" | jq -e '.state == "closed"' > /dev/null; then
-            echo "Issue #${{ github.event.issue.number }} successfully closed"
-          else
-            echo "::error::Failed to close issue"
-            echo "$RESPONSE" | jq .
-            exit 1
-          fi
