@@ -45,7 +45,7 @@
     </table>
     
     <script>
-        fetch('https://raw.githubusercontent.com/你的用户名/你的仓库名/main/stats/daily_opens.csv')
+        fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/daily_opens.csv')
             .then(response => response.text())
             .then(data => {
                 const rows = data.split('\n').filter(row => row.trim() !== '');
