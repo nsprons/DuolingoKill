@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xposed Module Usage Stats</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .chart-container {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Xposed Module Usage Statistics</h1>
+    
+    <div class="chart-container">
+        <h2>Daily Active Users</h2>
+        <canvas id="dailyUsersChart" height="300"></canvas>
+    </div>
+    
+    <div class="chart-container">
+        <h2>Usage Duration (minutes)</h2>
+        <canvas id="usageDurationChart" height="300"></canvas>
+    </div>
+    
+    <script>
+        // 从GitHub获取CSV数据
+        fetch('https://raw.githubusercontent.com/你的用户名/你的仓库名/main/stats/daily.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n').filter(row => row.trim() !== '');
+                const headers = rows.shift().split(',');
+                
+                // 按日期聚合数据
+                const statsByDate = {};
+                
+                rows.forEach(row => {
+                    const values = row.split(',');
+                    if (values.length === headers.length) {
+                        const date = values[0];
+                        const duration = parseInt(values[4]) / 60000; // 转换为分钟
+                        
+                        if (!statsByDate[date]) {
+                            statsByDate[date] = {
+                                users: 0,
+                                duration: 0
+                            };
+                        }
+                        
+                        statsByDate[date].users += parseInt(values[2]);
+                        statsByDate[date].duration += duration;
+                    }
+                });
+                
+                const dates = Object.keys(statsByDate).sort();
+                const userCounts = dates.map(date => statsByDate[date].users);
+                const durations = dates.map(date => statsByDate[date].duration);
+                
+                // 绘制每日用户图表
+                new Chart(
+                    document.getElementById('dailyUsersChart'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: dates,
+                            datasets: [{
+                                label: 'Daily Active Users',
+                                data: userCounts,
+                                borderColor: 'rgb(75, 192, 192)',
+                                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                                borderWidth: 2,
+                                tension: 0.1,
+                                fill: true
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    }
+                );
+                
+                // 绘制使用时长图表
+                new Chart(
+                    document.getElementById('usageDurationChart'),
+                    {
+                        type: 'bar',
+                        data: {
+                            labels: dates,
+                            datasets: [{
+                                label: 'Total Usage Duration (minutes)',
+                                data: durations,
+                                backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                                borderColor: 'rgb(54, 162, 235)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    }
+                );
+            })
+            .catch(error => {
+                console.error('Error loading stats:', error);
+                document.body.innerHTML = '<p>Error loading statistics. Please try again later.</p>';
+            });
+    </script>
+</body>
+</html>
