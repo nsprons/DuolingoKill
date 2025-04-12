@@ -46,11 +46,7 @@ jobs:
           fi
 
           # 解析JSON数据
-          if ! DEVICE_ID=$(echo "$BODY" | jq -r '.device_id'); then
-            echo "::error::Failed to parse device_id"
-            exit 1
-          fi
-
+          DEVICE_ID=$(echo "$BODY" | jq -r '.device_id')
           DATE=$(echo "$BODY" | jq -r '.date')
           OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
           REPORT_TIME=$(echo "$BODY" | jq -r '.report_time')
@@ -75,16 +71,14 @@ jobs:
             echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
           fi
 
-          # 更新记录（原子操作）- 改进的设备ID匹配
+          # 更新记录（原子操作）
           TEMP_FILE=$(mktemp)
           {
-            # 使用awk精确匹配device_id字段（第2列）
             awk -v device_id="$DEVICE_ID" -F, '
               BEGIN { OFS=FS }
               NR==1 { print; next }
               $2 != "\""device_id"\"" { print }
             ' "$CSV_FILE"
-            # 添加新记录
             echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
           } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
@@ -103,3 +97,42 @@ jobs:
           echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
           echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
           echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
+
+      - name: Clear Issue Content and Close Issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          # 清空Issue内容
+          gh api graphql -f query='
+            mutation {
+              updateIssue(input: {id: "$ISSUE_ID", body: ""}) {
+                clientMutationId
+              }
+            }
+          ' -F ISSUE_ID="$(gh api graphql -f query='
+            query {
+              repository(owner: "$OWNER", name: "$REPO") {
+                issue(number: $NUMBER) {
+                  id
+                }
+              }
+            }
+          ' -F OWNER=${{ github.repository_owner }} -F REPO=${{ github.event.repository.name }} -F NUMBER=$ISSUE_NUMBER | jq -r '.data.repository.issue.id')"
+
+          # 关闭Issue
+          gh api graphql -f query='
+            mutation {
+              closeIssue(input: {issueId: "$ISSUE_ID"}) {
+                clientMutationId
+              }
+            }
+          ' -F ISSUE_ID="$(gh api graphql -f query='
+            query {
+              repository(owner: "$OWNER", name: "$REPO") {
+                issue(number: $NUMBER) {
+                  id
+                }
+              }
+            }
+          ' -F OWNER=${{ github.repository_owner }} -F REPO=${{ github.event.repository.name }} -F NUMBER=$ISSUE_NUMBER | jq -r '.data.repository.issue.id')"
