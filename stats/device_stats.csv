@@ -19,3 +19,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-18","9e2d8b7a6c0f4513",4,"2025-04-18 09:10:28","LE2125","12","OnePlus",32,"119.235.67.89","China","CN","Beijing","Beijing",39.9042,116.4074,"Asia/Shanghai","China Mobile"
 "2025-04-19","b7a9c8e2d0f65341",20,"2025-04-19 14:45:52","RMX3562","11","Realme",31,"103.56.78.129","Bangladesh","BD","Dhaka","Dhaka",23.8103,90.4125,"Asia/Dhaka","Grameenphone"
 "2025-04-20","5d3e8b2a7c9f0614",13,"2025-04-20 10:20:18","Nokia X30","12","HMD Global",32,"94.76.145.33","Finland","FI","Uusimaa","Helsinki",60.1699,24.9384,"Europe/Helsinki","Elisa"
+"2025-04-13","24f18c96d960fba6",30,"2025-04-13 07:22:38","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
