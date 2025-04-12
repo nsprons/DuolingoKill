@@ -24,6 +24,7 @@ jobs:
         run: sudo apt-get install -y jq
 
       - name: Process stats data
+        id: process-stats
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -56,6 +57,7 @@ jobs:
             echo "$value"
           }
 
+          # Extract all fields
           DEVICE_ID=$(parse_field "device_id")
           DATE=$(parse_field "date")
           OPEN_COUNT=$(parse_field "open_count")
@@ -65,9 +67,14 @@ jobs:
           MANUFACTURER=$(parse_field "manufacturer")
           SDK_VERSION=$(parse_field "sdk_version")
           IP_ADDRESS=$(parse_field "ip_address")
-          CITY=$(parse_field "city")
           COUNTRY=$(parse_field "country")
+          COUNTRY_CODE=$(parse_field "country_code")
           REGION=$(parse_field "region")
+          CITY=$(parse_field "city")
+          LATITUDE=$(parse_field "latitude")
+          LONGITUDE=$(parse_field "longitude")
+          TIMEZONE=$(parse_field "timezone")
+          ISP=$(parse_field "isp")
 
           # Validate required fields
           REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
@@ -85,7 +92,7 @@ jobs:
 
           # Create CSV header if file doesn't exist
           if [ ! -f "$CSV_FILE" ]; then
-            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,ip_address,city,country,region" > "$CSV_FILE"
+            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp" > "$CSV_FILE"
           fi
 
           # Process CSV data
@@ -99,8 +106,8 @@ jobs:
               NR > 1 && $2 != "\""device_id"\"" { print }
             ' "$CSV_FILE"
             
-            # Add new record
-            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$IP_ADDRESS\",\"$CITY\",\"$COUNTRY\",\"$REGION\""
+            # Add new record with all fields
+            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$IP_ADDRESS\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$CITY\",$LATITUDE,$LONGITUDE,\"$TIMEZONE\",\"$ISP\""
           } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
           # Commit changes
@@ -113,12 +120,29 @@ jobs:
             echo "::notice::No changes to commit"
           fi
 
+          # Set outputs for summary step
+          echo "DEVICE_ID=$DEVICE_ID" >> $GITHUB_OUTPUT
+          echo "OPEN_COUNT=$OPEN_COUNT" >> $GITHUB_OUTPUT
+          echo "DEVICE_MODEL=$DEVICE_MODEL" >> $GITHUB_OUTPUT
+          echo "ANDROID_VERSION=$ANDROID_VERSION" >> $GITHUB_OUTPUT
+          echo "CITY=$CITY" >> $GITHUB_OUTPUT
+          echo "REGION=$REGION" >> $GITHUB_OUTPUT
+          echo "COUNTRY=$COUNTRY" >> $GITHUB_OUTPUT
+          echo "IP_ADDRESS=$IP_ADDRESS" >> $GITHUB_OUTPUT
+          echo "REPORT_TIME=$REPORT_TIME" >> $GITHUB_OUTPUT
+          echo "LATITUDE=$LATITUDE" >> $GITHUB_OUTPUT
+          echo "LONGITUDE=$LONGITUDE" >> $GITHUB_OUTPUT
+          echo "ISP=$ISP" >> $GITHUB_OUTPUT
+
       - name: Create summary
         run: |
           echo "## 📈 Device Stats Updated" >> $GITHUB_STEP_SUMMARY
-          echo "- **Device ID**: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
-          echo "- **Open count**: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
-          echo "- **Device model**: $DEVICE_MODEL ($ANDROID_VERSION)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Location**: $CITY, $REGION, $COUNTRY" >> $GITHUB_STEP_SUMMARY
-          echo "- **IP**: $IP_ADDRESS" >> $GITHUB_STEP_SUMMARY
-          echo "- **Report time**: $REPORT_TIME" >> $GITHUB_STEP_SUMMARY
+          echo "- **Device ID**: ${{ steps.process-stats.outputs.DEVICE_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Open count**: ${{ steps.process-stats.outputs.OPEN_COUNT }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Device model**: ${{ steps.process-stats.outputs.DEVICE_MODEL }} (${{ steps.process-stats.outputs.ANDROID_VERSION }})" >> $GITHUB_STEP_SUMMARY
+          echo "- **Location**: ${{ steps.process-stats.outputs.CITY }}, ${{ steps.process-stats.outputs.REGION }}, ${{ steps.process-stats.outputs.COUNTRY }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Coordinates**: ${{ steps.process-stats.outputs.LATITUDE }}, ${{ steps.process-stats.outputs.LONGITUDE }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **IP**: ${{ steps.process-stats.outputs.IP_ADDRESS }} (${{ steps.process-stats.outputs.ISP }})" >> $GITHUB_STEP_SUMMARY
+          echo "- **Report time**: ${{ steps.process-stats.outputs.REPORT_TIME }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "![Location Map](https://maps.googleapis.com/maps/api/staticmap?center=${{ steps.process-stats.outputs.LATITUDE }},${{ steps.process-stats.outputs.LONGITUDE }}&zoom=8&size=600x300&maptype=roadmap&markers=color:red%7C${{ steps.process-stats.outputs.LATITUDE }},${{ steps.process-stats.outputs.LONGITUDE }})" >> $GITHUB_STEP_SUMMARY
