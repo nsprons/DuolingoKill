@@ -16,29 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Validate issue title format
-      run: |
-        TITLE="${{ github.event.issue.title }}"
-        if [[ ! "$TITLE" =~ ^DailyOpen\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
-          echo "Error: Invalid issue title format - '$TITLE'"
-          exit 1
-        fi
-        
-        DATE=$(echo "$TITLE" | awk -F'-' '{print $2}' | xargs)
-        DEVICE_ID=$(echo "$TITLE" | awk -F'-' '{print $3}' | xargs)
-        
-        if [[ ! "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-          echo "Error: Invalid date format - '$DATE'"
-          exit 1
-        fi
-        
-        if [[ -z "$DEVICE_ID" ]]; then
-          echo "Error: Missing device ID"
-          exit 1
-        fi
-        
-        echo "Valid issue: Date=$DATE, Device=$DEVICE_ID"
-    
     - name: Process daily open
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -47,10 +24,32 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         
-        # 提取数据
+        # 提取并验证标题格式
         TITLE="${{ github.event.issue.title }}"
-        DATE=$(echo "$TITLE" | awk -F'-' '{print $2}' | xargs)
-        DEVICE_ID=$(echo "$TITLE" | awk -F'-' '{print $3}' | xargs)
+        
+        # 使用正则表达式提取日期和设备ID
+        if [[ "$TITLE" =~ ^DailyOpen\ -\ ([0-9]{4}-[0-9]{2}-[0-9]{2})\ -\ ([a-zA-Z0-9]+)$ ]]; then
+          DATE=${BASH_REMATCH[1]}
+          DEVICE_ID=${BASH_REMATCH[2]}
+          
+          echo "Extracted - Date: $DATE, Device: $DEVICE_ID"
+        else
+          echo "Error: Invalid issue title format - '$TITLE'"
+          echo "Expected format: 'DailyOpen - YYYY-MM-DD - DEVICE_ID'"
+          exit 1
+        fi
+        
+        # 验证日期格式
+        if [[ ! "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+          echo "Error: Invalid date format - '$DATE'"
+          exit 1
+        fi
+        
+        # 验证设备ID非空
+        if [[ -z "$DEVICE_ID" ]]; then
+          echo "Error: Missing device ID"
+          exit 1
+        fi
         
         # 创建stats目录
         mkdir -p stats
@@ -71,13 +70,3 @@ jobs:
         git add stats/daily_opens.csv
         git commit -m "Update daily opens for $DATE - $DEVICE_ID"
         git push
-    
-    - name: Close processed issue
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        curl -X PATCH \
-          -H "Authorization: token $GH_TOKEN" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
-          -d '{"state":"closed"}'
