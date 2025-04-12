@@ -28,7 +28,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         #!/bin/bash
-        set -e
+        set -eo pipefail
 
         # 安全设置Git配置
         git config --global user.name "GitHub Actions"
@@ -37,7 +37,7 @@ jobs:
 
         # 提取并验证Issue数据
         TITLE="${{ github.event.issue.title }}"
-        BODY="${{ github.event.issue.body }}"
+        BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
 
         # 验证标题格式
         if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
@@ -60,10 +60,13 @@ jobs:
         SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
 
         # 验证必需字段
-        if [[ -z "$DEVICE_ID" || -z "$DATE" || -z "$OPEN_COUNT" ]]; then
-          echo "::error::Missing required fields in body"
-          exit 1
-        fi
+        REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
+        for field in "${REQUIRED_FIELDS[@]}"; do
+          if [[ -z "$field" ]]; then
+            echo "::error::Missing required field in body"
+            exit 1
+          fi
+        done
 
         # 准备CSV文件
         CSV_FILE="stats/device_stats.csv"
@@ -78,7 +81,7 @@ jobs:
           # 保留非当前设备的记录
           grep -v "$DATE,$DEVICE_ID," "$CSV_FILE" || true
           # 添加新记录
-          echo "$DATE,$DEVICE_ID,$OPEN_COUNT,$REPORT_TIME,$DEVICE_MODEL,$ANDROID_VERSION,$MANUFACTURER,$SDK_VERSION"
+          echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
         } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
         # 提交更改
