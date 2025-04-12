@@ -12,34 +12,43 @@ jobs:
     permissions:
       contents: write
       issues: read
+      pull-requests: write
     
     steps:
-    - uses: actions/checkout@v3
-    
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
     - name: Set up jq
       run: sudo apt-get install -y jq
-      
-    - name: Process device stats
+
+    - name: Process stats data
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # 设置Git配置
+        # 安全设置Git配置
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        
-        # 提取数据
-        TITLE="${{ github.event.issue.title }}"
-        BODY="${{ github.event.issue.body }}"
-        
+        git config --global --add safe.directory /github/workspace
+
+        # 提取并验证Issue数据
+        TITLE="${{ toJson(github.event.issue.title) }}"
+        BODY="${{ toJson(github.event.issue.body) }}"
+
         # 验证标题格式
-        if [[ ! "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
-          echo "Error: Invalid issue title format - '$TITLE'"
+        if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
+          echo "::error::Invalid issue title format: $TITLE"
           exit 1
         fi
-        
-        # 解析JSON数据 (处理可能的换行符)
-        CLEAN_BODY=$(echo "$BODY" | tr -d '\n')
-        DEVICE_ID=$(echo "$CLEAN_BODY" | jq -r '.device_id')
+
+        # 解析JSON数据（处理转义字符）
+        CLEAN_BODY=$(echo "$BODY" | sed 's/\\"/"/g' | sed 's/^"//' | sed 's/"$//')
+        if ! DEVICE_ID=$(echo "$CLEAN_BODY" | jq -r '.device_id'); then
+          echo "::error::Failed to parse device_id"
+          exit 1
+        fi
+
         DATE=$(echo "$CLEAN_BODY" | jq -r '.date')
         OPEN_COUNT=$(echo "$CLEAN_BODY" | jq -r '.open_count')
         REPORT_TIME=$(echo "$CLEAN_BODY" | jq -r '.report_time')
@@ -47,32 +56,41 @@ jobs:
         ANDROID_VERSION=$(echo "$CLEAN_BODY" | jq -r '.android_version')
         MANUFACTURER=$(echo "$CLEAN_BODY" | jq -r '.manufacturer')
         SDK_VERSION=$(echo "$CLEAN_BODY" | jq -r '.sdk_version')
-        
-        # 验证数据
+
+        # 验证必需字段
         if [[ -z "$DEVICE_ID" || -z "$DATE" || -z "$OPEN_COUNT" ]]; then
-          echo "Error: Missing required fields in body"
+          echo "::error::Missing required fields in body"
           exit 1
         fi
-        
-        # 创建stats目录
-        mkdir -p stats
-        
-        # 初始化CSV文件(如果不存在)
+
+        # 准备CSV文件
         CSV_FILE="stats/device_stats.csv"
+        mkdir -p stats
         if [ ! -f "$CSV_FILE" ]; then
           echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
         fi
-        
-        # 删除该设备当天的旧记录(如果有)
-        if grep -q "$DATE,$DEVICE_ID," "$CSV_FILE"; then
-          grep -v "$DATE,$DEVICE_ID," "$CSV_FILE" > temp.csv
-          mv temp.csv "$CSV_FILE"
-        fi
-        
-        # 添加新记录
-        echo "$DATE,$DEVICE_ID,$OPEN_COUNT,$REPORT_TIME,$DEVICE_MODEL,$ANDROID_VERSION,$MANUFACTURER,$SDK_VERSION" >> "$CSV_FILE"
-        
+
+        # 更新记录（原子操作）
+        TEMP_FILE=$(mktemp)
+        {
+          # 保留非当前设备的记录
+          grep -v "$DATE,$DEVICE_ID," "$CSV_FILE" || true
+          # 添加新记录
+          echo "$DATE,$DEVICE_ID,$OPEN_COUNT,$REPORT_TIME,$DEVICE_MODEL,$ANDROID_VERSION,$MANUFACTURER,$SDK_VERSION"
+        } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
+
         # 提交更改
         git add "$CSV_FILE"
-        git commit -m "Update device stats for $DATE - $DEVICE_ID"
-        git push
+        if ! git diff-index --quiet HEAD --; then
+          git commit -m "📊 Update stats for $DATE - $DEVICE_ID"
+          git push origin HEAD:main
+        else
+          echo "No changes to commit"
+        fi
+
+    - name: Create summary
+      run: |
+        echo "## 📈 Device Stats Updated" >> $GITHUB_STEP_SUMMARY
+        echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
+        echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
+        echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
