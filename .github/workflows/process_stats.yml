@@ -16,6 +16,29 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Validate issue title format
+      run: |
+        TITLE="${{ github.event.issue.title }}"
+        if [[ ! "$TITLE" =~ ^DailyOpen\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
+          echo "Error: Invalid issue title format - '$TITLE'"
+          exit 1
+        fi
+        
+        DATE=$(echo "$TITLE" | awk -F'-' '{print $2}' | xargs)
+        DEVICE_ID=$(echo "$TITLE" | awk -F'-' '{print $3}' | xargs)
+        
+        if [[ ! "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+          echo "Error: Invalid date format - '$DATE'"
+          exit 1
+        fi
+        
+        if [[ -z "$DEVICE_ID" ]]; then
+          echo "Error: Missing device ID"
+          exit 1
+        fi
+        
+        echo "Valid issue: Date=$DATE, Device=$DEVICE_ID"
+    
     - name: Process daily open
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -28,18 +51,6 @@ jobs:
         TITLE="${{ github.event.issue.title }}"
         DATE=$(echo "$TITLE" | awk -F'-' '{print $2}' | xargs)
         DEVICE_ID=$(echo "$TITLE" | awk -F'-' '{print $3}' | xargs)
-        
-        # 检查日期格式是否正确
-        if [[ ! $DATE =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-          echo "Error: Invalid date format - $DATE"
-          exit 1
-        fi
-        
-        # 检查设备ID是否有效
-        if [[ -z "$DEVICE_ID" ]]; then
-          echo "Error: Missing device ID"
-          exit 1
-        fi
         
         # 创建stats目录
         mkdir -p stats
@@ -60,3 +71,13 @@ jobs:
         git add stats/daily_opens.csv
         git commit -m "Update daily opens for $DATE - $DEVICE_ID"
         git push
+    
+    - name: Close processed issue
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        curl -X PATCH \
+          -H "Authorization: token $GH_TOKEN" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
+          -d '{"state":"closed"}'
