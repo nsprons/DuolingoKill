@@ -9,4 +9,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-13","d7b0a3e6c2459f18",7,"2025-04-13 04:15:39","SM-A536E","11","Samsung",30,"5.62.108.92","Turkey","TR","Istanbul","Istanbul",41.0082,28.9784,"Europe/Istanbul","Turk Telekom"
 "2025-04-13","4f8e12a6b903dc57",16,"2025-04-13 04:02:51","2107113SG","12","Vivo",31,"119.92.145.77","Indonesia","ID","Jakarta","Jakarta",-6.2088,106.8456,"Asia/Jakarta","Telkom Indonesia"
 "2025-04-13","1c6a9b3e8d025f47",28,"2025-04-13 04:18:04","M2101K7AG","11","Redmi",30,"223.118.45.90","Vietnam","VN","Hanoi","Hanoi",21.0278,105.8342,"Asia/Bangkok","Viettel Group"
-"2025-04-13","24f18c96d960fba6",28,"2025-04-13 05:07:36","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-13","24f18c96d960fba6",29,"2025-04-13 05:47:13","PJA110","13","OnePlus",33,"13.229.79.45","Singapore","SG","","Singapore",1.2868,103.8503,"Asia/Singapore","AMAZON-02"
