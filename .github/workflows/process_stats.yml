@@ -1,73 +1,105 @@
-      name: Process stats data
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        #!/bin/bash
-        set -eo pipefail
+name: Process Device Stats
 
-        # 安全设置Git配置
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git config --global --add safe.directory /github/workspace
+on:
+  issues:
+    types: [opened]
 
-        # 提取并验证Issue数据
-        TITLE="${{ github.event.issue.title }}"
-        BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
+jobs:
+  process-device-stats:
+    if: contains(github.event.issue.labels.*.name, 'device_stats')
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      issues: read
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-        # 验证标题格式
-        if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
-          echo "::error::Invalid issue title format: $TITLE"
-          exit 1
-        fi
+      - name: Set up jq
+        run: sudo apt-get install -y jq
 
-        # 解析JSON数据
-        if ! DEVICE_ID=$(echo "$BODY" | jq -r '.device_id'); then
-          echo "::error::Failed to parse device_id"
-          exit 1
-        fi
+      - name: Process stats data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          #!/bin/bash
+          set -eo pipefail
 
-        DATE=$(echo "$BODY" | jq -r '.date')
-        OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
-        REPORT_TIME=$(echo "$BODY" | jq -r '.report_time')
-        DEVICE_MODEL=$(echo "$BODY" | jq -r '.device_model')
-        ANDROID_VERSION=$(echo "$BODY" | jq -r '.android_version')
-        MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
-        SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
+          # 安全设置Git配置
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git config --global --add safe.directory /github/workspace
 
-        # 验证必需字段
-        REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
-        for field in "${REQUIRED_FIELDS[@]}"; do
-          if [[ -z "$field" ]]; then
-            echo "::error::Missing required field in body"
+          # 提取并验证Issue数据
+          TITLE="${{ github.event.issue.title }}"
+          BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
+
+          # 验证标题格式
+          if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
+            echo "::error::Invalid issue title format: $TITLE"
             exit 1
           fi
-        done
 
-        # 准备CSV文件
-        CSV_FILE="stats/device_stats.csv"
-        mkdir -p stats
-        if [ ! -f "$CSV_FILE" ]; then
-          echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
-        fi
+          # 解析JSON数据
+          if ! DEVICE_ID=$(echo "$BODY" | jq -r '.device_id'); then
+            echo "::error::Failed to parse device_id"
+            exit 1
+          fi
 
-        # 更新记录（原子操作）- 改进的设备ID匹配
-        TEMP_FILE=$(mktemp)
-        {
-          # 使用awk精确匹配device_id字段（第2列）
-          awk -v device_id="$DEVICE_ID" -F, '
-            BEGIN { OFS=FS }
-            NR==1 { print; next }
-            $2 != "\""device_id"\"" { print }
-          ' "$CSV_FILE"
-          # 添加新记录
-          echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
-        } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
+          DATE=$(echo "$BODY" | jq -r '.date')
+          OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
+          REPORT_TIME=$(echo "$BODY" | jq -r '.report_time')
+          DEVICE_MODEL=$(echo "$BODY" | jq -r '.device_model')
+          ANDROID_VERSION=$(echo "$BODY" | jq -r '.android_version')
+          MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
+          SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
 
-        # 提交更改
-        git add "$CSV_FILE"
-        if ! git diff-index --quiet HEAD --; then
-          git commit -m "📊 Update stats for device $DEVICE_ID"
-          git push origin HEAD:main
-        else
-          echo "No changes to commit"
-        fi
+          # 验证必需字段
+          REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
+          for field in "${REQUIRED_FIELDS[@]}"; do
+            if [[ -z "$field" ]]; then
+              echo "::error::Missing required field in body"
+              exit 1
+            fi
+          done
+
+          # 准备CSV文件
+          CSV_FILE="stats/device_stats.csv"
+          mkdir -p stats
+          if [ ! -f "$CSV_FILE" ]; then
+            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
+          fi
+
+          # 更新记录（原子操作）- 改进的设备ID匹配
+          TEMP_FILE=$(mktemp)
+          {
+            # 使用awk精确匹配device_id字段（第2列）
+            awk -v device_id="$DEVICE_ID" -F, '
+              BEGIN { OFS=FS }
+              NR==1 { print; next }
+              $2 != "\""device_id"\"" { print }
+            ' "$CSV_FILE"
+            # 添加新记录
+            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
+          } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
+
+          # 提交更改
+          git add "$CSV_FILE"
+          if ! git diff-index --quiet HEAD --; then
+            git commit -m "📊 Update stats for device $DEVICE_ID"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Create summary
+        run: |
+          echo "## 📈 Device Stats Updated" >> $GITHUB_STEP_SUMMARY
+          echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
+          echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
