@@ -27,14 +27,17 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        #!/bin/bash
+        set -e
+
         # 安全设置Git配置
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git config --global --add safe.directory /github/workspace
 
         # 提取并验证Issue数据
-        TITLE="${{ toJson(github.event.issue.title) }}"
-        BODY="${{ toJson(github.event.issue.body) }}"
+        TITLE="${{ github.event.issue.title }}"
+        BODY="${{ github.event.issue.body }}"
 
         # 验证标题格式
         if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
@@ -42,20 +45,19 @@ jobs:
           exit 1
         fi
 
-        # 解析JSON数据（处理转义字符）
-        CLEAN_BODY=$(echo "$BODY" | sed 's/\\"/"/g' | sed 's/^"//' | sed 's/"$//')
-        if ! DEVICE_ID=$(echo "$CLEAN_BODY" | jq -r '.device_id'); then
+        # 解析JSON数据
+        if ! DEVICE_ID=$(echo "$BODY" | jq -r '.device_id'); then
           echo "::error::Failed to parse device_id"
           exit 1
         fi
 
-        DATE=$(echo "$CLEAN_BODY" | jq -r '.date')
-        OPEN_COUNT=$(echo "$CLEAN_BODY" | jq -r '.open_count')
-        REPORT_TIME=$(echo "$CLEAN_BODY" | jq -r '.report_time')
-        DEVICE_MODEL=$(echo "$CLEAN_BODY" | jq -r '.device_model')
-        ANDROID_VERSION=$(echo "$CLEAN_BODY" | jq -r '.android_version')
-        MANUFACTURER=$(echo "$CLEAN_BODY" | jq -r '.manufacturer')
-        SDK_VERSION=$(echo "$CLEAN_BODY" | jq -r '.sdk_version')
+        DATE=$(echo "$BODY" | jq -r '.date')
+        OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
+        REPORT_TIME=$(echo "$BODY" | jq -r '.report_time')
+        DEVICE_MODEL=$(echo "$BODY" | jq -r '.device_model')
+        ANDROID_VERSION=$(echo "$BODY" | jq -r '.android_version')
+        MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
+        SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
 
         # 验证必需字段
         if [[ -z "$DEVICE_ID" || -z "$DATE" || -z "$OPEN_COUNT" ]]; then
