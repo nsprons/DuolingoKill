@@ -1,3 +1,11 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp
-"2025-04-13","24f18c96d960fba6",26,"2025-04-13 03:38:55","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
-"2025-04-12","24f18c96d9601236",3,"2025-04-12 03:38:55","P999","15","OnePlus",35,"129.150.42.215","Singapore","SG","Kampong Loyang","Kampong Loyang",1.3759,103.9639,"Asia/Singapore","ORACLE-BMC-31898"
+"2025-04-13","7a3b9c2e5f1d8460",18,"2025-04-13 04:12:22","SM-G998B","12","Samsung",31,"89.145.167.32","Germany","DE","Bavaria","Munich",48.1351,11.5820,"Europe/Berlin","Deutsche Telekom AG"
+"2025-04-13","b5d702e839a4c61f",9,"2025-04-13 03:55:41","iPhone14,2","14","Apple",32,"210.56.78.129","Japan","JP","Tokyo","Shibuya",35.6618,139.6964,"Asia/Tokyo","NTT Communications"
+"2025-04-13","c3e892a7f04b56d1",42,"2025-04-13 04:03:17","Mi 11","11","Xiaomi",30,"110.232.155.88","China","CN","Guangdong","Shenzhen",22.5431,114.0579,"Asia/Shanghai","China Telecom"
+"2025-04-13","6f1e84d3a902bc57",5,"2025-04-13 03:47:33","Pixel 6","13","Google",33,"172.217.168.142","United States","US","California","Mountain View",37.3860,-122.0838,"America/Los_Angeles","Google LLC"
+"2025-04-13","e8d459c20a7b36f1",31,"2025-04-13 04:21:08","RMX2202","12","Realme",31,"103.72.146.55","India","IN","Maharashtra","Mumbai",19.0760,72.8777,"Asia/Kolkata","Jio Platforms Limited"
+"2025-04-13","2a4f7b6c019d83e5",13,"2025-04-13 04:08:45","VOG-L29","10","Huawei",29,"87.234.121.67","France","FR","Île-de-France","Paris",48.8566,2.3522,"Europe/Paris","Orange S.A."
+"2025-04-13","9c1e5f3a7b028d64",22,"2025-04-13 03:59:12","CPH2303","13","Oppo",32,"112.198.76.33","Philippines","PH","Metro Manila","Quezon City",14.6760,121.0437,"Asia/Manila","PLDT Inc."
+"2025-04-13","d7b0a3e6c2459f18",7,"2025-04-13 04:15:39","SM-A536E","11","Samsung",30,"5.62.108.92","Turkey","TR","Istanbul","Istanbul",41.0082,28.9784,"Europe/Istanbul","Turk Telekom"
+"2025-04-13","4f8e12a6b903dc57",16,"2025-04-13 04:02:51","2107113SG","12","Vivo",31,"119.92.145.77","Indonesia","ID","Jakarta","Jakarta",-6.2088,106.8456,"Asia/Jakarta","Telkom Indonesia"
+"2025-04-13","1c6a9b3e8d025f47",28,"2025-04-13 04:18:04","M2101K7AG","11","Redmi",30,"223.118.45.90","Vietnam","VN","Hanoi","Hanoi",21.0278,105.8342,"Asia/Bangkok","Viettel Group"
