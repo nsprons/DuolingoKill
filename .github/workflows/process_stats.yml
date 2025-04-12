@@ -30,22 +30,18 @@ jobs:
           #!/bin/bash
           set -eo pipefail
 
-          # 安全设置Git配置
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git config --global --add safe.directory /github/workspace
 
-          # 提取并验证Issue数据
           TITLE="${{ github.event.issue.title }}"
           BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
 
-          # 验证标题格式
           if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
             echo "::error::Invalid issue title format: $TITLE"
             exit 1
           fi
 
-          # 解析JSON数据
           DEVICE_ID=$(echo "$BODY" | jq -r '.device_id')
           DATE=$(echo "$BODY" | jq -r '.date')
           OPEN_COUNT=$(echo "$BODY" | jq -r '.open_count')
@@ -55,7 +51,6 @@ jobs:
           MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
           SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
 
-          # 验证必需字段
           REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
           for field in "${REQUIRED_FIELDS[@]}"; do
             if [[ -z "$field" ]]; then
@@ -64,14 +59,12 @@ jobs:
             fi
           done
 
-          # 准备CSV文件
           CSV_FILE="stats/device_stats.csv"
           mkdir -p stats
           if [ ! -f "$CSV_FILE" ]; then
             echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
           fi
 
-          # 更新记录（原子操作）
           TEMP_FILE=$(mktemp)
           {
             awk -v device_id="$DEVICE_ID" -F, '
@@ -82,7 +75,6 @@ jobs:
             echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
           } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
-          # 提交更改
           git add "$CSV_FILE"
           if ! git diff-index --quiet HEAD --; then
             git commit -m "📊 Update stats for device $DEVICE_ID"
@@ -103,36 +95,28 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          # 清空Issue内容
-          gh api graphql -f query='
-            mutation {
-              updateIssue(input: {id: "$ISSUE_ID", body: ""}) {
-                clientMutationId
-              }
-            }
-          ' -F ISSUE_ID="$(gh api graphql -f query='
-            query {
-              repository(owner: "$OWNER", name: "$REPO") {
-                issue(number: $NUMBER) {
+          ISSUE_ID=$(gh api graphql -f query='
+            query(\$NUMBER: Int!) {
+              repository(owner: "\${{ github.repository_owner }}", name: "\${{ github.event.repository.name }}") {
+                issue(number: \$NUMBER) {
                   id
                 }
               }
             }
-          ' -F OWNER=${{ github.repository_owner }} -F REPO=${{ github.event.repository.name }} -F NUMBER=$ISSUE_NUMBER | jq -r '.data.repository.issue.id')"
+          ' -F NUMBER=$ISSUE_NUMBER | jq -r '.data.repository.issue.id')
 
-          # 关闭Issue
           gh api graphql -f query='
-            mutation {
-              closeIssue(input: {issueId: "$ISSUE_ID"}) {
+            mutation(\$ISSUE_ID: ID!) {
+              updateIssue(input: {id: \$ISSUE_ID, body: ""}) {
                 clientMutationId
               }
             }
-          ' -F ISSUE_ID="$(gh api graphql -f query='
-            query {
-              repository(owner: "$OWNER", name: "$REPO") {
-                issue(number: $NUMBER) {
-                  id
-                }
+          ' -F ISSUE_ID=$ISSUE_ID
+
+          gh api graphql -f query='
+            mutation(\$ISSUE_ID: ID!) {
+              closeIssue(input: {issueId: \$ISSUE_ID}) {
+                clientMutationId
               }
             }
-          ' -F OWNER=${{ github.repository_owner }} -F REPO=${{ github.event.repository.name }} -F NUMBER=$ISSUE_NUMBER | jq -r '.data.repository.issue.id')"
+          ' -F ISSUE_ID=$ISSUE_ID
