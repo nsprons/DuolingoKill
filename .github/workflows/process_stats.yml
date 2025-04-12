@@ -1,11 +1,11 @@
-name: Process Device Stats
+name: 处理设备统计数据
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  process-device-stats:
+  处理设备统计:
     if: contains(github.event.issue.labels.*.name, 'device_stats')
     runs-on: ubuntu-latest
     
@@ -15,39 +15,39 @@ jobs:
       pull-requests: write
     
     steps:
-    - name: Checkout repository
+    - name: 检出代码库
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
-    - name: Set up jq
+    - name: 安装jq工具
       run: sudo apt-get install -y jq
 
-    - name: Process stats data
+    - name: 处理统计数据
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         #!/bin/bash
         set -eo pipefail
 
-        # 安全设置Git配置
+        # 配置Git用户信息
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git config --global --add safe.directory /github/workspace
 
-        # 提取并验证Issue数据
+        # 提取Issue数据
         TITLE="${{ github.event.issue.title }}"
         BODY=$(echo '${{ toJson(github.event.issue.body) }}' | jq -r '.')
 
         # 验证标题格式
         if ! [[ "$TITLE" =~ ^DeviceStats\ -\ [0-9]{4}-[0-9]{2}-[0-9]{2}\ - ]]; then
-          echo "::error::Invalid issue title format: $TITLE"
+          echo "::error::无效的问题标题格式: $TITLE"
           exit 1
         fi
 
         # 解析JSON数据
         if ! DEVICE_ID=$(echo "$BODY" | jq -r '.device_id'); then
-          echo "::error::Failed to parse device_id"
+          echo "::error::解析device_id失败"
           exit 1
         fi
 
@@ -59,11 +59,11 @@ jobs:
         MANUFACTURER=$(echo "$BODY" | jq -r '.manufacturer')
         SDK_VERSION=$(echo "$BODY" | jq -r '.sdk_version')
 
-        # 验证必需字段
+        # 验证必填字段
         REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
         for field in "${REQUIRED_FIELDS[@]}"; do
           if [[ -z "$field" ]]; then
-            echo "::error::Missing required field in body"
+            echo "::error::缺少必要字段"
             exit 1
           fi
         done
@@ -75,27 +75,27 @@ jobs:
           echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
         fi
 
-        # 更新记录（原子操作）- 现在基于device_id替换
+        # 更新记录（按设备ID替换）
         TEMP_FILE=$(mktemp)
         {
-          # 保留非当前设备的记录
+          # 保留其他设备的记录
           grep -v ",$DEVICE_ID," "$CSV_FILE" || true
-          # 添加新记录
+          # 添加新记录（会覆盖同设备ID的旧记录）
           echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
         } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
         # 提交更改
         git add "$CSV_FILE"
         if ! git diff-index --quiet HEAD --; then
-          git commit -m "📊 Update stats for device $DEVICE_ID"
+          git commit -m "📊 更新设备统计: $DEVICE_ID"
           git push origin HEAD:main
         else
-          echo "No changes to commit"
+          echo "没有需要提交的更改"
         fi
 
-    - name: Create summary
+    - name: 创建执行摘要
       run: |
-        echo "## 📈 Device Stats Updated" >> $GITHUB_STEP_SUMMARY
-        echo "- Processed data for device: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
-        echo "- Open count: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
-        echo "- Device model: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
+        echo "## 📈 设备统计已更新" >> $GITHUB_STEP_SUMMARY
+        echo "- 处理设备: $DEVICE_ID" >> $GITHUB_STEP_SUMMARY
+        echo "- 打开次数: $OPEN_COUNT" >> $GITHUB_STEP_SUMMARY
+        echo "- 设备型号: $DEVICE_MODEL" >> $GITHUB_STEP_SUMMARY
