@@ -229,6 +229,25 @@
             color: #6c757d;
         }
 
+        .map-container {
+            height: 300px;
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #6c757d;
+        }
+
         /* 新增移动端优化样式 */
         @media (max-width: 480px) {
             .container {
@@ -334,6 +353,15 @@
             </div>
             
             <div class="filter-group">
+                <label class="filter-label">IP类型</label>
+                <select id="ipTypeFilter">
+                    <option value="all">全部类型</option>
+                    <option value="IPv4">IPv4</option>
+                    <option value="IPv6">IPv6</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
                 <label class="filter-label">搜索设备ID/IP</label>
                 <input type="text" id="deviceSearch" placeholder="输入设备ID或IP">
             </div>
@@ -377,6 +405,15 @@
             </div>
             <div class="chart-container" style="height: 350px;">
                 <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">地理位置分布</span>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">地图可视化将在后续版本中实现</div>
             </div>
         </div>
         
@@ -473,6 +510,7 @@
         document.getElementById('deviceModel').addEventListener('change', applyFilters);
         document.getElementById('androidVersion').addEventListener('change', applyFilters);
         document.getElementById('regionFilter').addEventListener('change', applyFilters);
+        document.getElementById('ipTypeFilter').addEventListener('change', applyFilters);
         document.getElementById('deviceSearch').addEventListener('input', applyFilters);
         
         // 初始化柱状图
@@ -655,6 +693,7 @@
             const deviceModel = document.getElementById('deviceModel').value;
             const androidVersion = document.getElementById('androidVersion').value;
             const region = document.getElementById('regionFilter').value;
+            const ipType = document.getElementById('ipTypeFilter').value;
             const searchTerm = document.getElementById('deviceSearch').value.toLowerCase();
             
             // 计算日期范围
@@ -685,6 +724,14 @@
                 // 地区筛选
                 if (region !== 'all' && stat.region !== region) {
                     return false;
+                }
+                
+                // IP类型筛选
+                if (ipType !== 'all' && stat.ip_address) {
+                    const isIPv6 = stat.ip_address.includes(':');
+                    if ((ipType === 'IPv4' && isIPv6) || (ipType === 'IPv6' && !isIPv6)) {
+                        return false;
+                    }
                 }
                 
                 // 设备ID/IP搜索
