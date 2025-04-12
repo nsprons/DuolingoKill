@@ -1,0 +1,46 @@
+name: Process Usage Stats
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process-stats:
+    if: contains(github.event.issue.labels.*.name, 'usage')
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      issues: read
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Process new usage report
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        # 设置Git配置
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        
+        # 提取数据
+        DATE=$(echo '${{ github.event.issue.title }}' | cut -d'-' -f2 | xargs)
+        MODULE=$(echo '${{ github.event.issue.body }}' | grep 'Module:' | cut -d':' -f2 | xargs)
+        DURATION=$(echo '${{ github.event.issue.body }}' | grep 'Duration:' | cut -d':' -f2 | xargs)
+        
+        # 创建stats目录(如果不存在)
+        mkdir -p stats
+        
+        # 初始化CSV文件(如果不存在)
+        if [ ! -f "stats/daily.csv" ]; then
+          echo "date,module,users,sessions,duration" > stats/daily.csv
+        fi
+        
+        # 更新统计数据(这里简化处理)
+        echo "$DATE,$MODULE,1,1,$DURATION" >> stats/daily.csv
+        
+        # 提交更改
+        git add stats/daily.csv
+        git commit -m "Update usage stats for $DATE"
+        git push
