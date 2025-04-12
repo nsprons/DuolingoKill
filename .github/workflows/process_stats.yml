@@ -75,11 +75,11 @@ jobs:
           echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version" > "$CSV_FILE"
         fi
 
-        # 更新记录（原子操作）
+        # 更新记录（原子操作）- 现在基于device_id替换
         TEMP_FILE=$(mktemp)
         {
           # 保留非当前设备的记录
-          grep -v "$DATE,$DEVICE_ID," "$CSV_FILE" || true
+          grep -v ",$DEVICE_ID," "$CSV_FILE" || true
           # 添加新记录
           echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION"
         } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
@@ -87,7 +87,7 @@ jobs:
         # 提交更改
         git add "$CSV_FILE"
         if ! git diff-index --quiet HEAD --; then
-          git commit -m "📊 Update stats for $DATE - $DEVICE_ID"
+          git commit -m "📊 Update stats for device $DEVICE_ID"
           git push origin HEAD:main
         else
           echo "No changes to commit"
