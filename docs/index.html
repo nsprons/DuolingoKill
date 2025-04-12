@@ -374,7 +374,7 @@
         );
 
         // 加载数据
-        fetch('https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/stats/daily_opens.csv')
+        fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/daily_opens.csv')
             .then(response => {
                 if (!response.ok) throw new Error('网络响应不正常');
                 return response.text();
