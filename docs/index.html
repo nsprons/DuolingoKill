@@ -355,44 +355,53 @@
         
         // 加载数据
         fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv')
-            .then(response => {
-                if (!response.ok) throw new Error('网络响应不正常');
-                return response.text();
-            })
-            .then(data => {
-                const rows = data.split('\n').filter(row => row.trim() !== '');
-                const headers = rows.shift().split(',');
-                
-                // 解析CSV数据
-                allStats = rows.map(row => {
-                    const values = row.split(',');
-                    const entry = {};
-                    headers.forEach((header, i) => {
-                        entry[header] = values[i];
-                    });
-                    return entry;
-                }).filter(entry => entry.date && entry.device_id && entry.open_count);
-                
-                // 收集设备型号和Android版本
-                allStats.forEach(stat => {
-                    if (stat.device_model) deviceModels.add(stat.device_model);
-                    if (stat.android_version) androidVersions.add(stat.android_version);
+    .then(response => {
+        if (!response.ok) throw new Error('网络响应不正常');
+        return response.text();
+    })
+    .then(data => {
+        // 改进的CSV解析函数
+        const parseCSV = (text) => {
+            const rows = text.split('\n').filter(row => row.trim() !== '');
+            const headers = rows.shift().split(',').map(h => h.replace(/^"|"$/g, ''));
+            
+            return rows.map(row => {
+                // 使用正则表达式匹配CSV字段（处理带引号的字段）
+                const values = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
+                const entry = {};
+                headers.forEach((header, i) => {
+                    // 移除字段值的首尾引号（如果存在）
+                    entry[header] = values[i] ? values[i].replace(/^"|"$/g, '') : '';
                 });
-                
-                // 填充筛选器选项
-                fillFilterOptions();
-                
-                // 应用初始筛选
-                applyFilters();
-            })
-            .catch(error => {
-                console.error('加载数据失败:', error);
-                document.querySelector('#statsTable tbody').innerHTML = `
-                    <tr>
-                        <td colspan="8" class="error">数据加载失败，请稍后再试</td>
-                    </tr>
-                `;
+                return entry;
             });
+        };
+
+        // 解析CSV数据
+        allStats = parseCSV(data).filter(entry => 
+            entry.date && entry.device_id && entry.open_count
+        );
+        
+        // 收集设备型号和Android版本
+        allStats.forEach(stat => {
+            if (stat.device_model) deviceModels.add(stat.device_model);
+            if (stat.android_version) androidVersions.add(stat.android_version);
+        });
+        
+        // 填充筛选器选项
+        fillFilterOptions();
+        
+        // 应用初始筛选
+        applyFilters();
+    })
+    .catch(error => {
+        console.error('加载数据失败:', error);
+        document.querySelector('#statsTable tbody').innerHTML = `
+            <tr>
+                <td colspan="8" class="error">数据加载失败，请稍后再试</td>
+            </tr>
+        `;
+    });
         
         // 筛选器事件监听
         document.getElementById('dateRange').addEventListener('change', applyFilters);
