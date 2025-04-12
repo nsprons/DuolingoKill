@@ -27,15 +27,16 @@ jobs:
         # 提取并验证标题格式
         TITLE="${{ github.event.issue.title }}"
         
-        # 使用正则表达式提取日期和设备ID
-        if [[ "$TITLE" =~ ^DailyOpen\ -\ ([0-9]{4}-[0-9]{2}-[0-9]{2})\ -\ ([a-zA-Z0-9]+)$ ]]; then
+        # 使用正则表达式提取日期、设备ID和计数
+        if [[ "$TITLE" =~ ^DailyOpen\ -\ ([0-9]{4}-[0-9]{2}-[0-9]{2})\ -\ ([a-zA-Z0-9]+)\ -\ ([0-9]+)$ ]]; then
           DATE=${BASH_REMATCH[1]}
           DEVICE_ID=${BASH_REMATCH[2]}
+          COUNT=${BASH_REMATCH[3]}
           
-          echo "Extracted - Date: $DATE, Device: $DEVICE_ID"
+          echo "Extracted - Date: $DATE, Device: $DEVICE_ID, Count: $COUNT"
         else
           echo "Error: Invalid issue title format - '$TITLE'"
-          echo "Expected format: 'DailyOpen - YYYY-MM-DD - DEVICE_ID'"
+          echo "Expected format: 'DailyOpen - YYYY-MM-DD - DEVICE_ID - COUNT'"
           exit 1
         fi
         
@@ -51,22 +52,28 @@ jobs:
           exit 1
         fi
         
+        # 验证计数是数字
+        if [[ ! "$COUNT" =~ ^[0-9]+$ ]]; then
+          echo "Error: Invalid count format - '$COUNT'"
+          exit 1
+        fi
+        
         # 创建stats目录
         mkdir -p stats
         
         # 初始化CSV文件(如果不存在)
         if [ ! -f "stats/daily_opens.csv" ]; then
-          echo "date,device_id" > stats/daily_opens.csv
+          echo "date,device_id,open_count" > stats/daily_opens.csv
         fi
         
         # 删除该设备当天的旧记录(如果有)
-        grep -v "$DATE,$DEVICE_ID" stats/daily_opens.csv > temp.csv
+        grep -v "$DATE,$DEVICE_ID," stats/daily_opens.csv > temp.csv
         mv temp.csv stats/daily_opens.csv
         
         # 添加新记录
-        echo "$DATE,$DEVICE_ID" >> stats/daily_opens.csv
+        echo "$DATE,$DEVICE_ID,$COUNT" >> stats/daily_opens.csv
         
         # 提交更改
         git add stats/daily_opens.csv
-        git commit -m "Update daily opens for $DATE - $DEVICE_ID"
+        git commit -m "Update daily opens for $DATE - $DEVICE_ID - count $COUNT"
         git push
