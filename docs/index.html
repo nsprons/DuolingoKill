@@ -213,6 +213,59 @@
             font-family: inherit;
         }
 
+        /* 地图弹窗样式 */
+        .map-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .map-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        .location-map {
+            width: 100%;
+            height: 400px;
+            background-color: #eee;
+            margin-top: 15px;
+        }
+        
+        .location-info {
+            margin-top: 15px;
+        }
+        
+        .location-info p {
+            margin: 5px 0;
+        }
+        
+        .ip-link {
+            color: var(--primary-color);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
         /* 新增移动端优化样式 */
         @media (max-width: 480px) {
             .container {
@@ -246,6 +299,15 @@
             
             .card-value {
                 font-size: 1.4rem;
+            }
+            
+            .map-container {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .location-map {
+                height: 250px;
             }
         }
 
@@ -311,8 +373,15 @@
             </div>
             
             <div class="filter-group">
-                <label class="filter-label">搜索设备ID</label>
-                <input type="text" id="deviceSearch" placeholder="输入设备ID">
+                <label class="filter-label">地区</label>
+                <select id="regionFilter">
+                    <option value="all">全部地区</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">搜索设备ID/IP</label>
+                <input type="text" id="deviceSearch" placeholder="输入设备ID或IP地址">
             </div>
         </div>
         
@@ -339,11 +408,11 @@
             
             <div class="card">
                 <div class="card-header">
-                    <span class="card-title">Android版本分布</span>
-                    <span class="card-value" id="androidVersions">--</span>
+                    <span class="card-title">地区分布</span>
+                    <span class="card-value" id="regionCount">--</span>
                 </div>
                 <div class="chart-container">
-                    <canvas id="androidChart"></canvas>
+                    <canvas id="regionChart"></canvas>
                 </div>
             </div>
         </div>
@@ -366,8 +435,8 @@
                         <th>开启次数</th>
                         <th>设备型号</th>
                         <th>Android版本</th>
-                        <th>制造商</th>
-                        <th>报告时间</th>
+                        <th>地区</th>
+                        <th>IP地址</th>
                         <th>状态</th>
                     </tr>
                 </thead>
@@ -380,75 +449,108 @@
         </div>
     </div>
 
+    <!-- 地图弹窗 -->
+    <div class="map-modal" id="mapModal">
+        <div class="map-container">
+            <span class="map-close" id="mapClose">&times;</span>
+            <h3>IP地理位置信息</h3>
+            <div class="location-map" id="locationMap"></div>
+            <div class="location-info" id="locationInfo">
+                <p><strong>IP地址:</strong> <span id="modalIp">--</span></p>
+                <p><strong>位置:</strong> <span id="modalLocation">--</span></p>
+                <p><strong>运营商:</strong> <span id="modalIsp">--</span></p>
+                <p><strong>坐标:</strong> <span id="modalCoords">--</span></p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // 全局数据变量
         let allStats = [];
         let filteredStats = [];
         let deviceModels = new Set();
         let androidVersions = new Set();
+        let regions = new Set();
+        let map = null;
         
         // 初始化图表
         const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
         const devicesChart = initDoughnutChart('devicesChart', '设备分布');
-        const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
+        const regionChart = initDoughnutChart('regionChart', '地区分布');
         const trendChart = initLineChart('trendChart', '设备使用趋势');
         
         // 加载数据
         fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv')
-    .then(response => {
-        if (!response.ok) throw new Error('网络响应不正常');
-        return response.text();
-    })
-    .then(data => {
-        // 改进的CSV解析函数
-        const parseCSV = (text) => {
-            const rows = text.split('\n').filter(row => row.trim() !== '');
-            const headers = rows.shift().split(',').map(h => h.replace(/^"|"$/g, ''));
-            
-            return rows.map(row => {
-                // 使用正则表达式匹配CSV字段（处理带引号的字段）
-                const values = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
-                const entry = {};
-                headers.forEach((header, i) => {
-                    // 移除字段值的首尾引号（如果存在）
-                    entry[header] = values[i] ? values[i].replace(/^"|"$/g, '') : '';
-                });
-                return entry;
-            });
-        };
+            .then(response => {
+                if (!response.ok) throw new Error('网络响应不正常');
+                return response.text();
+            })
+            .then(data => {
+                // 改进的CSV解析函数
+                const parseCSV = (text) => {
+                    const rows = text.split('\n').filter(row => row.trim() !== '');
+                    const headers = rows.shift().split(',').map(h => h.replace(/^"|"$/g, ''));
+                    
+                    return rows.map(row => {
+                        // 使用正则表达式匹配CSV字段（处理带引号的字段）
+                        const values = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
+                        const entry = {};
+                        headers.forEach((header, i) => {
+                            // 移除字段值的首尾引号（如果存在）
+                            entry[header] = values[i] ? values[i].replace(/^"|"$/g, '') : '';
+                        });
+                        return entry;
+                    });
+                };
 
-        // 解析CSV数据
-        allStats = parseCSV(data).filter(entry => 
-            entry.date && entry.device_id && entry.open_count
-        );
-        
-        // 收集设备型号和Android版本
-        allStats.forEach(stat => {
-            if (stat.device_model) deviceModels.add(stat.device_model);
-            if (stat.android_version) androidVersions.add(stat.android_version);
-        });
-        
-        // 填充筛选器选项
-        fillFilterOptions();
-        
-        // 应用初始筛选
-        applyFilters();
-    })
-    .catch(error => {
-        console.error('加载数据失败:', error);
-        document.querySelector('#statsTable tbody').innerHTML = `
-            <tr>
-                <td colspan="8" class="error">数据加载失败，请稍后再试</td>
-            </tr>
-        `;
-    });
+                // 解析CSV数据
+                allStats = parseCSV(data).filter(entry => 
+                    entry.date && entry.device_id && entry.open_count
+                );
+                
+                // 收集设备型号、Android版本和地区
+                allStats.forEach(stat => {
+                    if (stat.device_model) deviceModels.add(stat.device_model);
+                    if (stat.android_version) androidVersions.add(stat.android_version);
+                    if (stat.country && stat.region && stat.city) {
+                        regions.add(`${stat.city}, ${stat.region}, ${stat.country}`);
+                    }
+                });
+                
+                // 填充筛选器选项
+                fillFilterOptions();
+                
+                // 应用初始筛选
+                applyFilters();
+            })
+            .catch(error => {
+                console.error('加载数据失败:', error);
+                document.querySelector('#statsTable tbody').innerHTML = `
+                    <tr>
+                        <td colspan="8" class="error">数据加载失败，请稍后再试</td>
+                    </tr>
+                `;
+            });
         
         // 筛选器事件监听
         document.getElementById('dateRange').addEventListener('change', applyFilters);
         document.getElementById('deviceModel').addEventListener('change', applyFilters);
         document.getElementById('androidVersion').addEventListener('change', applyFilters);
+        document.getElementById('regionFilter').addEventListener('change', applyFilters);
         document.getElementById('deviceSearch').addEventListener('input', applyFilters);
         
+        // 地图弹窗事件
+        document.getElementById('mapClose').addEventListener('click', () => {
+            document.getElementById('mapModal').style.display = 'none';
+        });
+        
+        // 点击地图弹窗外部关闭
+        document.getElementById('mapModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('mapModal')) {
+                document.getElementById('mapModal').style.display = 'none';
+            }
+        });
+
         // 初始化柱状图
         function initBarChart(canvasId, label, color) {
             return new Chart(
@@ -594,6 +696,7 @@
         function fillFilterOptions() {
             const deviceModelSelect = document.getElementById('deviceModel');
             const androidVersionSelect = document.getElementById('androidVersion');
+            const regionSelect = document.getElementById('regionFilter');
             
             // 添加设备型号选项
             deviceModels.forEach(model => {
@@ -610,6 +713,14 @@
                 option.textContent = `Android ${version}`;
                 androidVersionSelect.appendChild(option);
             });
+            
+            // 添加地区选项
+            regions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region;
+                option.textContent = region;
+                regionSelect.appendChild(option);
+            });
         }
         
         // 应用筛选条件
@@ -617,7 +728,8 @@
             const dateRange = document.getElementById('dateRange').value;
             const deviceModel = document.getElementById('deviceModel').value;
             const androidVersion = document.getElementById('androidVersion').value;
-            const deviceSearch = document.getElementById('deviceSearch').value.toLowerCase();
+            const region = document.getElementById('regionFilter').value;
+            const searchTerm = document.getElementById('deviceSearch').value.toLowerCase();
             
             // 计算日期范围
             let minDate = null;
@@ -644,8 +756,18 @@
                     return false;
                 }
                 
-                // 设备ID搜索
-                if (deviceSearch && !stat.device_id.toLowerCase().includes(deviceSearch)) {
+                // 地区筛选
+                if (region !== 'all') {
+                    const location = `${stat.city || ''}, ${stat.region || ''}, ${stat.country || ''}`.trim();
+                    if (location !== region) {
+                        return false;
+                    }
+                }
+                
+                // 设备ID/IP搜索
+                if (searchTerm && 
+                    !stat.device_id.toLowerCase().includes(searchTerm) && 
+                    !(stat.ip_address && stat.ip_address.toLowerCase().includes(searchTerm))) {
                     return false;
                 }
                 
@@ -664,9 +786,10 @@
             // 按日期聚合数据
             const dailyStats = {};
             const deviceCounts = {};
-            const versionCounts = {};
+            const regionCounts = {};
             let totalOpens = 0;
             let uniqueDevices = new Set();
+            let uniqueRegions = new Set();
             
             filteredStats.forEach(stat => {
                 // 统计总开启次数
@@ -674,6 +797,11 @@
                 
                 // 记录唯一设备
                 uniqueDevices.add(stat.device_id);
+                
+                // 记录唯一地区
+                if (stat.city && stat.region && stat.country) {
+                    uniqueRegions.add(`${stat.city}, ${stat.region}, ${stat.country}`);
+                }
                 
                 // 按日期统计
                 if (!dailyStats[stat.date]) {
@@ -687,17 +815,19 @@
                 }
                 deviceCounts[stat.device_model] += parseInt(stat.open_count) || 0;
                 
-                // 按Android版本统计
-                if (!versionCounts[stat.android_version]) {
-                    versionCounts[stat.android_version] = 0;
+                // 按地区统计
+                const regionKey = stat.city && stat.region && stat.country ? 
+                    `${stat.city}, ${stat.region}, ${stat.country}` : '未知地区';
+                if (!regionCounts[regionKey]) {
+                    regionCounts[regionKey] = 0;
                 }
-                versionCounts[stat.android_version] += parseInt(stat.open_count) || 0;
+                regionCounts[regionKey] += parseInt(stat.open_count) || 0;
             });
             
             // 更新仪表板数据
             document.getElementById('totalOpens').textContent = totalOpens;
             document.getElementById('uniqueDevices').textContent = uniqueDevices.size;
-            document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length;
+            document.getElementById('regionCount').textContent = uniqueRegions.size;
             
             // 准备日期排序
             const dates = Object.keys(dailyStats).sort();
@@ -716,14 +846,14 @@
             devicesChart.data.datasets[0].data = topDevices.map(d => d[1]);
             devicesChart.update();
             
-            // 更新Android版本分布图表
-            const topVersions = Object.entries(versionCounts)
+            // 更新地区分布图表
+            const topRegions = Object.entries(regionCounts)
                 .sort((a, b) => b[1] - a[1])
                 .slice(0, 5);
             
-            androidChart.data.labels = topVersions.map(v => `Android ${v[0]}` || '未知版本');
-            androidChart.data.datasets[0].data = topVersions.map(v => v[1]);
-            androidChart.update();
+            regionChart.data.labels = topRegions.map(r => r[0]);
+            regionChart.data.datasets[0].data = topRegions.map(r => r[1]);
+            regionChart.update();
             
             // 更新趋势图表
             trendChart.data.labels = dates;
@@ -782,15 +912,29 @@
                 versionTd.textContent = stat.android_version ? `Android ${stat.android_version}` : '--';
                 tr.appendChild(versionTd);
                 
-                // 制造商
-                const manuTd = document.createElement('td');
-                manuTd.textContent = stat.manufacturer || '--';
-                tr.appendChild(manuTd);
+                // 地区
+                const regionTd = document.createElement('td');
+                if (stat.city && stat.region && stat.country) {
+                    regionTd.textContent = `${stat.city}, ${stat.region}`;
+                    regionTd.title = `${stat.city}, ${stat.region}, ${stat.country}`;
+                } else {
+                    regionTd.textContent = '--';
+                }
+                tr.appendChild(regionTd);
                 
-                // 报告时间
-                const timeTd = document.createElement('td');
-                timeTd.textContent = stat.report_time || '--';
-                tr.appendChild(timeTd);
+                // IP地址
+                const ipTd = document.createElement('td');
+                if (stat.ip_address) {
+                    const ipLink = document.createElement('span');
+                    ipLink.className = 'ip-link';
+                    ipLink.textContent = stat.ip_address;
+                    ipLink.title = '点击查看位置';
+                    ipLink.addEventListener('click', () => showIpLocation(stat));
+                    ipTd.appendChild(ipLink);
+                } else {
+                    ipTd.textContent = '--';
+                }
+                tr.appendChild(ipTd);
                 
                 // 状态
                 const statusTd = document.createElement('td');
@@ -802,6 +946,63 @@
                 
                 tbody.appendChild(tr);
             });
+        }
+        
+        // 显示IP位置地图
+        function showIpLocation(stat) {
+            if (!stat.ip_address || (!stat.latitude && stat.latitude !== 0) || (!stat.longitude && stat.longitude !== 0)) {
+                alert('该记录没有位置信息');
+                return;
+            }
+            
+            // 更新弹窗内容
+            document.getElementById('modalIp').textContent = stat.ip_address;
+            document.getElementById('modalLocation').textContent = 
+                `${stat.city || '未知城市'}, ${stat.region || '未知地区'}, ${stat.country || '未知国家'}`;
+            document.getElementById('modalIsp').textContent = stat.isp || '未知运营商';
+            document.getElementById('modalCoords').textContent = 
+                `${stat.latitude}, ${stat.longitude}`;
+            
+            // 显示弹窗
+            document.getElementById('mapModal').style.display = 'flex';
+            
+            // 初始化地图
+            if (!map) {
+                // 动态加载Leaflet地图库
+                const leafletCSS = document.createElement('link');
+                leafletCSS.rel = 'stylesheet';
+                leafletCSS.href = 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+                document.head.appendChild(leafletCSS);
+                
+                const leafletJS = document.createElement('script');
+                leafletJS.src = 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js';
+                leafletJS.onload = initMap;
+                document.head.appendChild(leafletJS);
+            } else {
+                updateMap(stat.latitude, stat.longitude);
+            }
+            
+            function initMap() {
+                map = L.map('locationMap').setView([stat.latitude, stat.longitude], 8);
+                
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                L.marker([stat.latitude, stat.longitude]).addTo(map)
+                    .bindPopup(`<b>IP位置</b><br>${stat.ip_address}`);
+            }
+            
+            function updateMap(lat, lng) {
+                map.setView([lat, lng], 8);
+                map.eachLayer(layer => {
+                    if (layer instanceof L.Marker) {
+                        map.removeLayer(layer);
+                    }
+                });
+                L.marker([lat, lng]).addTo(map)
+                    .bindPopup(`<b>IP位置</b><br>${stat.ip_address}`);
+            }
         }
         
         // 获取状态标签样式
