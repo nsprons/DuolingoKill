@@ -15,7 +15,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-13","d15e9912ab4338e6",1,"2025-04-13 15:23:34","21061110AG","13","Xiaomi",33,"179.60.137.164","Ecuador","EC","Guayas","Guayaquil",-2.1978,-79.8764,"America/Guayaquil","Universidad de Guayaquil"
 "2025-04-13","b3904204b82c8fe4",2,"2025-04-13 23:38:45","ASUS_I01WD","13","samsung",33,"185.208.101.157","Türkiye","TR","Kilis","Kilis",36.7143,37.1123,"Europe/Istanbul","Guneydogu Telekom int.bil. ve ilt. hiz. tic. ltd. sti."
 "2025-04-14","1f703d7984b774bb",1,"2025-04-14 00:00:33","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
-"2025-04-14","c9caf8819b491cdb",3,"2025-04-14 05:02:25","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","f408942fcf786867",5,"2025-04-14 00:07:58","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",2,"٢٠٢٥-٠٤-١٤ ٠٠:٠٩:٥٩","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "٢٠٢٥-٠٤-١٤","53854893937ee474",2,"٢٠٢٥-٠٤-١٤ ٠٠:١٦:٢٨","SM-A305F","10","samsung",29,"null","null","null","null","null",null,null,"null","null"
@@ -30,3 +29,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","1cdab5c2f1dd4648",2,"2025-04-14 06:26:12","Pixel 7 Pro","15","Google",35,"223.104.54.148","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-13","b75429cdbc1f33fe",2,"2025-04-13 18:27:21","NX721J","14","nubia",34,"66.131.200.223","Canada","CA","Quebec","Montreal",45.5365,-73.6242,"America/Toronto","VIDEOTRON"
 "2025-04-13","7b93ed4e675b3b92",1,"2025-04-13 19:27:41","21051182G","13","Xiaomi",33,"170.83.206.7","Brazil","BR","Sergipe","Estância",-11.2339,-37.4145,"America/Maceio","JF Solucoes Informatica Ltda."
+"2025-04-14","c9caf8819b491cdb",4,"2025-04-14 06:31:04","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
