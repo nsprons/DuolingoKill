@@ -17,4 +17,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-13","b3904204b82c8fe4",2,"2025-04-13 23:38:45","ASUS_I01WD","13","samsung",33,"185.208.101.157","Türkiye","TR","Kilis","Kilis",36.7143,37.1123,"Europe/Istanbul","Guneydogu Telekom int.bil. ve ilt. hiz. tic. ltd. sti."
 "2025-04-13","4e2b605822045ef1",7,"2025-04-13 22:48:46","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","1f703d7984b774bb",1,"2025-04-14 00:00:33","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
-"2025-04-14","c9caf8819b491cdb",2,"2025-04-14 05:01:51","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
+"2025-04-14","c9caf8819b491cdb",3,"2025-04-14 05:02:25","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
