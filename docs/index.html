@@ -769,7 +769,7 @@
                 
                 // 地区筛选
                 if (region !== 'all') {
-                    const location = `${stat.city || ''}, ${stat.region || ''}, ${stat.country || ''}`.trim();
+                    const location = `${stat.city}, ${stat.region}, ${stat.country}`;
                     if (location !== region) {
                         return false;
                     }
