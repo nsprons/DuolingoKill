@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         :root {
             --primary-color: #4361ee;
@@ -103,25 +104,10 @@
             color: var(--dark-color);
         }
         
-        .card-subvalue {
-            font-size: 0.9rem;
-            color: #6c757d;
-            margin-top: 5px;
-        }
-        
         .chart-container {
             position: relative;
             height: 250px;
             width: 100%;
-        }
-        
-        .map-container {
-            position: relative;
-            height: 400px;
-            width: 100%;
-            background-color: #f0f0f0;
-            border-radius: var(--border-radius);
-            margin-top: 20px;
         }
         
         .data-table {
@@ -228,57 +214,35 @@
             font-family: inherit;
         }
 
-        /* 地图弹窗样式 */
-        .map-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* 地图容器样式 */
+        .map-container {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .map-container-modal {
-            background: white;
+            height: 500px;
+            background-color: #eee;
             border-radius: var(--border-radius);
-            width: 80%;
-            max-width: 800px;
-            padding: 20px;
+            margin-top: 20px;
             position: relative;
         }
         
-        .map-close {
+        .map-tooltip {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark-color);
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+            font-size: 0.9rem;
         }
         
-        .location-map {
-            width: 100%;
-            height: 400px;
-            background-color: #eee;
-            margin-top: 15px;
-        }
-        
-        .location-info {
-            margin-top: 15px;
-        }
-        
-        .location-info p {
-            margin: 5px 0;
-        }
-        
-        .ip-link {
+        .map-tooltip h4 {
+            margin-bottom: 5px;
             color: var(--primary-color);
-            cursor: pointer;
-            text-decoration: underline;
+        }
+        
+        .map-tooltip p {
+            margin: 3px 0;
         }
         
         /* 新增移动端优化样式 */
@@ -316,13 +280,8 @@
                 font-size: 1.4rem;
             }
             
-            .map-container-modal {
-                width: 95%;
-                padding: 15px;
-            }
-            
-            .location-map {
-                height: 250px;
+            .map-container {
+                height: 300px;
             }
         }
 
@@ -352,6 +311,17 @@
             .card-title {
                 font-size: 1rem;
             }
+        }
+        
+        /* 数据表格中的链接样式 */
+        .ip-link {
+            color: var(--primary-color);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        .ip-link:hover {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -421,10 +391,7 @@
             <div class="card">
                 <div class="card-header">
                     <span class="card-title">活跃设备数</span>
-                    <div>
-                        <span class="card-value" id="uniqueDevices">--</span>
-                        <div class="card-subvalue" id="newDevices">新增: --</div>
-                    </div>
+                    <span class="card-value" id="uniqueDevices">--</span>
                 </div>
                 <div class="chart-container">
                     <canvas id="devicesChart"></canvas>
@@ -440,25 +407,6 @@
                     <canvas id="regionChart"></canvas>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Android版本</span>
-                    <span class="card-value" id="androidVersions">--</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="androidChart"></canvas>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">全球设备分布</span>
-            </div>
-            <div class="map-container" id="worldMap">
-                <div class="loading">地图加载中...</div>
-            </div>
         </div>
         
         <div class="card">
@@ -467,6 +415,19 @@
             </div>
             <div class="chart-container" style="height: 350px;">
                 <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">全球设备分布</span>
+            </div>
+            <div class="map-container" id="worldMap">
+                <div class="map-tooltip">
+                    <h4>全球设备分布</h4>
+                    <p>共 <span id="mapDeviceCount">0</span> 个设备</p>
+                    <p>覆盖 <span id="mapCountryCount">0</span> 个国家/地区</p>
+                </div>
             </div>
         </div>
         
@@ -482,34 +443,19 @@
                         <th>地区</th>
                         <th>IP地址</th>
                         <th>运营商</th>
-                        <th>报告时间</th>
                         <th>状态</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="10" class="loading">数据加载中...</td>
+                        <td colspan="9" class="loading">数据加载中...</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- 地图弹窗 -->
-    <div class="map-modal" id="mapModal">
-        <div class="map-container-modal">
-            <span class="map-close" id="mapClose">&times;</span>
-            <h3>IP地理位置信息</h3>
-            <div class="location-map" id="locationMap"></div>
-            <div class="location-info" id="locationInfo">
-                <p><strong>IP地址:</strong> <span id="modalIp">--</span></p>
-                <p><strong>位置:</strong> <span id="modalLocation">--</span></p>
-                <p><strong>运营商:</strong> <span id="modalIsp">--</span></p>
-                <p><strong>坐标:</strong> <span id="modalCoords">--</span></p>
-            </div>
-        </div>
-    </div>
-
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
         // 全局数据变量
         let allStats = [];
@@ -518,14 +464,13 @@
         let androidVersions = new Set();
         let regions = new Set();
         let isps = new Set();
-        let map = null;
         let worldMap = null;
+        let markers = [];
         
         // 初始化图表
         const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
         const devicesChart = initDoughnutChart('devicesChart', '设备分布');
         const regionChart = initDoughnutChart('regionChart', '地区分布');
-        const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
         const trendChart = initLineChart('trendChart', '设备使用趋势');
         
         // 加载数据
@@ -551,7 +496,7 @@
                         return entry;
                     });
                 };
-    
+
                 // 解析CSV数据
                 allStats = parseCSV(data).filter(entry => 
                     entry.date && entry.device_id && entry.open_count
@@ -573,14 +518,14 @@
                 // 应用初始筛选
                 applyFilters();
                 
-                // 初始化世界地图
+                // 初始化地图
                 initWorldMap();
             })
             .catch(error => {
                 console.error('加载数据失败:', error);
                 document.querySelector('#statsTable tbody').innerHTML = `
                     <tr>
-                        <td colspan="10" class="error">数据加载失败，请稍后再试</td>
+                        <td colspan="9" class="error">数据加载失败，请稍后再试</td>
                     </tr>
                 `;
             });
@@ -592,19 +537,7 @@
         document.getElementById('regionFilter').addEventListener('change', applyFilters);
         document.getElementById('ispFilter').addEventListener('change', applyFilters);
         document.getElementById('deviceSearch').addEventListener('input', applyFilters);
-        
-        // 地图弹窗事件
-        document.getElementById('mapClose').addEventListener('click', () => {
-            document.getElementById('mapModal').style.display = 'none';
-        });
-        
-        // 点击地图弹窗外部关闭
-        document.getElementById('mapModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('mapModal')) {
-                document.getElementById('mapModal').style.display = 'none';
-            }
-        });
-    
+
         // 初始化柱状图
         function initBarChart(canvasId, label, color) {
             return new Chart(
@@ -852,18 +785,13 @@
         // 更新图表数据
         function updateCharts() {
             const today = new Date().toISOString().split('T')[0];
-            const weekAgo = new Date();
-            weekAgo.setDate(weekAgo.getDate() - 7);
-            const weekAgoStr = weekAgo.toISOString().split('T')[0];
             
             // 按日期聚合数据
             const dailyStats = {};
             const deviceCounts = {};
-            const versionCounts = {};
             const regionCounts = {};
             let totalOpens = 0;
             let uniqueDevices = new Set();
-            let newDevices = new Set();
             let uniqueRegions = new Set();
             
             filteredStats.forEach(stat => {
@@ -872,11 +800,6 @@
                 
                 // 记录唯一设备
                 uniqueDevices.add(stat.device_id);
-                
-                // 记录新设备（最近7天内首次出现）
-                if (stat.date >= weekAgoStr && !allStats.some(s => s.device_id === stat.device_id && s.date < weekAgoStr)) {
-                    newDevices.add(stat.device_id);
-                }
                 
                 // 记录唯一地区
                 if (stat.city && stat.region && stat.country) {
@@ -895,12 +818,6 @@
                 }
                 deviceCounts[stat.device_model] += parseInt(stat.open_count) || 0;
                 
-                // 按Android版本统计
-                if (!versionCounts[stat.android_version]) {
-                    versionCounts[stat.android_version] = 0;
-                }
-                versionCounts[stat.android_version] += parseInt(stat.open_count) || 0;
-                
                 // 按地区统计
                 const regionKey = stat.city && stat.region && stat.country ? 
                     `${stat.city}, ${stat.region}, ${stat.country}` : '未知地区';
@@ -913,9 +830,7 @@
             // 更新仪表板数据
             document.getElementById('totalOpens').textContent = totalOpens;
             document.getElementById('uniqueDevices').textContent = uniqueDevices.size;
-            document.getElementById('newDevices').textContent = `新增: ${newDevices.size}`;
             document.getElementById('regionCount').textContent = uniqueRegions.size;
-            document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length;
             
             // 准备日期排序
             const dates = Object.keys(dailyStats).sort();
@@ -933,15 +848,6 @@
             devicesChart.data.labels = topDevices.map(d => d[0] || '未知设备');
             devicesChart.data.datasets[0].data = topDevices.map(d => d[1]);
             devicesChart.update();
-            
-            // 更新Android版本分布图表
-            const topVersions = Object.entries(versionCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 5);
-            
-            androidChart.data.labels = topVersions.map(v => `Android ${v[0]}` || '未知版本');
-            androidChart.data.datasets[0].data = topVersions.map(v => v[1]);
-            androidChart.update();
             
             // 更新地区分布图表
             const topRegions = Object.entries(regionCounts)
@@ -966,7 +872,7 @@
             if (filteredStats.length === 0) {
                 tbody.innerHTML = `
                     <tr>
-                        <td colspan="10" class="loading">没有找到匹配的数据</td>
+                        <td colspan="9" class="loading">没有找到匹配的数据</td>
                     </tr>
                 `;
                 return;
@@ -1026,7 +932,11 @@
                     ipLink.className = 'ip-link';
                     ipLink.textContent = stat.ip_address;
                     ipLink.title = '点击查看位置';
-                    ipLink.addEventListener('click', () => showIpLocation(stat));
+                    ipLink.addEventListener('click', () => {
+                        if (stat.latitude && stat.longitude) {
+                            worldMap.setView([stat.latitude, stat.longitude], 8);
+                        }
+                    });
                     ipTd.appendChild(ipLink);
                 } else {
                     ipTd.textContent = '--';
@@ -1037,11 +947,6 @@
                 const ispTd = document.createElement('td');
                 ispTd.textContent = stat.isp || '--';
                 tr.appendChild(ispTd);
-                
-                // 报告时间
-                const timeTd = document.createElement('td');
-                timeTd.textContent = stat.report_time || '--';
-                tr.appendChild(timeTd);
                 
                 // 状态
                 const statusTd = document.createElement('td');
@@ -1057,233 +962,120 @@
         
         // 初始化世界地图
         function initWorldMap() {
-            // 动态加载ECharts库
-            const echartsScript = document.createElement('script');
-            echartsScript.src = 'https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js';
-            echartsScript.onload = function() {
-                // 加载世界地图数据
-                const mapScript = document.createElement('script');
-                mapScript.src = 'https://cdn.jsdelivr.net/npm/echarts@5.4.3/map/js/world.js';
-                mapScript.onload = function() {
-                    // 初始化地图实例
-                    worldMap = echarts.init(document.getElementById('worldMap'));
-                    
-                    // 设置地图选项
-                    updateWorldMap();
-                };
-                document.head.appendChild(mapScript);
-            };
-            document.head.appendChild(echartsScript);
+            worldMap = L.map('worldMap').setView([20, 0], 2);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(worldMap);
+            
+            updateWorldMap();
         }
         
         // 更新世界地图
         function updateWorldMap() {
-            if (!worldMap || !echarts) return;
+            if (!worldMap) return;
             
-            // 按国家统计设备数量
-            const countryData = {};
+            // 清除现有标记
+            markers.forEach(marker => worldMap.removeLayer(marker));
+            markers = [];
+            
+            // 按国家/地区统计设备数量
+            const countryCounts = {};
+            const deviceLocations = {};
+            
             filteredStats.forEach(stat => {
-                if (stat.country) {
-                    if (!countryData[stat.country]) {
-                        countryData[stat.country] = 0;
+                if (stat.country && stat.latitude && stat.longitude) {
+                    const country = stat.country;
+                    
+                    // 统计国家/地区设备数
+                    if (!countryCounts[country]) {
+                        countryCounts[country] = 0;
                     }
-                    countryData[stat.country]++;
+                    countryCounts[country]++;
+                    
+                    // 记录设备位置
+                    const locationKey = `${stat.latitude},${stat.longitude}`;
+                    if (!deviceLocations[locationKey]) {
+                        deviceLocations[locationKey] = {
+                            lat: parseFloat(stat.latitude),
+                            lng: parseFloat(stat.longitude),
+                            count: 0,
+                            country: stat.country,
+                            region: stat.region,
+                            city: stat.city
+                        };
+                    }
+                    deviceLocations[locationKey].count++;
                 }
             });
             
-            // 准备地图数据
-            const data = Object.keys(countryData).map(country => {
-                return {
-                    name: country,
-                    value: countryData[country]
-                };
+            // 添加标记到地图
+            Object.values(deviceLocations).forEach(loc => {
+                const marker = L.circleMarker([loc.lat, loc.lng], {
+                    radius: Math.min(5 + Math.log(loc.count) * 3, 20),
+                    fillColor: '#4361ee',
+                    color: '#3f37c9',
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.7
+                }).addTo(worldMap);
+                
+                // 添加弹出信息
+                marker.bindPopup(`
+                    <b>${loc.city || '未知城市'}, ${loc.region || '未知地区'}, ${loc.country || '未知国家'}</b><br>
+                    设备数量: ${loc.count}
+                `);
+                
+                markers.push(marker);
             });
             
-            // 设置地图选项
-            const option = {
-                tooltip: {
-                    trigger: 'item',
-                    formatter: params => {
-                        return `${params.name}<br/>设备数量: ${params.value || 0}`;
-                    }
-                },
-                visualMap: {
-                    min: 0,
-                    max: Math.max(...Object.values(countryData), 10),
-                    text: ['高', '低'],
-                    realtime: false,
-                    calculable: true,
-                    inRange: {
-                        color: ['#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695']
-                    }
-                },
-                series: [{
-                    name: '设备分布',
-                    type: 'map',
-                    map: 'world',
-                    roam: true,
-                    emphasis: {
-                        label: {
-                            show: true
-                        }
-                    },
-                    data: data
-                }]
-            };
-            
-            // 应用配置
-            worldMap.setOption(option);
-            
-            // 响应窗口大小变化
-            window.addEventListener('resize', function() {
-                worldMap.resize();
-            });
+            // 更新地图统计信息
+            document.getElementById('mapDeviceCount').textContent = filteredStats.length;
+            document.getElementById('mapCountryCount').textContent = Object.keys(countryCounts).length;
         }
         
-// 显示IP位置地图
-function showIpLocation(stat) {
-    if (!stat.ip_address) {
-        alert('此记录没有IP地址信息');
-        return;
-    }
-
-    const modal = document.getElementById('mapModal');
-    document.getElementById('modalIp').textContent = stat.ip_address;
-    
-    // 显示弹窗
-    modal.style.display = 'flex';
-    
-    // 设置加载状态
-    const locationInfo = document.getElementById('locationInfo');
-    const locationMap = document.getElementById('locationMap');
-    locationInfo.innerHTML = '<p>加载位置信息中...</p>';
-    locationMap.innerHTML = '<div class="loading">地图加载中...</div>';
-    
-    // 这里应该调用IP地理位置API获取实际数据
-    // 以下是模拟数据，实际应用中应该替换为真实API调用
-    setTimeout(() => {
-        // 模拟API响应
-        const mockData = {
-            ip: stat.ip_address,
-            city: stat.city || '未知城市',
-            region: stat.region || '未知地区',
-            country: stat.country || '未知国家',
-            loc: stat.latitude && stat.longitude ? `${stat.latitude},${stat.longitude}` : '0,0',
-            org: stat.isp || '未知运营商'
-        };
+        // 获取状态标签样式
+        function getStatusBadgeClass(date) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
         
-        // 更新位置信息
-        document.getElementById('modalLocation').textContent = 
-            `${mockData.city}, ${mockData.region}, ${mockData.country}`;
-        document.getElementById('modalIsp').textContent = mockData.org;
-        document.getElementById('modalCoords').textContent = mockData.loc;
+            const reportDate = new Date(date);
+            reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
         
-        // 初始化地图
-        initLocationMap(mockData.loc.split(','), `${mockData.city}, ${mockData.region}`);
-    }, 800);
-}
-
-// 初始化位置地图
-function initLocationMap(coords, locationName) {
-    // 检查ECharts是否已加载
-    if (typeof echarts === 'undefined') {
-        document.getElementById('locationMap').innerHTML = 
-            '<div class="error">地图库加载失败，请刷新页面</div>';
-        return;
-    }
-    
-    const locationMap = echarts.init(document.getElementById('locationMap'));
-    const [latitude, longitude] = coords;
-    
-    const option = {
-        tooltip: {
-            trigger: 'item',
-            formatter: params => {
-                return params.name === 'location' ? 
-                    `${locationName}<br/>坐标: ${latitude}, ${longitude}` : 
-                    params.name;
+            const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
+            
+            if (diffDays === 0) {
+                return 'badge-success';
+            } else if (diffDays <= 7) {
+                return 'badge-primary';
+            } else if (diffDays <= 30) {
+                return 'badge-warning';
+            } else {
+                return 'badge-danger';
             }
-        },
-        geo: {
-            map: 'world',
-            roam: true,
-            center: [longitude, latitude],
-            zoom: 4,
-            emphasis: {
-                itemStyle: {
-                    areaColor: '#4361ee'
-                }
-            },
-            itemStyle: {
-                areaColor: '#e6e6e6',
-                borderColor: '#aaa'
+        }
+        
+        // 获取状态文本
+        function getStatusText(date) {
+            // 统一用本地时区解析日期，避免 UTC 和本地时区混淆
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
+        
+            const reportDate = new Date(date);
+            reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
+        
+            const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
+        
+            if (diffDays === 0) {
+                return '今日活跃';
+            } else if (diffDays <= 7) {
+                return '7天内活跃';
+            } else if (diffDays <= 30) {
+                return '30天内活跃';
+            } else {
+                return '历史记录';
             }
-        },
-        series: [{
-            name: 'location',
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            data: [{
-                name: 'location',
-                value: [longitude, latitude, 1],
-                symbolSize: 12,
-                itemStyle: {
-                    color: '#f44336'
-                }
-            }]
-        }]
-    };
-    
-    locationMap.setOption(option);
-    
-    // 响应窗口大小变化
-    window.addEventListener('resize', function() {
-        locationMap.resize();
-    });
-}
-
-// 获取状态标签样式
-function getStatusBadgeClass(date) {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
-
-    const reportDate = new Date(date);
-    reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
-
-    const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
-    
-    if (diffDays === 0) {
-        return 'badge-success';
-    } else if (diffDays <= 7) {
-        return 'badge-primary';
-    } else if (diffDays <= 30) {
-        return 'badge-warning';
-    } else {
-        return 'badge-danger';
-    }
-}
-
-// 获取状态文本
-function getStatusText(date) {
-    // 统一用本地时区解析日期，避免 UTC 和本地时区混淆
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
-
-    const reportDate = new Date(date);
-    reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
-
-    const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
-
-    if (diffDays === 0) {
-        return '今日活跃';
-    } else if (diffDays <= 7) {
-        return '7天内活跃';
-    } else if (diffDays <= 30) {
-        return '30天内活跃';
-    } else {
-        return '历史记录';
-    }
-}
-</script>
+        }
+    </script>
 </body>
 </html>
