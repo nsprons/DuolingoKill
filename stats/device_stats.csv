@@ -12,4 +12,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","85f072daf1e3e579",1,"2025-04-14 03:13:51","21051182C","13","Xiaomi",33,"171.106.108.153","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","3e72ab716b659832",1,"2025-04-14 03:46:53","M2007J3SC","12","Xiaomi",31,"121.236.57.212","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","24f18c96d960fba6",51,"2025-04-14 03:55:27","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
-"2025-04-13","4e2b605822045ef1",2,"2025-04-13 21:55:38","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
+"2025-04-13","4e2b605822045ef1",4,"2025-04-13 22:02:44","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
