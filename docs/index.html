@@ -1193,8 +1193,104 @@
             });
         }
 
+        // 新增显示IP弹窗的函数
+        function showIpPopup(stat) {
+            const popup = document.getElementById('ipPopup');
+            const overlay = document.getElementById('ipOverlay');
+            const content = document.getElementById('ipPopupContent');
 
-        
+            // 创建临时容器用于小地图
+            const tempContainer = document.createElement('div');
+            tempContainer.style.display = 'none';
+            document.body.appendChild(tempContainer);
+
+            // 创建小地图
+            const miniMapContainer = document.createElement('div');
+            miniMapContainer.className = 'mini-map';
+            tempContainer.appendChild(miniMapContainer);
+
+            // 初始化小地图
+            const miniMap = L.map(miniMapContainer).setView(
+                [stat.latitude || 0, stat.longitude || 0],
+                stat.latitude && stat.longitude ? 10 : 2
+            );
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}/.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(miniMap);
+
+            // 如果有坐标，添加标记
+            if (stat.latitude && stat.longitude) {
+                L.marker([stat.latitude, stat.longitude], {
+                    icon: L.divIcon({
+                        className: 'mini-map-marker',
+                        html: '<div style="background-color: #4361ee; width: 20px; height: 20px; border-radius: 50%; border: 2px solid white;"></div>',
+                        iconSize: [24, 24]
+                    })
+                }).addTo(miniMap);
+            }
+
+            // 填充弹窗内容
+            content.innerHTML = `
+                <div class="ip-popup-row">
+                    <div class="ip-popup-label">IP地址:</div>
+                    <div class="ip-popup-value">${stat.ip_address || '未知'}</div>
+                </div>
+                <div class="ip-popup-row">
+                    <div class="ip-popup-label">位置:</div>
+                    <div class="ip-popup-value">
+                        ${stat.city || '未知城市'}, ${stat.region || '未知地区'}, ${stat.country || '未知国家'}
+                    </div>
+                </div>
+                <div class="ip-popup-row">
+                    <div class="ip-popup-label">坐标:</div>
+                    <div class="ip-popup-value">
+                        ${stat.latitude ? stat.latitude.toFixed(4) : '未知'}, 
+                        ${stat.longitude ? stat.longitude.toFixed(4) : '未知'}
+                    </div>
+                </div>
+                <div class="ip-popup-row">
+                    <div class="ip-popup-label">运营商:</div>
+                    <div class="ip-popup-value">${stat.isp || '未知'}</div>
+                </div>
+                <div class="ip-popup-row">
+                    <div class="ip-popup-label">设备ID:</div>
+                    <div class="ip-popup-value">${stat.device_id}</div>
+                </div>
+                <div class="ip-popup-row">
+                    <div class="ip-popup-label">开启次数:</div>
+                    <div class="ip-popup-value">${stat.open_count}</div>
+                </div>
+            `;
+
+            // 添加小地图到弹窗
+            content.appendChild(miniMapContainer);
+
+            // 显示弹窗和遮罩
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+
+            // 移除临时容器
+            document.body.removeChild(tempContainer);
+
+            // 调整地图大小以适应容器
+            setTimeout(() => {
+                miniMap.invalidateSize();
+            }, 0);
+        }
+
+        // 新增关闭弹窗的函数
+        document.getElementById('ipPopupClose').addEventListener('click', function () {
+            document.getElementById('ipPopup').style.display = 'none';
+            document.getElementById('ipOverlay').style.display = 'none';
+        });
+
+        // 点击遮罩也关闭弹窗
+        document.getElementById('ipOverlay').addEventListener('click', function () {
+            document.getElementById('ipPopup').style.display = 'none';
+            this.style.display = 'none';
+        });
+
         // 获取状态标签样式
         function getStatusBadgeClass(date) {
             const today = new Date();
