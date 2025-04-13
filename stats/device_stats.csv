@@ -34,3 +34,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","9124cca622684bd5",1,"2025-04-14 07:07:13","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3612f555f31e04ff",1,"2025-04-14 07:07:41","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","c9caf8819b491cdb",7,"2025-04-14 07:10:09","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
+"2025-04-14","df2a4a98aa04b485",2,"2025-04-14 07:15:37","M2012K11AC","13","Xiaomi",33,"112.251.30.171","China","CN","","",34.7732,113.722,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
