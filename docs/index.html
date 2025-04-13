@@ -317,8 +317,10 @@
             border-radius: var(--border-radius);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
-            max-width: 400px;
+            max-width: 600px;
             width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
             display: none;
         }
 
@@ -340,7 +342,7 @@
 
         .ip-popup-label {
             font-weight: 500;
-            width: 100px;
+            width: 120px;
             color: #666;
         }
 
@@ -367,6 +369,14 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
             display: none;
+        }
+
+        .mini-map {
+            height: 200px;
+            width: 100%;
+            margin: 15px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
         }
     </style>
 </head>
@@ -1183,11 +1193,90 @@
             });
         }
 
+        // 更新表格数据函数中的IP地址部分修改为：
+        function updateTable() {
+            const tbody = document.querySelector('#statsTable tbody');
+            tbody.innerHTML = '';
+
+            if (filteredStats.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="10" class="loading">没有找到匹配的数据</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            // 按日期降序排序
+            const sortedStats = [...filteredStats].sort((a, b) => {
+                return new Date(b.date) - new Date(a.date);
+            });
+
+            // 只显示前100条记录
+            const displayStats = sortedStats.slice(0, 100);
+
+            displayStats.forEach(stat => {
+                const tr = document.createElement('tr');
+
+                // ...其他表格单元格保持不变...
+
+                // IP地址
+                const ipTd = document.createElement('td');
+                if (stat.ip_address) {
+                    const ipLink = document.createElement('span');
+                    ipLink.className = 'ip-link';
+                    ipLink.textContent = stat.ip_address;
+                    ipLink.addEventListener('click', () => {
+                        showIpPopup(stat);
+                    });
+                    ipTd.appendChild(ipLink);
+                } else {
+                    ipTd.textContent = '--';
+                }
+                tr.appendChild(ipTd);
+
+                // ...其他表格单元格保持不变...
+
+                tbody.appendChild(tr);
+            });
+        }
+
         // 新增显示IP弹窗的函数
         function showIpPopup(stat) {
             const popup = document.getElementById('ipPopup');
             const overlay = document.getElementById('ipOverlay');
             const content = document.getElementById('ipPopupContent');
+
+            // 创建临时容器用于小地图
+            const tempContainer = document.createElement('div');
+            tempContainer.style.display = 'none';
+            document.body.appendChild(tempContainer);
+
+            // 创建小地图
+            const miniMapContainer = document.createElement('div');
+            miniMapContainer.className = 'mini-map';
+            tempContainer.appendChild(miniMapContainer);
+
+            // 初始化小地图
+            const miniMap = L.map(miniMapContainer).setView(
+                [stat.latitude || 0, stat.longitude || 0],
+                stat.latitude && stat.longitude ? 10 : 2
+            );
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}/.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(miniMap);
+
+            // 如果有坐标，添加标记
+            if (stat.latitude && stat.longitude) {
+                L.marker([stat.latitude, stat.longitude], {
+                    icon: L.divIcon({
+                        className: 'mini-map-marker',
+                        html: '<div style="background-color: #4361ee; width: 20px; height: 20px; border-radius: 50%; border: 2px solid white;"></div>',
+                        iconSize: [24, 24]
+                    })
+                }).addTo(miniMap);
+            }
 
             // 填充弹窗内容
             content.innerHTML = `
@@ -1202,15 +1291,15 @@
                     </div>
                 </div>
                 <div class="ip-popup-row">
-                    <div class="ip-popup-label">运营商:</div>
-                    <div class="ip-popup-value">${stat.isp || '未知'}</div>
-                </div>
-                <div class="ip-popup-row">
                     <div class="ip-popup-label">坐标:</div>
                     <div class="ip-popup-value">
                         ${stat.latitude ? stat.latitude.toFixed(4) : '未知'}, 
                         ${stat.longitude ? stat.longitude.toFixed(4) : '未知'}
                     </div>
+                </div>
+                <div class="ip-popup-row">
+                    <div class="ip-popup-label">运营商:</div>
+                    <div class="ip-popup-value">${stat.isp || '未知'}</div>
                 </div>
                 <div class="ip-popup-row">
                     <div class="ip-popup-label">设备ID:</div>
@@ -1220,14 +1309,22 @@
                     <div class="ip-popup-label">开启次数:</div>
                     <div class="ip-popup-value">${stat.open_count}</div>
                 </div>
-                <button class="ip-popup-close" onclick="centerMapOnIp(${stat.latitude}, ${stat.longitude})">
-                    在地图上定位
-                </button>
             `;
+
+            // 添加小地图到弹窗
+            content.appendChild(miniMapContainer);
 
             // 显示弹窗和遮罩
             popup.style.display = 'block';
             overlay.style.display = 'block';
+
+            // 移除临时容器
+            document.body.removeChild(tempContainer);
+
+            // 调整地图大小以适应容器
+            setTimeout(() => {
+                miniMap.invalidateSize();
+            }, 0);
         }
 
         // 新增关闭弹窗的函数
@@ -1241,15 +1338,6 @@
             document.getElementById('ipPopup').style.display = 'none';
             this.style.display = 'none';
         });
-
-        // 在地图上定位IP位置的函数
-        function centerMapOnIp(lat, lng) {
-            if (worldMap && lat && lng) {
-                worldMap.setView([lat, lng], 10);
-                document.getElementById('ipPopup').style.display = 'none';
-                document.getElementById('ipOverlay').style.display = 'none';
-            }
-        }
 
         // 获取状态标签样式
         function getStatusBadgeClass(date) {
