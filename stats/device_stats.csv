@@ -21,4 +21,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-20","5d3e8b2a7c9f0614",13,"2025-04-20 10:20:18","Nokia X30","12","HMD Global",32,"94.76.145.33","Finland","FI","Uusimaa","Helsinki",60.1699,24.9384,"Europe/Helsinki","Elisa"
 "2025-04-13","416ca38d0ecc026e",2,"2025-04-13 08:10:19","Pixel 7","15","Google",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-13","81632d4990e19f79",2,"2025-04-13 14:29:10","RMX3888","15","realme",35,"null","null","null","null","null",null,null,"null","null"
-"2025-04-13","24f18c96d960fba6",31,"2025-04-13 16:29:41","PJA110","13","OnePlus",33,"null","null","null","null","null",null,null,"null","null"
+"2025-04-13","24f18c96d960fba6",33,"2025-04-13 16:33:28","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
