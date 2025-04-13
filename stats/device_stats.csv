@@ -18,4 +18,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-13","4e2b605822045ef1",7,"2025-04-13 22:48:46","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","1f703d7984b774bb",1,"2025-04-14 00:00:33","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
 "2025-04-14","c9caf8819b491cdb",3,"2025-04-14 05:02:25","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
-"2025-04-14","f408942fcf786867",3,"2025-04-14 00:03:46","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
+"2025-04-14","f408942fcf786867",4,"2025-04-14 00:07:32","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
