@@ -27,6 +27,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-13","b75429cdbc1f33fe",2,"2025-04-13 18:27:21","NX721J","14","nubia",34,"66.131.200.223","Canada","CA","Quebec","Montreal",45.5365,-73.6242,"America/Toronto","VIDEOTRON"
 "2025-04-13","7b93ed4e675b3b92",1,"2025-04-13 19:27:41","21051182G","13","Xiaomi",33,"170.83.206.7","Brazil","BR","Sergipe","Estância",-11.2339,-37.4145,"America/Maceio","JF Solucoes Informatica Ltda."
 "2025-04-14","c9caf8819b491cdb",5,"2025-04-14 06:33:40","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
-"2025-04-14","b2cf5ad036aba98a",9,"2025-04-14 06:34:14","PGP110","15","OnePlus",35,"146.56.189.89","South Korea","KR","Seoul","Seoul",37.545,126.8078,"Asia/Seoul","ORACLE-BMC-31898"
 "2025-04-14","4e2b605822045ef1",3,"2025-04-14 00:35:09","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","1cdab5c2f1dd4648",3,"2025-04-14 06:36:33","Pixel 7 Pro","15","Google",35,"223.104.54.148","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","b2cf5ad036aba98a",10,"2025-04-14 06:42:55","PGP110","15","OnePlus",35,"182.32.18.7","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","Chinanet"
