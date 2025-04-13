@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>多领国杀手设备使用统计</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.6.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
         :root {
             --primary-color: #4361ee;
@@ -33,12 +33,6 @@
             --primary-color: #5e72e4;
             --secondary-color: #4a56d1;
             --accent-color: #66d9f7;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -90,11 +84,6 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -132,11 +121,6 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
         th, td {
             padding: 12px 15px;
             text-align: left;
@@ -151,36 +135,12 @@
             top: 0;
         }
 
-        tr:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
         .badge {
             display: inline-block;
             padding: 3px 8px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
-        }
-
-        .badge-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .badge-success {
-            background-color: var(--success-color);
-            color: white;
-        }
-
-        .badge-warning {
-            background-color: var(--warning-color);
-            color: white;
-        }
-
-        .badge-danger {
-            background-color: var(--danger-color);
-            color: white;
         }
 
         .loading {
@@ -213,21 +173,6 @@
             display: flex;
             flex-direction: column;
             min-width: 200px;
-        }
-
-        .filter-label {
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            color: #6c757d;
-        }
-
-        select, input {
-            padding: 8px 12px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            font-family: inherit;
-            background-color: var(--light-color);
-            color: var(--dark-color);
         }
 
         .map-container {
@@ -279,49 +224,10 @@
             font-family: monospace;
         }
 
-        /* 新增移动端优化样式 */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 8px;
-            }
-            
-            .chart-container {
-                height: 180px !important;
-            }
-            
-            .card {
-                padding: 12px;
-                margin: 0 -8px;
-            }
-            
-            table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-            
-            .filters {
-                gap: 8px;
-                padding: 12px;
-            }
-            
-            .filter-group {
-                min-width: auto;
-                width: 100%;
-            }
-            
-            .card-value {
-                font-size: 1.4rem;
-            }
-        }
-
+        /* 移动端优化 */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
-            }
-            
-            h1 {
-                font-size: 1.6rem;
             }
             
             .dashboard {
@@ -336,10 +242,6 @@
             th, td {
                 padding: 8px 10px;
                 font-size: 0.85rem;
-            }
-            
-            .card-title {
-                font-size: 1rem;
             }
         }
     </style>
@@ -357,9 +259,6 @@
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button" role="tab" aria-controls="map" aria-selected="false">地理位置</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="false">详细数据</button>
             </li>
         </ul>
         
@@ -394,13 +293,6 @@
                         <label class="filter-label">国家</label>
                         <select id="country">
                             <option value="all">全部国家</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label class="filter-label">地区</label>
-                        <select id="region">
-                            <option value="all">全部地区</option>
                         </select>
                     </div>
                     
@@ -440,36 +332,6 @@
                             <canvas id="androidChart"></canvas>
                         </div>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">地理位置分布</span>
-                            <span class="card-value" id="locationsCount">--</span>
-                        </div>
-                        <div class="chart-container">
-                            <canvas id="geoChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">今日开启次数</span>
-                            <span class="card-value" id="todayOpens">--</span>
-                        </div>
-                        <div class="chart-container">
-                            <canvas id="todayChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">今日活跃设备</span>
-                            <span class="card-value" id="todayDevices">--</span>
-                        </div>
-                        <div class="chart-container">
-                            <canvas id="todayDevicesChart"></canvas>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="card">
@@ -481,30 +343,6 @@
                     </div>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">最常用设备</span>
-                        <span class="card-value" id="topDevice">--</span>
-                    </div>
-                    <div class="chart-container" style="height: 350px;">
-                        <canvas id="topDevicesChart"></canvas>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-pane fade" id="map" role="tabpanel" aria-labelledby="map-tab">
-                <div class="map-container" id="mapContainer"></div>
-                <div class="card mt-3">
-                    <div class="card-header">
-                        <span class="card-title">地理位置分布</span>
-                    </div>
-                    <div class="chart-container" style="height: 350px;">
-                        <canvas id="geoDistributionChart"></canvas>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
                 <div class="data-table">
                     <table id="statsTable">
                         <thead>
@@ -514,21 +352,22 @@
                                 <th>开启次数</th>
                                 <th>设备型号</th>
                                 <th>Android版本</th>
-                                <th>制造商</th>
-                                <th>位置</th>
                                 <th>IP地址</th>
-                                <th>坐标</th>
-                                <th>报告时间</th>
+                                <th>位置</th>
                                 <th>状态</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="11" class="loading">数据加载中...</td>
+                                <td colspan="8" class="loading">数据加载中...</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+            
+            <div class="tab-pane fade" id="map" role="tabpanel" aria-labelledby="map-tab">
+                <div class="map-container" id="mapContainer"></div>
             </div>
         </div>
     </div>
@@ -537,7 +376,535 @@
         <i class="fas fa-moon"></i>
     </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="http://raw.githack.com/nspron/DuolingoKill/main/docs/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 全局变量
+            let allStats = [];
+            let filteredStats = [];
+            let deviceModels = new Set();
+            let androidVersions = new Set();
+            let countries = new Set();
+            let isDarkMode = false;
+            let map;
+            
+            // 初始化图表
+            const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
+            const devicesChart = initDoughnutChart('devicesChart', '设备分布');
+            const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
+            const trendChart = initLineChart('trendChart', '设备使用趋势');
+            
+            // 加载数据
+            loadData();
+            
+            // 事件监听
+            setupEventListeners();
+            
+            // 初始化主题
+            initTheme();
+            
+            // 初始化地图
+            initMap('mapContainer');
+
+            function loadData() {
+                // 显示加载状态
+                document.querySelector('#statsTable tbody').innerHTML = `
+                    <tr>
+                        <td colspan="8" class="loading">数据加载中...</td>
+                    </tr>
+                `;
+                
+                // 尝试从多个数据源加载
+                const dataSources = [
+                    'https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv',
+                    'device_stats.csv' // 本地备用文件
+                ];
+                
+                let currentSourceIndex = 0;
+                
+                const tryLoadData = () => {
+                    if (currentSourceIndex >= dataSources.length) {
+                        showError('所有数据源加载失败，请稍后再试');
+                        return;
+                    }
+                    
+                    fetch(dataSources[currentSourceIndex])
+                        .then(response => {
+                            if (!response.ok) throw new Error('网络响应不正常');
+                            return response.text();
+                        })
+                        .then(data => {
+                            allStats = parseCSV(data);
+                            processStats(allStats);
+                            applyFilters();
+                        })
+                        .catch(error => {
+                            console.error(`从 ${dataSources[currentSourceIndex]} 加载数据失败:`, error);
+                            currentSourceIndex++;
+                            tryLoadData();
+                        });
+                };
+                
+                tryLoadData();
+            }
+            
+            function parseCSV(text) {
+                const rows = text.split('\n').filter(row => row.trim() !== '');
+                const headers = rows.shift().split(',').map(h => h.replace(/^"|"$/g, ''));
+                
+                return rows.map(row => {
+                    const values = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
+                    const entry = {};
+                    headers.forEach((header, i) => {
+                        entry[header] = values[i] ? values[i].replace(/^"|"$/g, '') : '';
+                        
+                        // 转换数字字段
+                        if (['open_count', 'sdk_version', 'latitude', 'longitude'].includes(header)) {
+                            entry[header] = parseFloat(entry[header]) || 0;
+                        }
+                    });
+                    return entry;
+                }).filter(entry => entry.date && entry.device_id && entry.open_count);
+            }
+            
+            function processStats(stats) {
+                stats.forEach(stat => {
+                    if (stat.device_model) deviceModels.add(stat.device_model);
+                    if (stat.android_version) androidVersions.add(stat.android_version);
+                    if (stat.country) countries.add(stat.country);
+                });
+                
+                fillFilterOptions();
+            }
+            
+            function setupEventListeners() {
+                // 筛选器
+                document.getElementById('dateRange').addEventListener('change', applyFilters);
+                document.getElementById('deviceModel').addEventListener('change', applyFilters);
+                document.getElementById('androidVersion').addEventListener('change', applyFilters);
+                document.getElementById('country').addEventListener('change', applyFilters);
+                document.getElementById('deviceSearch').addEventListener('input', applyFilters);
+                
+                // 主题切换
+                document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            }
+            
+            function initTheme() {
+                isDarkMode = localStorage.getItem('darkMode') === 'true';
+                applyTheme();
+            }
+            
+            function toggleTheme() {
+                isDarkMode = !isDarkMode;
+                localStorage.setItem('darkMode', isDarkMode);
+                applyTheme();
+            }
+            
+            function applyTheme() {
+                document.body.classList.toggle('dark-mode', isDarkMode);
+                document.getElementById('themeToggle').innerHTML = isDarkMode ? 
+                    '<i class="fas fa-sun"></i>' : 
+                    '<i class="fas fa-moon"></i>';
+                
+                // 更新图表主题
+                updateCharts();
+            }
+            
+            function fillFilterOptions() {
+                fillSelect('deviceModel', deviceModels);
+                fillSelect('androidVersion', androidVersions, v => `Android ${v}`);
+                fillSelect('country', countries);
+            }
+            
+            function fillSelect(elementId, values, formatter = v => v) {
+                const select = document.getElementById(elementId);
+                select.innerHTML = '<option value="all">全部</option>';
+                
+                Array.from(values).sort().forEach(value => {
+                    if (!value) return;
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = formatter(value);
+                    select.appendChild(option);
+                });
+            }
+            
+            function applyFilters() {
+                const dateRange = document.getElementById('dateRange').value;
+                const deviceModel = document.getElementById('deviceModel').value;
+                const androidVersion = document.getElementById('androidVersion').value;
+                const country = document.getElementById('country').value;
+                const deviceSearch = document.getElementById('deviceSearch').value.toLowerCase();
+                
+                // 计算日期范围
+                let minDate = null;
+                if (dateRange !== 'all') {
+                    const days = parseInt(dateRange);
+                    minDate = new Date();
+                    minDate.setDate(minDate.getDate() - days);
+                }
+                
+                // 筛选数据
+                filteredStats = allStats.filter(stat => {
+                    // 日期筛选
+                    if (minDate && new Date(stat.date) < minDate) return false;
+                    
+                    // 设备型号筛选
+                    if (deviceModel !== 'all' && stat.device_model !== deviceModel) return false;
+                    
+                    // Android版本筛选
+                    if (androidVersion !== 'all' && stat.android_version !== androidVersion) return false;
+                    
+                    // 国家筛选
+                    if (country !== 'all' && stat.country !== country) return false;
+                    
+                    // 设备ID搜索
+                    if (deviceSearch && !stat.device_id.toLowerCase().includes(deviceSearch)) return false;
+                    
+                    return true;
+                });
+                
+                updateUI();
+            }
+            
+            function updateUI() {
+                updateCharts();
+                updateTable();
+                updateMap();
+            }
+            
+            function updateCharts() {
+                const today = new Date().toISOString().split('T')[0];
+                
+                // 聚合数据
+                const dailyStats = {};
+                const deviceCounts = {};
+                const versionCounts = {};
+                let totalOpens = 0;
+                let uniqueDevices = new Set();
+                
+                filteredStats.forEach(stat => {
+                    // 总开启次数
+                    totalOpens += stat.open_count || 0;
+                    
+                    // 唯一设备
+                    uniqueDevices.add(stat.device_id);
+                    
+                    // 每日统计
+                    if (!dailyStats[stat.date]) dailyStats[stat.date] = 0;
+                    dailyStats[stat.date] += stat.open_count || 0;
+                    
+                    // 设备统计
+                    if (!deviceCounts[stat.device_model]) deviceCounts[stat.device_model] = 0;
+                    deviceCounts[stat.device_model] += stat.open_count || 0;
+                    
+                    // 版本统计
+                    if (!versionCounts[stat.android_version]) versionCounts[stat.android_version] = 0;
+                    versionCounts[stat.android_version] += stat.open_count || 0;
+                });
+                
+                // 更新仪表板数字
+                document.getElementById('totalOpens').textContent = totalOpens.toLocaleString();
+                document.getElementById('uniqueDevices').textContent = uniqueDevices.size.toLocaleString();
+                document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length.toLocaleString();
+                
+                // 排序日期
+                const dates = Object.keys(dailyStats).sort();
+                
+                // 更新总开启次数图表
+                updateBarChart(totalOpensChart, dates, dates.map(date => dailyStats[date]));
+                
+                // 更新设备分布图表
+                const topDevices = getTopItems(deviceCounts, 5);
+                updateDoughnutChart(devicesChart, topDevices.labels, topDevices.values);
+                
+                // 更新Android版本图表
+                const topVersions = getTopItems(versionCounts, 5, v => `Android ${v}`);
+                updateDoughnutChart(androidChart, topVersions.labels, topVersions.values);
+                
+                // 更新趋势图表
+                updateLineChart(trendChart, dates, dates.map(date => dailyStats[date]));
+            }
+            
+            function getTopItems(items, limit, formatter = v => v) {
+                return Object.entries(items)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, limit)
+                    .reduce((acc, [key, value]) => {
+                        acc.labels.push(formatter(key) || '未知');
+                        acc.values.push(value);
+                        return acc;
+                    }, { labels: [], values: [] });
+            }
+            
+            function updateTable() {
+                const tbody = document.querySelector('#statsTable tbody');
+                tbody.innerHTML = '';
+                
+                if (filteredStats.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="8" class="loading">没有找到匹配的数据</td></tr>';
+                    return;
+                }
+                
+                // 按日期降序排序
+                const sortedStats = [...filteredStats].sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                // 显示前100条记录
+                sortedStats.slice(0, 100).forEach(stat => {
+                    const tr = document.createElement('tr');
+                    
+                    // 日期
+                    addTableCell(tr, stat.date);
+                    
+                    // 设备ID
+                    const deviceIdTd = document.createElement('td');
+                    deviceIdTd.innerHTML = `<span class="text-monospace">${stat.device_id.slice(0, 8)}...</span>`;
+                    deviceIdTd.title = stat.device_id;
+                    tr.appendChild(deviceIdTd);
+                    
+                    // 开启次数
+                    addTableCell(tr, stat.open_count);
+                    
+                    // 设备型号
+                    addTableCell(tr, stat.device_model || '--');
+                    
+                    // Android版本
+                    addTableCell(tr, stat.android_version ? `Android ${stat.android_version}` : '--');
+                    
+                    // IP地址
+                    const ipTd = document.createElement('td');
+                    ipTd.innerHTML = stat.ip_address ? `
+                        <span class="text-monospace">${stat.ip_address}</span>
+                        <small class="text-muted d-block">${stat.isp || '未知ISP'}</small>
+                    ` : '--';
+                    tr.appendChild(ipTd);
+                    
+                    // 位置
+                    const locationTd = document.createElement('td');
+                    locationTd.innerHTML = `
+                        <div>${stat.city || '--'}</div>
+                        <small class="text-muted">${[stat.region, stat.country].filter(Boolean).join(', ') || '--'}</small>
+                    `;
+                    tr.appendChild(locationTd);
+                    
+                    // 状态
+                    const statusTd = document.createElement('td');
+                    const badge = document.createElement('span');
+                    badge.className = 'badge ' + getStatusBadgeClass(stat.date);
+                    badge.textContent = getStatusText(stat.date);
+                    statusTd.appendChild(badge);
+                    tr.appendChild(statusTd);
+                    
+                    tbody.appendChild(tr);
+                });
+            }
+            
+            function addTableCell(row, content) {
+                const td = document.createElement('td');
+                td.textContent = content !== undefined && content !== null ? content : '--';
+                row.appendChild(td);
+            }
+            
+            function initMap(containerId) {
+                map = L.map(containerId).setView([30.589, 114.2681], 5);
+                
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+            }
+            
+            function updateMap() {
+                // 清除现有标记
+                map.eachLayer(layer => {
+                    if (layer instanceof L.Marker) {
+                        map.removeLayer(layer);
+                    }
+                });
+                
+                // 添加新标记
+                filteredStats.forEach(stat => {
+                    if (stat.latitude && stat.longitude) {
+                        const marker = L.marker([stat.latitude, stat.longitude]).addTo(map);
+                        
+                        let popupContent = `
+                            <div style="min-width: 200px;">
+                                <strong>设备ID:</strong> ${stat.device_id}<br>
+                                <strong>开启次数:</strong> ${stat.open_count}<br>
+                                <strong>位置:</strong> ${stat.city || '未知'}, ${stat.region || '未知'}, ${stat.country || '未知'}<br>
+                                <strong>IP:</strong> ${stat.ip_address || '未知'}<br>
+                                <strong>时间:</strong> ${stat.report_time || '未知'}
+                        `;
+                        
+                        if (stat.isp) {
+                            popupContent += `<br><strong>ISP:</strong> ${stat.isp}`;
+                        }
+                        
+                        popupContent += `</div>`;
+                        
+                        marker.bindPopup(popupContent);
+                    }
+                });
+                
+                // 调整视图以显示所有标记
+                if (filteredStats.some(stat => stat.latitude && stat.longitude)) {
+                    const markers = filteredStats
+                        .filter(stat => stat.latitude && stat.longitude)
+                        .map(stat => [stat.latitude, stat.longitude]);
+                    
+                    const bounds = L.latLngBounds(markers);
+                    map.fitBounds(bounds, { padding: [50, 50] });
+                }
+            }
+            
+            function getStatusBadgeClass(date) {
+                const diffDays = getDaysSinceReport(date);
+                
+                if (diffDays === 0) return 'badge-success';
+                if (diffDays <= 7) return 'badge-primary';
+                if (diffDays <= 30) return 'badge-warning';
+                return 'badge-danger';
+            }
+            
+            function getStatusText(date) {
+                const diffDays = getDaysSinceReport(date);
+                
+                if (diffDays === 0) return '今日活跃';
+                if (diffDays <= 7) return '7天内活跃';
+                if (diffDays <= 30) return '30天内活跃';
+                return '历史记录';
+            }
+            
+            function getDaysSinceReport(date) {
+                if (!date) return Infinity;
+                
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                const reportDate = new Date(date);
+                reportDate.setHours(0, 0, 0, 0);
+                
+                return Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
+            }
+            
+            function showError(message) {
+                const tbody = document.querySelector('#statsTable tbody');
+                tbody.innerHTML = `<tr><td colspan="8" class="error">${message}</td></tr>`;
+            }
+            
+            // 图表初始化函数
+            function initBarChart(canvasId, label, color) {
+                return new Chart(document.getElementById(canvasId), {
+                    type: 'bar',
+                    data: { labels: [], datasets: [{ label, data: [], backgroundColor: color }] },
+                    options: getChartOptions('bar')
+                });
+            }
+            
+            function initDoughnutChart(canvasId, label) {
+                return new Chart(document.getElementById(canvasId), {
+                    type: 'doughnut',
+                    data: { labels: [], datasets: [{ label, data: [], backgroundColor: getChartColors() }] },
+                    options: getChartOptions('doughnut')
+                });
+            }
+            
+            function initLineChart(canvasId, label) {
+                return new Chart(document.getElementById(canvasId), {
+                    type: 'line',
+                    data: { labels: [], datasets: [{ label, data: [], fill: true, tension: 0.3 }] },
+                    options: getChartOptions('line')
+                });
+            }
+            
+            function getChartOptions(type) {
+                const isDark = isDarkMode;
+                const textColor = isDark ? '#f8f9fa' : '#212529';
+                const gridColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)';
+                
+                const commonOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: textColor }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => `${ctx.dataset.label}: ${ctx.raw.toLocaleString()}`
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            grid: { color: gridColor },
+                            ticks: { color: textColor }
+                        },
+                        x: { 
+                            grid: { display: false },
+                            ticks: { color: textColor }
+                        }
+                    }
+                };
+                
+                if (type === 'doughnut') {
+                    return {
+                        ...commonOptions,
+                        cutout: '70%',
+                        plugins: {
+                            ...commonOptions.plugins,
+                            tooltip: {
+                                callbacks: {
+                                    label: ctx => {
+                                        const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percent = Math.round((ctx.raw / total) * 100);
+                                        return `${ctx.label}: ${ctx.raw.toLocaleString()} (${percent}%)`;
+                                    }
+                                }
+                            }
+                        }
+                    };
+                }
+                
+                return commonOptions;
+            }
+            
+            function getChartColors() {
+                return [
+                    'rgba(67, 97, 238, 0.7)',
+                    'rgba(76, 201, 240, 0.7)',
+                    'rgba(63, 55, 201, 0.7)',
+                    'rgba(108, 117, 125, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)'
+                ];
+            }
+            
+            // 图表更新函数
+            function updateBarChart(chart, labels, data) {
+                chart.data.labels = labels;
+                chart.data.datasets[0].data = data;
+                chart.update();
+            }
+            
+            function updateDoughnutChart(chart, labels, data) {
+                chart.data.labels = labels;
+                chart.data.datasets[0].data = data;
+                chart.data.datasets[0].backgroundColor = getChartColors().slice(0, labels.length);
+                chart.update();
+            }
+            
+            function updateLineChart(chart, labels, data) {
+                const isDark = isDarkMode;
+                chart.data.labels = labels;
+                chart.data.datasets[0].data = data;
+                chart.data.datasets[0].backgroundColor = isDark ? 'rgba(67, 97, 238, 0.2)' : 'rgba(67, 97, 238, 0.1)';
+                chart.data.datasets[0].borderColor = isDark ? 'rgba(76, 201, 240, 1)' : 'rgba(67, 97, 238, 1)';
+                chart.update();
+            }
+        });
+    </script>
 </body>
 </html>
