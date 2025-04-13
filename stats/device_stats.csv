@@ -23,3 +23,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","2648aed174b231b0",2,"2025-04-14 05:17:02","SM-S9280","13","samsung",33,"220.200.108.43","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","446ac5e65e0e9905",15,"2025-04-14 05:26:01","22011211C","13","Xiaomi",33,"39.144.220.119","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-13","c650a577f8eba164",2,"2025-04-13 22:26:31","SM-A515F","13","samsung",33,"41.249.183.30","Morocco","MA","El-Jadida","El Jadida",33.2558,-8.5015,"Africa/Casablanca","MT-MPLS"
+"2025-04-14","b2cf5ad036aba98a",2,"2025-04-14 05:27:06","PGP110","15","OnePlus",35,"146.56.189.89","South Korea","KR","Seoul","Seoul",37.545,126.8078,"Asia/Seoul","ORACLE-BMC-31898"
