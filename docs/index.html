@@ -694,7 +694,6 @@
         }
         
         // 填充筛选器选项
-        //测试
         function fillFilterOptions() {
             const deviceModelSelect = document.getElementById('deviceModel');
             const androidVersionSelect = document.getElementById('androidVersion');
@@ -703,8 +702,7 @@
             
             // 添加设备型号选项
             deviceModels.forEach(model => {
-                //测试
-            const option = document.createElement('option');
+                const option = document.createElement('option');
                 option.value = model;
                 option.textContent = model;
                 deviceModelSelect.appendChild(option);
@@ -771,7 +769,7 @@
                 
                 // 地区筛选
                 if (region !== 'all') {
-                    const location = `${stat.city}, ${stat.region}, ${stat.country}`;
+                    const location = `${stat.city || ''}, ${stat.region || ''}, ${stat.country || ''}`.trim();
                     if (location !== region) {
                         return false;
                     }
@@ -1118,7 +1116,6 @@
             if (                markers);
                 worldMap.fitBounds(group.getBounds());
             }
-        }
         
         // 更新表格数据
         function updateTable() {
