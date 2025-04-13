@@ -35,3 +35,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","c650a577f8eba164",1,"2025-04-14 00:24:24","SM-A515F","13","samsung",33,"41.249.183.30","Morocco","MA","El-Jadida","El Jadida",33.2558,-8.5015,"Africa/Casablanca","MT-MPLS"
 "2025-04-13","b75429cdbc1f33fe",3,"2025-04-13 19:28:39","NX721J","14","nubia",34,"184.163.69.12","Canada","CA","Quebec","Montreal",45.5365,-73.6242,"America/Toronto","VIDEOTRON"
 "2025-04-14","c9caf8819b491cdb",9,"2025-04-14 07:29:14","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
+"2025-04-14","218f9b0d422381e5",1,"2025-04-14 08:31:29","CPH2653","15","OnePlus",35,"59.158.105.193","Japan","JP","Tokyo","Tokyo",35.6837,139.6805,"Asia/Tokyo","ARTERIA Networks Corporation"
