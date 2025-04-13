@@ -15,4 +15,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","5459cfd130507c08",1,"2025-04-14 04:10:20","M2101K6G","15","Xiaomi",35,"49.217.120.12","Taiwan","TW","Taichung City","Taichung",24.144,120.6844,"Asia/Taipei","Taiwan Mobile Co., Ltd."
 "2025-04-13","d15e9912ab4338e6",1,"2025-04-13 15:23:34","21061110AG","13","Xiaomi",33,"179.60.137.164","Ecuador","EC","Guayas","Guayaquil",-2.1978,-79.8764,"America/Guayaquil","Universidad de Guayaquil"
 "2025-04-13","4e2b605822045ef1",6,"2025-04-13 22:31:08","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
-"2025-04-13","b3904204b82c8fe4",1,"2025-04-13 23:38:05","ASUS_I01WD","13","samsung",33,"185.208.101.157","Türkiye","TR","Kilis","Kilis",36.7143,37.1123,"Europe/Istanbul","Guneydogu Telekom int.bil. ve ilt. hiz. tic. ltd. sti."
+"2025-04-13","b3904204b82c8fe4",2,"2025-04-13 23:38:45","ASUS_I01WD","13","samsung",33,"185.208.101.157","Türkiye","TR","Kilis","Kilis",36.7143,37.1123,"Europe/Istanbul","Guneydogu Telekom int.bil. ve ilt. hiz. tic. ltd. sti."
