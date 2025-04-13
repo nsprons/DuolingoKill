@@ -624,12 +624,11 @@
         // 初始化地图
         function initMap() {
             worldMap = L.map('worldMap').setView([20, 0], 2);
-            
-            L.tileLayer('http://online{s}.map.bdimg.com/onlinelabel/?qt=tile&x={x}&y={y}&z={z}&styles=pl&scaler=1&p=1', {
-                subdomains: ['0', '1', '2'],
-                attribution: '&copy; <a href="https://map.baidu.com/">百度地图</a>'
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(worldMap);
-        
+
             // 初始化标记聚类
             markerCluster = L.markerClusterGroup();
             worldMap.addLayer(markerCluster);
@@ -1354,10 +1353,9 @@
                         const zoomLevel = validCoords ? 10 : 2;
 
                         const miniMap = L.map('miniMapContainer').setView([centerLat, centerLng], zoomLevel);
-                        
-                        L.tileLayer('http://online{s}.map.bdimg.com/onlinelabel/?qt=tile&x={x}&y={y}&z={z}&styles=pl&scaler=1&p=1', {
-                            subdomains: ['0', '1', '2'],
-                            attribution: '&copy; <a href="https://map.baidu.com/">百度地图</a>'
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         }).addTo(miniMap);
 
                         if (validCoords) {
