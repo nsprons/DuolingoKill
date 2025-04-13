@@ -459,91 +459,182 @@
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        // 全局数据变量
-        let allStats = [];
-        let filteredStats = [];
-        let deviceModels = new Set();
-        let androidVersions = new Set();
-        let regions = new Set();
-        let isps = new Set();
-        let worldMap = null;
-        let markers = [];
-        
-        // 初始化图表
-        const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
-        const devicesChart = initDoughnutChart('devicesChart', '设备分布');
-        const regionChart = initDoughnutChart('regionChart', '地区分布');
-        const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
-        const ispChart = initDoughnutChart('ispChart', '运营商分布');
-        const newDevicesChart = initBarChart('newDevicesChart', '每日新增设备', 'rgba(76, 201, 240, 0.7)');
-        const trendChart = initLineChart('trendChart', '设备使用趋势');
-        
-        // 初始化地图
-        function initMap() {
-            worldMap = L.map('worldMap').setView([20, 0], 2);
-            
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(worldMap);
-        }
-        
-        // 加载数据
-        fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv')
-            .then(response => {
-                if (!response.ok) throw new Error('网络响应不正常');
-                return response.text();
-            })
-            .then(data => {
-                // 改进的CSV解析函数
-                const parseCSV = (text) => {
-                    const rows = text.split('\n').filter(row => row.trim() !== '');
-                    const headers = rows.shift().split(',').map(h => h.replace(/^"|"$/g, ''));
-                    
-                    return rows.map(row => {
-                        // 使用正则表达式匹配CSV字段（处理带引号的字段）
-                        const values = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
-                        const entry = {};
-                        headers.forEach((header, i) => {
-                            // 移除字段值的首尾引号（如果存在）
-                            entry[header] = values[i] ? values[i].replace(/^"|"$/g, '') : '';
-                        });
-                        return entry;
-                    });
-                };
+// 全局数据变量
+let allStats = [];
+let filteredStats = [];
+let deviceModels = new Set();
+let androidVersions = new Set();
+let regions = new Set();
+let isps = new Set();
+let worldMap = null;
+let markers = [];
 
-                // 解析CSV数据
-                allStats = parseCSV(data).filter(entry => 
-                    entry.date && entry.device_id && entry.open_count
-                );
-                
-                // 收集设备型号、Android版本、地区和运营商
-                allStats.forEach(stat => {
-                    if (stat.device_model) deviceModels.add(stat.device_model);
-                    if (stat.android_version) androidVersions.add(stat.android_version);
-                    if (stat.country && stat.region && stat.city) {
-                        regions.add(`${stat.city}, ${stat.region}, ${stat.country}`);
-                    }
-                    if (stat.isp) isps.add(stat.isp);
+// 初始化图表
+const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
+const devicesChart = initDoughnutChart('devicesChart', '设备分布');
+const regionChart = initDoughnutChart('regionChart', '地区分布');
+const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
+const ispChart = initDoughnutChart('ispChart', '运营商分布');
+const newDevicesChart = initBarChart('newDevicesChart', '每日新增设备', 'rgba(76, 201, 240, 0.7)');
+const trendChart = initLineChart('trendChart', '设备使用趋势');
+
+// 初始化地图
+function initMap() {
+    worldMap = L.map('worldMap').setView([20, 0], 2);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(worldMap);
+}
+
+// 改进的CSV解析函数
+function parseCSV(text) {
+    const rows = text.split('\n').filter(row => row.trim() !== '');
+    if (rows.length < 2) throw new Error('CSV文件内容不足');
+    
+    const headers = rows.shift().split(',').map(h => h.replace(/^"|"$/g, ''));
+    
+    return rows.map(row => {
+        // 处理可能包含逗号的带引号字段
+        const values = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
+        const entry = {};
+        headers.forEach((header, i) => {
+            // 确保有对应的值，没有则设为空字符串
+            entry[header] = values[i] ? values[i].replace(/^"|"$/g, '') : '';
+        });
+        return entry;
+    });
+}
+
+// 加载数据的主函数
+function loadData() {
+    showLoading();
+    
+    // 主要数据源
+    const primaryDataSource = 'https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv';
+    
+    // 备用数据源
+    const fallbackDataSource = './data/device_stats.csv';
+    
+    // 尝试从主要源加载
+    fetchWithTimeout(primaryDataSource, { timeout: 5000 })
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP错误! 状态: ${response.status}`);
+            return response.text();
+        })
+        .then(data => {
+            processData(data);
+        })
+        .catch(error => {
+            console.warn('主要数据源加载失败，尝试备用源:', error);
+            // 尝试从备用源加载
+            return fetchWithTimeout(fallbackDataSource, { timeout: 3000 })
+                .then(response => {
+                    if (!response.ok) throw new Error(`备用源HTTP错误! 状态: ${response.status}`);
+                    return response.text();
+                })
+                .then(processData)
+                .catch(error => {
+                    console.error('所有数据源加载失败，使用模拟数据', error);
+                    loadSampleData();
                 });
-                
-                // 填充筛选器选项
-                fillFilterOptions();
-                
-                // 初始化地图
-                initMap();
-                
-                // 应用初始筛选
-                applyFilters();
-            })
-            .catch(error => {
-                console.error('加载数据失败:', error);
-                document.querySelector('#statsTable tbody').innerHTML = `
-                    <tr>
-                        <td colspan="10" class="error">数据加载失败，请稍后再试</td>
-                    </tr>
-                `;
-            });
-        
+        });
+}
+
+// 带超时的fetch封装
+function fetchWithTimeout(url, options = {}) {
+    const { timeout = 8000 } = options;
+    
+    const controller = new AbortController();
+    const { signal } = controller;
+    
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    
+    return fetch(url, { ...options, signal })
+        .then(response => {
+            clearTimeout(timeoutId);
+            return response;
+        })
+        .catch(error => {
+            clearTimeout(timeoutId);
+            throw error;
+        });
+}
+
+// 处理数据函数
+function processData(data) {
+    if (!data || data.trim().length === 0) {
+        throw new Error('获取的数据为空');
+    }
+    
+    // 解析CSV数据
+    allStats = parseCSV(data).filter(entry => 
+        entry.date && entry.device_id && entry.open_count
+    );
+    
+    if (allStats.length === 0) {
+        throw new Error('没有有效的统计数据');
+    }
+    
+    // 收集设备型号、Android版本、地区和运营商
+    allStats.forEach(stat => {
+        if (stat.device_model) deviceModels.add(stat.device_model);
+        if (stat.android_version) androidVersions.add(stat.android_version);
+        if (stat.country && stat.region && stat.city) {
+            regions.add(`${stat.city}, ${stat.region}, ${stat.country}`);
+        }
+        if (stat.isp) isps.add(stat.isp);
+    });
+    
+    // 填充筛选器选项
+    fillFilterOptions();
+    
+    // 初始化地图
+    initMap();
+    
+    // 应用初始筛选
+    applyFilters();
+}
+
+// 加载模拟数据
+function loadSampleData() {
+    const sampleData = `date,device_id,open_count,device_model,android_version,city,region,country,ip_address,isp,latitude,longitude
+"2023-01-01","device001",15,"Xiaomi Mi 10","10","北京","北京","中国","192.168.1.1","China Mobile","39.9042","116.4074"
+"2023-01-02","device002",8,"Huawei P40","11","上海","上海","中国","192.168.1.2","China Telecom","31.2304","121.4737"
+"2023-01-03","device003",12,"Samsung Galaxy S21","11","广州","广东","中国","192.168.1.3","China Unicom","23.1291","113.2644"
+"2023-01-04","device004",5,"Oppo Reno 5","10","深圳","广东","中国","192.168.1.4","China Mobile","22.5431","114.0579"
+"2023-01-05","device005",20,"Vivo X60","11","成都","四川","中国","192.168.1.5","China Telecom","30.5728","104.0665"`;
+    
+    try {
+        processData(sampleData);
+    } catch (error) {
+        console.error('模拟数据处理失败:', error);
+        showError('数据加载失败，请检查网络连接或稍后再试');
+    }
+}
+
+// 显示加载状态
+function showLoading() {
+    document.querySelector('#statsTable tbody').innerHTML = `
+        <tr>
+            <td colspan="10" class="loading">数据加载中...</td>
+        </tr>
+    `;
+}
+
+// 显示错误信息
+function showError(message) {
+    document.querySelector('#statsTable tbody').innerHTML = `
+        <tr>
+            <td colspan="10" class="error">${message}</td>
+        </tr>
+    `;
+}
+
+// 在DOM加载完成后执行
+document.addEventListener('DOMContentLoaded', function() {
+    loadData();
+    
         // 筛选器事件监听
         document.getElementById('dateRange').addEventListener('change', applyFilters);
         document.getElementById('deviceModel').addEventListener('change', applyFilters);
