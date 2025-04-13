@@ -1,3 +1,3 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp
 "2025-04-13","d756375c547a53b1",5,"2025-04-13 20:33:16","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"null","null","null","null","null",null,null,"null","null"
-"2025-04-13","24f18c96d960fba6",-85,"2025-04-13 21:13:50","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-13","24f18c96d960fba6",-84,"2025-04-13 21:24:42","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
