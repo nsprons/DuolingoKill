@@ -6,3 +6,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","1e139f26a9114a0f",1,"2025-04-14 00:16:16","2304FPN6DC","15","Xiaomi",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","24f18c96d960fba6",2,"2025-04-14 01:00:08","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","81632d4990e19f79",1,"2025-04-14 01:13:10","RMX3888","15","realme",35,"null","null","null","null","null",null,null,"null","null"
+"2025-04-13","a7acf0af8e2f44b8",3,"2025-04-13 19:23:04","M2007J3SG","15","Xiaomi",35,"90.116.57.200","France","FR","Alpes-Maritimes","Nice",43.7045,7.2597,"Europe/Paris","Orange"
