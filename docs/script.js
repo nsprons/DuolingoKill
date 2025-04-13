@@ -25,9 +25,6 @@ function initApp() {
     // 初始化事件监听
     initEventListeners();
     
-    // 初始化地图容器
-    initMapContainer();
-    
     // 检查本地存储中的主题设置
     checkThemePreference();
 }
@@ -61,7 +58,7 @@ function loadData() {
             console.error('加载数据失败:', error);
             document.querySelector('#statsTable tbody').innerHTML = `
                 <tr>
-                    <td colspan="10" class="error">数据加载失败，请稍后再试</td>
+                    <td colspan="8" class="error">数据加载失败，请稍后再试</td>
                 </tr>
             `;
         });
@@ -91,29 +88,9 @@ function initEventListeners() {
     document.getElementById('deviceModel').addEventListener('change', applyFilters);
     document.getElementById('androidVersion').addEventListener('change', applyFilters);
     document.getElementById('deviceSearch').addEventListener('input', applyFilters);
-    document.getElementById('ipSearch').addEventListener('input', applyFilters);
-    document.getElementById('countryFilter').addEventListener('change', applyFilters);
     
     // 主题切换按钮
-    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-    
-    // IP弹窗关闭按钮
-    document.getElementById('ipModalClose').addEventListener('click', () => {
-        document.getElementById('ipModal').style.display = 'none';
-    });
-    
-    // 点击地图容器外关闭弹窗
-    window.addEventListener('click', (event) => {
-        if (event.target === document.getElementById('ipModal')) {
-            document.getElementById('ipModal').style.display = 'none';
-        }
-    });
-}
-
-// 初始化地图容器
-function initMapContainer() {
-    const mapContainer = document.getElementById('mapContainer');
-    mapContainer.innerHTML = '<div class="map-placeholder">地图加载中...</div>';
+    document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
 }
 
 // 检查主题偏好
@@ -334,16 +311,6 @@ function initLineChart(canvasId, label) {
 function fillFilterOptions() {
     const deviceModelSelect = document.getElementById('deviceModel');
     const androidVersionSelect = document.getElementById('androidVersion');
-    const countryFilter = document.getElementById('countryFilter');
-    
-    const countries = new Set();
-    
-    // 收集国家和设备信息
-    allStats.forEach(stat => {
-        if (stat.device_model) deviceModels.add(stat.device_model);
-        if (stat.android_version) androidVersions.add(stat.android_version);
-        if (stat.country) countries.add(stat.country);
-    });
     
     // 添加设备型号选项
     deviceModels.forEach(model => {
@@ -360,14 +327,6 @@ function fillFilterOptions() {
         option.textContent = `Android ${version}`;
         androidVersionSelect.appendChild(option);
     });
-    
-    // 添加国家筛选选项
-    countries.forEach(country => {
-        const option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        countryFilter.appendChild(option);
-    });
 }
 
 // 应用筛选条件
@@ -376,8 +335,6 @@ function applyFilters() {
     const deviceModel = document.getElementById('deviceModel').value;
     const androidVersion = document.getElementById('androidVersion').value;
     const deviceSearch = document.getElementById('deviceSearch').value.toLowerCase();
-    const ipSearch = document.getElementById('ipSearch').value.toLowerCase();
-    const countryFilter = document.getElementById('countryFilter').value;
     
     // 计算日期范围
     let minDate = null;
@@ -409,16 +366,6 @@ function applyFilters() {
             return false;
         }
         
-        // IP地址搜索
-        if (ipSearch && (!stat.ip_address || !stat.ip_address.toLowerCase().includes(ipSearch))) {
-            return false;
-        }
-        
-        // 国家筛选
-        if (countryFilter !== 'all' && stat.country !== countryFilter) {
-            return false;
-        }
-        
         return true;
     });
     
@@ -436,11 +383,9 @@ function updateCharts() {
     const deviceCounts = {};
     const versionCounts = {};
     const countryCounts = {};
-    const locationPoints = [];
     let totalOpens = 0;
     let uniqueDevices = new Set();
     let uniqueCountries = new Set();
-    let uniqueLocations = new Set();
     
     filteredStats.forEach(stat => {
         // 统计总开启次数
@@ -449,31 +394,13 @@ function updateCharts() {
         // 记录唯一设备
         uniqueDevices.add(stat.device_id);
         
-        // 记录唯一地理位置
-        if (stat.country && stat.region && stat.city) {
-            const locationKey = `${stat.country}-${stat.region}-${stat.city}`;
-            uniqueLocations.add(locationKey);
-            
-            // 记录国家
+        // 记录国家
+        if (stat.country) {
             uniqueCountries.add(stat.country);
             if (!countryCounts[stat.country]) {
                 countryCounts[stat.country] = 0;
             }
             countryCounts[stat.country] += parseInt(stat.open_count) || 0;
-            
-            // 收集坐标点
-            if (stat.latitude && stat.longitude) {
-                locationPoints.push({
-                    lat: parseFloat(stat.latitude),
-                    lng: parseFloat(stat.longitude),
-                    city: stat.city,
-                    region: stat.region,
-                    country: stat.country,
-                    count: parseInt(stat.open_count) || 1,
-                    ip: stat.ip_address,
-                    isp: stat.isp
-                });
-            }
         }
         
         // 按日期统计
@@ -499,7 +426,7 @@ function updateCharts() {
     document.getElementById('totalOpens').textContent = totalOpens.toLocaleString();
     document.getElementById('uniqueDevices').textContent = uniqueDevices.size.toLocaleString();
     document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length.toLocaleString();
-    document.getElementById('uniqueLocations').textContent = uniqueLocations.size.toLocaleString();
+    document.getElementById('uniqueLocations').textContent = uniqueCountries.size.toLocaleString();
     
     // 准备日期排序
     const dates = Object.keys(dailyStats).sort();
@@ -540,123 +467,6 @@ function updateCharts() {
     trendChart.data.labels = dates;
     trendChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
     trendChart.update();
-    
-    // 更新地图
-    updateMap(locationPoints);
-}
-
-// 更新地图
-function updateMap(locationPoints) {
-    const mapContainer = document.getElementById('mapContainer');
-    mapContainer.innerHTML = ''; // 清除旧地图
-    
-    if (locationPoints.length === 0) {
-        mapContainer.innerHTML = '<div class="map-placeholder">没有地理位置数据</div>';
-        return;
-    }
-    
-    // 计算中心点
-    const centerLat = locationPoints.reduce((sum, point) => sum + point.lat, 0) / locationPoints.length;
-    const centerLng = locationPoints.reduce((sum, point) => sum + point.lng, 0) / locationPoints.length;
-    
-    // 初始化地图
-    map = L.map('mapContainer').setView([centerLat, centerLng], 3);
-    
-    // 添加地图图层
-    const tileLayer = isDarkMode 
-        ? L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        })
-        : L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        });
-    
-    tileLayer.addTo(map);
-    
-    // 清除旧标记
-    if (markers && markers.length > 0) {
-        markers.forEach(marker => map.removeLayer(marker));
-    }
-    markers = [];
-    
-    // 创建自定义图标
-    const customIcon = L.icon({
-        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34]
-    });
-    
-    // 添加新标记
-    locationPoints.forEach(point => {
-        const marker = L.marker([point.lat, point.lng], { icon: customIcon }).addTo(map);
-        const popupContent = `
-            <div class="map-popup">
-                <h4>${point.city || '未知城市'}, ${point.region || '未知地区'}</h4>
-                <p><strong>国家:</strong> ${point.country || '未知'}</p>
-                <p><strong>IP:</strong> ${point.ip || '未知'}</p>
-                <p><strong>ISP:</strong> ${point.isp || '未知'}</p>
-                <p><strong>开启次数:</strong> ${point.count}</p>
-                <button class="view-details" data-ip="${point.ip}">查看详情</button>
-            </div>
-        `;
-        
-        marker.bindPopup(popupContent);
-        
-        // 添加点击事件监听
-        marker.on('popupopen', () => {
-            document.querySelector(`.view-details[data-ip="${point.ip}"]`)?.addEventListener('click', () => {
-                const stat = filteredStats.find(s => s.ip_address === point.ip);
-                if (stat) showIpDetails(stat);
-            });
-        });
-        
-        markers.push(marker);
-    });
-    
-    // 如果有多个点，调整视图以包含所有标记
-    if (locationPoints.length > 1) {
-        const group = new L.featureGroup(markers);
-        map.fitBounds(group.getBounds());
-    }
-}
-
-// 显示IP详细信息
-function showIpDetails(stat) {
-    const ipModal = document.getElementById('ipModal');
-    const ipDetails = document.getElementById('ipDetails');
-    
-    ipDetails.innerHTML = '';
-    
-    // 添加IP基本信息
-    addIpDetail('IP地址', stat.ip_address || '未知');
-    addIpDetail('国家', stat.country || '未知');
-    addIpDetail('地区', stat.region || '未知');
-    addIpDetail('城市', stat.city || '未知');
-    addIpDetail('ISP', stat.isp || '未知');
-    addIpDetail('经纬度', 
-        (stat.latitude && stat.longitude) 
-            ? `${stat.latitude}, ${stat.longitude}` 
-            : '未知');
-    addIpDetail('时区', stat.timezone || '未知');
-    addIpDetail('设备ID', stat.device_id || '未知');
-    addIpDetail('设备型号', stat.device_model || '未知');
-    addIpDetail('Android版本', stat.android_version ? `Android ${stat.android_version}` : '未知');
-    addIpDetail('报告时间', stat.report_time || '未知');
-    addIpDetail('开启次数', stat.open_count || '0');
-    
-    // 显示弹窗
-    ipModal.style.display = 'flex';
-    
-    function addIpDetail(label, value) {
-        const detailItem = document.createElement('div');
-        detailItem.className = 'ip-detail-item';
-        detailItem.innerHTML = `
-            <div class="ip-detail-label">${label}</div>
-            <div class="ip-detail-value">${value}</div>
-        `;
-        ipDetails.appendChild(detailItem);
-    }
 }
 
 // 更新表格数据
@@ -667,7 +477,7 @@ function updateTable() {
     if (filteredStats.length === 0) {
         tbody.innerHTML = `
             <tr>
-                <td colspan="10" class="loading">没有找到匹配的数据</td>
+                <td colspan="8" class="loading">没有找到匹配的数据</td>
             </tr>
         `;
         return;
@@ -710,33 +520,6 @@ function updateTable() {
         versionTd.textContent = stat.android_version ? `Android ${stat.android_version}` : '--';
         tr.appendChild(versionTd);
         
-        // IP地址
-        const ipTd = document.createElement('td');
-        if (stat.ip_address) {
-            const ipLink = document.createElement('a');
-            ipLink.href = '#';
-            ipLink.textContent = stat.ip_address;
-            ipLink.className = 'ip-link';
-            ipLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                showIpDetails(stat);
-            });
-            ipTd.appendChild(ipLink);
-        } else {
-            ipTd.textContent = '--';
-        }
-        tr.appendChild(ipTd);
-        
-        // 地理位置
-        const geoTd = document.createElement('td');
-        if (stat.city && stat.region && stat.country) {
-            geoTd.textContent = `${stat.city}, ${stat.region}`;
-            geoTd.title = stat.country;
-        } else {
-            geoTd.textContent = '--';
-        }
-        tr.appendChild(geoTd);
-        
         // 制造商
         const manuTd = document.createElement('td');
         manuTd.textContent = stat.manufacturer || '--';
@@ -744,7 +527,7 @@ function updateTable() {
         
         // 报告时间
         const timeTd = document.createElement('td');
-        timeTd.textContent = stat.report_time ? stat.report_time.split(' ')[1] : '--';
+        timeTd.textContent = stat.report_time || '--';
         tr.appendChild(timeTd);
         
         // 状态
