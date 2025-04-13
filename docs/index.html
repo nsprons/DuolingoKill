@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP地址可视化分析平台</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <style>
         :root {
             /* 浅色主题变量 */
@@ -263,6 +264,23 @@
             width: 100%;
         }
 
+        /* 威胁等级标记样式 */
+        .threat-marker {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .marker-pin {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+
         /* 表格样式 */
         .table-container {
             background-color: var(--bg-primary);
@@ -377,6 +395,21 @@
             max-width: 200px;
         }
 
+        /* 加载状态 */
+        .loading {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+        }
+
+        /* 错误状态 */
+        .error {
+            text-align: center;
+            padding: 30px;
+            color: var(--danger-color);
+            font-weight: 500;
+        }
+
         /* 响应式设计 */
         @media (max-width: 1024px) {
             .container {
@@ -424,6 +457,14 @@
             .map-container {
                 height: 300px;
             }
+
+            .pagination {
+                flex-wrap: wrap;
+            }
+
+            .page-item {
+                margin: 2px;
+            }
         }
     </style>
 </head>
@@ -455,6 +496,11 @@
                     <option value="US">美国</option>
                     <option value="JP">日本</option>
                     <option value="DE">德国</option>
+                    <option value="GB">英国</option>
+                    <option value="FR">法国</option>
+                    <option value="IN">印度</option>
+                    <option value="BR">巴西</option>
+                    <option value="RU">俄罗斯</option>
                 </select>
             </div>
 
@@ -476,6 +522,8 @@
                     <option value="HTTPS">HTTPS</option>
                     <option value="FTP">FTP</option>
                     <option value="SSH">SSH</option>
+                    <option value="TCP">TCP</option>
+                    <option value="UDP">UDP</option>
                 </select>
             </div>
 
@@ -568,7 +616,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="8" style="text-align: center; padding: 30px;">数据加载中...</td>
+                            <td colspan="8" class="loading">数据加载中...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -597,503 +645,533 @@
     <!-- 工具提示容器 -->
     <div class="tooltip" id="tooltip" style="display: none;"></div>
 
+    <!-- JavaScript 文件 -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-    // 全局数据变量
+        // main.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the dashboard
+    initDashboard();
+});
+
+function initDashboard() {
+    // Global variables
     let allStats = [];
     let filteredStats = [];
-    let deviceModels = new Set();
-    let androidVersions = new Set();
+    let map;
+    let markers = [];
+    let heatmapLayer;
     
-    // 初始化图表
-    const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
-    const devicesChart = initDoughnutChart('devicesChart', '设备分布');
-    const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
-    const trendChart = initLineChart('trendChart', '设备使用趋势');
+    // Initialize map
+    initMap();
     
-    // 页面加载完成后执行
-    document.addEventListener('DOMContentLoaded', function() {
-        loadCSVData();
+    // Initialize theme toggle
+    initThemeToggle();
+    
+    // Load data
+    loadData();
+    
+    // Set up event listeners
+    document.getElementById('applyFilters').addEventListener('click', applyFilters);
+    document.getElementById('exportCSV').addEventListener('click', exportCSV);
+    document.getElementById('refreshData').addEventListener('click', loadData);
+    document.getElementById('heatmapToggle').addEventListener('change', toggleHeatmap);
+}
+
+function initMap() {
+    // Initialize Leaflet map
+    map = L.map('ipMap').setView([30.589, 114.2681], 4);
+    
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    // Initialize heatmap layer
+    heatmapLayer = L.heatLayer([], {
+        radius: 15,
+        blur: 15,
+        maxZoom: 17,
+        gradient: {0.4: 'blue', 0.6: 'cyan', 0.7: 'lime', 0.8: 'yellow', 1.0: 'red'}
+    }).addTo(map);
+}
+
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '🌞' : '🌓';
+        localStorage.setItem('theme', newTheme);
     });
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '🌞' : '🌓';
+}
 
-    // 加载CSV数据
-    function loadCSVData() {
-        fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv')
-            .then(response => {
-                if (!response.ok) throw new Error('网络响应不正常');
-                return response.text();
-            })
-            .then(csvText => {
-                // 解析CSV数据
-                allStats = parseCSV(csvText);
-                
-                // 预处理数据
-                preprocessData();
-                
-                // 填充筛选器选项
-                fillFilterOptions();
-                
-                // 应用初始筛选
-                applyFilters();
-            })
-            .catch(error => {
-                console.error('加载数据失败:', error);
-                showErrorInTable('数据加载失败，请稍后再试');
-            });
-    }
+function loadData() {
+    // Show loading state
+    document.querySelector('#ipTable tbody').innerHTML = `
+        <tr>
+            <td colspan="8" style="text-align: center; padding: 30px;">数据加载中...</td>
+        </tr>
+    `;
+    
+    // In a real application, this would fetch from your API
+    // For demo purposes, we'll use the sample data provided
+    const sampleData = {
+        "device_id": "24f18c96d960fba6",
+        "date": "2025-04-13",
+        "open_count": 25,
+        "report_time": "2025-04-13 03:36:00",
+        "device_model": "PJA110",
+        "android_version": "13",
+        "manufacturer": "OnePlus",
+        "sdk_version": 33,
+        "ip_address": "117.151.235.247",
+        "country": "China",
+        "country_code": "CN",
+        "region": "Hubei",
+        "city": "Wuhan",
+        "latitude": 30.589,
+        "longitude": 114.2681,
+        "timezone": "Asia/Shanghai",
+        "isp": "China Mobile Communications Group Co., Ltd.",
+        "threat_level": "medium",
+        "bandwidth": 45.2,
+        "protocols": ["HTTPS", "TCP"],
+        "ports": [443, 8080],
+        "asn": "AS9808",
+        "asn_name": "China Mobile Communications Corporation"
+    };
+    
+    // Process the data
+    allStats = [sampleData]; // Normally this would be an array of data
+    processData();
+}
 
-    // 解析CSV文本为JSON数组
-    function parseCSV(csvText) {
-        const lines = csvText.split('\n').filter(line => line.trim() !== '');
-        if (lines.length < 2) return [];
-        
-        const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
-        
-        return lines.slice(1).map(line => {
-            // 处理可能包含逗号的带引号字段
-            const values = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g) || [];
-            const entry = {};
+function processData() {
+    // Process and normalize the data
+    filteredStats = [...allStats];
+    
+    // Update UI
+    updateDashboard();
+    updateMap();
+    updateTable();
+}
+
+function applyFilters() {
+    // Get filter values
+    const timeRange = document.getElementById('timeRange').value;
+    const country = document.getElementById('countryFilter').value;
+    const threatLevel = document.getElementById('threatLevel').value;
+    const protocolType = document.getElementById('protocolType').value;
+    const ipSearch = document.getElementById('ipSearch').value.toLowerCase();
+    const realTime = document.getElementById('realTimeToggle').checked;
+    
+    // Apply filters
+    filteredStats = allStats.filter(stat => {
+        // Time range filter
+        if (timeRange !== 'all') {
+            const days = parseInt(timeRange.replace('d', '').replace('h', ''));
+            const cutoffDate = new Date();
             
-            headers.forEach((header, index) => {
-                if (values[index]) {
-                    entry[header] = values[index].replace(/"/g, '').trim();
-                }
-            });
-            
-            return entry;
-        }).filter(entry => entry.date && entry.device_id);
-    }
-
-    // 数据预处理
-    function preprocessData() {
-        allStats.forEach(stat => {
-            // 标准化设备型号
-            if (stat.device_model) {
-                stat.device_model = stat.device_model.trim();
-                deviceModels.add(stat.device_model);
+            if (timeRange.includes('h')) {
+                cutoffDate.setHours(cutoffDate.getHours() - days);
+            } else {
+                cutoffDate.setDate(cutoffDate.getDate() - days);
             }
             
-            // 标准化Android版本
-            if (stat.android_version) {
-                stat.android_version = stat.android_version.trim();
-                androidVersions.add(stat.android_version);
-            }
-            
-            // 转换开启次数为数字
-            stat.open_count = parseInt(stat.open_count) || 0;
-            
-            // 标准化日期格式 (YYYY-MM-DD)
-            if (stat.date) {
-                const dateObj = new Date(stat.date);
-                if (!isNaN(dateObj.getTime())) {
-                    stat.date = dateObj.toISOString().split('T')[0];
-                }
-            }
-        });
-        
-        // 按日期排序
-        allStats.sort((a, b) => new Date(a.date) - new Date(b.date));
-    }
-
-    // 填充筛选器选项
-    function fillFilterOptions() {
-        const deviceModelSelect = document.getElementById('deviceModel');
-        const androidVersionSelect = document.getElementById('androidVersion');
-        
-        // 清空现有选项
-        deviceModelSelect.innerHTML = '<option value="all">全部型号</option>';
-        androidVersionSelect.innerHTML = '<option value="all">全部版本</option>';
-        
-        // 添加设备型号选项
-        deviceModels.forEach(model => {
-            const option = document.createElement('option');
-            option.value = model;
-            option.textContent = model;
-            deviceModelSelect.appendChild(option);
-        });
-        
-        // 添加Android版本选项
-        androidVersions.forEach(version => {
-            const option = document.createElement('option');
-            option.value = version;
-            option.textContent = `Android ${version}`;
-            androidVersionSelect.appendChild(option);
-        });
-    }
-
-    // 应用筛选条件
-    function applyFilters() {
-        const dateRange = document.getElementById('dateRange').value;
-        const deviceModel = document.getElementById('deviceModel').value;
-        const androidVersion = document.getElementById('androidVersion').value;
-        const deviceSearch = document.getElementById('deviceSearch').value.toLowerCase();
-        
-        // 计算日期范围
-        let minDate = null;
-        if (dateRange !== 'all') {
-            const days = parseInt(dateRange);
-            minDate = new Date();
-            minDate.setDate(minDate.getDate() - days);
-            minDate.setHours(0, 0, 0, 0); // 清零时间部分
+            const statDate = new Date(stat.report_time || stat.date);
+            if (statDate < cutoffDate) return false;
         }
         
-        // 筛选数据
-        filteredStats = allStats.filter(stat => {
-            // 日期筛选
-            if (minDate) {
-                const statDate = new Date(stat.date);
-                statDate.setHours(0, 0, 0, 0);
-                if (statDate < minDate) return false;
-            }
-            
-            // 设备型号筛选
-            if (deviceModel !== 'all' && stat.device_model !== deviceModel) {
-                return false;
-            }
-            
-            // Android版本筛选
-            if (androidVersion !== 'all' && stat.android_version !== androidVersion) {
-                return false;
-            }
-            
-            // 设备ID搜索
-            if (deviceSearch && !stat.device_id.toLowerCase().includes(deviceSearch)) {
-                return false;
-            }
-            
-            return true;
-        });
-        
-        // 更新图表和数据展示
-        updateCharts();
-        updateTable();
-    }
-
-    // 更新图表数据
-    function updateCharts() {
-        // 按日期聚合数据
-        const dailyStats = {};
-        const deviceCounts = {};
-        const versionCounts = {};
-        let totalOpens = 0;
-        let uniqueDevices = new Set();
-        
-        filteredStats.forEach(stat => {
-            // 统计总开启次数
-            totalOpens += stat.open_count;
-            
-            // 记录唯一设备
-            uniqueDevices.add(stat.device_id);
-            
-            // 按日期统计
-            if (!dailyStats[stat.date]) {
-                dailyStats[stat.date] = 0;
-            }
-            dailyStats[stat.date] += stat.open_count;
-            
-            // 按设备统计
-            if (stat.device_model) {
-                if (!deviceCounts[stat.device_model]) {
-                    deviceCounts[stat.device_model] = 0;
-                }
-                deviceCounts[stat.device_model] += stat.open_count;
-            }
-            
-            // 按Android版本统计
-            if (stat.android_version) {
-                if (!versionCounts[stat.android_version]) {
-                    versionCounts[stat.android_version] = 0;
-                }
-                versionCounts[stat.android_version] += stat.open_count;
-            }
-        });
-        
-        // 更新仪表板数据
-        document.getElementById('totalOpens').textContent = totalOpens.toLocaleString();
-        document.getElementById('uniqueDevices').textContent = uniqueDevices.size.toLocaleString();
-        document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length.toLocaleString();
-        
-        // 准备日期排序
-        const dates = Object.keys(dailyStats).sort((a, b) => new Date(a) - new Date(b));
-        
-        // 更新总开启次数图表
-        updateChartData(totalOpensChart, dates, dates.map(date => dailyStats[date]));
-        
-        // 更新设备分布图表
-        const topDevices = getTopItems(deviceCounts, 5);
-        updateChartData(devicesChart, 
-            topDevices.map(d => d[0] || '未知设备'), 
-            topDevices.map(d => d[1])
-        );
-        
-        // 更新Android版本分布图表
-        const topVersions = getTopItems(versionCounts, 5);
-        updateChartData(androidChart, 
-            topVersions.map(v => `Android ${v[0]}` || '未知版本'), 
-            topVersions.map(v => v[1])
-        );
-        
-        // 更新趋势图表
-        updateChartData(trendChart, dates, dates.map(date => dailyStats[date]));
-    }
-
-    // 获取前N项数据
-    function getTopItems(data, limit) {
-        return Object.entries(data)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, limit);
-    }
-
-    // 更新图表数据
-    function updateChartData(chart, labels, data) {
-        chart.data.labels = labels;
-        chart.data.datasets[0].data = data;
-        chart.update();
-    }
-
-    // 更新表格数据
-    function updateTable() {
-        const tbody = document.querySelector('#statsTable tbody');
-        tbody.innerHTML = '';
-        
-        if (filteredStats.length === 0) {
-            showErrorInTable('没有找到匹配的数据');
-            return;
+        // Country filter
+        if (country !== 'all' && stat.country_code !== country) {
+            return false;
         }
         
-        // 按日期降序排序
-        const sortedStats = [...filteredStats].sort((a, b) => {
-            return new Date(b.date) - new Date(a.date);
-        });
+        // Threat level filter
+        if (threatLevel !== 'all' && stat.threat_level !== threatLevel) {
+            return false;
+        }
         
-        // 只显示前100条记录
-        const displayStats = sortedStats.slice(0, 100);
+        // Protocol filter
+        if (protocolType !== 'all' && 
+            (!stat.protocols || !stat.protocols.includes(protocolType))) {
+            return false;
+        }
         
-        displayStats.forEach(stat => {
-            const tr = document.createElement('tr');
-            
-            // 日期
-            tr.appendChild(createTableCell(stat.date));
-            
-            // 设备ID (显示前8位)
-            const deviceIdTd = createTableCell(stat.device_id.slice(0, 8) + '...');
-            deviceIdTd.title = stat.device_id;
-            tr.appendChild(deviceIdTd);
-            
-            // 开启次数
-            tr.appendChild(createTableCell(stat.open_count.toLocaleString()));
-            
-            // 设备型号
-            tr.appendChild(createTableCell(stat.device_model || '--'));
-            
-            // Android版本
-            tr.appendChild(createTableCell(stat.android_version ? `Android ${stat.android_version}` : '--'));
-            
-            // 制造商
-            tr.appendChild(createTableCell(stat.manufacturer || '--'));
-            
-            // 报告时间
-            tr.appendChild(createTableCell(stat.report_time || '--'));
-            
-            // 状态
-            const statusTd = document.createElement('td');
-            const badge = document.createElement('span');
-            badge.className = 'badge ' + getStatusBadgeClass(stat.date);
-            badge.textContent = getStatusText(stat.date);
-            statusTd.appendChild(badge);
-            tr.appendChild(statusTd);
-            
-            tbody.appendChild(tr);
-        });
-    }
+        // IP search
+        if (ipSearch && !stat.ip_address.includes(ipSearch)) {
+            return false;
+        }
+        
+        return true;
+    });
+    
+    // Update UI
+    updateDashboard();
+    updateMap();
+    updateTable();
+}
 
-    // 创建表格单元格
-    function createTableCell(text) {
-        const td = document.createElement('td');
-        td.textContent = text;
-        return td;
-    }
+function updateDashboard() {
+    // Calculate metrics
+    const totalIps = filteredStats.length;
+    const highRiskIps = filteredStats.filter(s => s.threat_level === 'high').length;
+    const countries = new Set(filteredStats.map(s => s.country)).size;
+    const avgBandwidth = filteredStats.reduce((sum, s) => sum + (s.bandwidth || 0), 0) / (filteredStats.length || 1);
+    
+    // Update cards
+    document.getElementById('totalIps').textContent = totalIps;
+    document.getElementById('highRiskIps').textContent = highRiskIps;
+    document.getElementById('countryCount').textContent = countries;
+    document.getElementById('avgBandwidth').textContent = avgBandwidth.toFixed(2);
+}
 
-    // 显示表格错误信息
-    function showErrorInTable(message) {
-        const tbody = document.querySelector('#statsTable tbody');
+function updateMap() {
+    // Clear existing markers
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+    
+    // Add new markers
+    filteredStats.forEach(stat => {
+        if (stat.latitude && stat.longitude) {
+            const marker = L.marker([stat.latitude, stat.longitude], {
+                icon: getThreatLevelIcon(stat.threat_level)
+            }).addTo(map);
+            
+            marker.bindPopup(`
+                <b>IP:</b> ${stat.ip_address}<br>
+                <b>位置:</b> ${stat.city}, ${stat.region}, ${stat.country}<br>
+                <b>ISP:</b> ${stat.isp}<br>
+                <b>威胁等级:</b> ${getThreatLevelText(stat.threat_level)}<br>
+                <b>带宽:</b> ${stat.bandwidth || 'N/A'} Mbps
+            `);
+            
+            markers.push(marker);
+        }
+    });
+    
+    // Update heatmap
+    updateHeatmap();
+    
+    // Fit bounds if we have markers
+    if (markers.length > 0) {
+        const group = new L.featureGroup(markers);
+        map.fitBounds(group.getBounds());
+    }
+}
+
+function getThreatLevelIcon(level) {
+    const colors = {
+        low: 'green',
+        medium: 'orange',
+        high: 'red'
+    };
+    
+    return L.divIcon({
+        className: 'threat-marker',
+        html: `<div style="background-color: ${colors[level] || 'gray'}" class="marker-pin"></div>`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+    });
+}
+
+function getThreatLevelText(level) {
+    const levels = {
+        low: '低风险',
+        medium: '中风险',
+        high: '高风险'
+    };
+    
+    return levels[level] || '未知';
+}
+
+function updateHeatmap() {
+    if (document.getElementById('heatmapToggle').checked) {
+        const points = filteredStats
+            .filter(stat => stat.latitude && stat.longitude)
+            .map(stat => [stat.latitude, stat.longitude, stat.open_count || 1]);
+        
+        heatmapLayer.setLatLngs(points.map(p => [p[0], p[1], p[2]]));
+        heatmapLayer.addTo(map);
+    } else {
+        map.removeLayer(heatmapLayer);
+    }
+}
+
+function toggleHeatmap() {
+    updateHeatmap();
+}
+
+function updateTable() {
+    const tbody = document.querySelector('#ipTable tbody');
+    tbody.innerHTML = '';
+    
+    if (filteredStats.length === 0) {
         tbody.innerHTML = `
             <tr>
-                <td colspan="8" class="error">${message}</td>
+                <td colspan="8" style="text-align: center; padding: 30px;">没有找到匹配的数据</td>
             </tr>
         `;
+        return;
     }
+    
+    // Sort by most recent
+    const sortedStats = [...filteredStats].sort((a, b) => {
+        return new Date(b.report_time || b.date) - new Date(a.report_time || a.date);
+    });
+    
+    // Display first 100 records
+    sortedStats.slice(0, 100).forEach(stat => {
+        const row = document.createElement('tr');
+        
+        // IP Address
+        const ipCell = document.createElement('td');
+        ipCell.textContent = stat.ip_address;
+        row.appendChild(ipCell);
+        
+        // Country
+        const countryCell = document.createElement('td');
+        countryCell.innerHTML = `
+            <span class="flag-icon flag-icon-${stat.country_code.toLowerCase()}"></span>
+            ${stat.country}
+        `;
+        row.appendChild(countryCell);
+        
+        // City
+        const cityCell = document.createElement('td');
+        cityCell.textContent = stat.city || 'N/A';
+        row.appendChild(cityCell);
+        
+        // Coordinates
+        const coordCell = document.createElement('td');
+        if (stat.latitude && stat.longitude) {
+            coordCell.textContent = `${stat.latitude.toFixed(4)}, ${stat.longitude.toFixed(4)}`;
+        } else {
+            coordCell.textContent = 'N/A';
+        }
+        row.appendChild(coordCell);
+        
+        // ISP
+        const ispCell = document.createElement('td');
+        ispCell.textContent = stat.isp || 'N/A';
+        row.appendChild(ispCell);
+        
+        // Bandwidth
+        const bwCell = document.createElement('td');
+        bwCell.textContent = stat.bandwidth ? `${stat.bandwidth} Mbps` : 'N/A';
+        row.appendChild(bwCell);
+        
+        // Threat Level
+        const threatCell = document.createElement('td');
+        const badge = document.createElement('span');
+        badge.className = `badge badge-${stat.threat_level || 'unknown'}`;
+        badge.textContent = getThreatLevelText(stat.threat_level);
+        threatCell.appendChild(badge);
+        row.appendChild(threatCell);
+        
+        // Last Active
+        const lastActiveCell = document.createElement('td');
+        lastActiveCell.textContent = stat.report_time || stat.date || 'N/A';
+        row.appendChild(lastActiveCell);
+        
+        tbody.appendChild(row);
+    });
+}
 
-    // 获取状态标签样式
-    function getStatusBadgeClass(date) {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        
-        const reportDate = new Date(date);
-        reportDate.setHours(0, 0, 0, 0);
-        
-        const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
-        
-        if (diffDays === 0) return 'badge-success';
-        if (diffDays <= 7) return 'badge-primary';
-        if (diffDays <= 30) return 'badge-warning';
-        return 'badge-danger';
+function exportCSV() {
+    if (filteredStats.length === 0) {
+        alert('没有数据可导出');
+        return;
     }
+    
+    // Create CSV content
+    const headers = [
+        'IP地址', '国家', '城市', '纬度', '经度', 
+        'ISP', '带宽(Mbps)', '威胁等级', '最后活跃', 'ASN', '协议'
+    ];
+    
+    const rows = filteredStats.map(stat => [
+        stat.ip_address,
+        stat.country,
+        stat.city,
+        stat.latitude,
+        stat.longitude,
+        stat.isp,
+        stat.bandwidth,
+        stat.threat_level,
+        stat.report_time || stat.date,
+        stat.asn,
+        stat.protocols ? stat.protocols.join(', ') : ''
+    ]);
+    
+    const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.join(','))
+    ].join('\n');
+    
+    // Create download link
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `ip_data_${new Date().toISOString().slice(0, 10)}.csv`);
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
-    // 获取状态文本
-    function getStatusText(date) {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        
-        const reportDate = new Date(date);
-        reportDate.setHours(0, 0, 0, 0);
-        
-        const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
-        
-        if (diffDays === 0) return '今日活跃';
-        if (diffDays <= 7) return '7天内活跃';
-        if (diffDays <= 30) return '30天内活跃';
-        return '历史记录';
-    }
-
-    // 初始化柱状图
-    function initBarChart(canvasId, label, color) {
-        return new Chart(
-            document.getElementById(canvasId),
-            {
-                type: 'bar',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: label,
-                        data: [],
-                        backgroundColor: color,
-                        borderColor: color.replace('0.7', '1'),
-                        borderWidth: 1
-                    }]
-                },
-                options: getChartOptions(label)
-            }
-        );
-    }
-
-    // 初始化环形图
-    function initDoughnutChart(canvasId, label) {
-        return new Chart(
-            document.getElementById(canvasId),
-            {
-                type: 'doughnut',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: label,
-                        data: [],
-                        backgroundColor: [
-                            'rgba(67, 97, 238, 0.7)',
-                            'rgba(76, 201, 240, 0.7)',
-                            'rgba(63, 55, 201, 0.7)',
-                            'rgba(108, 117, 125, 0.7)',
-                            'rgba(255, 159, 64, 0.7)'
-                        ],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '70%',
-                    plugins: {
-                        legend: {
-                            position: 'right'
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                    const percentage = Math.round((context.raw / total) * 100);
-                                    return `${context.label}: ${context.raw} (${percentage}%)`;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        );
-    }
-
-    // 初始化折线图
-    function initLineChart(canvasId, label) {
-        return new Chart(
-            document.getElementById(canvasId),
-            {
-                type: 'line',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: label,
-                        data: [],
-                        backgroundColor: 'rgba(67, 97, 238, 0.1)',
-                        borderColor: 'rgba(67, 97, 238, 1)',
-                        borderWidth: 2,
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: getChartOptions(label)
-            }
-        );
-    }
-
-    // 获取图表通用配置
-    function getChartOptions(label) {
-        return {
+// Initialize charts
+function initCharts() {
+    // Threat level distribution
+    const threatCtx = document.getElementById('threatChart').getContext('2d');
+    new Chart(threatCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['低风险', '中风险', '高风险'],
+            datasets: [{
+                data: [0, 0, 0], // Will be updated
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(255, 99, 132, 0.7)'
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
             responsive: true,
-            maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    display: false
+                    position: 'right'
                 },
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return `${label}: ${context.raw}`;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = Math.round((context.raw / total) * 100);
+                            return `${context.label}: ${context.raw} (${percentage}%)`;
                         }
                     }
                 }
-            },
+            }
+        }
+    });
+    
+    // Bandwidth distribution
+    const bwCtx = document.getElementById('bandwidthChart').getContext('2d');
+    new Chart(bwCtx, {
+        type: 'bar',
+        data: {
+            labels: ['0-10', '10-50', '50-100', '100-500', '500+'],
+            datasets: [{
+                label: '带宽分布 (Mbps)',
+                data: [0, 0, 0, 0, 0], // Will be updated
+                backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
             scales: {
                 y: {
-                    beginAtZero: true,
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.05)'
-                    }
-                },
-                x: {
-                    grid: {
-                        display: false
-                    }
+                    beginAtZero: true
                 }
             }
-        };
-    }
+        }
+    });
+    
+    // Protocol distribution
+    const protocolCtx = document.getElementById('protocolChart').getContext('2d');
+    new Chart(protocolCtx, {
+        type: 'pie',
+        data: {
+            labels: ['HTTP', 'HTTPS', 'FTP', 'SSH', '其他'],
+            datasets: [{
+                data: [0, 0, 0, 0, 0], // Will be updated
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)'
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        }
+    });
+}
 
-    // 筛选器事件监听
-    document.getElementById('dateRange').addEventListener('change', applyFilters);
-    document.getElementById('deviceModel').addEventListener('change', applyFilters);
-    document.getElementById('androidVersion').addEventListener('change', applyFilters);
-    document.getElementById('deviceSearch').addEventListener('input', debounce(applyFilters, 300));
-
-    // 防抖函数
-    function debounce(func, wait) {
-        let timeout;
-        return function() {
-            const context = this;
-            const args = arguments;
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                func.apply(context, args);
-            }, wait);
-        };
-    }
-</script>
+function updateCharts() {
+    // Update threat level chart
+    const threatCounts = {
+        low: filteredStats.filter(s => s.threat_level === 'low').length,
+        medium: filteredStats.filter(s => s.threat_level === 'medium').length,
+        high: filteredStats.filter(s => s.threat_level === 'high').length
+    };
+    
+    // Update bandwidth distribution chart
+    const bwRanges = [0, 0, 0, 0, 0]; // 0-10, 10-50, 50-100, 100-500, 500+
+    filteredStats.forEach(stat => {
+        const bw = stat.bandwidth || 0;
+        if (bw <= 10) bwRanges[0]++;
+        else if (bw <= 50) bwRanges[1]++;
+        else if (bw <= 100) bwRanges[2]++;
+        else if (bw <= 500) bwRanges[3]++;
+        else bwRanges[4]++;
+    });
+    
+    // Update protocol distribution chart
+    const protocolCounts = {
+        http: 0,
+        https: 0,
+        ftp: 0,
+        ssh: 0,
+        other: 0
+    };
+    
+    filteredStats.forEach(stat => {
+        if (!stat.protocols) return;
+        
+        stat.protocols.forEach(proto => {
+            const lowerProto = proto.toLowerCase();
+            if (lowerProto.includes('http')) {
+                if (lowerProto.includes('https')) protocolCounts.https++;
+                else protocolCounts.http++;
+            } else if (lowerProto.includes('ftp')) {
+                protocolCounts.ftp++;
+            } else if (lowerProto.includes('ssh')) {
+                protocolCounts.ssh++;
+            } else {
+                protocolCounts.other++;
+            }
+        });
+    });
+    
+    // In a real implementation, we would update the chart data here
+    // For this demo, we'll just log the values
+    console.log('Threat level counts:', threatCounts);
+    console.log('Bandwidth ranges:', bwRanges);
+    console.log('Protocol counts:', protocolCounts);
+}
+    </script>
 </body>
 </html>
