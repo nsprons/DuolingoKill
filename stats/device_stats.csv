@@ -6,4 +6,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","81632d4990e19f79",1,"2025-04-14 01:13:10","RMX3888","15","realme",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-13","a7acf0af8e2f44b8",3,"2025-04-13 19:23:04","M2007J3SG","15","Xiaomi",35,"90.116.57.200","France","FR","Alpes-Maritimes","Nice",43.7045,7.2597,"Europe/Paris","Orange"
 "2025-04-14","d756375c547a53b1",2,"2025-04-14 01:56:29","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"null","null","null","null","null",null,null,"null","null"
-"2025-04-14","24f18c96d960fba6",46,"2025-04-14 02:21:30","PJA110","13","OnePlus",33,"129.150.42.215","Singapore","SG","","Kampong Loyang",1.3759,103.9639,"Asia/Singapore","ORACLE-BMC-31898"
+"2025-04-14","24f18c96d960fba6",48,"2025-04-14 02:24:34","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
