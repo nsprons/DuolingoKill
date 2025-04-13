@@ -3,385 +3,1420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>设备使用统计可视化</title>
+    <title>多领国杀手设备使用统计</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f7fa;
-            color: #333;
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
-        h1, h2 {
-            color: #2c3e50;
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
+        
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            color: #6c757d;
+            font-weight: 300;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
         .card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             padding: 20px;
-            margin-bottom: 20px;
+            transition: var(--transition);
         }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .card-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
         .chart-container {
+            position: relative;
+            height: 250px;
+            width: 100%;
+        }
+        
+        .large-chart {
             height: 400px;
-            margin: 20px 0;
         }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+        
+        .map-container {
+            height: 500px;
+            width: 100%;
         }
-        .stat-card {
+        
+        .data-table {
+            width: 100%;
             background: white;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-top: 30px;
         }
-        .stat-card h3 {
-            margin-top: 0;
-            color: #3498db;
-        }
-        .stat-card .value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
         }
+        
         th, td {
             padding: 12px 15px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e9ecef;
         }
+        
         th {
-            background-color: #3498db;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .badge-primary {
+            background-color: var(--primary-color);
             color: white;
         }
-        tr:hover {
-            background-color: #f5f5f5;
+        
+        .badge-success {
+            background-color: var(--success-color);
+            color: white;
         }
-        .map-container {
-            width: 100%;
-            height: 500px;
+        
+        .badge-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .badge-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 50px;
+            color: var(--danger-color);
+            font-weight: 500;
+        }
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+        
+        .filter-label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #6c757d;
+        }
+        
+        select, input {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .tab-container {
+            display: flex;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+        
+        .tab:hover:not(.active) {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        /* 新增移动端优化样式 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 8px;
+            }
+            
+            .chart-container {
+                height: 180px !important;
+            }
+            
+            .card {
+                padding: 12px;
+                margin: 0 -8px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .filters {
+                gap: 8px;
+                padding: 12px;
+            }
+            
+            .filter-group {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .card-value {
+                font-size: 1.4rem;
+            }
+            
+            .tab-container {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                flex: 1;
+                text-align: center;
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+            
+            .card-title {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>设备使用统计可视化分析</h1>
-        <p>数据来源: <a href="https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv" target="_blank">GitHub数据文件</a></p>
+        <header>
+            <h1>多领国杀手设备使用统计</h1>
+            <p class="subtitle">详细记录设备使用情况和行为模式</p>
+        </header>
         
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>总记录数</h3>
-                <div class="value" id="total-records">24</div>
+        <div class="filters">
+            <div class="filter-group">
+                <label class="filter-label">日期范围</label>
+                <select id="dateRange">
+                    <option value="7">最近7天</option>
+                    <option value="30" selected>最近30天</option>
+                    <option value="90">最近90天</option>
+                    <option value="all">全部数据</option>
+                </select>
             </div>
-            <div class="stat-card">
-                <h3>平均打开次数</h3>
-                <div class="value" id="avg-opens">14.54</div>
+            
+            <div class="filter-group">
+                <label class="filter-label">设备型号</label>
+                <select id="deviceModel">
+                    <option value="all">全部型号</option>
+                </select>
             </div>
-            <div class="stat-card">
-                <h3>覆盖国家</h3>
-                <div class="value" id="countries">16</div>
+            
+            <div class="filter-group">
+                <label class="filter-label">Android版本</label>
+                <select id="androidVersion">
+                    <option value="all">全部版本</option>
+                </select>
             </div>
-            <div class="stat-card">
-                <h3>设备品牌</h3>
-                <div class="value" id="brands">12</div>
+            
+            <div class="filter-group">
+                <label class="filter-label">国家/地区</label>
+                <select id="countryFilter">
+                    <option value="all">全部国家</option>
+                </select>
             </div>
-        </div>
-
-        <div class="card">
-            <h2>每日打开次数趋势</h2>
-            <div class="chart-container">
-                <canvas id="dailyTrendChart"></canvas>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>设备品牌分布</h2>
-            <div class="chart-container">
-                <canvas id="brandDistributionChart"></canvas>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>国家分布</h2>
-            <div class="chart-container">
-                <div id="worldMap" style="width: 100%; height: 500px;"></div>
+            
+            <div class="filter-group">
+                <label class="filter-label">搜索设备ID</label>
+                <input type="text" id="deviceSearch" placeholder="输入设备ID">
             </div>
         </div>
-
-        <div class="card">
-            <h2>Android版本分布</h2>
-            <div class="chart-container">
-                <canvas id="androidVersionChart"></canvas>
+        
+        <div class="tab-container">
+            <div class="tab active" data-tab="summary">数据概览</div>
+            <div class="tab" data-tab="geography">地理分布</div>
+            <div class="tab" data-tab="devices">设备分析</div>
+            <div class="tab" data-tab="trends">使用趋势</div>
+        </div>
+        
+        <!-- 数据概览标签页 -->
+        <div class="tab-content active" id="summary-tab">
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">总开启次数</span>
+                        <span class="card-value" id="totalOpens">--</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="totalOpensChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">活跃设备数</span>
+                        <span class="card-value" id="uniqueDevices">--</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="devicesChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Android版本分布</span>
+                        <span class="card-value" id="androidVersions">--</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="androidChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">设备品牌分布</span>
+                        <span class="card-value" id="manufacturerCount">--</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="manufacturerChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">SDK版本分布</span>
+                        <span class="card-value" id="sdkVersions">--</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="sdkChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">运营商分布</span>
+                        <span class="card-value" id="ispCount">--</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="ispChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">设备使用趋势</span>
+                </div>
+                <div class="chart-container large-chart">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="data-table">
+                <table id="statsTable">
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>设备ID</th>
+                            <th>开启次数</th>
+                            <th>设备型号</th>
+                            <th>Android版本</th>
+                            <th>制造商</th>
+                            <th>国家</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8" class="loading">数据加载中...</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <div class="card">
-            <h2>详细数据</h2>
-            <table id="dataTable">
-                <thead>
-                    <tr>
-                        <th>日期</th>
-                        <th>设备ID</th>
-                        <th>打开次数</th>
-                        <th>设备型号</th>
-                        <th>品牌</th>
-                        <th>国家</th>
-                        <th>城市</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <!-- 数据将通过JavaScript填充 -->
-                </tbody>
-            </table>
+        
+        <!-- 地理分布标签页 -->
+        <div class="tab-content" id="geography-tab">
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">国家分布</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="countryChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">城市分布</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="cityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">全球用户分布地图</span>
+                </div>
+                <div class="map-container" id="worldMap"></div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">时区分布</span>
+                </div>
+                <div class="chart-container large-chart">
+                    <canvas id="timezoneChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 设备分析标签页 -->
+        <div class="tab-content" id="devices-tab">
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">设备品牌使用情况</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="manufacturerUsageChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Android版本使用情况</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="androidUsageChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">设备型号TOP10</span>
+                </div>
+                <div class="chart-container large-chart">
+                    <canvas id="deviceModelChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">SDK版本使用情况</span>
+                </div>
+                <div class="chart-container large-chart">
+                    <canvas id="sdkUsageChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 使用趋势标签页 -->
+        <div class="tab-content" id="trends-tab">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">每日活跃趋势</span>
+                </div>
+                <div class="chart-container large-chart">
+                    <canvas id="dailyActiveChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">按品牌的使用趋势</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="manufacturerTrendChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">按Android版本的使用趋势</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="androidTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">按国家的使用趋势</span>
+                </div>
+                <div class="chart-container large-chart">
+                    <canvas id="countryTrendChart"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // 从URL获取数据
-        async function fetchData() {
-            const response = await fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv');
-            const text = await response.text();
-            const data = d3.csvParse(text);
-            return data;
-        }
+        // 全局数据变量
+let allStats = [];
+let filteredStats = [];
+let deviceModels = new Set();
+let androidVersions = new Set();
+let countries = new Set();
+let timezones = new Set();
+let manufacturers = new Set();
+let sdks = new Set();
+let isps = new Set();
 
-        // 主函数
-        async function main() {
-            const data = await fetchData();
+// 初始化图表
+const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
+const devicesChart = initDoughnutChart('devicesChart', '设备分布');
+const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
+const trendChart = initLineChart('trendChart', '设备使用趋势');
+const manufacturerChart = initDoughnutChart('manufacturerChart', '品牌分布');
+const sdkChart = initDoughnutChart('sdkChart', 'SDK版本分布');
+const ispChart = initDoughnutChart('ispChart', '运营商分布');
+const countryChart = initBarChart('countryChart', '国家分布', 'rgba(76, 201, 240, 0.7)');
+const cityChart = initBarChart('cityChart', '城市分布', 'rgba(63, 55, 201, 0.7)');
+const timezoneChart = initBarChart('timezoneChart', '时区分布', 'rgba(255, 159, 64, 0.7)');
+const manufacturerUsageChart = initBarChart('manufacturerUsageChart', '品牌使用情况', 'rgba(67, 97, 238, 0.7)');
+const androidUsageChart = initBarChart('androidUsageChart', 'Android版本使用情况', 'rgba(76, 201, 240, 0.7)');
+const deviceModelChart = initBarChart('deviceModelChart', '设备型号TOP10', 'rgba(63, 55, 201, 0.7)');
+const sdkUsageChart = initBarChart('sdkUsageChart', 'SDK版本使用情况', 'rgba(255, 159, 64, 0.7)');
+const dailyActiveChart = initLineChart('dailyActiveChart', '每日活跃趋势');
+const manufacturerTrendChart = initLineChart('manufacturerTrendChart', '品牌使用趋势');
+const androidTrendChart = initLineChart('androidTrendChart', 'Android版本使用趋势');
+const countryTrendChart = initLineChart('countryTrendChart', '国家使用趋势');
+
+// 世界地图
+let worldMapChart = null;
+
+// 加载数据
+fetch('https://raw.githubusercontent.com/nspron/DuolingoKill/main/stats/device_stats.csv')
+    .then(response => {
+        if (!response.ok) throw new Error('网络响应不正常');
+        return response.text();
+    })
+    .then(data => {
+        // 改进的CSV解析函数
+        const parseCSV = (text) => {
+            const rows = text.split('\n').filter(row => row.trim() !== '');
+            const headers = rows.shift().split(',').map(h => h.replace(/^"|"$/g, ''));
             
-            // 处理数据
-            const processedData = data.map(item => {
-                return {
-                    date: item.date,
-                    device_id: item.device_id,
-                    open_count: +item.open_count,
-                    device_model: item.device_model,
-                    manufacturer: item.manufacturer,
-                    country: item.country,
-                    city: item.city,
-                    android_version: item.android_version,
-                    latitude: item.latitude !== 'null' ? +item.latitude : null,
-                    longitude: item.longitude !== 'null' ? +item.longitude : null
+            return rows.map(row => {
+                // 使用正则表达式匹配CSV字段（处理带引号的字段）
+                const values = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
+                const entry = {};
+                headers.forEach((header, i) => {
+                    // 移除字段值的首尾引号（如果存在）
+                    let value = values[i] ? values[i].replace(/^"|"$/g, '') : '';
+                    // 处理null值
+                    if (value === 'null') value = null;
+                    entry[header] = value;
+                });
+                return entry;
+            });
+        };
+
+        // 解析CSV数据
+        allStats = parseCSV(data).filter(entry => 
+            entry.date && entry.device_id && entry.open_count
+        );
+        
+        // 收集设备型号、Android版本、国家等信息
+        allStats.forEach(stat => {
+            if (stat.device_model) deviceModels.add(stat.device_model);
+            if (stat.android_version) androidVersions.add(stat.android_version);
+            if (stat.country && stat.country !== 'null') countries.add(stat.country);
+            if (stat.timezone && stat.timezone !== 'null') timezones.add(stat.timezone);
+            if (stat.manufacturer) manufacturers.add(stat.manufacturer);
+            if (stat.sdk_version) sdks.add(stat.sdk_version);
+            if (stat.isp && stat.isp !== 'null') isps.add(stat.isp);
+        });
+        
+        // 填充筛选器选项
+        fillFilterOptions();
+        
+        // 应用初始筛选
+        applyFilters();
+        
+        // 初始化标签页切换
+        initTabs();
+        
+        // 初始化世界地图
+        initWorldMap();
+    })
+    .catch(error => {
+        console.error('加载数据失败:', error);
+        document.querySelector('#statsTable tbody').innerHTML = `
+            <tr>
+                <td colspan="8" class="error">数据加载失败，请稍后再试</td>
+            </tr>
+        `;
+    });
+
+// 初始化标签页切换
+function initTabs() {
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // 移除所有active类
+            tabs.forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // 添加当前active类
+            this.classList.add('active');
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+            
+            // 特殊处理地图标签页
+            if (tabId === 'geography' && worldMapChart) {
+                setTimeout(() => {
+                    worldMapChart.resize();
+                }, 100);
+            }
+        });
+    });
+}
+
+// 初始化世界地图
+function initWorldMap() {
+    worldMapChart = echarts.init(document.getElementById('worldMap'));
+    
+    // 准备国家数据
+    const countryData = {};
+    filteredStats.forEach(stat => {
+        if (stat.country && stat.country !== 'null') {
+            if (!countryData[stat.country]) {
+                countryData[stat.country] = {
+                    count: 0,
+                    code: stat.country_code || ''
                 };
-            });
-
-            // 填充表格
-            const tableBody = document.getElementById('tableBody');
-            processedData.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${item.date}</td>
-                    <td>${item.device_id.substring(0, 8)}...</td>
-                    <td>${item.open_count}</td>
-                    <td>${item.device_model}</td>
-                    <td>${item.manufacturer}</td>
-                    <td>${item.country}</td>
-                    <td>${item.city}</td>
-                `;
-                tableBody.appendChild(row);
-            });
-
-            // 每日趋势图
-            const dailyData = {};
-            processedData.forEach(item => {
-                if (!dailyData[item.date]) {
-                    dailyData[item.date] = 0;
-                }
-                dailyData[item.date] += item.open_count;
-            });
-
-            const dates = Object.keys(dailyData).sort();
-            const dailyCounts = dates.map(date => dailyData[date]);
-
-            const dailyTrendCtx = document.getElementById('dailyTrendChart').getContext('2d');
-            new Chart(dailyTrendCtx, {
-                type: 'line',
-                data: {
-                    labels: dates,
-                    datasets: [{
-                        label: '每日打开次数',
-                        data: dailyCounts,
-                        borderColor: '#3498db',
-                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                        borderWidth: 2,
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: '每日打开次数趋势'
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: '打开次数'
-                            }
-                        }
-                    }
-                }
-            });
-
-            // 品牌分布图
-            const brandCounts = {};
-            processedData.forEach(item => {
-                const brand = item.manufacturer;
-                brandCounts[brand] = (brandCounts[brand] || 0) + 1;
-            });
-
-            const brandDistributionCtx = document.getElementById('brandDistributionChart').getContext('2d');
-            new Chart(brandDistributionCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: Object.keys(brandCounts),
-                    datasets: [{
-                        data: Object.values(brandCounts),
-                        backgroundColor: [
-                            '#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#9b59b6',
-                            '#1abc9c', '#d35400', '#34495e', '#16a085', '#27ae60'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: '设备品牌分布'
-                        },
-                        legend: {
-                            position: 'right'
-                        }
-                    }
-                }
-            });
-
-            // Android版本分布
-            const versionCounts = {};
-            processedData.forEach(item => {
-                const version = item.android_version;
-                versionCounts[version] = (versionCounts[version] || 0) + 1;
-            });
-
-            const androidVersionCtx = document.getElementById('androidVersionChart').getContext('2d');
-            new Chart(androidVersionCtx, {
-                type: 'bar',
-                data: {
-                    labels: Object.keys(versionCounts).sort(),
-                    datasets: [{
-                        label: '设备数量',
-                        data: Object.keys(versionCounts).sort().map(v => versionCounts[v]),
-                        backgroundColor: '#3498db',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Android版本分布'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: '设备数量'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Android版本'
-                            }
-                        }
-                    }
-                }
-            });
-
-            // 世界地图
-            const countryCounts = {};
-            processedData.forEach(item => {
-                if (item.country && item.country !== 'null') {
-                    countryCounts[item.country] = (countryCounts[item.country] || 0) + 1;
-                }
-            });
-
-            const mapChart = echarts.init(document.getElementById('worldMap'));
-            const option = {
-                title: {
-                    text: '用户国家分布',
-                    left: 'center'
-                },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: '{b}: {c} 设备'
-                },
-                visualMap: {
-                    min: 1,
-                    max: 3,
-                    text: ['高', '低'],
-                    realtime: false,
-                    calculable: true,
-                    inRange: {
-                        color: ['#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695']
-                    }
-                },
-                series: [{
-                    name: '设备数量',
-                    type: 'map',
-                    map: 'world',
-                    roam: true,
-                    emphasis: {
-                        label: {
-                            show: true
-                        }
-                    },
-                    data: Object.keys(countryCounts).map(country => {
-                        return {
-                            name: country,
-                            value: countryCounts[country]
-                        };
-                    })
-                }]
-            };
-            mapChart.setOption(option);
-
-            // 响应窗口大小变化
-            window.addEventListener('resize', function() {
-                mapChart.resize();
-            });
+            }
+            countryData[stat.country].count++;
         }
+    });
+    
+    const mapData = Object.keys(countryData).map(country => {
+        return {
+            name: country,
+            value: countryData[country].count,
+            code: countryData[country].code
+        };
+    });
+    
+    const option = {
+        title: {
+            text: '全球用户分布',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: params => {
+                return `${params.name}: ${params.value} 设备`;
+            }
+        },
+        visualMap: {
+            min: 1,
+            max: Math.max(...mapData.map(d => d.value)),
+            text: ['高', '低'],
+            realtime: false,
+            calculable: true,
+            inRange: {
+                color: ['#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695']
+            }
+        },
+        series: [{
+            name: '设备数量',
+            type: 'map',
+            map: 'world',
+            roam: true,
+            emphasis: {
+                label: {
+                    show: true
+                }
+            },
+            data: mapData
+        }]
+    };
+    
+    worldMapChart.setOption(option);
+    
+    // 响应窗口大小变化
+    window.addEventListener('resize', function() {
+        worldMapChart.resize();
+    });
+}
 
-        // 运行主函数
-        main();
+// 筛选器事件监听
+document.getElementById('dateRange').addEventListener('change', applyFilters);
+document.getElementById('deviceModel').addEventListener('change', applyFilters);
+document.getElementById('androidVersion').addEventListener('change', applyFilters);
+document.getElementById('countryFilter').addEventListener('change', applyFilters);
+document.getElementById('deviceSearch').addEventListener('input', applyFilters);
+
+// 填充筛选器选项
+function fillFilterOptions() {
+    const deviceModelSelect = document.getElementById('deviceModel');
+    const androidVersionSelect = document.getElementById('androidVersion');
+    const countrySelect = document.getElementById('countryFilter');
+    
+    // 添加设备型号选项
+    deviceModels.forEach(model => {
+        const option = document.createElement('option');
+        option.value = model;
+        option.textContent = model;
+        deviceModelSelect.appendChild(option);
+    });
+    
+    // 添加Android版本选项
+    androidVersions.forEach(version => {
+        const option = document.createElement('option');
+        option.value = version;
+        option.textContent = `Android ${version}`;
+        androidVersionSelect.appendChild(option);
+    });
+    
+    // 添加国家选项
+    countries.forEach(country => {
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        countrySelect.appendChild(option);
+    });
+}
+
+// 应用筛选条件
+function applyFilters() {
+    const dateRange = document.getElementById('dateRange').value;
+    const deviceModel = document.getElementById('deviceModel').value;
+    const androidVersion = document.getElementById('androidVersion').value;
+    const country = document.getElementById('countryFilter').value;
+    const deviceSearch = document.getElementById('deviceSearch').value.toLowerCase();
+    
+    // 计算日期范围
+    let minDate = null;
+    if (dateRange !== 'all') {
+        const days = parseInt(dateRange);
+        minDate = new Date();
+        minDate.setDate(minDate.getDate() - days);
+    }
+    
+    // 筛选数据
+    filteredStats = allStats.filter(stat => {
+        // 日期筛选
+        if (minDate && new Date(stat.date) < minDate) {
+            return false;
+        }
+        
+        // 设备型号筛选
+        if (deviceModel !== 'all' && stat.device_model !== deviceModel) {
+            return false;
+        }
+        
+        // Android版本筛选
+        if (androidVersion !== 'all' && stat.android_version !== androidVersion) {
+            return false;
+        }
+        
+        // 国家筛选
+        if (country !== 'all' && stat.country !== country) {
+            return false;
+        }
+        
+        // 设备ID搜索
+        if (deviceSearch && !stat.device_id.toLowerCase().includes(deviceSearch)) {
+            return false;
+        }
+        
+        return true;
+    });
+    
+    // 更新图表和数据展示
+    updateCharts();
+    updateTable();
+    
+    // 更新世界地图
+    if (worldMapChart) {
+        initWorldMap();
+    }
+}
+
+// 更新图表数据
+function updateCharts() {
+    // 按日期聚合数据
+    const dailyStats = {};
+    const deviceCounts = {};
+    const versionCounts = {};
+    const manufacturerCounts = {};
+    const sdkCounts = {};
+    const ispCounts = {};
+    const countryCounts = {};
+    const cityCounts = {};
+    const timezoneCounts = {};
+    const manufacturerUsage = {};
+    const androidUsage = {};
+    const deviceModelUsage = {};
+    const sdkUsage = {};
+    const countryUsage = {};
+    
+    let totalOpens = 0;
+    let uniqueDevices = new Set();
+    let uniqueManufacturers = new Set();
+    let uniqueSdkVersions = new Set();
+    let uniqueCountries = new Set();
+    
+    filteredStats.forEach(stat => {
+        // 统计总开启次数
+        const opens = parseInt(stat.open_count) || 0;
+        totalOpens += opens;
+        
+        // 记录唯一设备
+        uniqueDevices.add(stat.device_id);
+        
+        // 按日期统计
+        if (!dailyStats[stat.date]) {
+            dailyStats[stat.date] = 0;
+        }
+        dailyStats[stat.date] += opens;
+        
+        // 按设备统计
+        if (!deviceCounts[stat.device_model]) {
+            deviceCounts[stat.device_model] = 0;
+        }
+        deviceCounts[stat.device_model] += opens;
+        
+        // 按Android版本统计
+        if (!versionCounts[stat.android_version]) {
+            versionCounts[stat.android_version] = 0;
+        }
+        versionCounts[stat.android_version] += opens;
+        
+        // 按制造商统计
+        if (stat.manufacturer) {
+            if (!manufacturerCounts[stat.manufacturer]) {
+                manufacturerCounts[stat.manufacturer] = 0;
+                uniqueManufacturers.add(stat.manufacturer);
+            }
+            manufacturerCounts[stat.manufacturer] += opens;
+        }
+        
+        // 按SDK版本统计
+        if (stat.sdk_version) {
+            if (!sdkCounts[stat.sdk_version]) {
+                sdkCounts[stat.sdk_version] = 0;
+                uniqueSdkVersions.add(stat.sdk_version);
+            }
+            sdkCounts[stat.sdk_version] += opens;
+        }
+        
+        // 按运营商统计
+        if (stat.isp && stat.isp !== 'null') {
+            if (!ispCounts[stat.isp]) {
+                ispCounts[stat.isp] = 0;
+            }
+            ispCounts[stat.isp] += opens;
+        }
+        
+        // 按国家统计
+        if (stat.country && stat.country !== 'null') {
+            if (!countryCounts[stat.country]) {
+                countryCounts[stat.country] = 0;
+                uniqueCountries.add(stat.country);
+            }
+            countryCounts[stat.country] += opens;
+            
+            // 按城市统计
+            if (stat.city && stat.city !== 'null') {
+                const cityKey = `${stat.city}, ${stat.country}`;
+                if (!cityCounts[cityKey]) {
+                    cityCounts[cityKey] = 0;
+                }
+                cityCounts[cityKey] += opens;
+            }
+        }
+        
+        // 按时区统计
+        if (stat.timezone && stat.timezone !== 'null') {
+            if (!timezoneCounts[stat.timezone]) {
+                timezoneCounts[stat.timezone] = 0;
+            }
+            timezoneCounts[stat.timezone] += opens;
+        }
+        
+        // 按制造商使用情况统计
+        if (stat.manufacturer) {
+            if (!manufacturerUsage[stat.manufacturer]) {
+                manufacturerUsage[stat.manufacturer] = 0;
+            }
+            manufacturerUsage[stat.manufacturer] += opens;
+        }
+        
+        // 按Android版本使用情况统计
+        if (stat.android_version) {
+            if (!androidUsage[stat.android_version]) {
+                androidUsage[stat.android_version] = 0;
+            }
+            androidUsage[stat.android_version] += opens;
+        }
+        
+        // 按设备型号使用情况统计
+        if (stat.device_model) {
+            if (!deviceModelUsage[stat.device_model]) {
+                deviceModelUsage[stat.device_model] = 0;
+            }
+            deviceModelUsage[stat.device_model] += opens;
+        }
+        
+        // 按SDK版本使用情况统计
+        if (stat.sdk_version) {
+            if (!sdkUsage[stat.sdk_version]) {
+                sdkUsage[stat.sdk_version] = 0;
+            }
+            sdkUsage[stat.sdk_version] += opens;
+        }
+        
+        // 按国家使用情况统计
+        if (stat.country && stat.country !== 'null') {
+            if (!countryUsage[stat.country]) {
+                countryUsage[stat.country] = 0;
+            }
+            countryUsage[stat.country] += opens;
+        }
+    });
+    
+    // 更新仪表板数据
+    document.getElementById('totalOpens').textContent = totalOpens;
+    document.getElementById('uniqueDevices').textContent = uniqueDevices.size;
+    document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length;
+    document.getElementById('manufacturerCount').textContent = uniqueManufacturers.size;
+    document.getElementById('sdkVersions').textContent = uniqueSdkVersions.size;
+    document.getElementById('ispCount').textContent = Object.keys(ispCounts).length;
+    
+    // 准备日期排序
+    const dates = Object.keys(dailyStats).sort();
+    
+    // 更新总开启次数图表
+    totalOpensChart.data.labels = dates;
+    totalOpensChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
+    totalOpensChart.update();
+    
+    // 更新设备分布图表
+    const topDevices = Object.entries(deviceCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+    
+    devicesChart.data.labels = topDevices.map(d => d[0] || '未知设备');
+    devicesChart.data.datasets[0].data = topDevices.map(d => d[1]);
+    devicesChart.update();
+    
+    // 更新Android版本分布图表
+    const topVersions = Object.entries(versionCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+    
+    androidChart.data.labels = topVersions.map(v => `Android ${v[0]}` || '未知版本');
+    androidChart.data.datasets[0].data = topVersions.map(v => v[1]);
+    androidChart.update();
+    
+    // 更新趋势图表
+    trendChart.data.labels = dates;
+    trendChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
+    trendChart.update();
+    
+    // 更新品牌分布图表
+    const topManufacturers = Object.entries(manufacturerCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+    
+    manufacturerChart.data.labels = topManufacturers.map(m => m[0] || '未知品牌');
+    manufacturerChart.data.datasets[0].data = topManufacturers.map(m => m[1]);
+    manufacturerChart.update();
+    
+    // 更新SDK版本分布图表
+    const topSdks = Object.entries(sdkCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+    
+    sdkChart.data.labels = topSdks.map(s => `SDK ${s[0]}` || '未知SDK');
+    sdkChart.data.datasets[0].data = topSdks.map(s => s[1]);
+    sdkChart.update();
+    
+    // 更新运营商分布图表
+    const topIsps = Object.entries(ispCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+    
+    ispChart.data.labels = topIsps.map(i => i[0] || '未知运营商');
+    ispChart.data.datasets[0].data = topIsps.map(i => i[1]);
+    ispChart.update();
+    
+    // 更新国家分布图表
+    const topCountries = Object.entries(countryCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    countryChart.data.labels = topCountries.map(c => c[0] || '未知国家');
+    countryChart.data.datasets[0].data = topCountries.map(c => c[1]);
+    countryChart.update();
+    
+    // 更新城市分布图表
+    const topCities = Object.entries(cityCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    cityChart.data.labels = topCities.map(c => c[0] || '未知城市');
+    cityChart.data.datasets[0].data = topCities.map(c => c[1]);
+    cityChart.update();
+    
+    // 更新时区分布图表
+    const topTimezones = Object.entries(timezoneCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    timezoneChart.data.labels = topTimezones.map(t => t[0] || '未知时区');
+    timezoneChart.data.datasets[0].data = topTimezones.map(t => t[1]);
+    timezoneChart.update();
+    
+    // 更新品牌使用情况图表
+    const topManufacturerUsage = Object.entries(manufacturerUsage)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    manufacturerUsageChart.data.labels = topManufacturerUsage.map(m => m[0] || '未知品牌');
+    manufacturerUsageChart.data.datasets[0].data = topManufacturerUsage.map(m => m[1]);
+    manufacturerUsageChart.update();
+    
+    // 更新Android版本使用情况图表
+    const topAndroidUsage = Object.entries(androidUsage)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    androidUsageChart.data.labels = topAndroidUsage.map(a => `Android ${a[0]}` || '未知版本');
+    androidUsageChart.data.datasets[0].data = topAndroidUsage.map(a => a[1]);
+    androidUsageChart.update();
+    
+    // 更新设备型号TOP10图表
+    const topDeviceModels = Object.entries(deviceModelUsage)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    deviceModelChart.data.labels = topDeviceModels.map(d => d[0] || '未知型号');
+    deviceModelChart.data.datasets[0].data = topDeviceModels.map(d => d[1]);
+    deviceModelChart.update();
+    
+    // 更新SDK版本使用情况图表
+    const topSdkUsage = Object.entries(sdkUsage)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    sdkUsageChart.data.labels = topSdkUsage.map(s => `SDK ${s[0]}` || '未知SDK');
+    sdkUsageChart.data.datasets[0].data = topSdkUsage.map(s => s[1]);
+    sdkUsageChart.update();
+    
+    // 更新每日活跃趋势图表
+    dailyActiveChart.data.labels = dates;
+    dailyActiveChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
+    dailyActiveChart.update();
+    
+    // 更新品牌使用趋势图表
+    const manufacturerTrendData = {};
+    dates.forEach(date => {
+        manufacturerTrendData[date] = {};
+    });
+    
+    filteredStats.forEach(stat => {
+        if (stat.manufacturer && stat.date) {
+            if (!manufacturerTrendData[stat.date][stat.manufacturer]) {
+                manufacturerTrendData[stat.date][stat.manufacturer] = 0;
+            }
+            manufacturerTrendData[stat.date][stat.manufacturer] += parseInt(stat.open_count) || 0;
+        }
+    });
+    
+    const topManufacturersTrend = Object.entries(manufacturerUsage)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5)
+        .map(m => m[0]);
+    
+    manufacturerTrendChart.data.labels = dates;
+    manufacturerTrendChart.data.datasets = topManufacturersTrend.map((manufacturer, i) => {
+        const colors = [
+            'rgba(67, 97, 238, 1)',
+            'rgba(76, 201, 240, 1)',
+            'rgba(63, 55, 201, 1)',
+            'rgba(108, 117, 125, 1)',
+            'rgba(255, 159, 64, 1)'
+        ];
+        
+        return {
+            label: manufacturer,
+            data: dates.map(date => manufacturerTrendData[date][manufacturer] || 0),
+            borderColor: colors[i % colors.length],
+            backgroundColor: colors[i % colors.length].replace('1', '0.1'),
+            borderWidth: 2,
+            tension: 0.3,
+            fill: true
+        };
+    });
+    
+    manufacturerTrendChart.update();
+    
+    // 更新Android版本使用趋势图表
+    const androidTrendData = {};
+    dates.forEach(date => {
+        androidTrendData[date] = {};
+    });
+    
+    filteredStats.forEach(stat => {
+        if (stat.android_version && stat.date) {
+            if (!androidTrendData[stat.date][stat.android_version]) {
+                androidTrendData[stat.date][stat.android_version] = 0;
+            }
+            androidTrendData[stat.date][stat.android_version] += parseInt(stat.open_count) || 0;
+        }
+    });
+    
+    const topAndroidTrend = Object.entries(androidUsage)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5)
+        .map(a => a[0]);
+    
+    androidTrendChart.data.labels = dates;
+    androidTrendChart.data.datasets = topAndroidTrend.map((version, i) => {
+        const colors = [
+            'rgba(67, 97, 238, 1)',
+            'rgba(76, 201, 240, 1)',
+            'rgba(63, 55, 201, 1)',
+            'rgba(108, 117, 125, 1)',
+            'rgba(255, 159, 64, 1)'
+        ];
+        
+        return {
+            label: `Android ${version}`,
+            data: dates.map(date => androidTrendData[date][version] || 0),
+            borderColor: colors[i % colors.length],
+            backgroundColor: colors[i % colors.length].replace('1', '0.1'),
+            borderWidth: 2,
+            tension: 0.3,
+            fill: true
+        };
+    });
+    
+    androidTrendChart.update();
+    
+    // 更新国家使用趋势图表
+    const countryTrendData = {};
+    dates.forEach(date => {
+        countryTrendData[date] = {};
+    });
+    
+    filteredStats.forEach(stat => {
+        if (stat.country && stat.country !== 'null' && stat.date) {
+            if (!countryTrendData[stat.date][stat.country]) {
+                countryTrendData[stat.date][stat.country] = 0;
+            }
+            countryTrendData[stat.date][stat.country] += parseInt(stat.open_count) || 0;
+        }
+    });
+    
+    const topCountryTrend = Object.entries(countryUsage)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5)
+        .map(c => c[0]);
+    
+    countryTrendChart.data.labels = dates;
+    countryTrendChart.data.datasets = topCountryTrend.map((country, i) => {
+        const colors = [
+            'rgba(67, 97, 238, 1)',
+            'rgba(76, 201, 240, 1)',
+            'rgba(63, 55, 201, 1)',
+            'rgba(108, 117, 125, 1)',
+            'rgba(255, 159, 64, 1)'
+        ];
+        
+        return {
+            label: country,
+            data: dates.map(date => countryTrendData[date][country] || 0),
+            borderColor: colors[i % colors.length],
+            backgroundColor: colors[i % colors.length].replace('1', '0.1'),
+            borderWidth: 2,
+            tension: 0.3,
+            fill: true
+        };
+    });
+    
+    countryTrendChart.update();
+}
+
+// 更新表格数据
+function updateTable() {
+    const tbody = document.querySelector('#statsTable tbody');
+    tbody.innerHTML = '';
+    
+    if (filteredStats.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="8" class="loading">没有找到匹配的数据</td>
+            </tr>
+        `;
+        return;
+    }
+    
+    // 按日期降序排序
+    const sortedStats = [...filteredStats].sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+    });
+    
+    // 只显示前100条记录
+    const displayStats = sortedStats.slice(0, 100);
+    
+    displayStats.forEach(stat => {
+        const tr = document.createElement('tr');
+        
+        // 日期
+        const dateTd = document.createElement('td');
+        dateTd.textContent = stat.date;
+        tr.appendChild(dateTd);
+        
+        // 设备ID
+        const deviceTd = document.createElement('td');
+        deviceTd.textContent = stat.device_id.slice(0, 8) + '...';
+        deviceTd.title = stat.device_id;
+        tr.appendChild(deviceTd);
+        
+        // 开启次数
+        const countTd = document.createElement('td');
+        countTd.textContent = stat.open_count;
+        tr.appendChild(countTd);
+        
+        // 设备型号
+        const modelTd = document.createElement('td');
+        modelTd.textContent = stat.device_model || '--';
+        tr.appendChild(modelTd);
+        
+        // Android版本
+        const versionTd = document.createElement('td');
+        versionTd.textContent = stat.android_version ? `Android ${stat.android_version}` : '--';
+        tr.appendChild(versionTd);
+        
+        // 制造商
+        const manuTd = document.createElement('td');
+        manuTd.textContent = stat.manufacturer || '--';
+        tr.appendChild(manuTd);
+        
+        // 报告时间
+        const timeTd = document.createElement('td');
+        timeTd.textContent = stat.report_time || '--';
+        tr.appendChild(timeTd);
+        
+        // 状态
+        const statusTd = document.createElement('td');
+        const badge = document.createElement('span');
+        badge.className = 'badge ' + getStatusBadgeClass(stat.date);
+        badge.textContent = getStatusText(stat.date);
+        statusTd.appendChild(badge);
+        tr.appendChild(statusTd);
+        
+        tbody.appendChild(tr);
+    });
+}
+
+// 获取状态标签样式
+function getStatusBadgeClass(date) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
+
+    const reportDate = new Date(date);
+    reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
+
+    const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 0) {
+        return 'badge-success';
+    } else if (diffDays <= 7) {
+        return 'badge-primary';
+    } else if (diffDays <= 30) {
+        return 'badge-warning';
+    } else {
+        return 'badge-danger';
+    }
+}
+
+// 获取状态文本
+function getStatusText(date) {
+    // 统一用本地时区解析日期，避免 UTC 和本地时区混淆
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // 清零时间部分，确保比较日期而非时间戳
+
+    const reportDate = new Date(date);
+    reportDate.setHours(0, 0, 0, 0); // 同样清零时间部分
+
+    const diffDays = Math.floor((today - reportDate) / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) {
+        return '今日活跃';
+    } else if (diffDays <= 7) {
+        return '7天内活跃';
+    } else if (diffDays <= 30) {
+        return '30天内活跃';
+    } else {
+        return '历史记录';
+    }
+}
     </script>
 </body>
 </html>
