@@ -37,7 +37,7 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","c650a577f8eba164",2,"2025-04-14 00:36:46","SM-A515F","13","samsung",33,"41.249.183.30","Morocco","MA","El-Jadida","El Jadida",33.2558,-8.5015,"Africa/Casablanca","MT-MPLS"
 "2025-04-14","59b6e70715692276",1,"2025-04-14 07:39:27","2210132C","15","Xiaomi",35,"223.160.208.221","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile communications corporation"
 "2025-04-13","7b93ed4e675b3b92",3,"2025-04-13 20:42:56","21051182G","13","Xiaomi",33,"170.83.206.7","Brazil","BR","Sergipe","Estância",-11.2339,-37.4145,"America/Maceio","JF Solucoes Informatica Ltda."
-"2025-04-14","96b4620adb1ddf20",4,"2025-04-14 07:43:10","PHB110","14","OnePlus",34,"156.224.76.203","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","MOACK.Co.LTD"
 "2025-04-14","3e72ab716b659832",4,"2025-04-14 07:47:09","M2007J3SC","12","Xiaomi",31,"121.236.57.212","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","e3d63f6772c7637e",4,"2025-04-14 07:49:42","Redmi Note 10 5G","14","Xiaomi",34,"112.96.137.10","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Unicom Guangzhou network"
 "2025-04-14","fbddf252a1ef9bf7",1,"2025-04-14 07:53:39","23049RAD8C","15","Xiaomi",35,"167.234.210.234","United States","US","California","San Jose",37.2379,-121.7946,"America/Los_Angeles","ORACLE-BMC-31898"
+"2025-04-14","96b4620adb1ddf20",5,"2025-04-14 07:59:02","PHB110","14","OnePlus",34,"156.224.76.203","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","MOACK.Co.LTD"
