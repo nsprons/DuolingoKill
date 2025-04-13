@@ -694,6 +694,7 @@
         }
         
         // 填充筛选器选项
+        //测试
         function fillFilterOptions() {
             const deviceModelSelect = document.getElementById('deviceModel');
             const androidVersionSelect = document.getElementById('androidVersion');
@@ -702,6 +703,7 @@
             
             // 添加设备型号选项
             deviceModels.forEach(model => {
+                //测试
                 const option = document.createElement('option');
                 option.value = model;
                 option.textContent = model;
@@ -710,9 +712,7 @@
             
             // 添加Android版本选项
             androidVersions.forEach(version => {
-                //测试
                 const option = document.createElement('option');
-                //测试
                 option.value = version;
                 option.textContent = `Android ${version}`;
                 androidVersionSelect.appendChild(option);
