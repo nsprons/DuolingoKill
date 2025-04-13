@@ -2,3 +2,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-13","d756375c547a53b1",6,"2025-04-13 21:42:55","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-13","06060a38b401e661",3,"2025-04-13 21:50:13","22127RK46C","15","Xiaomi",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-13","24f18c96d960fba6",-82,"2025-04-13 22:27:08","PJA110","13","OnePlus",33,"13.229.79.45","Singapore","SG","","Singapore",1.2868,103.8503,"Asia/Singapore","AMAZON-02"
+"2025-04-13","3b2c7bde652b6038",1,"2025-04-13 22:28:05","M2002J9E","11","Xiaomi",30,"57.183.32.199","Japan","JP","Tokyo","Tokyo",35.6893,139.6899,"Asia/Tokyo","AMAZON-02"
