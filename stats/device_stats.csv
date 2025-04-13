@@ -38,3 +38,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","96b4620adb1ddf20",1,"2025-04-14 07:32:32","PHB110","14","OnePlus",34,"156.224.76.203","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","MOACK.Co.LTD"
 "2025-04-14","41eb04801928282a",1,"2025-04-14 07:35:28","RMX3888","15","realme",35,"153.35.127.15","China","CN","Jiangsu","Suzhou",31.3093,120.602,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","c650a577f8eba164",2,"2025-04-14 00:36:46","SM-A515F","13","samsung",33,"41.249.183.30","Morocco","MA","El-Jadida","El Jadida",33.2558,-8.5015,"Africa/Casablanca","MT-MPLS"
+"2025-04-14","e3d63f6772c7637e",1,"2025-04-14 07:38:07","Redmi Note 10 5G","14","Xiaomi",34,"35.72.29.112","Japan","JP","Tokyo","Tokyo",35.6893,139.6899,"Asia/Tokyo","AMAZON-02"
