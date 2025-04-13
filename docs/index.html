@@ -636,7 +636,7 @@
 
         // 加载数据
         function loadData() {
-            fetch('http://raw.githack.com/nspron/DuolingoKill/main/stats/device_stats.csv')
+            fetch('https://proxy.nspron.eu.org/proxy/https://raw.githubusercontent.com/nspron/DuolingoKill/refs/heads/main/stats/device_stats.csv')
                 .then(response => {
                     if (!response.ok) throw new Error('网络响应不正常');
                     return response.text();
