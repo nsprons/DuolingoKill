@@ -9,3 +9,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","24f18c96d960fba6",50,"2025-04-14 02:31:20","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-13","1f66be5aab96b161",3,"2025-04-13 20:40:01","22111317G","14","Xiaomi",34,"31.15.181.96","Slovenia","SI","Hajdina","Spodnja Hajdina",46.4095,15.8449,"Europe/Ljubljana","Telemach UG d.o.o."
 "2025-04-14","d756375c547a53b1",3,"2025-04-14 02:48:55","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"null","null","null","null","null",null,null,"null","null"
+"٢٠٢٥-٠٤-١٣","3618cfb92c5ef7a6",1,"٢٠٢٥-٠٤-١٣ ٢١:٥٦:٥٧","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
