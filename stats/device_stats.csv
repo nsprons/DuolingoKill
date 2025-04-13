@@ -19,3 +19,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","c9caf8819b491cdb",3,"2025-04-14 05:02:25","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","f408942fcf786867",5,"2025-04-14 00:07:58","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",2,"٢٠٢٥-٠٤-١٤ ٠٠:٠٩:٥٩","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","446ac5e65e0e9905",1,"2025-04-14 05:13:07","22011211C","13","Xiaomi",33,"39.144.220.119","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
