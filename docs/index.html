@@ -625,7 +625,7 @@
         function initMap() {
             worldMap = L.map('worldMap').setView([20, 0], 2);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer('https://proxy.nspron.eu.org/proxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(worldMap);
 
@@ -1354,7 +1354,7 @@
 
                         const miniMap = L.map('miniMapContainer').setView([centerLat, centerLng], zoomLevel);
 
-                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        L.tileLayer('https://proxy.nspron.eu.org/proxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         }).addTo(miniMap);
 
