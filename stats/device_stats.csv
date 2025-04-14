@@ -73,3 +73,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","215e9a7554d0b952",2,"2025-04-14 13:28:18","Redmi K20 Pro","13","Xiaomi",33,"192.9.251.148","United States","US","California","San Jose",37.2379,-121.7946,"America/Los_Angeles","ORACLE-BMC-31898"
 "2025-04-14","741180d6cb9b9201",4,"2025-04-14 13:29:02","PHJ110","13","OPPO",33,"218.26.158.182","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","683d43af967763fc",13,"2025-04-14 13:31:05","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","80745194cb145da1",1,"2025-04-14 13:32:04","PJX110","15","OnePlus",35,"8.212.7.77","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
