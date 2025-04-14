@@ -1,4 +1,4 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
 "2025-04-14","24f18c96d960fba6",46,"2025-04-14 17:25:18","PJA110","13","OnePlus",33,"1.7.4.2","117.151.235.247","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-14T17:25:19+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-14","f43acb410bda7d55",22,"2025-04-14 17:28:44","SM-S9160","14","samsung",34,"","1.164.100.126","","","TW","","","Hsinchu","24.8065","120.9706","","","Data Communication Business Group"
-"2025-04-14","7c161a49ce78d626",20,"2025-04-14 16:29:24","23028RN4DG","13","Xiaomi",33,"","180.252.175.96","","","ID","","","Jakarta","-6.2114","106.8446","","","PT Telekomunikasi Indonesia"
+"2025-04-14","7c161a49ce78d626",21,"2025-04-14 16:37:43","23028RN4DG","13","Xiaomi",33,"","180.252.175.96","","","ID","","","Jakarta","-6.2114","106.8446","","","PT Telekomunikasi Indonesia"
