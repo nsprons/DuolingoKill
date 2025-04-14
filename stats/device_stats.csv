@@ -1,6 +1,5 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
 "2025-04-14","55f0813c54989c74",10,"2025-04-14 17:58:53","2201122C","15","Xiaomi",35,"","171.111.160.114","","","CN","","","","34.7732","113.722","","","Chinanet"
-"2025-04-14","378e38e3dab14109",2,"2025-04-14 18:43:22","23054RA19C","15","Xiaomi",35,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","73b2850cdc0b23f7",2,"2025-04-14 18:52:29","CPH2653","15","OnePlus",35,"","182.255.32.46","","","HK","","","","22.2578","114.1657","","","JINX CO., LIMITED"
 "2025-04-14","5db7d4623784c024",5,"2025-04-14 18:57:48","PKR110","15","OnePlus",35,"","120.208.214.206","","","CN","","","Jincheng","35.4963","112.831","","","China Mobile communications corporation"
 "2025-04-14","47a1a80d474c27ad",6,"2025-04-14 18:58:01","23013RK75C","13","Xiaomi",33,"","43.250.200.27","","","CN","","","Changsha","28.2014","112.9611","","","CHINA UNICOM China169 Backbone"
@@ -118,3 +117,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3294514c57dc69a2",6,"2025-04-14 23:48:56","PJD110","15","OnePlus",35,"1.7.4.3","36.147.127.154","ipv4","中国","CN","Beijing Shi","BJ","北京市","39.91518020629883","116.37431335449219","Asia/Shanghai","2025-04-14T22:51:38+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-14","cc1e3f324b9ef1a7",2,"2025-04-14 23:49:20","23127PN0CC","15","Xiaomi",35,"1.7.4.3","183.216.130.115","ipv4","中国","CN","江西省","JX","南昌市","28.671499252319336","115.88899993896484","Asia/Shanghai","2025-04-14T23:49:21+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-14","d4eb17c15617ddba",1,"2025-04-14 23:50:09","23078RKD5C","15","Xiaomi",35,"1.7.4.3","106.34.168.189","ipv4","中国","CN","河南省","HA","郑州市","34.741111755371094","113.68556213378906","Asia/Shanghai","2025-04-14T23:50:11+08:00","Chinanet"
+"2025-04-14","378e38e3dab14109",3,"2025-04-14 23:50:24","23054RA19C","15","Xiaomi",35,"1.7.4.2","","","","","","","","","","","",""
