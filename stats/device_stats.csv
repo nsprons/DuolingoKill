@@ -72,3 +72,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","a7191571d3b8c46a",3,"2025-04-14 07:23:31","moto g82 5G","13","motorola",33,"46.29.25.101","The Netherlands","NL","North Holland","Hoofddorp",52.297,4.6999,"Europe/Amsterdam","HURRICANE"
 "2025-04-14","d914a47a32dda8bf",2,"2025-04-14 13:26:36","22081212C","13","Xiaomi",33,"118.212.206.145","China","CN","Shanghai","Shanghai",31.2222,121.4581,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","7c161a49ce78d626",4,"2025-04-14 12:26:52","23028RN4DG","13","Xiaomi",33,"180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
+"2025-04-14","215e9a7554d0b952",2,"2025-04-14 13:28:18","Redmi K20 Pro","13","Xiaomi",33,"192.9.251.148","United States","US","California","San Jose",37.2379,-121.7946,"America/Los_Angeles","ORACLE-BMC-31898"
