@@ -75,4 +75,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","9925e43c4238f4cd",7,"2025-04-14 15:29:46","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","4acaec7f09726c21",3,"2025-04-14 08:37:54","SM-S901E","14","samsung",34,"1.7.4.3","","","","","","","","","","","",""
 "2025-04-14","7c161a49ce78d626",33,"2025-04-14 20:39:46","23028RN4DG","13","Xiaomi",33,"1.7.4.3","180.252.175.96","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","unknown","PT Telekomunikasi Indonesia"
-"2025-04-14","a197d92e5c4389fb",3,"2025-04-14 21:40:40","Pixel 6","15","Google",35,"1.7.4.3","146.190.169.146","unknown","United States","US","California","CA","San Francisco","37.7809","-122.4245","America/Los_Angeles","unknown","DIGITALOCEAN-ASN"
+"2025-04-14","a197d92e5c4389fb",4,"2025-04-14 21:42:02","Pixel 6","15","Google",35,"1.7.4.3","146.190.169.146","unknown","United States","US","California","CA","San Francisco","37.7809","-122.4245","America/Los_Angeles","unknown","DIGITALOCEAN-ASN"
