@@ -55,4 +55,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","a9ed58b64588d414",1,"2025-04-14 10:43:56","Pixel 8","15","Google",35,"136.23.28.51","United Kingdom","GB","","",51.4964,-0.1224,"Europe/London","GOOGLEWIFI"
 "2025-04-14","57fddb52739e669d",2,"2025-04-14 10:47:45","PJD110","15","OnePlus",35,"183.222.182.229","China","CN","Sichuan","Chengdu",30.6498,104.0555,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","d17b41cb3a2e054e",1,"2025-04-14 10:57:25","24031PN0DC","15","Xiaomi",35,"89.185.25.176","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Hytron Network Services Limited"
-"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",5,"٢٠٢٥-٠٤-١٤ ٠٦:٠٩:١٠","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",6,"٢٠٢٥-٠٤-١٤ ٠٦:١٠:٥٠","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
