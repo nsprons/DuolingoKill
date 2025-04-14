@@ -455,6 +455,13 @@
             </div>
 
             <div class="filter-group">
+                <label class="filter-label">制造商</label>
+                <select id="manufacturerFilter">
+                    <option value="all">全部制造商</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
                 <label class="filter-label">Android版本</label>
                 <select id="androidVersion">
                     <option value="all">全部版本</option>
@@ -577,7 +584,10 @@
                         <th>设备ID</th>
                         <th>开启次数</th>
                         <th>设备型号</th>
+                        <th>制造商</th>
                         <th>Android版本</th>
+                        <th>SDK版本</th>
+                        <th>应用版本</th>
                         <th>地区</th>
                         <th>IP地址</th>
                         <th>运营商</th>
@@ -587,7 +597,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="10" class="loading">数据加载中...</td>
+                        <td colspan="13" class="loading">数据加载中...</td>
                     </tr>
                 </tbody>
             </table>
@@ -906,6 +916,7 @@
             const region = document.getElementById('regionFilter').value;
             const isp = document.getElementById('ispFilter').value;
             const searchTerm = document.getElementById('deviceSearch').value.toLowerCase();
+            const manufacturer = document.getElementById('manufacturerFilter').value;
 
             // 计算日期范围
             let minDate = null;
@@ -924,6 +935,11 @@
 
                 // 设备型号筛选
                 if (deviceModel !== 'all' && stat.device_model !== deviceModel) {
+                    return false;
+                }
+
+                //制造商筛选
+                if (manufacturer !== 'all' && stat.manufacturer !== manufacturer) {
                     return false;
                 }
 
@@ -1177,6 +1193,7 @@
                 <b>${locationText}</b><br>
                 设备数量: ${location.devices.size}<br>
                 总开启次数: ${location.count}
+                主要制造商: ${getTopManufacturer(location.devices)}
             `);
 
                 markerCluster.addLayer(marker);
@@ -1186,6 +1203,22 @@
             if (markerCluster.getLayers().length > 0) {
                 worldMap.fitBounds(markerCluster.getBounds());
             }
+        }
+
+        // 添加辅助函数获取主要制造商
+        function getTopManufacturer(devices) {
+            const manufacturerCounts = {};
+            devices.forEach(deviceId => {
+                const stat = allStats.find(s => s.device_id === deviceId);
+                if (stat && stat.manufacturer) {
+                    manufacturerCounts[stat.manufacturer] = (manufacturerCounts[stat.manufacturer] || 0) + 1;
+                }
+            });
+
+            const topManufacturer = Object.entries(manufacturerCounts)
+                .sort((a, b) => b[1] - a[1])[0];
+
+            return topManufacturer ? `${topManufacturer[0]} (${topManufacturer[1]})` : '未知';
         }
 
         // 更新表格数据（带分页）
@@ -1211,6 +1244,7 @@
             const startIndex = (page - 1) * itemsPerPage;
             const paginatedStats = sortedStats.slice(startIndex, startIndex + itemsPerPage);
 
+            // 在updateTable函数中更新表格行创建逻辑
             paginatedStats.forEach(stat => {
                 const tr = document.createElement('tr');
 
@@ -1230,26 +1264,36 @@
                 countTd.textContent = stat.open_count;
                 tr.appendChild(countTd);
 
-                // 添加制造商列
-                const manufacturerTd = document.createElement('td');
-                manufacturerTd.textContent = stat.manufacturer || '--';
-                tr.appendChild(manufacturerTd);
-
                 // 设备型号
                 const modelTd = document.createElement('td');
                 modelTd.textContent = stat.device_model || '--';
                 tr.appendChild(modelTd);
+
+                // 制造商
+                const manufacturerTd = document.createElement('td');
+                manufacturerTd.textContent = stat.manufacturer || '--';
+                tr.appendChild(manufacturerTd);
 
                 // Android版本
                 const versionTd = document.createElement('td');
                 versionTd.textContent = stat.android_version ? `Android ${stat.android_version}` : '--';
                 tr.appendChild(versionTd);
 
+                // SDK版本
+                const sdkTd = document.createElement('td');
+                sdkTd.textContent = stat.sdk_version ? `SDK ${stat.sdk_version}` : '--';
+                tr.appendChild(sdkTd);
+
+                // 应用版本
+                const appVersionTd = document.createElement('td');
+                appVersionTd.textContent = stat.version || '--';
+                tr.appendChild(appVersionTd);
+
                 // 地区
                 const regionTd = document.createElement('td');
-                if (stat.city && stat.region && stat.country) {
-                    regionTd.textContent = `${stat.city}, ${stat.region}`;
-                    regionTd.title = `${stat.city}, ${stat.region}, ${stat.country}`;
+                if (stat.city && stat.region_name && stat.country_name) {
+                    regionTd.textContent = `${stat.city}, ${stat.region_name}`;
+                    regionTd.title = `${stat.city}, ${stat.region_name}, ${stat.country_name}`;
                 } else {
                     regionTd.textContent = '--';
                 }
@@ -1346,37 +1390,69 @@
 
                 // 填充弹窗内容
                 content.innerHTML = `
-                <div class="ip-popup-row">
-                    <div class="ip-popup-label">IP地址:</div>
-                    <div class="ip-popup-value">${stat.ip_address || '未知'}</div>
-                </div>
-                <div class="ip-popup-row">
-                    <div class="ip-popup-label">位置:</div>
-                    <div class="ip-popup-value">
-                        ${stat.city || '未知城市'}, ${stat.region || '未知地区'}, ${stat.country || '未知国家'}
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">IP地址:</div>
+                        <div class="ip-popup-value">${stat.ip_address || '未知'}</div>
                     </div>
-                </div>
-                <div class="ip-popup-row">
-                    <div class="ip-popup-label">坐标:</div>
-                    <div class="ip-popup-value">
-                        ${stat.latitude ? stat.latitude.toFixed(4) : '未知'}, 
-                        ${stat.longitude ? stat.longitude.toFixed(4) : '未知'}
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">IP类型:</div>
+                        <div class="ip-popup-value">${stat.ip_type || '未知'}</div>
                     </div>
-                </div>
-                <div class="ip-popup-row">
-                    <div class="ip-popup-label">运营商:</div>
-                    <div class="ip-popup-value">${stat.isp || '未知'}</div>
-                </div>
-                <div class="ip-popup-row">
-                    <div class="ip-popup-label">设备ID:</div>
-                    <div class="ip-popup-value">${stat.device_id}</div>
-                </div>
-                <div class="ip-popup-row">
-                    <div class="ip-popup-label">开启次数:</div>
-                    <div class="ip-popup-value">${stat.open_count}</div>
-                </div>
-                <div class="mini-map" id="miniMapContainer"></div>
-            `;
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">位置:</div>
+                        <div class="ip-popup-value">
+                            ${stat.city || '未知城市'}, ${stat.region_name || '未知地区'}, ${stat.country_name || '未知国家'}
+                        </div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">坐标:</div>
+                        <div class="ip-popup-value">
+                            ${stat.latitude ? stat.latitude.toFixed(4) : '未知'}, 
+                            ${stat.longitude ? stat.longitude.toFixed(4) : '未知'}
+                        </div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">时区:</div>
+                        <div class="ip-popup-value">${stat.timezone_id || '未知'}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">运营商:</div>
+                        <div class="ip-popup-value">${stat.isp || '未知'}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">设备ID:</div>
+                        <div class="ip-popup-value">${stat.device_id}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">设备型号:</div>
+                        <div class="ip-popup-value">${stat.device_model || '未知'}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">制造商:</div>
+                        <div class="ip-popup-value">${stat.manufacturer || '未知'}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">Android版本:</div>
+                        <div class="ip-popup-value">${stat.android_version || '未知'}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">SDK版本:</div>
+                        <div class="ip-popup-value">${stat.sdk_version || '未知'}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">应用版本:</div>
+                        <div class="ip-popup-value">${stat.version || '未知'}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">开启次数:</div>
+                        <div class="ip-popup-value">${stat.open_count}</div>
+                    </div>
+                    <div class="ip-popup-row">
+                        <div class="ip-popup-label">当前时间:</div>
+                        <div class="ip-popup-value">${stat.current_time || '未知'}</div>
+                    </div>
+                    <div class="mini-map" id="miniMapContainer"></div>
+                `;
 
                 // 显示弹窗和遮罩
                 popup.style.display = 'block';
