@@ -7,3 +7,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","1f66be5aab96b161",3,"2025-04-14 09:09:42","22111317G","14","Xiaomi",34,"null","153.5.82.25","Slovenia","SI","Oplotnica Municipality","Oplotnica",46.3871,15.4455,"Europe/Ljubljana","ARNES"
 "2025-04-14","bcc52e49c73a5c66",5,"2025-04-14 15:11:40","RMX5010","15","realme",35,"1.7.4.1","null","null","null","null","null",null,null,"null","null"
 "2025-04-14","35c24c1e355bfce2",4,"2025-04-14 15:12:02","A065","15","Nothing",35,"null","103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
+"2025-04-14","80d93c54fe8c28a7",10,"2025-04-14 15:12:18","Mi 10 Pro","13","Xiaomi",33,"null","223.73.217.183","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
