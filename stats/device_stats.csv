@@ -1,6 +1,5 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
 "2025-04-14","55f0813c54989c74",10,"2025-04-14 17:58:53","2201122C","15","Xiaomi",35,"","171.111.160.114","","","CN","","","","34.7732","113.722","","","Chinanet"
-"2025-04-14","24f18c96d960fba6",51,"2025-04-14 18:04:43","PJA110","13","OnePlus",33,"1.7.4.2","117.151.235.247","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-14T17:19:55+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-14","b3904204b82c8fe4",6,"2025-04-14 13:06:49","ASUS_I01WD","13","samsung",33,"","149.50.234.201","","","TR","","","","41.0214","28.9948","","","Veganet Teknolojileri ve Hizmetleri LTD STI"
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",17,"٢٠٢٥-٠٤-١٤ ١٣:١١:٠١","SM-A155F","14","samsung",34,"","","","","","","","","","","","",""
 "2025-04-14","be3b9fd6dd01dfc1",5,"2025-04-14 18:11:06","GM1910","12","OnePlus",31,"","103.149.249.232","","","HK","","","Hong Kong","22.2842","114.1759","","","Kirino LLC"
@@ -16,3 +15,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","2352e19e23a1286d",10,"2025-04-14 18:47:14","21051182G","13","Xiaomi",33,"1.7.4.2","104.28.152.144","ipv4","美国","US","加利福尼亚州","CA","东洛杉矶","","","America/Los_Angeles","2025-04-14T03:47:16-07:00","Cloudflare"
 "2025-04-14","c889b2e32a0b4d1f",3,"2025-04-14 17:49:55","GM1910","10","OnePlus",29,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","1f66be5aab96b161",15,"2025-04-14 12:50:00","22111317G","14","Xiaomi",34,"","153.5.82.22","","","SI","","","Oplotnica","46.3871","15.4455","","","ARNES"
+"2025-04-14","24f18c96d960fba6",53,"2025-04-14 18:50:18","PJA110","13","OnePlus",33,"1.7.4.2","117.151.235.247","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-14T18:50:19+08:00","China Mobile Communications Group Co. Ltd."
