@@ -24,7 +24,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","f43acb410bda7d55",31,"2025-04-14 19:46:06","SM-S9160","14","samsung",34,"","27.53.9.154","","","TW","","","New Taipei City","24.9466","121.586","","","Far EastTone Telecommunication Co., Ltd."
 "2025-04-14","2e78d0de3dc1c1c4",4,"2025-04-14 19:50:23","V2307A","15","vivo",35,"1.7.4.3","27.28.196.72","ipv4","中国","CN","湖北省","HB","武汉市","30.553970336914062","114.28945922851562","Asia/Shanghai","2025-04-14T19:34:11+08:00","Chinanet"
 "2025-04-14","aec46bd53e5669d0",5,"2025-04-14 19:51:14","M2102J2SC","14","Xiaomi",34,"","119.186.246.46","","","CN","","","","34.7732","113.722","","","CHINA UNICOM China169 Backbone"
-"2025-04-14","47e9c375dbecfb74",19,"2025-04-14 19:51:29","M2102K1C","14","Xiaomi",34,"1.7.4.3","159.223.37.149","unknown","Singapore","SG","","","Singapore","1.3078","103.6818","Asia/Singapore","unknown","DIGITALOCEAN-ASN"
 "2025-04-14","be3b9fd6dd01dfc1",6,"2025-04-14 19:53:58","GM1910","12","OnePlus",31,"","103.149.249.232","","","HK","","","Hong Kong","22.2842","114.1759","","","Kirino LLC"
 "2025-04-14","02998915bdf5e74a",2,"2025-04-14 19:54:30","MEIZU 21 Pro","14","meizu",34,"1.7.4.3","123.233.213.124","ipv4","中国","CN","山东省","SD","济南市","36.68299865722656","117.0","Asia/Shanghai","2025-04-14T19:54:25+08:00","China Unicom china169 Backbone"
 "2025-04-14","d756375c547a53b1",6,"2025-04-14 20:02:08","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"","180.136.246.223","","","CN","","","Nanning","22.8111","108.3168","","","Chinanet"
@@ -69,3 +68,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","7ec9405e139f070e",2,"2025-04-14 20:59:11","SM-S9110","14","samsung",34,"","23.177.40.9","","","US","","","","37.751","-97.822","","",""
 "2025-04-14","3b2c7bde652b6038",23,"2025-04-14 20:59:19","M2002J9E","11","Xiaomi",30,"","111.25.4.6","","","CN","","","Changchun","43.88","125.3247","","","China Mobile Group JiLin communications corporation"
 "2025-04-14","e224c5016f68ef01",1,"2025-04-14 20:59:39","2410DPN6CC","15","Xiaomi",35,"1.7.4.3","104.28.160.186","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","CLOUDFLARENET"
+"2025-04-14","47e9c375dbecfb74",20,"2025-04-14 20:59:46","M2102K1C","14","Xiaomi",34,"1.7.4.3","103.164.54.231","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","unknown","Contabo Asia Private Limited"
