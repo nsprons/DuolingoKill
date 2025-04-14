@@ -1566,34 +1566,50 @@
                 setTimeout(() => {
                     try {
                         const validCoords = stat.latitude && stat.longitude;
-                        const centerLat = validCoords ? stat.latitude : 0;
-                        const centerLng = validCoords ? stat.longitude : 0;
+                        const centerLat = validCoords ? parseFloat(stat.latitude) : 0;
+                        const centerLng = validCoords ? parseFloat(stat.longitude) : 0;
                         const zoomLevel = validCoords ? 10 : 2;
 
-                        const miniMap = L.map('miniMapContainer').setView([centerLat, centerLng], zoomLevel);
+                        // 初始化小地图
+                        const miniMap = L.map('miniMapContainer', {
+                            zoomControl: false,
+                            attributionControl: false
+                        }).setView([centerLat, centerLng], zoomLevel);
 
-                        L.tileLayer('https://proxy.nspron.eu.org/proproxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        // 添加地图图层
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         }).addTo(miniMap);
 
+                        // 如果有有效坐标，添加标记
                         if (validCoords) {
-                            L.marker([stat.latitude, stat.longitude], {
+                            const marker = L.marker([centerLat, centerLng], {
                                 icon: L.divIcon({
                                     className: 'mini-map-marker',
                                     html: '<div style="background-color: #4361ee; width: 20px; height: 20px; border-radius: 50%; border: 2px solid white;"></div>',
                                     iconSize: [24, 24]
                                 })
                             }).addTo(miniMap);
+
+                            // 添加标记弹窗
+                            marker.bindPopup(`
+                        <b>设备位置</b><br>
+                        经度: ${centerLng.toFixed(4)}<br>
+                        纬度: ${centerLat.toFixed(4)}<br>
+                        城市: ${stat.city || '未知'}
+                    `);
                         }
 
                         // 确保地图正确调整大小
-                        miniMap.invalidateSize();
+                        setTimeout(() => {
+                            miniMap.invalidateSize();
+                        }, 100);
                     } catch (e) {
                         console.error('初始化小地图失败:', e);
                         document.getElementById('miniMapContainer').innerHTML =
-                            '<div style="padding: 20px; text-align: center; color: #f44336;">地图加载失败</div>';
+                            '<div style="padding: 20px; text-align: center; color: #f44336;">地图加载失败: ' + e.message + '</div>';
                     }
-                }, 50);
+                }, 100);
             } catch (e) {
                 console.error('显示IP弹窗失败:', e);
             }
