@@ -43,7 +43,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","833d606ef4ad4f75",4,"2025-04-14 09:33:55","23127PN0CC","14","Xiaomi",34,"171.108.112.12","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","a2635a5c122f5dc1",1,"2025-04-14 09:53:58","2106118C","15","Xiaomi",35,"46.3.242.130","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","Akari Networks"
 "2025-04-14","c9caf8819b491cdb",18,"2025-04-14 10:01:09","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
-"2025-04-14","e3d63f6772c7637e",30,"2025-04-14 10:09:01","Redmi Note 10 5G","14","Xiaomi",34,"112.97.65.154","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","China Unicom Guangdong IP network"
 "2025-04-14","e9305886eb2165c6",1,"2025-04-14 10:12:16","2203121C","15","Xiaomi",35,"222.218.210.43","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","0701e331b10c0bc5",3,"2025-04-14 10:25:49","MIX 2S","14","MIX 2S",34,"106.83.33.213","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","Chinanet"
 "2025-04-14","80d93c54fe8c28a7",7,"2025-04-14 10:40:52","Mi 10 Pro","13","Xiaomi",33,"8.223.18.197","Singapore","SG","","",1.3673,103.8014,"Asia/Singapore",""
@@ -61,3 +60,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3e72ab716b659832",7,"2025-04-14 11:42:21","M2007J3SC","12","Xiaomi",31,"8.212.76.210","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
 "2025-04-14","3b09ec7c1ddb23b2",21,"2025-04-14 10:44:36","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","f43acb410bda7d55",1,"2025-04-14 11:47:28","SM-S9160","14","samsung",34,"111.243.18.92","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
+"2025-04-14","e3d63f6772c7637e",31,"2025-04-14 11:49:51","Redmi Note 10 5G","14","Xiaomi",34,"112.97.86.79","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","China Unicom Shenzen network"
