@@ -33,7 +33,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","02998915bdf5e74a",2,"2025-04-14 19:54:30","MEIZU 21 Pro","14","meizu",34,"1.7.4.3","123.233.213.124","ipv4","中国","CN","山东省","SD","济南市","36.68299865722656","117.0","Asia/Shanghai","2025-04-14T19:54:25+08:00","China Unicom china169 Backbone"
 "2025-04-14","d756375c547a53b1",6,"2025-04-14 20:02:08","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"","180.136.246.223","","","CN","","","Nanning","22.8111","108.3168","","","Chinanet"
 "2025-04-14","5459cfd130507c08",2,"2025-04-14 20:02:35","M2101K6G","15","Xiaomi",35,"1.7.4.3","49.217.203.71","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","unknown","Taiwan Mobile Co., Ltd."
-"2025-04-14","9925e43c4238f4cd",4,"2025-04-14 14:03:26","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","77b06fa0b5ba9ba2",4,"2025-04-14 20:04:53","23049RAD8C","14","Xiaomi",34,"1.7.4.1","222.210.208.38","","","CN","","","Shanghai","31.2222","121.4581","","","Chinanet"
 "2025-04-14","66f956d00913491d",6,"2025-04-14 20:07:05","PJE110","15","OnePlus",35,"","111.181.90.245","","","CN","","","Wuhan","30.589","114.2681","","","CHINATELECOM Hubei province Shengji 5G network"
 "2025-04-14","3d90e8144d8fb105",1,"2025-04-14 20:15:34","23049RAD8C","15","Xiaomi",35,"1.7.4.3","104.28.235.57","unknown","United States","US","Washington","WA","Seattle","47.6034","-122.3414","America/Los_Angeles","unknown","CLOUDFLARENET"
@@ -60,3 +59,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","80d93c54fe8c28a7",16,"2025-04-14 20:36:35","Mi 10 Pro","13","Xiaomi",33,"","223.104.78.129","","","CN","","","Guangzhou","23.1181","113.2539","","","China Mobile communications corporation"
 "2025-04-14","ded0d9b082536dfd",36,"2025-04-14 19:36:50","22101316G","14","Xiaomi",34,"","113.160.14.17","","","VN","","","Hanoi","21.0292","105.8526","","","VNPT Corp"
 "2025-04-14","24f18c96d960fba6",57,"2025-04-14 20:37:00","PJA110","13","OnePlus",33,"1.7.4.3","129.150.42.215","unknown","Singapore","SG","","","Kampong Loyang","1.3759","103.9639","Asia/Singapore","unknown","ORACLE-BMC-31898"
+"2025-04-14","9925e43c4238f4cd",5,"2025-04-14 14:38:58","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
