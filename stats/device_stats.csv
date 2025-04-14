@@ -43,6 +43,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","f43acb410bda7d55",31,"2025-04-14 19:46:06","SM-S9160","14","samsung",34,"","27.53.9.154","","","TW","","","New Taipei City","24.9466","121.586","","","Far EastTone Telecommunication Co., Ltd."
 "2025-04-14","77b06fa0b5ba9ba2",1,"2025-04-14 19:46:41","23049RAD8C","14","Xiaomi",34,"1.7.4.1","154.83.90.120","","","MY","","","Kuala Lumpur","3.1412","101.685","","","OWS"
 "2025-04-14","2e78d0de3dc1c1c4",4,"2025-04-14 19:50:23","V2307A","15","vivo",35,"1.7.4.3","27.28.196.72","ipv4","中国","CN","湖北省","HB","武汉市","30.553970336914062","114.28945922851562","Asia/Shanghai","2025-04-14T19:34:11+08:00","Chinanet"
-"2025-04-14","ab2c54a01e315330",5,"2025-04-14 19:50:58","22081212C","15","Xiaomi",35,"","117.30.132.13","","","CN","","","Xiamen","24.4793","118.0673","","","Chinanet"
 "2025-04-14","aec46bd53e5669d0",5,"2025-04-14 19:51:14","M2102J2SC","14","Xiaomi",34,"","119.186.246.46","","","CN","","","","34.7732","113.722","","","CHINA UNICOM China169 Backbone"
 "2025-04-14","47e9c375dbecfb74",19,"2025-04-14 19:51:29","M2102K1C","14","Xiaomi",34,"1.7.4.3","159.223.37.149","unknown","Singapore","SG","","","Singapore","1.3078","103.6818","Asia/Singapore","unknown","DIGITALOCEAN-ASN"
+"2025-04-14","ab2c54a01e315330",6,"2025-04-14 19:52:08","22081212C","15","Xiaomi",35,"1.7.4.3","45.61.161.193","unknown","The Netherlands","NL","North Holland","NH","Amsterdam","52.3759","4.8975","Europe/Amsterdam","unknown","Advin Services LLC"
