@@ -78,3 +78,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","f43acb410bda7d55",12,"2025-04-14 14:18:34","SM-S9160","14","samsung",34,"1.164.100.126","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
 "2025-04-14","24f18c96d960fba6",4,"2025-04-14 14:22:34","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3b09ec7c1ddb23b2",29,"2025-04-14 13:23:47","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","edead6942f2e5aaf",3,"2025-04-14 14:25:41","22081212C","15","Xiaomi",35,"36.227.208.140","Taiwan","TW","Taipei City","Taipei",25.0504,121.5324,"Asia/Taipei","Data Communication Business Group"
