@@ -111,7 +111,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","a28c458ee7c454d3",3,"2025-04-14 23:52:25","Mi MIX 2","13","Xiaomi",33,"1.7.4.3","223.104.76.87","ipv4","中国","CN","广东省","GD","廣州市","23.124719619750977","113.23860931396484","Asia/Shanghai","2025-04-14T23:36:16+08:00","China Mobile Communications Corporation"
 "2025-04-14","903579ff6893c8c9",5,"2025-04-14 23:54:28","RMX5010","15","realme",35,"1.7.4.2","171.111.172.9","ipv4","中国","CN","广西壮族自治区","GX","南寧市","22.836669921875","108.3213882446289","Asia/Shanghai","2025-04-14T23:54:28+08:00","Chinanet"
 "2025-04-14","47e9c375dbecfb74",22,"2025-04-14 23:59:47","M2102K1C","14","Xiaomi",34,"1.7.4.3","120.230.155.139","ipv4","中国","CN","广东省","GD","廣州市","23.124719619750977","113.23860931396484","Asia/Shanghai","2025-04-14T23:59:47+08:00","China Mobile Communications Group Co. Ltd."
-"2025-04-15","f43acb410bda7d55",1,"2025-04-15 00:00:34","SM-S9160","14","samsung",34,"","1.164.100.126","","","TW","","","Hsinchu","24.8065","120.9706","","","Data Communication Business Group"
 "2025-04-15","be3b9fd6dd01dfc1",1,"2025-04-15 00:00:30","GM1910","12","OnePlus",31,"1.7.4.3","212.107.31.94","unknown","Japan","JP","Tokyo","13","Tokyo","35.6668","139.6726","Asia/Tokyo","unknown","Kirino LLC"
 "2025-04-15","ba542807f88161a8",1,"2025-04-15 00:01:17","KB2000","13","OnePlus",33,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-15","f211819936886d54",1,"2025-04-15 00:01:23","IN2020","13","OnePlus",33,"1.7.4.1","153.35.127.195","","","CN","","","Suzhou","31.3093","120.602","","","CHINA UNICOM China169 Backbone"
@@ -123,3 +122,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-15","1cdab5c2f1dd4648",1,"2025-04-15 00:06:07","Pixel 7 Pro","15","Google",35,"","154.29.150.117","","","US","","","Los Angeles","34.0515","-118.2707","","","NETLAB-SDN"
 "2025-04-14","aa5f6f54109e5d68",2,"2025-04-14 17:06:44","M2007J1SC","13","Xiaomi",33,"1.7.4.3","86.149.21.53","unknown","United Kingdom","GB","West Dunbartonshire","WDU","Clydebank","55.9135","-4.4084","Europe/London","unknown","British Telecommunications PLC"
 "2025-04-14","9925e43c4238f4cd",12,"2025-04-14 18:06:52","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
+"2025-04-15","f43acb410bda7d55",2,"2025-04-15 00:07:57","SM-S9160","14","samsung",34,"","1.164.100.126","","","TW","","","Hsinchu","24.8065","120.9706","","","Data Communication Business Group"
