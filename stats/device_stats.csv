@@ -79,3 +79,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3b09ec7c1ddb23b2",29,"2025-04-14 13:23:47","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","edead6942f2e5aaf",3,"2025-04-14 14:25:41","22081212C","15","Xiaomi",35,"36.227.208.140","Taiwan","TW","Taipei City","Taipei",25.0504,121.5324,"Asia/Taipei","Data Communication Business Group"
 "2025-04-14","35c24c1e355bfce2",2,"2025-04-14 14:27:48","A065","15","Nothing",35,"103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
+"2025-04-14","4cb73ef539610e2a",1,"2025-04-14 14:30:12","M2105K81AC","15","Xiaomi",35,"113.85.104.72","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
