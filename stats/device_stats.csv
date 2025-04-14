@@ -1,6 +1,5 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp
 "2025-04-14","446ac5e65e0e9905",31,"2025-04-14 15:03:06","22011211C","13","Xiaomi",33,"null","223.104.248.34","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
-"2025-04-14","683d43af967763fc",17,"2025-04-14 15:04:56","2304FPN6DC","15","Xiaomi",35,"null","223.160.219.14","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","9d45294de37d7b4a",2,"2025-04-14 10:07:45","22071212AG","15","Xiaomi",35,"null","93.180.222.68","Iraq","IQ","","",33,44,"Asia/Baghdad","Horizon Scope Mobile Telecom WLL"
 "2025-04-14","d731f16acb55f131",1,"2025-04-14 14:09:16","PJZ110","15","OnePlus",35,"1.7.4.1","202.65.227.105","Indonesia","ID","","",-6.1728,106.8272,"Asia/Jakarta",""
 "2025-04-14","35c24c1e355bfce2",4,"2025-04-14 15:12:02","A065","15","Nothing",35,"null","103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
@@ -17,3 +16,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","80d93c54fe8c28a7",11,"2025-04-14 15:30:39","Mi 10 Pro","13","Xiaomi",33,"null","223.73.217.183","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","70b9d91b10ecb86a",1,"2025-04-14 15:30:41","MEIZU 21","14","meizu",34,"null","193.233.207.89","United States","US","Texas","Dallas",32.7797,-96.8022,"America/Chicago","BAXET-GROUP"
 "2025-04-14","66f956d00913491d",2,"2025-04-14 15:33:38","PJE110","15","OnePlus",35,"null","111.183.27.73","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","CHINATELECOM Hubei province Shengji 5G network"
+"2025-04-14","683d43af967763fc",19,"2025-04-14 15:37:25","2304FPN6DC","15","Xiaomi",35,"null","223.160.219.14","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
