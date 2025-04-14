@@ -47,3 +47,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","80d93c54fe8c28a7",4,"2025-04-14 08:57:30","Mi 10 Pro","13","Xiaomi",33,"223.73.217.183","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3e1920fa07f76b88",1,"2025-04-14 08:57:00","24031PN0DC","15","Xiaomi",35,"38.175.103.151","United States","US","Washington","Seattle",47.6144,-122.3447,"America/Los_Angeles","MISAKA"
 "2025-04-14","d6f6c23c7d75a9bc",2,"2025-04-14 06:28:40","CPH2569","15","OnePlus",35,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","833d606ef4ad4f75",2,"2025-04-14 08:59:00","23127PN0CC","14","Xiaomi",34,"147.182.225.151","United States","US","California","Santa Clara",37.3931,-121.962,"America/Los_Angeles","DIGITALOCEAN-ASN"
