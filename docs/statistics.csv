@@ -1,2 +1,2 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
-"2025-04-15","24f18c96d960fba6",37,"2025-04-15 06:17:28","PJA110","13","OnePlus",33,"1.7.4.4","129.150.42.215","unknown","Singapore","SG","","","Kampong Loyang","1.3759","103.9639","Asia/Singapore","","ORACLE-BMC-31898"
+"2025-04-15","24f18c96d960fba6",38,"2025-04-15 06:20:15","PJA110","13","OnePlus",33,"1.7.4.4","117.151.235.247","ipv4","ä¸­å½","CN","æ¹åç","HB","éå·","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-15T06:20:16+08:00","China Mobile Communications Group Co. Ltd."
