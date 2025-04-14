@@ -691,10 +691,10 @@
                     allStats.forEach(stat => {
                         if (stat.device_model) deviceModels.add(stat.device_model);
                         if (stat.android_version) androidVersions.add(stat.android_version);
-                        if (stat.city || stat.region_name || stat.country_name) {
-                            const location = [stat.city, stat.region_name, stat.country_name].filter(Boolean).join(', ');
-                            regions.add(location);
-                        }
+
+                        const location = [stat.city, stat.region_name, stat.country_name].filter(Boolean).join(', ');
+                        regions.add(location);
+
                         if (stat.isp) isps.add(stat.isp);
                         if (stat.manufacturer && stat.manufacturer.trim() !== '') {
                             manufacturers.add(stat.manufacturer.trim());
