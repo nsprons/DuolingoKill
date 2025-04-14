@@ -63,11 +63,25 @@ jobs:
             echo "$value"
           }
 
+          # 在 Process stats data 步骤中添加检测和转换函数
+          contains_arabic() {
+              [[ "$1" =~ [٠-٩] ]] && return 0 || return 1
+          }
+          
+          convert_if_arabic() {
+              local input="$1"
+              if contains_arabic "$input"; then
+                  echo "$input" | sed -e 'y/٠١٢٣٤٥٦٧٨٩/0123456789/'
+              else
+                  echo "$input"
+              fi
+          }
+
           # Extract all fields
           DEVICE_ID=$(parse_field "device_id")
-          DATE=$(parse_field "date")
+          DATE=$(convert_if_arabic "$(parse_field "date")")
           OPEN_COUNT=$(parse_field "open_count")
-          REPORT_TIME=$(parse_field "report_time")
+          REPORT_TIME=$(convert_if_arabic "$(parse_field "report_time")")
           DEVICE_MODEL=$(parse_field "device_model")
           ANDROID_VERSION=$(parse_field "android_version")
           MANUFACTURER=$(parse_field "manufacturer")
