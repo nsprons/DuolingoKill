@@ -53,7 +53,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","218f9b0d422381e5",5,"2025-04-14 22:14:22","CPH2653","15","OnePlus",35,"1.7.4.3","59.158.105.193","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","unknown","ARTERIA Networks Corporation"
 "2025-04-14","903579ff6893c8c9",3,"2025-04-14 21:15:53","RMX5010","15","realme",35,"1.7.4.2","171.107.241.183","ipv4","中国","CN","广西壮族自治区","GX","南寧市","22.836669921875","108.3213882446289","Asia/Shanghai","2025-04-14T21:15:54+08:00","Chinanet"
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",24,"٢٠٢٥-٠٤-١٤ ١٦:١٩:٢٨","SM-A155F","14","samsung",34,"1.7.4.3","","","","","","","","","","","",""
-"2025-04-14","a7191571d3b8c46a",16,"2025-04-14 15:23:09","moto g82 5G","13","motorola",33,"","46.29.25.101","","","NL","","","Hoofddorp","52.297","4.6999","","","HURRICANE"
 "2025-04-14","daa917a4c9e73b88",4,"2025-04-14 21:27:31","2210132C","13","Xiaomi",33,"1.7.4.3","141.11.131.80","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","IPXO"
 "2025-04-14","d216ab5cf967754b",1,"2025-04-14 21:27:54","22011211C","14","Xiaomi",34,"1.7.4.3","112.32.64.56","ipv4","中国","CN","Beijing Shi","BJ","北京市","39.91175842285156","116.37922668457031","Asia/Shanghai","2025-04-14T21:27:55+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-14","b75429cdbc1f33fe",4,"2025-04-14 09:27:55","NX721J","14","nubia",34,"","204.48.78.51","","","CA","","","Montreal","45.58","-73.5313","","","VIDEOTRON"
@@ -86,3 +85,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3b09ec7c1ddb23b2",56,"2025-04-14 21:16:01","SM-S908B","14","samsung",34,"1.7.4.3","","","","","","","","","","","",""
 "2025-04-14","ebd0e46ac8c3986c",17,"2025-04-14 22:17:24","XQ-AS72","14","Sony",34,"1.7.4.3","95.85.94.17","unknown","Japan","JP","Tokyo","13","Tokyo","35.6289","139.7915","Asia/Tokyo","unknown","G-Core Labs S.A."
 "2025-04-14","6e490d89912071fb",11,"2025-04-14 19:49:17","M2002J9G","15","Xiaomi",35,"1.7.4.3","112.134.128.85","unknown","Sri Lanka","LK","Gampaha District","12","Wattala","6.9847","79.8838","Asia/Colombo","unknown","Sri Lanka Telecom Internet"
+"2025-04-14","a7191571d3b8c46a",17,"2025-04-14 16:21:18","moto g82 5G","13","motorola",33,"","46.29.25.101","","","NL","","","Hoofddorp","52.297","4.6999","","","HURRICANE"
