@@ -74,3 +74,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","a7191571d3b8c46a",16,"2025-04-14 15:23:09","moto g82 5G","13","motorola",33,"","46.29.25.101","","","NL","","","Hoofddorp","52.297","4.6999","","","HURRICANE"
 "2025-04-14","daa917a4c9e73b88",4,"2025-04-14 21:27:31","2210132C","13","Xiaomi",33,"1.7.4.3","141.11.131.80","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","IPXO"
 "2025-04-14","d216ab5cf967754b",1,"2025-04-14 21:27:54","22011211C","14","Xiaomi",34,"1.7.4.3","112.32.64.56","ipv4","中国","CN","Beijing Shi","BJ","北京市","39.91175842285156","116.37922668457031","Asia/Shanghai","2025-04-14T21:27:55+08:00","China Mobile Communications Group Co. Ltd."
+"2025-04-14","b75429cdbc1f33fe",4,"2025-04-14 09:27:55","NX721J","14","nubia",34,"","204.48.78.51","","","CA","","","Montreal","45.58","-73.5313","","","VIDEOTRON"
