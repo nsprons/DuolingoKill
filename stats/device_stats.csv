@@ -77,3 +77,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","ded0d9b082536dfd",20,"2025-04-14 12:57:26","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
 "2025-04-14","b084ab91a7f15f27",1,"2025-04-14 12:58:52","2109119BC","13","Xiaomi",33,"42.1.85.65","Vietnam","VN","Ho Chi Minh","Ho Chi Minh City",10.822,106.6257,"Asia/Ho_Chi_Minh",""
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",8,"٢٠٢٥-٠٤-١٤ ٠٩:٠٧:٤٠","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","5b29f2c469c71fe2",3,"2025-04-14 14:09:59","M2105K81AC","15","Xiaomi",35,"113.85.104.72","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
