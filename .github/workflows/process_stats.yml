@@ -66,6 +66,7 @@ jobs:
           ANDROID_VERSION=$(parse_field "android_version")
           MANUFACTURER=$(parse_field "manufacturer")
           SDK_VERSION=$(parse_field "sdk_version")
+          VERSION=$(parse_field "version")
           IP_ADDRESS=$(parse_field "ip_address")
           COUNTRY=$(parse_field "country")
           COUNTRY_CODE=$(parse_field "country_code")
@@ -92,7 +93,7 @@ jobs:
 
           # Create CSV header if file doesn't exist
           if [ ! -f "$CSV_FILE" ]; then
-            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp" > "$CSV_FILE"
+            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp" > "$CSV_FILE"
           fi
 
           # Process CSV data
@@ -107,8 +108,8 @@ jobs:
             ' "$CSV_FILE"
             
             # Add new record with all fields
-            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$IP_ADDRESS\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$CITY\",$LATITUDE,$LONGITUDE,\"$TIMEZONE\",\"$ISP\""
-          } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
+            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$VERSION\",\"$IP_ADDRESS\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$CITY\",$LATITUDE,$LONGITUDE,\"$TIMEZONE\",\"$ISP\"" >> "$TEMP_FILE"
+            } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
           # Commit changes
           git add "$CSV_FILE"
