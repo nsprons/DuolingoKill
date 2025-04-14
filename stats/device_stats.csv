@@ -60,7 +60,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","99a9da25f200db5e",5,"2025-04-14 12:33:41","PJX110","15","OnePlus",35,"39.154.141.138","China","CN","Inner Mongolia","Ordos",39.596,109.7835,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","75e3928f24476308",2,"2025-04-14 12:39:25","24129PN74C","15","Xiaomi",35,"43.154.190.55","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Tencent Building, Kejizhongyi Avenue"
 "2025-04-14","1f66be5aab96b161",2,"2025-04-14 07:08:41","22111317G","14","Xiaomi",34,"31.15.181.96","Slovenia","SI","Hajdina","Spodnja Hajdina",46.4095,15.8449,"Europe/Ljubljana","Telemach UG d.o.o."
-"2025-04-14","ded0d9b082536dfd",16,"2025-04-14 12:09:47","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
 "2025-04-14","1cdab5c2f1dd4648",4,"2025-04-14 13:10:51","Pixel 7 Pro","15","Google",35,"146.190.147.19","United States","US","California","Santa Clara",37.3931,-121.962,"America/Los_Angeles","DIGITALOCEAN-ASN"
 "2025-04-14","c22a428482e29524",2,"2025-04-14 13:18:12","M2012K11AC","15","Xiaomi",35,"183.217.165.43","China","CN","Guangdong","",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","d914a47a32dda8bf",2,"2025-04-14 13:26:36","22081212C","13","Xiaomi",33,"118.212.206.145","China","CN","Shanghai","Shanghai",31.2222,121.4581,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
@@ -75,3 +74,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3b09ec7c1ddb23b2",27,"2025-04-14 12:44:48","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","f43acb410bda7d55",10,"2025-04-14 13:45:50","SM-S9160","14","samsung",34,"1.164.100.126","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
 "2025-04-14","683d43af967763fc",14,"2025-04-14 13:47:30","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","ded0d9b082536dfd",18,"2025-04-14 12:48:33","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
