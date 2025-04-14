@@ -83,7 +83,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","73799f77ba23bb0d",1,"2025-04-14 22:40:23","24129PN74C","15","Xiaomi",35,"","198.176.56.28","","","US","","","Los Angeles","34.0544","-118.2441","","","PRIME-SEC"
 "2025-04-14","3c88599d78199168",1,"2025-04-14 22:40:44","23078RKD5C","15","Xiaomi",35,"1.7.4.3","210.79.151.21","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","unknown","Radishcloud Technology LLC"
 "2025-04-14","741180d6cb9b9201",16,"2025-04-14 22:42:34","PHJ110","13","OPPO",33,"","18.181.193.29","","","JP","","","Tokyo","35.6893","139.6899","","","AMAZON-02"
-"2025-04-14","3b2c7bde652b6038",27,"2025-04-14 22:43:46","M2002J9E","11","Xiaomi",30,"","111.25.4.6","","","CN","","","Changchun","43.88","125.3247","","","China Mobile Group JiLin communications corporation"
 "2025-04-14","380482800de5af6c",2,"2025-04-14 22:44:05","G8441","12","Sony",32,"1.7.4.3","16.162.47.66","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","unknown","AMAZON-02"
 "2025-04-14","bee2a64c84827e29",20,"2025-04-14 22:44:52","Pixel 5","13","Google",33,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","90cd51b05630c674",3,"2025-04-14 22:45:22","23127PN0CC","14","Xiaomi",34,"","175.13.107.95","","","CN","","","","34.7732","113.722","","","Chinanet"
@@ -101,3 +100,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","be3b9fd6dd01dfc1",1,"2025-04-14 23:00:37","GM1910","12","OnePlus",31,"1.7.4.3","103.149.249.232","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","Kirino LLC"
 "2025-04-15","218f9b0d422381e5",1,"2025-04-15 00:01:08","CPH2653","15","OnePlus",35,"1.7.4.3","59.158.105.193","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","unknown","ARTERIA Networks Corporation"
 "2025-04-14","47e9c375dbecfb74",21,"2025-04-14 22:58:31","M2102K1C","14","Xiaomi",34,"1.7.4.3","","","","","","","","","","","",""
+"2025-04-14","3b2c7bde652b6038",28,"2025-04-14 23:02:04","M2002J9E","11","Xiaomi",30,"","111.25.4.6","","","CN","","","Changchun","43.88","125.3247","","","China Mobile Group JiLin communications corporation"
