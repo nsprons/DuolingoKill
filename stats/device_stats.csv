@@ -37,7 +37,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3c5a6de082310214",3,"2025-04-14 15:20:05","22071212AG","15","Xiaomi",35,"1.7.4.3","169.224.105.173","unknown","Iraq","IQ","Dhi Qar","DQ","Nasiriyah","31.0585","46.251","Asia/Baghdad","unknown","Earthlink Telecommunications Equipment Trading & Services DMCC"
 "2025-04-14","5b14abc72fc84dc1",5,"2025-04-14 20:20:14","2304FPN6DC","15","Xiaomi",35,"","146.235.219.206","","","US","","","San Jose","37.2379","-121.7946","","","ORACLE-BMC-31898"
 "2025-04-14","66e9c62a9a5d4895",2,"2025-04-14 20:21:42","PJD110","14","OnePlus",34,"1.7.4.3","194.105.83.145","unknown","Japan","JP","Hyōgo","28","","34.6922","135.1816","Asia/Tokyo","unknown","GCI Network Solutions Limited"
-"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",22,"٢٠٢٥-٠٤-١٤ ١٥:٢٤:٠١","SM-A155F","14","samsung",34,"1.7.4.3","","","","","","","","","","","",""
 "2025-04-14","b3904204b82c8fe4",7,"2025-04-14 15:25:05","ASUS_I01WD","13","samsung",33,"","149.50.234.201","","","TR","","","","41.0214","28.9948","","","Veganet Teknolojileri ve Hizmetleri LTD STI"
 "2025-04-14","4e2b605822045ef1",13,"2025-04-14 14:25:35","SM-A715F","13","samsung",33,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","a7191571d3b8c46a",14,"2025-04-14 14:28:40","moto g82 5G","13","motorola",33,"","46.29.25.101","","","NL","","","Hoofddorp","52.297","4.6999","","","HURRICANE"
@@ -69,3 +68,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","e224c5016f68ef01",4,"2025-04-14 21:01:25","2410DPN6CC","15","Xiaomi",35,"1.7.4.3","104.28.157.196","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","CLOUDFLARENET"
 "2025-04-14","7c161a49ce78d626",30,"2025-04-14 20:03:01","23028RN4DG","13","Xiaomi",33,"","180.252.175.96","","","ID","","","Jakarta","-6.2114","106.8446","","","PT Telekomunikasi Indonesia"
 "2025-04-14","9925e43c4238f4cd",6,"2025-04-14 15:05:22","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
+"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",23,"٢٠٢٥-٠٤-١٤ ١٦:١٠:٢٢","SM-A155F","14","samsung",34,"1.7.4.3","","","","","","","","","","","",""
