@@ -68,7 +68,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","2352e19e23a1286d",8,"2025-04-14 21:28:42","21051182G","13","Xiaomi",33,"1.7.4.2","104.28.158.106","ipv4","美国","US","加利福尼亚州","CA","东洛杉矶","","","America/Los_Angeles","2025-04-14T06:28:44-07:00","Cloudflare"
 "2025-04-14","9925e43c4238f4cd",7,"2025-04-14 15:29:46","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","4acaec7f09726c21",3,"2025-04-14 08:37:54","SM-S901E","14","samsung",34,"1.7.4.3","","","","","","","","","","","",""
-"2025-04-14","7c161a49ce78d626",33,"2025-04-14 20:39:46","23028RN4DG","13","Xiaomi",33,"1.7.4.3","180.252.175.96","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","unknown","PT Telekomunikasi Indonesia"
 "2025-04-14","80d93c54fe8c28a7",17,"2025-04-14 21:42:42","Mi 10 Pro","13","Xiaomi",33,"","223.104.78.129","","","CN","","","Guangzhou","23.1181","113.2539","","","China Mobile communications corporation"
 "2025-04-14","61ec789774307afb",2,"2025-04-14 21:45:39","PJF110","15","OnePlus",35,"1.7.4.3","167.234.216.78","unknown","United States","US","California","CA","San Jose","37.2379","-121.7946","America/Los_Angeles","unknown","ORACLE-BMC-31898"
 "2025-04-14","1658645402f5f68b",1,"2025-04-14 21:46:02","MI 9","11","Xiaomi",30,"1.7.4.3","182.204.34.97","ipv4","中国","CN","辽宁省","LN","Shenyang","41.803001403808594","123.3759994506836","Asia/Shanghai","2025-04-14T21:46:03+08:00","Chinanet"
@@ -81,3 +80,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","cae17d951e7a1733",4,"2025-04-14 21:59:34","Redmi K30 Pro Zoom Edition","12","Xiaomi",31,"1.7.4.2","42.84.238.21","ipv4","中国","CN","辽宁省","LN","大连市","","","Asia/Shanghai","2025-04-14T21:59:35+08:00","China Unicom china169 Backbone"
 "2025-04-14","be3b9fd6dd01dfc1",9,"2025-04-14 21:59:48","GM1910","12","OnePlus",31,"1.7.4.3","103.149.249.232","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","Kirino LLC"
 "2025-04-14","3b2c7bde652b6038",26,"2025-04-14 22:00:24","M2002J9E","11","Xiaomi",30,"","111.25.4.6","","","CN","","","Changchun","43.88","125.3247","","","China Mobile Group JiLin communications corporation"
+"2025-04-14","7c161a49ce78d626",35,"2025-04-14 21:01:09","23028RN4DG","13","Xiaomi",33,"1.7.4.3","180.252.175.96","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","unknown","PT Telekomunikasi Indonesia"
