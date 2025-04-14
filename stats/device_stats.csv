@@ -56,3 +56,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",7,"٢٠٢٥-٠٤-١٤ ٠٦:١١:٣٥","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","4e2b605822045ef1",7,"2025-04-14 05:13:46","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","3b09ec7c1ddb23b2",20,"2025-04-14 10:15:06","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","ded0d9b082536dfd",1,"2025-04-14 10:26:42","22101316G","14","Xiaomi",34,"113.160.14.17","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","VNPT Corp"
