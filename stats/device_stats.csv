@@ -29,7 +29,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","fbddf252a1ef9bf7",1,"2025-04-14 07:53:39","23049RAD8C","15","Xiaomi",35,"167.234.210.234","United States","US","California","San Jose",37.2379,-121.7946,"America/Los_Angeles","ORACLE-BMC-31898"
 "2025-04-14","96b4620adb1ddf20",7,"2025-04-14 07:59:50","PHB110","14","OnePlus",34,"156.224.76.203","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","MOACK.Co.LTD"
 "2025-04-13","2d8e48bff9738644",3,"2025-04-13 18:05:51","Pixel 6","15","Google",35,"187.153.66.21","Mexico","MX","Tamaulipas","Tampico",22.1802,-97.8802,"America/Monterrey","UNINET"
-"2025-04-14","99a9da25f200db5e",4,"2025-04-14 08:14:21","PJX110","15","OnePlus",35,"39.154.131.231","China","CN","Inner Mongolia","Ordos",39.596,109.7835,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","8acfdac8d37be885",4,"2025-04-14 08:18:49","2410DPN6CC","15","Xiaomi",35,"106.85.159.250","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","Chinanet"
 "2025-04-14","61d0e8ccc353914d",3,"2025-04-14 08:22:43","22041211AC","15","Xiaomi",35,"104.28.247.68","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","CLOUDFLARENET"
 "2025-04-14","efd315634b0a7c26",1,"2025-04-14 08:31:57","22127RK46C","14","Xiaomi",34,"77.111.111.113","Hungary","HU","","",47.4919,19.05,"Europe/Budapest","Dravanet Co Ltd."
@@ -66,3 +65,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","ebd0e46ac8c3986c",8,"2025-04-14 12:27:09","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
 "2025-04-14","23b34b7f3511e555",1,"2025-04-14 12:30:10","2304FPN6DC","15","Xiaomi",35,"129.227.235.113","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","ZEN-ECN"
 "2025-04-14","c650a577f8eba164",4,"2025-04-14 05:32:30","SM-A515F","13","samsung",33,"41.249.183.30","Morocco","MA","El-Jadida","El Jadida",33.2558,-8.5015,"Africa/Casablanca","MT-MPLS"
+"2025-04-14","99a9da25f200db5e",5,"2025-04-14 12:33:41","PJX110","15","OnePlus",35,"39.154.141.138","China","CN","Inner Mongolia","Ordos",39.596,109.7835,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
