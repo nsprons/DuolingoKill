@@ -57,3 +57,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","36a9b8b8686cbd7a",2,"2025-04-14 20:18:45","22011211C","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","3c5a6de082310214",3,"2025-04-14 15:20:05","22071212AG","15","Xiaomi",35,"1.7.4.3","169.224.105.173","unknown","Iraq","IQ","Dhi Qar","DQ","Nasiriyah","31.0585","46.251","Asia/Baghdad","unknown","Earthlink Telecommunications Equipment Trading & Services DMCC"
 "2025-04-14","5b14abc72fc84dc1",5,"2025-04-14 20:20:14","2304FPN6DC","15","Xiaomi",35,"","146.235.219.206","","","US","","","San Jose","37.2379","-121.7946","","","ORACLE-BMC-31898"
+"2025-04-14","66e9c62a9a5d4895",1,"2025-04-14 20:21:21","PJD110","14","OnePlus",34,"1.7.4.3","194.105.83.145","unknown","Japan","JP","Hyōgo","28","","34.6922","135.1816","Asia/Tokyo","unknown","GCI Network Solutions Limited"
