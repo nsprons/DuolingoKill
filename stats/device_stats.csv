@@ -44,7 +44,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","a9ed58b64588d414",1,"2025-04-14 10:43:56","Pixel 8","15","Google",35,"136.23.28.51","United Kingdom","GB","","",51.4964,-0.1224,"Europe/London","GOOGLEWIFI"
 "2025-04-14","57fddb52739e669d",2,"2025-04-14 10:47:45","PJD110","15","OnePlus",35,"183.222.182.229","China","CN","Sichuan","Chengdu",30.6498,104.0555,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","d17b41cb3a2e054e",1,"2025-04-14 10:57:25","24031PN0DC","15","Xiaomi",35,"89.185.25.176","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Hytron Network Services Limited"
-"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",7,"٢٠٢٥-٠٤-١٤ ٠٦:١١:٣٥","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-13","b75429cdbc1f33fe",7,"2025-04-13 23:30:40","NX721J","14","nubia",34,"184.163.69.12","Canada","CA","Quebec","Montreal",45.5365,-73.6242,"America/Toronto","VIDEOTRON"
 "2025-04-14","47a1a80d474c27ad",2,"2025-04-14 11:37:19","23013RK75C","13","Xiaomi",33,"116.162.2.137","China","CN","Hunan","Changsha",28.2014,112.9611,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","3e72ab716b659832",7,"2025-04-14 11:42:21","M2007J3SC","12","Xiaomi",31,"8.212.76.210","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
@@ -77,3 +76,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","7c161a49ce78d626",8,"2025-04-14 12:56:56","23028RN4DG","13","Xiaomi",33,"180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
 "2025-04-14","ded0d9b082536dfd",20,"2025-04-14 12:57:26","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
 "2025-04-14","b084ab91a7f15f27",1,"2025-04-14 12:58:52","2109119BC","13","Xiaomi",33,"42.1.85.65","Vietnam","VN","Ho Chi Minh","Ho Chi Minh City",10.822,106.6257,"Asia/Ho_Chi_Minh",""
+"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",8,"٢٠٢٥-٠٤-١٤ ٠٩:٠٧:٤٠","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
