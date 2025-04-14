@@ -649,9 +649,7 @@
         function initMap() {
             worldMap = L.map('worldMap').setView([20, 0], 2);
 
-            L.tileLayer('https://proxy.nspron.eu.org/proxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(worldMap);
+            L.tileLayer('https://proxy.nspron.eu.org/proxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}).addTo(worldMap);
 
             // 初始化标记聚类
             markerCluster = L.markerClusterGroup();
@@ -1576,9 +1574,7 @@
                         }).setView([centerLat, centerLng], zoomLevel);
 
                         // 添加地图图层
-                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        }).addTo(miniMap);
+                        L.tileLayer('https://proxy.nspron.eu.org/proxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(miniMap);
 
                         // 如果有有效坐标，添加标记
                         if (validCoords) {
