@@ -660,12 +660,7 @@
 
         // 加载数据
         function loadData() {
-            fetch('https://api.github.com/repos/nspron/DuolingoKill/contents/stats/device_stats.csv', {
-                headers: {
-                    'Accept': 'application/vnd.github.v3.raw',
-                    'Authorization': 'token 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'
-                }
-            })
+            fetch('https://proxy.nspron.eu.org/proxy/https://raw.githubusercontent.com/nsprons/DuolingoKill/refs/heads/main/stats/device_stats.csv')
                 .then(response => {
                     if (!response.ok) throw new Error('网络响应不正常');
                     return response.text();
