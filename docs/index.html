@@ -626,12 +626,12 @@
         let androidVersions = new Set();
         let regions = new Set();
         let isps = new Set();
+        let manufacturers = new Set(); // 新增
         let worldMap = null;
         let markerCluster = null;
         let currentPage = 1;
         const itemsPerPage = 20;
         let debounceTimer = null;
-        let manufacturers = new Set();
 
         // 初始化图表
         const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
@@ -875,6 +875,7 @@
             const androidVersionSelect = document.getElementById('androidVersion');
             const regionSelect = document.getElementById('regionFilter');
             const ispSelect = document.getElementById('ispFilter');
+            const manufacturerSelect = document.getElementById('manufacturerFilter');
 
             // 添加设备型号选项
             deviceModels.forEach(model => {
@@ -882,6 +883,14 @@
                 option.value = model;
                 option.textContent = model;
                 deviceModelSelect.appendChild(option);
+            });
+
+            // 添加制造商选项
+            manufacturers.forEach(manufacturer => {
+                const option = document.createElement('option');
+                option.value = manufacturer;
+                option.textContent = manufacturer;
+                manufacturerSelect.appendChild(option);
             });
 
             // 添加Android版本选项
@@ -984,6 +993,7 @@
         // 更新图表数据
         function updateCharts() {
             const today = new Date().toISOString().split('T')[0];
+            let uniqueManufacturers = new Set(); // 在这里初始化
 
             // 按日期聚合数据
             const dailyStats = {};
@@ -992,6 +1002,7 @@
             const regionCounts = {};
             const ispCounts = {};
             const newDeviceDates = {};
+            const manufacturerCounts = {}; // 制造商计数
             let totalOpens = 0;
             let uniqueDevices = new Set();
             let uniqueRegions = new Set();
