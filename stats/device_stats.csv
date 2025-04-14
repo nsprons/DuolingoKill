@@ -67,5 +67,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","7c161a49ce78d626",29,"2025-04-14 19:57:04","23028RN4DG","13","Xiaomi",33,"","180.252.175.96","","","ID","","","Jakarta","-6.2114","106.8446","","","PT Telekomunikasi Indonesia"
 "2025-04-14","7ec9405e139f070e",2,"2025-04-14 20:59:11","SM-S9110","14","samsung",34,"","23.177.40.9","","","US","","","","37.751","-97.822","","",""
 "2025-04-14","3b2c7bde652b6038",23,"2025-04-14 20:59:19","M2002J9E","11","Xiaomi",30,"","111.25.4.6","","","CN","","","Changchun","43.88","125.3247","","","China Mobile Group JiLin communications corporation"
-"2025-04-14","e224c5016f68ef01",1,"2025-04-14 20:59:39","2410DPN6CC","15","Xiaomi",35,"1.7.4.3","104.28.160.186","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","CLOUDFLARENET"
 "2025-04-14","47e9c375dbecfb74",20,"2025-04-14 20:59:46","M2102K1C","14","Xiaomi",34,"1.7.4.3","103.164.54.231","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","unknown","Contabo Asia Private Limited"
+"2025-04-14","e224c5016f68ef01",2,"2025-04-14 20:59:48","2410DPN6CC","15","Xiaomi",35,"1.7.4.3","104.28.163.55","unknown","Austria","AT","","","","48.2048","16.3801","Europe/Vienna","unknown","CLOUDFLARENET"
