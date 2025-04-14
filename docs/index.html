@@ -631,6 +631,7 @@
         let currentPage = 1;
         const itemsPerPage = 20;
         let debounceTimer = null;
+        let manufacturers = new Set();
 
         // 初始化图表
         const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
@@ -1226,10 +1227,12 @@
             const tbody = document.querySelector('#statsTable tbody');
             tbody.innerHTML = '';
 
-            if (filteredStats.length === 0) {
+            if (!filteredStats || filteredStats.length === 0) {
                 tbody.innerHTML = `
                 <tr>
-                    <td colspan="10" class="loading">没有找到匹配的数据</td>
+                    <td colspan="13" class="loading">
+                        ${allStats.length > 0 ? '没有找到匹配的数据' : '数据加载中...'}
+                    </td>
                 </tr>
             `;
                 return;
