@@ -45,7 +45,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-13","b75429cdbc1f33fe",7,"2025-04-13 23:30:40","NX721J","14","nubia",34,"184.163.69.12","Canada","CA","Quebec","Montreal",45.5365,-73.6242,"America/Toronto","VIDEOTRON"
 "2025-04-14","47a1a80d474c27ad",2,"2025-04-14 11:37:19","23013RK75C","13","Xiaomi",33,"116.162.2.137","China","CN","Hunan","Changsha",28.2014,112.9611,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","3e72ab716b659832",7,"2025-04-14 11:42:21","M2007J3SC","12","Xiaomi",31,"8.212.76.210","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
-"2025-04-14","35c24c1e355bfce2",1,"2025-04-14 12:03:02","A065","15","Nothing",35,"103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
 "2025-04-14","416ca38d0ecc026e",3,"2025-04-14 12:11:23","Pixel 7","15","Google",35,"61.239.238.243","Hong Kong","HK","","",22.2908,114.1501,"Asia/Hong_Kong","Hong Kong Broadband Network Ltd."
 "2025-04-14","4e2b605822045ef1",8,"2025-04-14 06:14:58","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","66f956d00913491d",3,"2025-04-14 12:18:57","PJE110","15","OnePlus",35,"111.183.27.73","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","CHINATELECOM Hubei province Shengji 5G network"
@@ -79,3 +78,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","24f18c96d960fba6",4,"2025-04-14 14:22:34","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3b09ec7c1ddb23b2",29,"2025-04-14 13:23:47","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","edead6942f2e5aaf",3,"2025-04-14 14:25:41","22081212C","15","Xiaomi",35,"36.227.208.140","Taiwan","TW","Taipei City","Taipei",25.0504,121.5324,"Asia/Taipei","Data Communication Business Group"
+"2025-04-14","35c24c1e355bfce2",2,"2025-04-14 14:27:48","A065","15","Nothing",35,"103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
