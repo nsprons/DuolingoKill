@@ -15,3 +15,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",10,"٢٠٢٥-٠٤-١٤ ١٠:٢٨:٢٠","SM-A155F","14","samsung",34,"null","null","null","null","null","null",null,null,"null","null"
 "2025-04-14","6c5502ff9236363e",1,"2025-04-14 15:30:00","23049RAD8C","15","Xiaomi",35,"1.7.4.1","36.112.192.156","China","CN","Beijing","Beijing",39.911,116.395,"Asia/Shanghai","China Networks Inter-Exchange"
 "2025-04-14","80d93c54fe8c28a7",11,"2025-04-14 15:30:39","Mi 10 Pro","13","Xiaomi",33,"null","223.73.217.183","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","70b9d91b10ecb86a",1,"2025-04-14 15:30:41","MEIZU 21","14","meizu",34,"null","193.233.207.89","United States","US","Texas","Dallas",32.7797,-96.8022,"America/Chicago","BAXET-GROUP"
