@@ -68,3 +68,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","683d43af967763fc",11,"2025-04-14 13:10:15","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","1cdab5c2f1dd4648",4,"2025-04-14 13:10:51","Pixel 7 Pro","15","Google",35,"146.190.147.19","United States","US","California","Santa Clara",37.3931,-121.962,"America/Los_Angeles","DIGITALOCEAN-ASN"
 "2025-04-14","741180d6cb9b9201",3,"2025-04-14 13:13:18","PHJ110","13","OPPO",33,"218.26.158.182","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
+"2025-04-14","d914a47a32dda8bf",1,"2025-04-14 13:16:34","22081212C","13","Xiaomi",33,"3.0.56.149","Singapore","SG","","Singapore",1.2868,103.8503,"Asia/Singapore","AMAZON-02"
