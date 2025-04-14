@@ -108,8 +108,8 @@ jobs:
           done
 
           # Prepare CSV directory and file
-          CSV_DIR="stats"
-          CSV_FILE="${CSV_DIR}/device_stats.csv"
+          CSV_DIR="docs"
+          CSV_FILE="${CSV_DIR}/statistics.csv"
           mkdir -p "$CSV_DIR"
 
           # Create CSV header if file doesn't exist
