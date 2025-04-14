@@ -658,7 +658,7 @@
 
         // 加载数据
         function loadData() {
-            fetch('https://proxy.nspron.eu.org/proxy/https://api.github.com/repos/nspron/DuolingoKill/contents/stats/device_stats.csv', {
+            fetch('https://api.github.com/repos/nspron/DuolingoKill/contents/stats/device_stats.csv', {
                 headers: {
                     'Accept': 'application/vnd.github.v3.raw',
                     'Authorization': 'token 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'
@@ -1058,8 +1058,11 @@
                 versionCounts[stat.android_version] += parseInt(stat.open_count) || 0;
 
                 // 按地区统计
-                const regionKey = stat.city && stat.region && stat.country ?
-                    `${stat.city}, ${stat.region}, ${stat.country}` : '未知地区';
+                if (stat.city || stat.region_name || stat.country_name) {
+                    const regionKey = stat.city && stat.region && stat.country ?
+                        `${stat.city}, ${stat.region}, ${stat.country}` : '未知地区';
+                }
+
                 if (!regionCounts[regionKey]) {
                     regionCounts[regionKey] = 0;
                 }
@@ -1174,9 +1177,9 @@
                             lng: parseFloat(stat.longitude),
                             count: 0,
                             devices: new Set(),
-                            city: stat.city,
-                            region: stat.region,
-                            country: stat.country
+                            city: stat.city || '未知城市',
+                            region: stat.region_name || '未知地区',
+                            country: stat.country_name || '未知国家'
                         };
                     }
 
@@ -1197,8 +1200,8 @@
 
                 const locationText = [
                     location.city || '未知城市',
-                    location.region_name || '未知地区',
-                    location.country_name || '未知国家'
+                    location.region || '未知地区',
+                    location.country || '未知国家'
                 ].filter(Boolean).join(', ');
 
                 marker.bindPopup(`
