@@ -72,3 +72,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","5b14abc72fc84dc1",6,"2025-04-14 21:14:23","2304FPN6DC","15","Xiaomi",35,"1.7.4.3","211.90.237.13","ipv4","中国","CN","Beijing Shi","BJ","北京市","39.91175842285156","116.37922668457031","Asia/Shanghai","2025-04-14T21:14:24+08:00","China Unicom china169 Backbone"
 "2025-04-14","218f9b0d422381e5",5,"2025-04-14 22:14:22","CPH2653","15","OnePlus",35,"1.7.4.3","59.158.105.193","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","unknown","ARTERIA Networks Corporation"
 "2025-04-14","3b2c7bde652b6038",24,"2025-04-14 21:14:18","M2002J9E","11","Xiaomi",30,"","111.25.4.6","","","CN","","","Changchun","43.88","125.3247","","","China Mobile Group JiLin communications corporation"
+"2025-04-14","4acaec7f09726c21",1,"2025-04-14 08:15:23","SM-S901E","14","samsung",34,"1.7.4.3","","","","","","","","","","","",""
