@@ -64,14 +64,10 @@ jobs:
           }
 
           # 在 Process stats data 步骤中添加检测和转换函数
-          contains_arabic() {
-              [[ "$1" =~ [٠-٩] ]] && return 0 || return 1
-          }
-          
           convert_if_arabic() {
               local input="$1"
-              if contains_arabic "$input"; then
-                  echo "$input" | sed -e 'y/٠١٢٣٤٥٦٧٨٩/0123456789/'
+              if [[ "$input" =~ [$'\u0660'-$'\u0669'] ]]; then
+                  echo "$input" | sed -e "y/\u0660\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669/0123456789/"
               else
                   echo "$input"
               fi
