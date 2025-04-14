@@ -65,7 +65,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","1cdab5c2f1dd4648",4,"2025-04-14 13:10:51","Pixel 7 Pro","15","Google",35,"146.190.147.19","United States","US","California","Santa Clara",37.3931,-121.962,"America/Los_Angeles","DIGITALOCEAN-ASN"
 "2025-04-14","c22a428482e29524",2,"2025-04-14 13:18:12","M2012K11AC","15","Xiaomi",35,"183.217.165.43","China","CN","Guangdong","",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","d914a47a32dda8bf",2,"2025-04-14 13:26:36","22081212C","13","Xiaomi",33,"118.212.206.145","China","CN","Shanghai","Shanghai",31.2222,121.4581,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
-"2025-04-14","7c161a49ce78d626",4,"2025-04-14 12:26:52","23028RN4DG","13","Xiaomi",33,"180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
 "2025-04-14","215e9a7554d0b952",2,"2025-04-14 13:28:18","Redmi K20 Pro","13","Xiaomi",33,"192.9.251.148","United States","US","California","San Jose",37.2379,-121.7946,"America/Los_Angeles","ORACLE-BMC-31898"
 "2025-04-14","683d43af967763fc",13,"2025-04-14 13:31:05","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","80745194cb145da1",1,"2025-04-14 13:32:04","PJX110","15","OnePlus",35,"8.212.7.77","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
@@ -74,3 +73,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","ebd0e46ac8c3986c",9,"2025-04-14 13:37:17","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
 "2025-04-14","f43acb410bda7d55",9,"2025-04-14 13:38:06","SM-S9160","14","samsung",34,"1.164.100.126","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
 "2025-04-14","741180d6cb9b9201",6,"2025-04-14 13:40:49","PHJ110","13","OPPO",33,"218.26.158.182","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
+"2025-04-14","7c161a49ce78d626",6,"2025-04-14 12:41:30","23028RN4DG","13","Xiaomi",33,"180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
