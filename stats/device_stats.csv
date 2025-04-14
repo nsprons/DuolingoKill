@@ -53,7 +53,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3e72ab716b659832",7,"2025-04-14 11:42:21","M2007J3SC","12","Xiaomi",31,"8.212.76.210","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
 "2025-04-14","3b09ec7c1ddb23b2",21,"2025-04-14 10:44:36","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","35c24c1e355bfce2",1,"2025-04-14 12:03:02","A065","15","Nothing",35,"103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
-"2025-04-14","683d43af967763fc",7,"2025-04-14 12:05:20","2304FPN6DC","15","Xiaomi",35,"223.160.219.14","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","416ca38d0ecc026e",3,"2025-04-14 12:11:23","Pixel 7","15","Google",35,"61.239.238.243","Hong Kong","HK","","",22.2908,114.1501,"Asia/Hong_Kong","Hong Kong Broadband Network Ltd."
 "2025-04-14","4e2b605822045ef1",8,"2025-04-14 06:14:58","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","ded0d9b082536dfd",14,"2025-04-14 11:18:39","22101316G","14","Xiaomi",34,"113.160.14.17","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","VNPT Corp"
@@ -66,3 +65,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","23b34b7f3511e555",1,"2025-04-14 12:30:10","2304FPN6DC","15","Xiaomi",35,"129.227.235.113","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","ZEN-ECN"
 "2025-04-14","c650a577f8eba164",4,"2025-04-14 05:32:30","SM-A515F","13","samsung",33,"41.249.183.30","Morocco","MA","El-Jadida","El Jadida",33.2558,-8.5015,"Africa/Casablanca","MT-MPLS"
 "2025-04-14","99a9da25f200db5e",5,"2025-04-14 12:33:41","PJX110","15","OnePlus",35,"39.154.141.138","China","CN","Inner Mongolia","Ordos",39.596,109.7835,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","683d43af967763fc",9,"2025-04-14 12:35:17","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
