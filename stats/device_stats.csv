@@ -28,7 +28,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","61d0e8ccc353914d",3,"2025-04-14 08:22:43","22041211AC","15","Xiaomi",35,"104.28.247.68","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","CLOUDFLARENET"
 "2025-04-14","efd315634b0a7c26",1,"2025-04-14 08:31:57","22127RK46C","14","Xiaomi",34,"77.111.111.113","Hungary","HU","","",47.4919,19.05,"Europe/Budapest","Dravanet Co Ltd."
 "2025-04-14","2648aed174b231b0",6,"2025-04-14 08:44:13","SM-S9280","13","samsung",33,"220.200.108.43","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
-"2025-04-14","b2cf5ad036aba98a",12,"2025-04-14 08:46:45","PGP110","15","OnePlus",35,"39.144.109.128","China","CN","Shandong","",36.1155,120.3024,"Asia/Shanghai","Shandong Mobile Communication Company Limited"
 "2025-04-14","d6f6c23c7d75a9bc",2,"2025-04-14 06:28:40","CPH2569","15","OnePlus",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","3e1920fa07f76b88",2,"2025-04-14 09:00:21","24031PN0DC","15","Xiaomi",35,"38.175.103.151","United States","US","Washington","Seattle",47.6144,-122.3447,"America/Los_Angeles","MISAKA"
 "2025-04-14","YpyGLX0ADs11",1,"2025-04-14 11:16:27","22041216C","15","Xiaomi",35,"45.118.67.135","Australia","AU","South Australia","Adelaide",-34.7348,138.6837,"Australia/Adelaide","Superloop"
@@ -80,3 +79,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","7c161a49ce78d626",10,"2025-04-14 13:37:04","23028RN4DG","13","Xiaomi",33,"180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
 "2025-04-14","4cb73ef539610e2a",7,"2025-04-14 14:39:14","M2105K81AC","15","Xiaomi",35,"113.85.104.72","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","24f18c96d960fba6",16,"2025-04-14 14:39:25","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","b2cf5ad036aba98a",14,"2025-04-14 14:39:43","PGP110","15","OnePlus",35,"182.32.18.7","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","Chinanet"
