@@ -40,7 +40,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","b2cf5ad036aba98a",12,"2025-04-14 08:46:45","PGP110","15","OnePlus",35,"39.144.109.128","China","CN","Shandong","",36.1155,120.3024,"Asia/Shanghai","Shandong Mobile Communication Company Limited"
 "2025-04-14","d6f6c23c7d75a9bc",2,"2025-04-14 06:28:40","CPH2569","15","OnePlus",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","3e1920fa07f76b88",2,"2025-04-14 09:00:21","24031PN0DC","15","Xiaomi",35,"38.175.103.151","United States","US","Washington","Seattle",47.6144,-122.3447,"America/Los_Angeles","MISAKA"
-"2025-04-14","4e2b605822045ef1",4,"2025-04-14 03:06:38","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","YpyGLX0ADs11",1,"2025-04-14 11:16:27","22041216C","15","Xiaomi",35,"45.118.67.135","Australia","AU","South Australia","Adelaide",-34.7348,138.6837,"Australia/Adelaide","Superloop"
 "2025-04-14","ebd0e46ac8c3986c",7,"2025-04-14 09:20:56","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
 "2025-04-14","833d606ef4ad4f75",4,"2025-04-14 09:33:55","23127PN0CC","14","Xiaomi",34,"171.108.112.12","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
@@ -52,3 +51,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","e9305886eb2165c6",1,"2025-04-14 10:12:16","2203121C","15","Xiaomi",35,"222.218.210.43","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","3e72ab716b659832",6,"2025-04-14 10:13:42","M2007J3SC","12","Xiaomi",31,"8.223.16.69","Singapore","SG","","",1.3673,103.8014,"Asia/Singapore",""
 "2025-04-14","3b09ec7c1ddb23b2",15,"2025-04-14 09:14:25","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","4e2b605822045ef1",6,"2025-04-14 04:23:26","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
