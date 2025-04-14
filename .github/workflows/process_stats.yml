@@ -80,6 +80,8 @@ jobs:
           REGION=$(parse_field "region_name")
           REGION_CODE=$(parse_field "region_code")
           CITY=$(parse_field "city")
+          LATITUDE=$(parse_field "latitude")
+          LONGITUDE=$(parse_field "longitude")
           TIMEZONE=$(parse_field "timezone_id")
           CURRENT_TIME=$(parse_field "current_time")
           ISP=$(parse_field "isp")
@@ -100,7 +102,7 @@ jobs:
 
           # Create CSV header if file doesn't exist
           if [ ! -f "$CSV_FILE" ]; then
-            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,timezone_id,current_time,isp" > "$CSV_FILE"
+            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp" > "$CSV_FILE"
           fi
 
           # Process CSV data
@@ -110,7 +112,7 @@ jobs:
             awk -F, -v device_id="$DEVICE_ID" '
               NR > 1 && $2 != "\""device_id"\"" { print }
             ' "$CSV_FILE"
-            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$VERSION\",\"$IP_ADDRESS\",\"$IP_TYPE\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$REGION_CODE\",\"$CITY\",\"$TIMEZONE\",\"$CURRENT_TIME\",\"$ISP\""
+            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$VERSION\",\"$IP_ADDRESS\",\"$IP_TYPE\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$REGION_CODE\",\"$CITY\",\"$LATITUDE\",\"$LONGITUDE\",\"$TIMEZONE\",\"$CURRENT_TIME\",\"$ISP\""
           } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
           # Commit changes
