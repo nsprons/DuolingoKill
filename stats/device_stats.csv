@@ -61,5 +61,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","f43acb410bda7d55",1,"2025-04-14 11:47:28","SM-S9160","14","samsung",34,"111.243.18.92","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
 "2025-04-14","35c24c1e355bfce2",1,"2025-04-14 12:03:02","A065","15","Nothing",35,"103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
 "2025-04-14","683d43af967763fc",7,"2025-04-14 12:05:20","2304FPN6DC","15","Xiaomi",35,"223.160.219.14","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
-"2025-04-14","e3d63f6772c7637e",34,"2025-04-14 12:06:40","Redmi Note 10 5G","14","Xiaomi",34,"112.97.86.79","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","China Unicom Shenzen network"
 "2025-04-14","416ca38d0ecc026e",3,"2025-04-14 12:11:23","Pixel 7","15","Google",35,"61.239.238.243","Hong Kong","HK","","",22.2908,114.1501,"Asia/Hong_Kong","Hong Kong Broadband Network Ltd."
+"2025-04-14","e3d63f6772c7637e",37,"2025-04-14 12:14:01","Redmi Note 10 5G","14","Xiaomi",34,"112.97.86.79","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","China Unicom Shenzen network"
