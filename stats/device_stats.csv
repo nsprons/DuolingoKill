@@ -50,4 +50,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3b09ec7c1ddb23b2",12,"2025-04-14 08:58:18","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","0701e331b10c0bc5",1,"2025-04-14 10:00:27","MIX 2S","14","MIX 2S",34,"106.83.33.213","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","Chinanet"
 "2025-04-14","c9caf8819b491cdb",18,"2025-04-14 10:01:09","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
-"2025-04-14","e3d63f6772c7637e",29,"2025-04-14 10:07:53","Redmi Note 10 5G","14","Xiaomi",34,"112.97.65.154","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","China Unicom Guangdong IP network"
+"2025-04-14","e3d63f6772c7637e",30,"2025-04-14 10:09:01","Redmi Note 10 5G","14","Xiaomi",34,"112.97.65.154","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","China Unicom Guangdong IP network"
