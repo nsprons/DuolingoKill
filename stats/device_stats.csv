@@ -1,4 +1,4 @@
-date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp
+date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp
 "2025-04-13","06060a38b401e661",3,"2025-04-13 21:50:13","22127RK46C","15","Xiaomi",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","3b2c7bde652b6038",1,"2025-04-14 00:13:31","M2002J9E","11","Xiaomi",30,"111.25.4.6","China","CN","Jilin","Changchun",43.88,125.3247,"Asia/Shanghai","China Mobile Group JiLin communications corporation"
 "2025-04-14","1e139f26a9114a0f",1,"2025-04-14 00:16:16","2304FPN6DC","15","Xiaomi",35,"null","null","null","null","null",null,null,"null","null"
