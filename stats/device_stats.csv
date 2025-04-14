@@ -39,7 +39,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","d6f6c23c7d75a9bc",2,"2025-04-14 06:28:40","CPH2569","15","OnePlus",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","3e1920fa07f76b88",2,"2025-04-14 09:00:21","24031PN0DC","15","Xiaomi",35,"38.175.103.151","United States","US","Washington","Seattle",47.6144,-122.3447,"America/Los_Angeles","MISAKA"
 "2025-04-14","YpyGLX0ADs11",1,"2025-04-14 11:16:27","22041216C","15","Xiaomi",35,"45.118.67.135","Australia","AU","South Australia","Adelaide",-34.7348,138.6837,"Australia/Adelaide","Superloop"
-"2025-04-14","ebd0e46ac8c3986c",7,"2025-04-14 09:20:56","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
 "2025-04-14","833d606ef4ad4f75",4,"2025-04-14 09:33:55","23127PN0CC","14","Xiaomi",34,"171.108.112.12","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","a2635a5c122f5dc1",1,"2025-04-14 09:53:58","2106118C","15","Xiaomi",35,"46.3.242.130","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","Akari Networks"
 "2025-04-14","c9caf8819b491cdb",18,"2025-04-14 10:01:09","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
@@ -65,3 +64,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","e3d63f6772c7637e",48,"2025-04-14 12:23:55","Redmi Note 10 5G","14","Xiaomi",34,"112.97.86.79","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","China Unicom Shenzen network"
 "2025-04-14","a08089bc0c96990c",1,"2025-04-14 12:24:17","Pixel 8a","15","Google",35,"113.84.34.114","China","CN","Guangdong","Shenzhen",22.5559,114.0577,"Asia/Shanghai","Chinanet"
 "2025-04-14","73b2850cdc0b23f7",1,"2025-04-14 12:25:00","CPH2653","15","OnePlus",35,"182.255.32.48","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","JINX CO., LIMITED"
+"2025-04-14","ebd0e46ac8c3986c",8,"2025-04-14 12:27:09","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
