@@ -685,9 +685,13 @@
                         }
                     });
 
-                    allStats = results.data.filter(entry =>
-                        entry.date && entry.device_id && entry.open_count
-                    );
+                    allStats = results.data.filter(entry => {
+                        if (entry.android_version) {
+                            // 标准化Android版本号
+                            entry.android_version = entry.android_version.toString().replace(/\.0$/, '');
+                        }
+                        return entry.date && entry.device_id && entry.open_count;
+                    });
 
                     // 收集设备型号、Android版本、地区和运营商
                     allStats.forEach(stat => {
@@ -937,8 +941,10 @@
             // 添加Android版本选项
             androidVersions.forEach(version => {
                 const option = document.createElement('option');
-                option.value = version;
-                option.textContent = `Android ${version}`;
+                // 标准化版本号，移除".0"后缀
+                const cleanVersion = version.toString().replace(/\.0$/, '');
+                option.value = cleanVersion;
+                option.textContent = `Android ${cleanVersion}`;
                 androidVersionSelect.appendChild(option);
             });
 
@@ -995,8 +1001,15 @@
                 }
 
                 // Android版本筛选
-                if (androidVersion !== 'all' && stat.android_version !== androidVersion) {
-                    return false;
+                if (androidVersion !== 'all') {
+                    // 标准化版本号，移除可能的".0"后缀
+                    const statVersion = stat.android_version ?
+                        stat.android_version.toString().replace(/\.0$/, '') : '';
+                    const filterVersion = androidVersion.toString().replace(/\.0$/, '');
+
+                    if (statVersion !== filterVersion) {
+                        return false;
+                    }
                 }
 
                 // 地区筛选
@@ -1099,10 +1112,11 @@
                 deviceCounts[stat.device_model] += parseInt(stat.open_count) || 0;
 
                 // 按Android版本统计
-                if (!versionCounts[stat.android_version]) {
-                    versionCounts[stat.android_version] = 0;
+                const cleanVersion = stat.android_version.toString().replace(/\.0$/, '');
+                if (!versionCounts[cleanVersion]) {
+                    versionCounts[cleanVersion] = 0;
                 }
-                versionCounts[stat.android_version] += parseInt(stat.open_count) || 0;
+                versionCounts[cleanVersion] += parseInt(stat.open_count) || 0;
 
                 // 按地区统计
                 let regionKey = '未知地区';
