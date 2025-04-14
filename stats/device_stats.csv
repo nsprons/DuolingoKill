@@ -95,5 +95,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","90cd51b05630c674",3,"2025-04-14 22:45:22","23127PN0CC","14","Xiaomi",34,"","175.13.107.95","","","CN","","","","34.7732","113.722","","","Chinanet"
 "2025-04-14","9925e43c4238f4cd",9,"2025-04-14 16:47:13","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","2352e19e23a1286d",12,"2025-04-14 22:47:42","21051182G","13","Xiaomi",33,"1.7.4.2","104.28.158.106","ipv4","美国","US","加利福尼亚州","CA","东洛杉矶","","","America/Los_Angeles","2025-04-14T07:24:02-07:00","Cloudflare"
-"2025-04-14","1f66be5aab96b161",24,"2025-04-14 16:48:43","22111317G","14","Xiaomi",34,"1.7.4.3","31.15.181.96","unknown","Slovenia","SI","Hajdina","159","Spodnja Hajdina","46.4095","15.8449","Europe/Ljubljana","unknown","Telemach UG d.o.o."
 "2025-04-14","365d7fe2bb757fa9",1,"2025-04-14 22:49:06","PJE110","15","OnePlus",35,"1.7.4.3","205.198.66.66","unknown","Hong Kong","HK","Kwai Tsing","NKT","Ha Kwai Chung","22.3539","114.1342","Asia/Hong_Kong","unknown","Eons Data Communications Limited"
+"2025-04-14","1f66be5aab96b161",25,"2025-04-14 16:49:19","22111317G","14","Xiaomi",34,"1.7.4.3","31.15.181.96","unknown","Slovenia","SI","Hajdina","159","Spodnja Hajdina","46.4095","15.8449","Europe/Ljubljana","unknown","Telemach UG d.o.o."
