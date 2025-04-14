@@ -43,7 +43,7 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","2648aed174b231b0",6,"2025-04-14 08:44:13","SM-S9280","13","samsung",33,"220.200.108.43","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","3b09ec7c1ddb23b2",5,"2025-04-14 07:45:01","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","b2cf5ad036aba98a",12,"2025-04-14 08:46:45","PGP110","15","OnePlus",35,"39.144.109.128","China","CN","Shandong","",36.1155,120.3024,"Asia/Shanghai","Shandong Mobile Communication Company Limited"
-"2025-04-14","d6f6c23c7d75a9bc",1,"2025-04-14 06:23:37","CPH2569","15","OnePlus",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","ebd0e46ac8c3986c",3,"2025-04-14 08:55:53","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
 "2025-04-14","80d93c54fe8c28a7",4,"2025-04-14 08:57:30","Mi 10 Pro","13","Xiaomi",33,"223.73.217.183","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3e1920fa07f76b88",1,"2025-04-14 08:57:00","24031PN0DC","15","Xiaomi",35,"38.175.103.151","United States","US","Washington","Seattle",47.6144,-122.3447,"America/Los_Angeles","MISAKA"
+"2025-04-14","d6f6c23c7d75a9bc",2,"2025-04-14 06:28:40","CPH2569","15","OnePlus",35,"null","null","null","null","null",null,null,"null","null"
