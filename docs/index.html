@@ -1121,17 +1121,21 @@
                 // 按地区统计
                 let regionKey = '未知地区';
                 if (stat.city || stat.region_name || stat.country_name) {
-                    const parts = [];
-                    if (stat.city) parts.push(stat.city);
-                    if (stat.region_name) parts.push(stat.region_name);
-                    if (stat.country_name) parts.push(stat.country_name);
-                    regionKey = parts.join(', ') || '未知地区';
+                    const regionParts = [];
+                    if (stat.city) regionParts.push(stat.city);
+                    if (stat.region_name) regionParts.push(stat.region_name);
+                    if (stat.country_name) regionParts.push(stat.country_name);
+                    const regionKey = regionParts.join(', ');
+
+                    uniqueRegions.add(regionKey);
+
+                    // 地区计数统计
+                    if (!regionCounts[regionKey]) {
+                        regionCounts[regionKey] = 0;
+                    }
+                    regionCounts[regionKey] += parseInt(stat.open_count) || 0;
                 }
 
-                if (!regionCounts[regionKey]) {
-                    regionCounts[regionKey] = 0;
-                }
-                regionCounts[regionKey] += parseInt(stat.open_count) || 0;
 
                 // 按运营商统计
                 const ispKey = stat.isp || '未知运营商';
