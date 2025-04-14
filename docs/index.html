@@ -504,6 +504,16 @@
 
             <div class="card">
                 <div class="card-header">
+                    <span class="card-title">设备制造商</span>
+                    <span class="card-value" id="manufacturerCount">--</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="manufacturerChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
                     <span class="card-title">地区分布</span>
                     <span class="card-value" id="regionCount">--</span>
                 </div>
@@ -620,6 +630,7 @@
         const ispChart = initDoughnutChart('ispChart', '运营商分布');
         const newDevicesChart = initBarChart('newDevicesChart', '每日新增设备', 'rgba(76, 201, 240, 0.7)');
         const trendChart = initLineChart('trendChart', '设备使用趋势');
+        const manufacturerChart = initDoughnutChart('manufacturerChart', '设备制造商分布');
 
         // 初始化地图
         function initMap() {
@@ -673,6 +684,7 @@
                             regions.add(`${stat.city}, ${stat.region}, ${stat.country}`);
                         }
                         if (stat.isp) isps.add(stat.isp);
+                        if (stat.manufacturer) manufacturers.add(stat.manufacturer);
                     });
 
                     // 填充筛选器选项
@@ -972,6 +984,8 @@
             filteredStats.forEach(stat => {
                 // 统计总开启次数
                 totalOpens += parseInt(stat.open_count) || 0;
+                const manufacturerCounts = {};
+                let uniqueManufacturers = new Set();
 
                 // 记录唯一设备
                 if (!uniqueDevices.has(stat.device_id)) {
@@ -1027,6 +1041,15 @@
                     ispCounts[ispKey] = 0;
                 }
                 ispCounts[ispKey] += parseInt(stat.open_count) || 0;
+
+                // 统计制造商
+                if (stat.manufacturer) {
+                    uniqueManufacturers.add(stat.manufacturer);
+                    if (!manufacturerCounts[stat.manufacturer]) {
+                        manufacturerCounts[stat.manufacturer] = 0;
+                    }
+                    manufacturerCounts[stat.manufacturer] += parseInt(stat.open_count) || 0;
+                }
             });
 
             // 更新仪表板数据
@@ -1036,6 +1059,7 @@
             document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length.toLocaleString();
             document.getElementById('ispCount').textContent = uniqueIsps.size.toLocaleString();
             document.getElementById('newDevices').textContent = newDevicesCount.toLocaleString();
+            document.getElementById('manufacturerCount').textContent = uniqueManufacturers.size.toLocaleString();
 
             // 准备日期排序
             const dates = Object.keys(dailyStats).sort();
@@ -1091,6 +1115,15 @@
             trendChart.data.labels = dates;
             trendChart.data.datasets[0].data = dates.map(date => dailyStats[date]);
             trendChart.update();
+
+            // 更新制造商分布图表
+            const topManufacturers = Object.entries(manufacturerCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+
+            manufacturerChart.data.labels = topManufacturers.map(m => m[0] || '未知制造商');
+            manufacturerChart.data.datasets[0].data = topManufacturers.map(m => m[1]);
+            manufacturerChart.update();
         }
 
         // 更新地图（使用聚类）
@@ -1196,6 +1229,11 @@
                 const countTd = document.createElement('td');
                 countTd.textContent = stat.open_count;
                 tr.appendChild(countTd);
+
+                // 添加制造商列
+                const manufacturerTd = document.createElement('td');
+                manufacturerTd.textContent = stat.manufacturer || '--';
+                tr.appendChild(manufacturerTd);
 
                 // 设备型号
                 const modelTd = document.createElement('td');
