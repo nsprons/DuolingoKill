@@ -85,3 +85,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","741180d6cb9b9201",15,"2025-04-14 22:15:22","PHJ110","13","OPPO",33,"","218.26.159.209","","","CN","","","Guangzhou","23.1181","113.2539","","","CHINA UNICOM China169 Backbone"
 "2025-04-14","6e490d89912071fb",7,"2025-04-14 19:45:23","M2002J9G","15","Xiaomi",35,"1.7.4.3","112.134.128.85","unknown","Sri Lanka","LK","Gampaha District","12","Wattala","6.9847","79.8838","Asia/Colombo","unknown","Sri Lanka Telecom Internet"
 "2025-04-14","be3b9fd6dd01dfc1",18,"2025-04-14 22:15:15","GM1910","12","OnePlus",31,"1.7.4.3","103.149.249.232","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","Kirino LLC"
+"2025-04-14","20368ff074d406c2",2,"2025-04-14 22:15:36","PJX110","15","OnePlus",35,"1.7.4.3","103.88.46.15","unknown","Japan","JP","Ōsaka","27","Osaka","34.6946","135.5021","Asia/Tokyo","unknown","xTom"
