@@ -53,3 +53,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","ebd0e46ac8c3986c",13,"2025-04-14 20:13:12","XQ-AS72","14","Sony",34,"","95.85.94.17","","","JP","","","Tokyo","35.6289","139.7915","","","G-Core Labs S.A."
 "2025-04-14","3d90e8144d8fb105",1,"2025-04-14 20:15:34","23049RAD8C","15","Xiaomi",35,"1.7.4.3","104.28.235.57","unknown","United States","US","Washington","WA","Seattle","47.6034","-122.3414","America/Los_Angeles","unknown","CLOUDFLARENET"
 "2025-04-14","2352e19e23a1286d",4,"2025-04-14 20:15:38","21051182G","13","Xiaomi",33,"1.7.4.2","104.28.152.132","ipv4","美国","US","加利福尼亚州","CA","东洛杉矶","","","America/Los_Angeles","2025-04-14T04:30:29-07:00","Cloudflare"
+"2025-04-14","a18acf44b36954e9",1,"2025-04-14 20:16:06","23127PN0CC","15","Xiaomi",35,"1.7.4.1","118.120.86.163","","","CN","","","Dongguan","23.0177","113.7506","","","Chinanet"
