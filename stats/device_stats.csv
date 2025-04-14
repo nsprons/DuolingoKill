@@ -48,4 +48,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","YpyGLX0ADs11",1,"2025-04-14 11:16:27","22041216C","15","Xiaomi",35,"45.118.67.135","Australia","AU","South Australia","Adelaide",-34.7348,138.6837,"Australia/Adelaide","Superloop"
 "2025-04-14","ebd0e46ac8c3986c",7,"2025-04-14 09:20:56","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
 "2025-04-14","c9caf8819b491cdb",14,"2025-04-14 09:31:12","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
-"2025-04-14","3b09ec7c1ddb23b2",9,"2025-04-14 08:32:42","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","3b09ec7c1ddb23b2",10,"2025-04-14 08:33:41","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
