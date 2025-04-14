@@ -1,4 +1,4 @@
-date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,timezone_id,current_time,isp
+date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
 "2025-04-14","ded0d9b082536dfd",25,"2025-04-14 15:17:32","22101316G","14","Xiaomi",34,"","113.160.14.17","","","VN","","","Hanoi","","","VNPT Corp"
 "2025-04-14","55f0813c54989c74",7,"2025-04-14 16:29:14","2201122C","15","Xiaomi",35,"","171.111.160.114","","","CN","","","","","","Chinanet"
 "2025-04-14","3b09ec7c1ddb23b2",37,"2025-04-14 15:32:10","SM-S908B","14","samsung",34,"","","","","","","","","","",""
