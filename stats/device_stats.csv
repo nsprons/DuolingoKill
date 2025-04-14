@@ -16,7 +16,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","f408942fcf786867",5,"2025-04-14 00:07:58","23049PCD8G","15","Xiaomi",35,"82.131.24.27","Estonia","EE","Jogeva vald","Jõgeva",58.7473,26.3866,"Europe/Tallinn","Elisa Eesti AS"
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",2,"٢٠٢٥-٠٤-١٤ ٠٠:٠٩:٥٩","SM-A155F","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "٢٠٢٥-٠٤-١٤","53854893937ee474",2,"٢٠٢٥-٠٤-١٤ ٠٠:١٦:٢٨","SM-A305F","10","samsung",29,"null","null","null","null","null",null,null,"null","null"
-"2025-04-14","2648aed174b231b0",2,"2025-04-14 05:17:02","SM-S9280","13","samsung",33,"220.200.108.43","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","446ac5e65e0e9905",25,"2025-04-14 05:36:16","22011211C","13","Xiaomi",33,"39.144.220.119","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","80d93c54fe8c28a7",1,"2025-04-14 05:46:05","Mi 10 Pro","13","Xiaomi",33,"223.73.217.183","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","9393b0374320bdb5",1,"2025-04-14 05:47:05","PEQM00","13","OPPO",33,"218.103.130.208","Hong Kong","HK","","",22.2908,114.1501,"Asia/Hong_Kong","HKT Limited"
@@ -44,3 +43,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","8acfdac8d37be885",4,"2025-04-14 08:18:49","2410DPN6CC","15","Xiaomi",35,"106.85.159.250","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","Chinanet"
 "2025-04-14","61d0e8ccc353914d",3,"2025-04-14 08:22:43","22041211AC","15","Xiaomi",35,"104.28.247.68","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","CLOUDFLARENET"
 "2025-04-14","efd315634b0a7c26",1,"2025-04-14 08:31:57","22127RK46C","14","Xiaomi",34,"77.111.111.113","Hungary","HU","","",47.4919,19.05,"Europe/Budapest","Dravanet Co Ltd."
+"2025-04-14","2648aed174b231b0",3,"2025-04-14 08:44:04","SM-S9280","13","samsung",33,"220.200.108.43","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
