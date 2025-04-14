@@ -61,3 +61,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","24f18c96d960fba6",57,"2025-04-14 20:37:00","PJA110","13","OnePlus",33,"1.7.4.3","129.150.42.215","unknown","Singapore","SG","","","Kampong Loyang","1.3759","103.9639","Asia/Singapore","unknown","ORACLE-BMC-31898"
 "2025-04-14","9925e43c4238f4cd",5,"2025-04-14 14:38:58","Redmi Note 5","14","Xiaomi",34,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","75412f1eb1ab80fc",2,"2025-04-14 20:39:23","23077RABDC","15","Xiaomi",35,"1.7.4.3","183.202.197.31","ipv4","中国","CN","陕西省","SN","西安市","34.25532913208008","108.95320892333984","Asia/Shanghai","2025-04-14T20:39:21+08:00","China Mobile Communications Corporation"
+"2025-04-14","1a94bc73c6cccfc1",1,"2025-04-14 20:39:37","Pixel 7 Pro","15","Google",35,"","42.75.11.67","","","TW","","","Kaohsiung City","22.6148","120.3139","","","Mobile Business Group"
