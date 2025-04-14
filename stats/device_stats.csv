@@ -1,6 +1,5 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,timezone_id,current_time,isp
 "2025-04-14","f211819936886d54",1,"2025-04-14 16:11:07","IN2020","13","OnePlus",33,"1.7.4.1","222.93.202.179","","","CN","","","","","","Chinanet"
-"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",13,"٢٠٢٥-٠٤-١٤ ١١:١٧:٢٤","SM-A155F","14","samsung",34,"","","","","","","","","","",""
 "2025-04-14","ded0d9b082536dfd",25,"2025-04-14 15:17:32","22101316G","14","Xiaomi",34,"","113.160.14.17","","","VN","","","Hanoi","","","VNPT Corp"
 "2025-04-14","24f18c96d960fba6",43,"2025-04-14 16:28:30","PJA110","13","OnePlus",33,"1.7.4.2","117.151.235.247","ipv4","中国","CN","湖北省","HB","鄂州","Asia/Shanghai","2025-04-14T15:32:04+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-14","55f0813c54989c74",7,"2025-04-14 16:29:14","2201122C","15","Xiaomi",35,"","171.111.160.114","","","CN","","","","","","Chinanet"
@@ -16,3 +15,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","741180d6cb9b9201",10,"2025-04-14 16:46:52","PHJ110","13","OPPO",33,"","218.26.158.130","","","CN","","","Guangzhou","","","CHINA UNICOM China169 Backbone"
 "2025-04-14","47e9c375dbecfb74",14,"2025-04-14 16:49:58","M2102K1C","14","Xiaomi",34,"","120.230.155.232","","","CN","","","Jiangmen","","","China Mobile Communications Group Co., Ltd."
 "2025-04-14","b3904204b82c8fe4",4,"2025-04-14 12:03:16","ASUS_I01WD","13","samsung",33,"","149.50.234.201","","","TR","","","","","","Veganet Teknolojileri ve Hizmetleri LTD STI"
+"٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",14,"٢٠٢٥-٠٤-١٤ ١٢:١٠:٠٦","SM-A155F","14","samsung",34,"","","","","","","","","","",""
