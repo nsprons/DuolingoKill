@@ -24,7 +24,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","aec46bd53e5669d0",5,"2025-04-14 19:51:14","M2102J2SC","14","Xiaomi",34,"","119.186.246.46","","","CN","","","","34.7732","113.722","","","CHINA UNICOM China169 Backbone"
 "2025-04-14","be3b9fd6dd01dfc1",6,"2025-04-14 19:53:58","GM1910","12","OnePlus",31,"","103.149.249.232","","","HK","","","Hong Kong","22.2842","114.1759","","","Kirino LLC"
 "2025-04-14","02998915bdf5e74a",2,"2025-04-14 19:54:30","MEIZU 21 Pro","14","meizu",34,"1.7.4.3","123.233.213.124","ipv4","中国","CN","山东省","SD","济南市","36.68299865722656","117.0","Asia/Shanghai","2025-04-14T19:54:25+08:00","China Unicom china169 Backbone"
-"2025-04-14","d756375c547a53b1",6,"2025-04-14 20:02:08","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"","180.136.246.223","","","CN","","","Nanning","22.8111","108.3168","","","Chinanet"
 "2025-04-14","5459cfd130507c08",2,"2025-04-14 20:02:35","M2101K6G","15","Xiaomi",35,"1.7.4.3","49.217.203.71","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","unknown","Taiwan Mobile Co., Ltd."
 "2025-04-14","77b06fa0b5ba9ba2",4,"2025-04-14 20:04:53","23049RAD8C","14","Xiaomi",34,"1.7.4.1","222.210.208.38","","","CN","","","Shanghai","31.2222","121.4581","","","Chinanet"
 "2025-04-14","66f956d00913491d",6,"2025-04-14 20:07:05","PJE110","15","OnePlus",35,"","111.181.90.245","","","CN","","","Wuhan","30.589","114.2681","","","CHINATELECOM Hubei province Shengji 5G network"
@@ -80,3 +79,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","a197d92e5c4389fb",7,"2025-04-14 21:49:03","Pixel 6","15","Google",35,"1.7.4.3","146.190.169.146","unknown","United States","US","California","CA","San Francisco","37.7809","-122.4245","America/Los_Angeles","unknown","DIGITALOCEAN-ASN"
 "2025-04-14","7a2fadd78aa47e11",2,"2025-04-14 21:49:29","23116PN5BC","13","Xiaomi",33,"1.7.4.2","219.152.146.2","ipv4","中国","CN","重庆市","CQ","Zhendong","31.1813907623291","108.38152313232422","Asia/Shanghai","2025-04-14T21:49:10+08:00","Chinanet"
 "2025-04-14","a08089bc0c96990c",14,"2025-04-14 21:49:38","Pixel 8a","15","Google",35,"","113.84.128.157","","","CN","","","Shenzhen","22.5559","114.0577","","","Chinanet"
+"2025-04-14","d756375c547a53b1",7,"2025-04-14 21:52:00","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"","180.136.246.223","","","CN","","","Nanning","22.8111","108.3168","","","Chinanet"
