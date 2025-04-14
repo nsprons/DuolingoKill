@@ -22,7 +22,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","5f09408f4da96b03",2,"2025-04-14 00:56:30","25010PN30G","15","Xiaomi",35,"94.25.171.44","Russia","RU","Moscow","Moscow",55.7483,37.6171,"Europe/Moscow","PJSC MegaFon"
 "2025-04-14","4e2b605822045ef1",3,"2025-04-14 00:35:09","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","1cdab5c2f1dd4648",3,"2025-04-14 06:36:33","Pixel 7 Pro","15","Google",35,"223.104.54.148","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
-"2025-04-14","b2cf5ad036aba98a",10,"2025-04-14 06:42:55","PGP110","15","OnePlus",35,"182.32.18.7","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","Chinanet"
 "2025-04-14","9124cca622684bd5",1,"2025-04-14 07:07:13","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3612f555f31e04ff",1,"2025-04-14 07:07:41","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","df2a4a98aa04b485",2,"2025-04-14 07:15:37","M2012K11AC","13","Xiaomi",33,"112.251.30.171","China","CN","","",34.7732,113.722,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
@@ -44,3 +43,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","efd315634b0a7c26",1,"2025-04-14 08:31:57","22127RK46C","14","Xiaomi",34,"77.111.111.113","Hungary","HU","","",47.4919,19.05,"Europe/Budapest","Dravanet Co Ltd."
 "2025-04-14","2648aed174b231b0",6,"2025-04-14 08:44:13","SM-S9280","13","samsung",33,"220.200.108.43","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","3b09ec7c1ddb23b2",5,"2025-04-14 07:45:01","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","b2cf5ad036aba98a",12,"2025-04-14 08:46:45","PGP110","15","OnePlus",35,"39.144.109.128","China","CN","Shandong","",36.1155,120.3024,"Asia/Shanghai","Shandong Mobile Communication Company Limited"
