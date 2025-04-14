@@ -4,7 +4,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","d731f16acb55f131",1,"2025-04-14 14:09:16","PJZ110","15","OnePlus",35,"1.7.4.1","202.65.227.105","Indonesia","ID","","",-6.1728,106.8272,"Asia/Jakarta",""
 "2025-04-14","35c24c1e355bfce2",4,"2025-04-14 15:12:02","A065","15","Nothing",35,"null","103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
 "2025-04-14","ded0d9b082536dfd",23,"2025-04-14 14:12:26","22101316G","14","Xiaomi",34,"null","113.160.14.17","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","VNPT Corp"
-"2025-04-14","bcc52e49c73a5c66",7,"2025-04-14 15:12:50","RMX5010","15","realme",35,"1.7.4.1","23.26.223.204","United States","US","","",37.751,-97.822,"America/Chicago","Spike Telecom LLC"
 "2025-04-14","5db7d4623784c024",3,"2025-04-14 15:13:07","PKR110","15","OnePlus",35,"null","120.208.214.206","China","CN","Shanxi","Jincheng",35.4963,112.831,"Asia/Shanghai","China Mobile communications corporation"
 "2025-04-14","3b09ec7c1ddb23b2",33,"2025-04-14 14:15:27","SM-S908B","14","samsung",34,"null","null","null","null","null","null",null,null,"null","null"
 "2025-04-14","f43acb410bda7d55",15,"2025-04-14 15:19:07","SM-S9160","14","samsung",34,"null","1.164.100.126","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
@@ -17,3 +16,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","683d43af967763fc",19,"2025-04-14 15:37:25","2304FPN6DC","15","Xiaomi",35,"null","223.160.219.14","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","7c161a49ce78d626",15,"2025-04-14 14:40:09","23028RN4DG","13","Xiaomi",33,"null","180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
 "2025-04-14","24f18c96d960fba6",29,"2025-04-14 15:40:52","PJA110","13","OnePlus",33,"1.7.4.1","null","null","null","null","null",null,null,"null","null"
+"2025-04-14","bcc52e49c73a5c66",8,"2025-04-14 15:41:12","RMX5010","15","realme",35,"1.7.4.1","223.160.150.142","China","CN","","",34.7732,113.722,"Asia/Shanghai","China Mobile communications corporation"
