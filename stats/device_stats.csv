@@ -89,4 +89,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","80d93c54fe8c28a7",18,"2025-04-14 22:33:00","Mi 10 Pro","13","Xiaomi",33,"","219.136.188.7","","","CN","","","Guangzhou","23.1181","113.2539","","","Chinanet"
 "2025-04-14","ebd0e46ac8c3986c",18,"2025-04-14 22:33:45","XQ-AS72","14","Sony",34,"1.7.4.3","95.85.94.17","unknown","Japan","JP","Tokyo","13","Tokyo","35.6289","139.7915","Asia/Tokyo","unknown","G-Core Labs S.A."
 "2025-04-14","6e490d89912071fb",21,"2025-04-14 20:04:36","M2002J9G","15","Xiaomi",35,"1.7.4.3","112.134.128.85","unknown","Sri Lanka","LK","Gampaha District","12","Wattala","6.9847","79.8838","Asia/Colombo","unknown","Sri Lanka Telecom Internet"
-"2025-04-14","be3b9fd6dd01dfc1",21,"2025-04-14 22:34:30","GM1910","12","OnePlus",31,"1.7.4.3","103.149.249.232","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","Kirino LLC"
+"2025-04-14","be3b9fd6dd01dfc1",22,"2025-04-14 22:34:48","GM1910","12","OnePlus",31,"1.7.4.3","103.149.249.232","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","unknown","Kirino LLC"
