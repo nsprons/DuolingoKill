@@ -11,7 +11,7 @@ jobs:
     
     permissions:
       contents: write
-      issues: read
+      issues: write  # 需要增加issues的write权限才能关闭issue
       pull-requests: write
     
     steps:
@@ -42,7 +42,7 @@ jobs:
 
           # Validate title format
           if ! [[ "$TITLE" =~ ^DeviceStats ]]; then
-            echo "::error::Invalid issue title format: $TITLE"
+            echo "::error::无效的issue标题格式: $TITLE"
             exit 1
           fi
 
@@ -51,8 +51,11 @@ jobs:
             local field_name="$1"
             local value
             if ! value=$(echo "$BODY" | jq -r ".${field_name}"); then
-              echo "::error::Failed to parse ${field_name}"
+              echo "::error::解析字段失败: ${field_name}"
               exit 1
+            fi
+            if [[ "$value" == "null" ]]; then
+              value=""
             fi
             echo "$value"
           }
@@ -68,20 +71,21 @@ jobs:
           SDK_VERSION=$(parse_field "sdk_version")
           VERSION=$(parse_field "version")
           IP_ADDRESS=$(parse_field "ip_address")
-          COUNTRY=$(parse_field "country")
+          IP_TYPE=$(parse_field "ip_type")
+          COUNTRY=$(parse_field "country_name")
           COUNTRY_CODE=$(parse_field "country_code")
-          REGION=$(parse_field "region")
+          REGION=$(parse_field "region_name")
+          REGION_CODE=$(parse_field "region_code")
           CITY=$(parse_field "city")
-          LATITUDE=$(parse_field "latitude")
-          LONGITUDE=$(parse_field "longitude")
-          TIMEZONE=$(parse_field "timezone")
+          TIMEZONE=$(parse_field "timezone_id")
+          CURRENT_TIME=$(parse_field "current_time")
           ISP=$(parse_field "isp")
 
           # Validate required fields
           REQUIRED_FIELDS=("$DEVICE_ID" "$DATE" "$OPEN_COUNT")
           for field in "${REQUIRED_FIELDS[@]}"; do
-            if [[ -z "$field" || "$field" == "null" ]]; then
-              echo "::error::Missing required field: $field"
+            if [[ -z "$field" ]]; then
+              echo "::error::缺少必填字段: $field"
               exit 1
             fi
           done
@@ -93,7 +97,7 @@ jobs:
 
           # Create CSV header if file doesn't exist
           if [ ! -f "$CSV_FILE" ]; then
-            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,country,country_code,region,city,latitude,longitude,timezone,isp" > "$CSV_FILE"
+            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,timezone_id,current_time,isp" > "$CSV_FILE"
           fi
 
           # Process CSV data
@@ -108,17 +112,17 @@ jobs:
             ' "$CSV_FILE"
             
             # Add new record with all fields
-            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$VERSION\",\"$IP_ADDRESS\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$CITY\",$LATITUDE,$LONGITUDE,\"$TIMEZONE\",\"$ISP\"" >> "$TEMP_FILE"
-            } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
+            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$VERSION\",\"$IP_ADDRESS\",\"$IP_TYPE\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$REGION_CODE\",\"$CITY\",\"$TIMEZONE\",\"$CURRENT_TIME\",\"$ISP\""
+          } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
           # Commit changes
           git add "$CSV_FILE"
           if ! git diff-index --quiet HEAD --; then
-            git commit -m "📊 Update stats for device $DEVICE_ID"
+            git commit -m "📊 更新设备统计: $DEVICE_ID"
             git push origin HEAD:main
-            echo "::notice::Stats updated for device $DEVICE_ID"
+            echo "::notice::已更新设备 $DEVICE_ID 的统计数据"
           else
-            echo "::notice::No changes to commit"
+            echo "::notice::没有需要更新的数据"
           fi
 
           # Set outputs for summary step
@@ -130,20 +134,45 @@ jobs:
           echo "REGION=$REGION" >> $GITHUB_OUTPUT
           echo "COUNTRY=$COUNTRY" >> $GITHUB_OUTPUT
           echo "IP_ADDRESS=$IP_ADDRESS" >> $GITHUB_OUTPUT
+          echo "IP_TYPE=$IP_TYPE" >> $GITHUB_OUTPUT
           echo "REPORT_TIME=$REPORT_TIME" >> $GITHUB_OUTPUT
-          echo "LATITUDE=$LATITUDE" >> $GITHUB_OUTPUT
-          echo "LONGITUDE=$LONGITUDE" >> $GITHUB_OUTPUT
+          echo "CURRENT_TIME=$CURRENT_TIME" >> $GITHUB_OUTPUT
+          echo "TIMEZONE=$TIMEZONE" >> $GITHUB_OUTPUT
           echo "ISP=$ISP" >> $GITHUB_OUTPUT
+          echo "ISSUE_NUMBER=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
 
       - name: Create summary
         run: |
-          echo "## 📈 Device Stats Updated" >> $GITHUB_STEP_SUMMARY
-          echo "- **Device ID**: ${{ steps.process-stats.outputs.DEVICE_ID }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Open count**: ${{ steps.process-stats.outputs.OPEN_COUNT }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Device model**: ${{ steps.process-stats.outputs.DEVICE_MODEL }} (${{ steps.process-stats.outputs.ANDROID_VERSION }})" >> $GITHUB_STEP_SUMMARY
-          echo "- **Location**: ${{ steps.process-stats.outputs.CITY }}, ${{ steps.process-stats.outputs.REGION }}, ${{ steps.process-stats.outputs.COUNTRY }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Coordinates**: ${{ steps.process-stats.outputs.LATITUDE }}, ${{ steps.process-stats.outputs.LONGITUDE }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **IP**: ${{ steps.process-stats.outputs.IP_ADDRESS }} (${{ steps.process-stats.outputs.ISP }})" >> $GITHUB_STEP_SUMMARY
-          echo "- **Report time**: ${{ steps.process-stats.outputs.REPORT_TIME }}" >> $GITHUB_STEP_SUMMARY
+          echo "## 📈 设备统计更新" >> $GITHUB_STEP_SUMMARY
+          echo "- **设备ID**: ${{ steps.process-stats.outputs.DEVICE_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **打开次数**: ${{ steps.process-stats.outputs.OPEN_COUNT }}" >> $GITHUB_STEP_SUMMARY  
+          echo "- **设备型号**: ${{ steps.process-stats.outputs.DEVICE_MODEL }} (Android ${{ steps.process-stats.outputs.ANDROID_VERSION }})" >> $GITHUB_STEP_SUMMARY
+          echo "- **制造商**: ${{ steps.process-stats.outputs.MANUFACTURER }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **应用版本**: ${{ steps.process-stats.outputs.VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **位置**: ${{ steps.process-stats.outputs.CITY }}市, ${{ steps.process-stats.outputs.REGION }}, ${{ steps.process-stats.outputs.COUNTRY }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **IP地址**: ${{ steps.process-stats.outputs.IP_ADDRESS }} (${{ steps.process-stats.outputs.IP_TYPE }})" >> $GITHUB_STEP_SUMMARY
+          echo "- **上报时间**: ${{ steps.process-stats.outputs.REPORT_TIME }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **当前时间**: ${{ steps.process-stats.outputs.CURRENT_TIME }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **时区**: ${{ steps.process-stats.outputs.TIMEZONE }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **运营商**: ${{ steps.process-stats.outputs.ISP }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "![Location Map](https://maps.googleapis.com/maps/api/staticmap?center=${{ steps.process-stats.outputs.LATITUDE }},${{ steps.process-stats.outputs.LONGITUDE }}&zoom=8&size=600x300&maptype=roadmap&markers=color:red%7C${{ steps.process-stats.outputs.LATITUDE }},${{ steps.process-stats.outputs.LONGITUDE }})" >> $GITHUB_STEP_SUMMARY
+          echo "![位置地图](https://maps.googleapis.com/maps/api/staticmap?center=${{ steps.process-stats.outputs.CITY }}&zoom=10&size=600x300&maptype=roadmap&markers=color:red%7C${{ steps.process-stats.outputs.CITY }}&key=${{ secrets.GOOGLE_MAPS_API_KEY }})" >> $GITHUB_STEP_SUMMARY
+
+      - name: Close issue
+        if: always()  # 确保即使前面的步骤失败也会尝试关闭issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issueNumber = ${{ steps.process-stats.outputs.ISSUE_NUMBER }};
+            try {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                state: 'closed'
+              });
+              console.log(`Successfully closed issue #${issueNumber}`);
+            } catch (error) {
+              console.error(`Error closing issue: ${error}`);
+              // 不抛出错误，避免工作流失败
+            }
