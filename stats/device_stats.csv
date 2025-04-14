@@ -58,3 +58,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","ded0d9b082536dfd",2,"2025-04-14 10:28:35","22101316G","14","Xiaomi",34,"113.160.14.17","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","VNPT Corp"
 "2025-04-14","66f956d00913491d",1,"2025-04-14 11:30:04","PJE110","15","OnePlus",35,"111.183.27.73","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","CHINATELECOM Hubei province Shengji 5G network"
 "2025-04-13","b75429cdbc1f33fe",7,"2025-04-13 23:30:40","NX721J","14","nubia",34,"184.163.69.12","Canada","CA","Quebec","Montreal",45.5365,-73.6242,"America/Toronto","VIDEOTRON"
+"2025-04-14","683d43af967763fc",2,"2025-04-14 11:31:36","2304FPN6DC","15","Xiaomi",35,"218.87.158.153","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
