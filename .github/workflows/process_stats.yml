@@ -141,7 +141,6 @@ jobs:
           echo "ISSUE_NUMBER=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
 
       - name: Close issue
-        if: success()  # 只有前面步骤成功才关闭issue
         uses: actions/github-script@v6
         with:
           script: |
