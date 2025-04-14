@@ -691,11 +691,14 @@
                     allStats.forEach(stat => {
                         if (stat.device_model) deviceModels.add(stat.device_model);
                         if (stat.android_version) androidVersions.add(stat.android_version);
-                        if (stat.country && stat.region && stat.city) {
-                            regions.add(`${stat.city}, ${stat.region}, ${stat.country}`);
+                        if (stat.city || stat.region_name || stat.country_name) {
+                            const location = [stat.city, stat.region_name, stat.country_name].filter(Boolean).join(', ');
+                            regions.add(location);
                         }
                         if (stat.isp) isps.add(stat.isp);
-                        if (stat.manufacturer) manufacturers.add(stat.manufacturer);
+                        if (stat.manufacturer && stat.manufacturer.trim() !== '') {
+                            manufacturers.add(stat.manufacturer.trim());
+                        }
                     });
 
                     // 填充筛选器选项
@@ -1197,8 +1200,8 @@
 
                 const locationText = [
                     location.city || '未知城市',
-                    location.region || '未知地区',
-                    location.country || '未知国家'
+                    location.region_name || '未知地区',
+                    location.country_name || '未知国家'
                 ].filter(Boolean).join(', ');
 
                 marker.bindPopup(`
@@ -1305,9 +1308,14 @@
 
                 // 地区
                 const regionTd = document.createElement('td');
-                if (stat.city && stat.region_name && stat.country_name) {
-                    regionTd.textContent = `${stat.city}, ${stat.region_name}`;
-                    regionTd.title = `${stat.city}, ${stat.region_name}, ${stat.country_name}`;
+                const regionParts = [];
+                if (stat.city) regionParts.push(stat.city);
+                if (stat.region_name) regionParts.push(stat.region_name);
+                if (stat.country_name) regionParts.push(stat.country_name);
+
+                if (regionParts.length > 0) {
+                    regionTd.textContent = regionParts.join(', ');
+                    regionTd.title = regionParts.join(', ');
                 } else {
                     regionTd.textContent = '--';
                 }
