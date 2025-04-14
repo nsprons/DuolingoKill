@@ -17,7 +17,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","446ac5e65e0e9905",25,"2025-04-14 05:36:16","22011211C","13","Xiaomi",33,"39.144.220.119","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","9393b0374320bdb5",1,"2025-04-14 05:47:05","PEQM00","13","OPPO",33,"218.103.130.208","Hong Kong","HK","","",22.2908,114.1501,"Asia/Hong_Kong","HKT Limited"
 "2025-04-14","5f09408f4da96b03",2,"2025-04-14 00:56:30","25010PN30G","15","Xiaomi",35,"94.25.171.44","Russia","RU","Moscow","Moscow",55.7483,37.6171,"Europe/Moscow","PJSC MegaFon"
-"2025-04-14","1cdab5c2f1dd4648",3,"2025-04-14 06:36:33","Pixel 7 Pro","15","Google",35,"223.104.54.148","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","9124cca622684bd5",1,"2025-04-14 07:07:13","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3612f555f31e04ff",1,"2025-04-14 07:07:41","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","df2a4a98aa04b485",2,"2025-04-14 07:15:37","M2012K11AC","13","Xiaomi",33,"112.251.30.171","China","CN","","",34.7732,113.722,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
@@ -68,3 +67,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","1f66be5aab96b161",2,"2025-04-14 07:08:41","22111317G","14","Xiaomi",34,"31.15.181.96","Slovenia","SI","Hajdina","Spodnja Hajdina",46.4095,15.8449,"Europe/Ljubljana","Telemach UG d.o.o."
 "2025-04-14","ded0d9b082536dfd",16,"2025-04-14 12:09:47","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
 "2025-04-14","683d43af967763fc",11,"2025-04-14 13:10:15","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","1cdab5c2f1dd4648",4,"2025-04-14 13:10:51","Pixel 7 Pro","15","Google",35,"146.190.147.19","United States","US","California","Santa Clara",37.3931,-121.962,"America/Los_Angeles","DIGITALOCEAN-ASN"
