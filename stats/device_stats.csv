@@ -19,7 +19,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","446ac5e65e0e9905",25,"2025-04-14 05:36:16","22011211C","13","Xiaomi",33,"39.144.220.119","China","CN","Chongqing","Chongqing",29.5689,106.5577,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","9393b0374320bdb5",1,"2025-04-14 05:47:05","PEQM00","13","OPPO",33,"218.103.130.208","Hong Kong","HK","","",22.2908,114.1501,"Asia/Hong_Kong","HKT Limited"
 "2025-04-14","5f09408f4da96b03",2,"2025-04-14 00:56:30","25010PN30G","15","Xiaomi",35,"94.25.171.44","Russia","RU","Moscow","Moscow",55.7483,37.6171,"Europe/Moscow","PJSC MegaFon"
-"2025-04-14","4e2b605822045ef1",3,"2025-04-14 00:35:09","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
 "2025-04-14","1cdab5c2f1dd4648",3,"2025-04-14 06:36:33","Pixel 7 Pro","15","Google",35,"223.104.54.148","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","9124cca622684bd5",1,"2025-04-14 07:07:13","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","3612f555f31e04ff",1,"2025-04-14 07:07:41","23049RAD8C","13","Xiaomi",33,"223.74.79.183","China","CN","Guangdong","Foshan",23.0261,113.1371,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
@@ -48,3 +47,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","d6f6c23c7d75a9bc",2,"2025-04-14 06:28:40","CPH2569","15","OnePlus",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","833d606ef4ad4f75",2,"2025-04-14 08:59:00","23127PN0CC","14","Xiaomi",34,"147.182.225.151","United States","US","California","Santa Clara",37.3931,-121.962,"America/Los_Angeles","DIGITALOCEAN-ASN"
 "2025-04-14","3e1920fa07f76b88",2,"2025-04-14 09:00:21","24031PN0DC","15","Xiaomi",35,"38.175.103.151","United States","US","Washington","Seattle",47.6144,-122.3447,"America/Los_Angeles","MISAKA"
+"2025-04-14","4e2b605822045ef1",4,"2025-04-14 03:06:38","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
