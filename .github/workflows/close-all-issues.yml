@@ -1,0 +1,69 @@
+name: Auto Close All Issues Daily
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # 每天 UTC 时间 3:00 AM（北京时间 11:00 AM）
+  workflow_dispatch:      # 可选：支持手动触发
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write  # 必须的写入权限
+    steps:
+      - name: Close all issues (with pagination)
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const closeIssues = async () => {
+              let page = 1;
+              let closedCount = 0;
+              const perPage = 100;  # 每页最多 100 条
+
+              try {
+                while (true) {
+                  # 分页获取 Issues
+                  const { data: issues } = await github.rest.issues.listForRepo({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    state: 'open',
+                    per_page: perPage,
+                    page: page
+                  });
+
+                  if (issues.length === 0) break;  # 无更多 Issues 时退出循环
+
+                  # 批量关闭当前页的 Issues
+                  for (const issue of issues) {
+                    # 跳过 Pull Request（GitHub API 中 PR 也是 Issue 类型）
+                    if (issue.pull_request) continue;
+
+                    await github.rest.issues.update({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      state: 'closed',
+                      body: `[Auto-closed by GitHub Actions at ${new Date().toISOString()}]` + (issue.body || '')
+                    });
+                    closedCount++;
+                    console.log(`Closed #${issue.number}: ${issue.title}`);
+                  }
+
+                  page++;
+                  await new Promise(resolve => setTimeout(resolve, 1000)); # 避免 API 速率限制
+                }
+
+                console.log(`✅ 成功关闭 ${closedCount} 个 Issues`);
+                return { success: true, count: closedCount };
+
+              } catch (error) {
+                console.error(`❌ 错误: ${error}`);
+                return { success: false, error: error.message };
+              }
+            };
+
+            # 执行并处理结果
+            const result = await closeIssues();
+            if (!result.success) {
+              core.setFailed(result.error);
+            }
