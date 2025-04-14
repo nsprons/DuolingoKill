@@ -993,7 +993,8 @@
         // 更新图表数据
         function updateCharts() {
             const today = new Date().toISOString().split('T')[0];
-            let uniqueManufacturers = new Set(); // 在这里初始化
+            const manufacturerCounts = {}; // 制造商计数
+            const uniqueManufacturers = new Set(); // 只在这里声明一次
 
             // 按日期聚合数据
             const dailyStats = {};
@@ -1002,7 +1003,6 @@
             const regionCounts = {};
             const ispCounts = {};
             const newDeviceDates = {};
-            const manufacturerCounts = {}; // 制造商计数
             let totalOpens = 0;
             let uniqueDevices = new Set();
             let uniqueRegions = new Set();
