@@ -31,7 +31,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","df2a4a98aa04b485",2,"2025-04-14 07:15:37","M2012K11AC","13","Xiaomi",33,"112.251.30.171","China","CN","","",34.7732,113.722,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","3b09ec7c1ddb23b2",3,"2025-04-14 06:23:17","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-13","b75429cdbc1f33fe",3,"2025-04-13 19:28:39","NX721J","14","nubia",34,"184.163.69.12","Canada","CA","Quebec","Montreal",45.5365,-73.6242,"America/Toronto","VIDEOTRON"
-"2025-04-14","c9caf8819b491cdb",9,"2025-04-14 07:29:14","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
 "2025-04-14","218f9b0d422381e5",1,"2025-04-14 08:31:29","CPH2653","15","OnePlus",35,"59.158.105.193","Japan","JP","Tokyo","Tokyo",35.6837,139.6805,"Asia/Tokyo","ARTERIA Networks Corporation"
 "2025-04-14","41eb04801928282a",1,"2025-04-14 07:35:28","RMX3888","15","realme",35,"153.35.127.15","China","CN","Jiangsu","Suzhou",31.3093,120.602,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","c650a577f8eba164",2,"2025-04-14 00:36:46","SM-A515F","13","samsung",33,"41.249.183.30","Morocco","MA","El-Jadida","El Jadida",33.2558,-8.5015,"Africa/Casablanca","MT-MPLS"
@@ -42,3 +41,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","fbddf252a1ef9bf7",1,"2025-04-14 07:53:39","23049RAD8C","15","Xiaomi",35,"167.234.210.234","United States","US","California","San Jose",37.2379,-121.7946,"America/Los_Angeles","ORACLE-BMC-31898"
 "2025-04-14","96b4620adb1ddf20",7,"2025-04-14 07:59:50","PHB110","14","OnePlus",34,"156.224.76.203","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","MOACK.Co.LTD"
 "2025-04-13","2d8e48bff9738644",1,"2025-04-13 18:03:56","Pixel 6","15","Google",35,"187.153.66.21","Mexico","MX","Tamaulipas","Tampico",22.1802,-97.8802,"America/Monterrey","UNINET"
+"2025-04-14","c9caf8819b491cdb",11,"2025-04-14 08:04:36","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
