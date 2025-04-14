@@ -41,4 +41,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","fbddf252a1ef9bf7",1,"2025-04-14 07:53:39","23049RAD8C","15","Xiaomi",35,"167.234.210.234","United States","US","California","San Jose",37.2379,-121.7946,"America/Los_Angeles","ORACLE-BMC-31898"
 "2025-04-14","96b4620adb1ddf20",7,"2025-04-14 07:59:50","PHB110","14","OnePlus",34,"156.224.76.203","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","MOACK.Co.LTD"
 "2025-04-14","c9caf8819b491cdb",11,"2025-04-14 08:04:36","Mi 10 Pro","13","Xiaomi",33,"101.249.169.105","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
-"2025-04-13","2d8e48bff9738644",2,"2025-04-13 18:05:35","Pixel 6","15","Google",35,"187.153.66.21","Mexico","MX","Tamaulipas","Tampico",22.1802,-97.8802,"America/Monterrey","UNINET"
+"2025-04-13","2d8e48bff9738644",3,"2025-04-13 18:05:51","Pixel 6","15","Google",35,"187.153.66.21","Mexico","MX","Tamaulipas","Tampico",22.1802,-97.8802,"America/Monterrey","UNINET"
