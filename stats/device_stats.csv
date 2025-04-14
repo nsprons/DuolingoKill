@@ -122,3 +122,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-15","ab2c54a01e315330",2,"2025-04-15 00:05:51","22081212C","15","Xiaomi",35,"1.7.4.3","27.148.71.203","ipv4","中国","CN","福建省","FJ","福州市","26.062780380249023","119.29000091552734","Asia/Shanghai","2025-04-14T23:34:52+08:00","Chinanet"
 "2025-04-15","ab11108cbb0dad7a",1,"2025-04-15 00:06:06","SM-S9010","14","samsung",34,"1.7.4.3","213.218.255.70","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","unknown","BAGE"
 "2025-04-15","1cdab5c2f1dd4648",1,"2025-04-15 00:06:07","Pixel 7 Pro","15","Google",35,"","154.29.150.117","","","US","","","Los Angeles","34.0515","-118.2707","","","NETLAB-SDN"
+"2025-04-14","aa5f6f54109e5d68",2,"2025-04-14 17:06:44","M2007J1SC","13","Xiaomi",33,"1.7.4.3","86.149.21.53","unknown","United Kingdom","GB","West Dunbartonshire","WDU","Clydebank","55.9135","-4.4084","Europe/London","unknown","British Telecommunications PLC"
