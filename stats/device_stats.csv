@@ -74,4 +74,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3b09ec7c1ddb23b2",27,"2025-04-14 12:44:48","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","f43acb410bda7d55",10,"2025-04-14 13:45:50","SM-S9160","14","samsung",34,"1.164.100.126","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
 "2025-04-14","683d43af967763fc",14,"2025-04-14 13:47:30","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
-"2025-04-14","ded0d9b082536dfd",18,"2025-04-14 12:48:33","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
+"2025-04-14","ded0d9b082536dfd",19,"2025-04-14 12:50:37","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
