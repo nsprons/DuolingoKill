@@ -60,3 +60,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","47a1a80d474c27ad",2,"2025-04-14 11:37:19","23013RK75C","13","Xiaomi",33,"116.162.2.137","China","CN","Hunan","Changsha",28.2014,112.9611,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","3e72ab716b659832",7,"2025-04-14 11:42:21","M2007J3SC","12","Xiaomi",31,"8.212.76.210","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
 "2025-04-14","3b09ec7c1ddb23b2",21,"2025-04-14 10:44:36","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
+"2025-04-14","f43acb410bda7d55",1,"2025-04-14 11:47:28","SM-S9160","14","samsung",34,"111.243.18.92","Taiwan","TW","Hsinchu City","Hsinchu",24.8065,120.9706,"Asia/Taipei","Data Communication Business Group"
