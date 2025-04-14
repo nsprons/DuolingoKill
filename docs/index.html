@@ -491,7 +491,7 @@
         <div class="dashboard">
             <div class="card">
                 <div class="card-header">
-                    <span class="card-title">总开启次数</span>
+                    <span class="card-title">总启动次数</span>
                     <span class="card-value" id="totalOpens">--</span>
                 </div>
                 <div class="chart-container">
@@ -580,9 +580,9 @@
             <table id="statsTable">
                 <thead>
                     <tr>
-                        <th>日期</th>
+                        <th onclick="sortTable(0)">日期 ▼</th>
                         <th>设备ID</th>
-                        <th>开启次数</th>
+                        <th>启动次数</th>
                         <th>设备型号</th>
                         <th>制造商</th>
                         <th>Android版本</th>
@@ -591,7 +591,7 @@
                         <th>地区</th>
                         <th>IP地址</th>
                         <th>运营商</th>
-                        <th>报告时间</th>
+                        <th onclick="sortTable(11)">报告时间 ▼</th>
                         <th>状态</th>
                     </tr>
                 </thead>
@@ -626,12 +626,14 @@
         let androidVersions = new Set();
         let regions = new Set();
         let isps = new Set();
-        let manufacturers = new Set(); // 新增
+        let manufacturers = new Set();
         let worldMap = null;
         let markerCluster = null;
         let currentPage = 1;
         const itemsPerPage = 20;
         let debounceTimer = null;
+        let sortColumn = 0; // 默认按日期排序
+        let sortDirection = 'desc'; // 默认降序
 
         // 初始化图表
         const totalOpensChart = initBarChart('totalOpensChart', '总开启次数', 'rgba(67, 97, 238, 0.7)');
@@ -709,15 +711,50 @@
 
                     // 应用初始筛选
                     applyFilters();
+
+                    // 初始化排序指示器
+                    updateSortIndicator();
                 })
                 .catch(error => {
                     console.error('加载数据失败:', error);
                     document.querySelector('#statsTable tbody').innerHTML = `
-                    <tr>
-                        <td colspan="10" class="error">数据加载失败，请稍后再试</td>
-                    </tr>
-                `;
+                <tr>
+                    <td colspan="13" class="error">数据加载失败，请稍后再试</td>
+                </tr>
+            `;
                 });
+        }
+
+        // 排序表格函数
+        function sortTable(columnIndex) {
+            // 如果是点击当前排序列，则切换排序方向
+            if (columnIndex === sortColumn) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                // 点击新列，默认降序排列
+                sortColumn = columnIndex;
+                sortDirection = 'desc';
+            }
+
+            // 更新表头箭头指示
+            updateSortIndicator();
+
+            // 重新排序并更新表格
+            updateTable();
+        }
+
+        // 更新表头排序指示器
+        function updateSortIndicator() {
+            // 移除所有表头的箭头
+            document.querySelectorAll('#statsTable th').forEach(th => {
+                th.innerHTML = th.innerHTML.replace(/ ▼| ▲/g, '');
+            });
+
+            // 添加当前排序列的箭头
+            const currentTh = document.querySelectorAll('#statsTable th')[sortColumn];
+            if (currentTh) {
+                currentTh.innerHTML += sortDirection === 'asc' ? ' ▲' : ' ▼';
+            }
         }
 
         // 筛选器事件监听（添加防抖）
@@ -726,6 +763,7 @@
         document.getElementById('androidVersion').addEventListener('change', applyFilters);
         document.getElementById('regionFilter').addEventListener('change', applyFilters);
         document.getElementById('ispFilter').addEventListener('change', applyFilters);
+        document.getElementById('manufacturerFilter').addEventListener('change', applyFilters);
         document.getElementById('deviceSearch').addEventListener('input', function () {
             clearTimeout(debounceTimer);
             debounceTimer = setTimeout(applyFilters, 300);
@@ -963,7 +1001,12 @@
 
                 // 地区筛选
                 if (region !== 'all') {
-                    const location = `${stat.city || ''}, ${stat.region || ''}, ${stat.country || ''}`.trim();
+                    const locationParts = [];
+                    if (stat.city) locationParts.push(stat.city);
+                    if (stat.region_name) locationParts.push(stat.region_name);
+                    if (stat.country_name) locationParts.push(stat.country_name);
+                    const location = locationParts.join(', ');
+
                     if (location !== region) {
                         return false;
                     }
@@ -975,14 +1018,18 @@
                 }
 
                 // 设备ID/IP搜索
-                if (searchTerm &&
-                    !stat.device_id.toLowerCase().includes(searchTerm) &&
-                    !(stat.ip_address && stat.ip_address.toLowerCase().includes(searchTerm))) {
-                    return false;
+                if (searchTerm) {
+                    const matchesId = stat.device_id && stat.device_id.toLowerCase().includes(searchTerm);
+                    const matchesIp = stat.ip_address && stat.ip_address.toLowerCase().includes(searchTerm);
+                    if (!matchesId && !matchesIp) {
+                        return false;
+                    }
                 }
 
                 return true;
             });
+
+            console.log('筛选后数据量:', filteredStats.length); // 调试用
 
             // 重置到第一页
             currentPage = 1;
@@ -1209,11 +1256,11 @@
                 ].filter(Boolean).join(', ');
 
                 marker.bindPopup(`
-                <b>${locationText}</b><br>
-                设备数量: ${location.devices.size}<br>
-                总开启次数: ${location.count}
-                主要制造商: ${getTopManufacturer(location.devices)}
-            `);
+            <b>${locationText}</b><br>
+            设备数量: ${location.devices.size}<br>
+            总开启次数: ${location.count}
+            主要制造商: ${getTopManufacturer(location.devices)}
+        `);
 
                 markerCluster.addLayer(marker);
             });
@@ -1247,17 +1294,40 @@
 
             if (!filteredStats || filteredStats.length === 0) {
                 tbody.innerHTML = `
-                <tr>
-                    <td colspan="13" class="loading">
-                        ${allStats.length > 0 ? '没有找到匹配的数据' : '数据加载中...'}
-                    </td>
-                </tr>
-            `;
+            <tr>
+                <td colspan="13" class="loading">
+                    ${allStats.length > 0 ? '没有找到匹配的数据' : '数据加载中...'}
+                </td>
+            </tr>
+        `;
                 return;
             }
 
-            // 按日期降序排序
+            // 排序数据
             const sortedStats = [...filteredStats].sort((a, b) => {
+                let valueA, valueB;
+
+                // 根据排序列获取比较值
+                if (sortColumn === 0) { // 日期列
+                    valueA = new Date(a.date);
+                    valueB = new Date(b.date);
+                } else if (sortColumn === 11) { // 报告时间列
+                    valueA = a.report_time || '';
+                    valueB = b.report_time || '';
+                }
+
+                // 执行比较
+                if (sortColumn === 0 || sortColumn === 11) {
+                    if (valueA < valueB) {
+                        return sortDirection === 'asc' ? -1 : 1;
+                    }
+                    if (valueA > valueB) {
+                        return sortDirection === 'asc' ? 1 : -1;
+                    }
+                    return 0;
+                }
+
+                // 默认按日期降序
                 return new Date(b.date) - new Date(a.date);
             });
 
@@ -1265,24 +1335,25 @@
             const startIndex = (page - 1) * itemsPerPage;
             const paginatedStats = sortedStats.slice(startIndex, startIndex + itemsPerPage);
 
-            // 在updateTable函数中更新表格行创建逻辑
+            // 创建表格行
             paginatedStats.forEach(stat => {
                 const tr = document.createElement('tr');
 
                 // 日期
                 const dateTd = document.createElement('td');
-                dateTd.textContent = stat.date;
+                dateTd.textContent = stat.date || '--';
                 tr.appendChild(dateTd);
 
                 // 设备ID
                 const deviceTd = document.createElement('td');
-                deviceTd.textContent = stat.device_id.slice(0, 8) + '...';
-                deviceTd.title = stat.device_id;
+                const deviceId = stat.device_id || '';
+                deviceTd.textContent = deviceId.slice(0, 8) + (deviceId.length > 8 ? '...' : '');
+                deviceTd.title = deviceId;
                 tr.appendChild(deviceTd);
 
                 // 开启次数
                 const countTd = document.createElement('td');
-                countTd.textContent = stat.open_count;
+                countTd.textContent = stat.open_count || '--';
                 tr.appendChild(countTd);
 
                 // 设备型号
@@ -1316,13 +1387,8 @@
                 if (stat.city) regionParts.push(stat.city);
                 if (stat.region_name) regionParts.push(stat.region_name);
                 if (stat.country_name) regionParts.push(stat.country_name);
-
-                if (regionParts.length > 0) {
-                    regionTd.textContent = regionParts.join(', ');
-                    regionTd.title = regionParts.join(', ');
-                } else {
-                    regionTd.textContent = '--';
-                }
+                regionTd.textContent = regionParts.length > 0 ? regionParts.join(', ') : '--';
+                regionTd.title = regionParts.join(', ');
                 tr.appendChild(regionTd);
 
                 // IP地址
@@ -1379,7 +1445,6 @@
                 prevBtn.addEventListener('click', () => {
                     currentPage--;
                     updateTable();
-                    //window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
                 paginationDiv.appendChild(prevBtn);
             }
@@ -1396,7 +1461,6 @@
                 nextBtn.addEventListener('click', () => {
                     currentPage++;
                     updateTable();
-                    //indow.scrollTo({ top: 0, behavior: 'smooth' });
                 });
                 paginationDiv.appendChild(nextBtn);
             }
@@ -1416,69 +1480,69 @@
 
                 // 填充弹窗内容
                 content.innerHTML = `
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">IP地址:</div>
-                        <div class="ip-popup-value">${stat.ip_address || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">IP类型:</div>
-                        <div class="ip-popup-value">${stat.ip_type || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">位置:</div>
-                        <div class="ip-popup-value">
-                            ${stat.city || '未知城市'}, ${stat.region_name || '未知地区'}, ${stat.country_name || '未知国家'}
-                        </div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">坐标:</div>
-                        <div class="ip-popup-value">
-                            ${stat.latitude ? stat.latitude.toFixed(4) : '未知'}, 
-                            ${stat.longitude ? stat.longitude.toFixed(4) : '未知'}
-                        </div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">时区:</div>
-                        <div class="ip-popup-value">${stat.timezone_id || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">运营商:</div>
-                        <div class="ip-popup-value">${stat.isp || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">设备ID:</div>
-                        <div class="ip-popup-value">${stat.device_id}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">设备型号:</div>
-                        <div class="ip-popup-value">${stat.device_model || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">制造商:</div>
-                        <div class="ip-popup-value">${stat.manufacturer || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">Android版本:</div>
-                        <div class="ip-popup-value">${stat.android_version || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">SDK版本:</div>
-                        <div class="ip-popup-value">${stat.sdk_version || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">应用版本:</div>
-                        <div class="ip-popup-value">${stat.version || '未知'}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">开启次数:</div>
-                        <div class="ip-popup-value">${stat.open_count}</div>
-                    </div>
-                    <div class="ip-popup-row">
-                        <div class="ip-popup-label">当前时间:</div>
-                        <div class="ip-popup-value">${stat.current_time || '未知'}</div>
-                    </div>
-                    <div class="mini-map" id="miniMapContainer"></div>
-                `;
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">IP地址:</div>
+                <div class="ip-popup-value">${stat.ip_address || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">IP类型:</div>
+                <div class="ip-popup-value">${stat.ip_type || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">位置:</div>
+                <div class="ip-popup-value">
+                    ${stat.city || '未知城市'}, ${stat.region_name || '未知地区'}, ${stat.country_name || '未知国家'}
+                </div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">坐标:</div>
+                <div class="ip-popup-value">
+                    ${stat.latitude ? stat.latitude.toFixed(4) : '未知'}, 
+                    ${stat.longitude ? stat.longitude.toFixed(4) : '未知'}
+                </div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">时区:</div>
+                <div class="ip-popup-value">${stat.timezone_id || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">运营商:</div>
+                <div class="ip-popup-value">${stat.isp || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">设备ID:</div>
+                <div class="ip-popup-value">${stat.device_id}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">设备型号:</div>
+                <div class="ip-popup-value">${stat.device_model || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">制造商:</div>
+                <div class="ip-popup-value">${stat.manufacturer || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">Android版本:</div>
+                <div class="ip-popup-value">${stat.android_version || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">SDK版本:</div>
+                <div class="ip-popup-value">${stat.sdk_version || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">应用版本:</div>
+                <div class="ip-popup-value">${stat.version || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">开启次数:</div>
+                <div class="ip-popup-value">${stat.open_count}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">当前时间:</div>
+                <div class="ip-popup-value">${stat.current_time || '未知'}</div>
+            </div>
+            <div class="mini-map" id="miniMapContainer"></div>
+        `;
 
                 // 显示弹窗和遮罩
                 popup.style.display = 'block';
@@ -1494,7 +1558,7 @@
 
                         const miniMap = L.map('miniMapContainer').setView([centerLat, centerLng], zoomLevel);
 
-                        L.tileLayer('https://proxy.nspron.eu.org/proxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        L.tileLayer('https://proxy.nspron.eu.org/proproxy/https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         }).addTo(miniMap);
 
