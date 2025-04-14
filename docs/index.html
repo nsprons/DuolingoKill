@@ -996,8 +996,9 @@
         // 更新图表数据
         function updateCharts() {
             const today = new Date().toISOString().split('T')[0];
-            const manufacturerCounts = {}; // 制造商计数
-            const uniqueManufacturers = new Set(); // 只在这里声明一次
+
+            const manufacturerCounts = {};
+            const uniqueManufacturers = new Set();
 
             // 按日期聚合数据
             const dailyStats = {};
@@ -1015,8 +1016,6 @@
             filteredStats.forEach(stat => {
                 // 统计总开启次数
                 totalOpens += parseInt(stat.open_count) || 0;
-                const manufacturerCounts = {};
-                let uniqueManufacturers = new Set();
 
                 // 记录唯一设备
                 if (!uniqueDevices.has(stat.device_id)) {
@@ -1075,11 +1074,9 @@
 
                 // 统计制造商
                 if (stat.manufacturer) {
-                    uniqueManufacturers.add(stat.manufacturer);
-                    if (!manufacturerCounts[stat.manufacturer]) {
-                        manufacturerCounts[stat.manufacturer] = 0;
-                    }
-                    manufacturerCounts[stat.manufacturer] += parseInt(stat.open_count) || 0;
+                    const manufacturer = stat.manufacturer.trim();
+                    uniqueManufacturers.add(manufacturer);
+                    manufacturerCounts[manufacturer] = (manufacturerCounts[manufacturer] || 0) + (parseInt(stat.open_count) || 0);
                 }
             });
 
