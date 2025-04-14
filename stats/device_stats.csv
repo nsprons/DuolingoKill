@@ -101,3 +101,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-15","218f9b0d422381e5",1,"2025-04-15 00:01:08","CPH2653","15","OnePlus",35,"1.7.4.3","59.158.105.193","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","unknown","ARTERIA Networks Corporation"
 "2025-04-14","47e9c375dbecfb74",21,"2025-04-14 22:58:31","M2102K1C","14","Xiaomi",34,"1.7.4.3","","","","","","","","","","","",""
 "2025-04-14","3b2c7bde652b6038",28,"2025-04-14 23:02:04","M2002J9E","11","Xiaomi",30,"","111.25.4.6","","","CN","","","Changchun","43.88","125.3247","","","China Mobile Group JiLin communications corporation"
+"2025-04-14","a8e96c15f290a700",1,"2025-04-14 23:02:13","22081212C","13","Xiaomi",33,"1.7.4.2","","","","","","","","","","","",""
