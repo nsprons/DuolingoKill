@@ -17,3 +17,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","c650a577f8eba164",5,"2025-04-14 10:13:48","SM-A515F","13","samsung",33,"","41.249.183.30","","","MA","","","El Jadida","","","MT-MPLS"
 "٢٠٢٥-٠٤-١٤","57618d6174ad79c4",3,"٢٠٢٥-٠٤-١٤ ١١:١٧:٤٧","SM-A725F","14","samsung",34,"1.7.4.2","","","","","","","","","",""
 "2025-04-14","24f18c96d960fba6",44,"2025-04-14 17:19:54","PJA110","13","OnePlus",33,"1.7.4.2","117.151.235.247","ipv4","中国","CN","湖北省","HB","鄂州","Asia/Shanghai","2025-04-14T17:19:55+08:00","China Mobile Communications Group Co. Ltd."
+"2025-04-14","35c24c1e355bfce2",6,"2025-04-14 17:20:52","A065","15","Nothing",35,"","175.147.158.173","","","CN","","","Guangzhou","","","CHINA UNICOM China169 Backbone"
