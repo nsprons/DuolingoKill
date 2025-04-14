@@ -79,4 +79,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","35c24c1e355bfce2",2,"2025-04-14 14:27:48","A065","15","Nothing",35,"103.151.172.84","Hong Kong","HK","","",22.2578,114.1657,"Asia/Hong_Kong","IKUUU NETWORK LTD"
 "2025-04-14","b3904204b82c8fe4",1,"2025-04-14 09:31:11","ASUS_I01WD","13","samsung",33,"149.50.234.201","Türkiye","TR","","",41.0214,28.9948,"Europe/Istanbul","Veganet Teknolojileri ve Hizmetleri LTD STI"
 "2025-04-14","4cb73ef539610e2a",5,"2025-04-14 14:34:03","M2105K81AC","15","Xiaomi",35,"113.85.104.72","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
-"2025-04-14","24f18c96d960fba6",13,"2025-04-14 14:34:31","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
+"2025-04-14","24f18c96d960fba6",14,"2025-04-14 14:34:56","PJA110","13","OnePlus",33,"117.151.235.247","China","CN","Hubei","Wuhan",30.589,114.2681,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
