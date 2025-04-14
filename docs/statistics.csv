@@ -1,2 +1,2 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
-"2025-04-15","24f18c96d960fba6",12,"2025-04-15 04:30:21","PJA110","13","OnePlus",33,"1.7.4.4","117.151.235.247","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-15T04:30:22+08:00","China Mobile Communications Group Co. Ltd."
+"2025-04-15","24f18c96d960fba6",13,"2025-04-15 04:30:58","PJA110","13","OnePlus",33,"1.7.4.4","117.151.235.247","unknown","China","CN","Hubei","HB","Wuhan","30.589","114.2681","Asia/Shanghai","","China Mobile Communications Group Co., Ltd."
