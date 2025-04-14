@@ -49,3 +49,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","2352e19e23a1286d",7,"2025-04-14 19:58:53","21051182G","13","Xiaomi",33,"1.7.4.2","104.28.158.106","ipv4","美国","US","加利福尼亚州","CA","东洛杉矶","","","America/Los_Angeles","2025-04-14T04:58:55-07:00","Cloudflare"
 "2025-04-14","d756375c547a53b1",6,"2025-04-14 20:02:08","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"","180.136.246.223","","","CN","","","Nanning","22.8111","108.3168","","","Chinanet"
 "2025-04-14","77b06fa0b5ba9ba2",3,"2025-04-14 20:02:23","23049RAD8C","14","Xiaomi",34,"1.7.4.1","154.83.90.120","","","MY","","","Kuala Lumpur","3.1412","101.685","","","OWS"
+"2025-04-14","5459cfd130507c08",2,"2025-04-14 20:02:35","M2101K6G","15","Xiaomi",35,"1.7.4.3","49.217.203.71","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","unknown","Taiwan Mobile Co., Ltd."
