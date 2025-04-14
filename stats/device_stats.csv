@@ -12,7 +12,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","334a76b791aa1458",2,"2025-04-14 19:40:52","RMX3888","15","realme",35,"1.7.4.2","223.104.40.201","ipv4","中国","CN","Beijing Shi","BJ","北京市","","","Asia/Shanghai","2025-04-14T19:40:29+08:00","China Mobile Communicaitons Corporation"
 "2025-04-14","ee8282874ac69177",4,"2025-04-14 19:41:00","24122RKC7C","15","Xiaomi",35,"1.7.4.3","192.243.120.172","unknown","Japan","JP","Ōsaka","27","Osaka","34.6946","135.5021","Asia/Tokyo","unknown","IT7NET"
 "2025-04-14","a9ed58b64588d414",7,"2025-04-14 19:42:01","Pixel 8","15","Google",35,"1.7.4.3","136.23.7.226","unknown","United Kingdom","GB","","","","51.4964","-0.1224","Europe/London","unknown","GOOGLEWIFI"
-"2025-04-14","f43acb410bda7d55",31,"2025-04-14 19:46:06","SM-S9160","14","samsung",34,"","27.53.9.154","","","TW","","","New Taipei City","24.9466","121.586","","","Far EastTone Telecommunication Co., Ltd."
 "2025-04-14","2e78d0de3dc1c1c4",4,"2025-04-14 19:50:23","V2307A","15","vivo",35,"1.7.4.3","27.28.196.72","ipv4","中国","CN","湖北省","HB","武汉市","30.553970336914062","114.28945922851562","Asia/Shanghai","2025-04-14T19:34:11+08:00","Chinanet"
 "2025-04-14","aec46bd53e5669d0",5,"2025-04-14 19:51:14","M2102J2SC","14","Xiaomi",34,"","119.186.246.46","","","CN","","","","34.7732","113.722","","","CHINA UNICOM China169 Backbone"
 "2025-04-14","02998915bdf5e74a",2,"2025-04-14 19:54:30","MEIZU 21 Pro","14","meizu",34,"1.7.4.3","123.233.213.124","ipv4","中国","CN","山东省","SD","济南市","36.68299865722656","117.0","Asia/Shanghai","2025-04-14T19:54:25+08:00","China Unicom china169 Backbone"
@@ -122,3 +121,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","1cdab5c2f1dd4648",5,"2025-04-14 23:58:36","Pixel 7 Pro","15","Google",35,"","117.172.254.216","","","CN","","","Chengdu","30.6498","104.0555","","","China Mobile Communications Group Co., Ltd."
 "2025-04-14","47e9c375dbecfb74",22,"2025-04-14 23:59:47","M2102K1C","14","Xiaomi",34,"1.7.4.3","120.230.155.139","ipv4","中国","CN","广东省","GD","廣州市","23.124719619750977","113.23860931396484","Asia/Shanghai","2025-04-14T23:59:47+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-15","06060a38b401e661",1,"2025-04-15 00:00:27","22127RK46C","15","Xiaomi",35,"","","","","","","","","","","","",""
+"2025-04-15","f43acb410bda7d55",1,"2025-04-15 00:00:34","SM-S9160","14","samsung",34,"","1.164.100.126","","","TW","","","Hsinchu","24.8065","120.9706","","","Data Communication Business Group"
