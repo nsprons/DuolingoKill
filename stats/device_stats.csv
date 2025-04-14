@@ -14,3 +14,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","7c161a49ce78d626",14,"2025-04-14 14:24:50","23028RN4DG","13","Xiaomi",33,"null","180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
 "2025-04-14","1f66be5aab96b161",6,"2025-04-14 09:26:13","22111317G","14","Xiaomi",34,"null","153.5.82.24","Slovenia","SI","Oplotnica Municipality","Oplotnica",46.3871,15.4455,"Europe/Ljubljana","ARNES"
 "٢٠٢٥-٠٤-١٤","3618cfb92c5ef7a6",10,"٢٠٢٥-٠٤-١٤ ١٠:٢٨:٢٠","SM-A155F","14","samsung",34,"null","null","null","null","null","null",null,null,"null","null"
+"2025-04-14","6c5502ff9236363e",1,"2025-04-14 15:30:00","23049RAD8C","15","Xiaomi",35,"1.7.4.1","36.112.192.156","China","CN","Beijing","Beijing",39.911,116.395,"Asia/Shanghai","China Networks Inter-Exchange"
