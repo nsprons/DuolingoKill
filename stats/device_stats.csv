@@ -43,3 +43,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","a9ed58b64588d414",7,"2025-04-14 19:42:01","Pixel 8","15","Google",35,"1.7.4.3","136.23.7.226","unknown","United Kingdom","GB","","","","51.4964","-0.1224","Europe/London","unknown","GOOGLEWIFI"
 "2025-04-14","2e78d0de3dc1c1c4",2,"2025-04-14 19:42:04","V2307A","15","vivo",35,"1.7.4.3","27.28.196.72","ipv4","中国","CN","湖北省","HB","武汉市","30.553970336914062","114.28945922851562","Asia/Shanghai","2025-04-14T19:42:07+08:00","Chinanet"
 "2025-04-14","f43acb410bda7d55",31,"2025-04-14 19:46:06","SM-S9160","14","samsung",34,"","27.53.9.154","","","TW","","","New Taipei City","24.9466","121.586","","","Far EastTone Telecommunication Co., Ltd."
+"2025-04-14","77b06fa0b5ba9ba2",1,"2025-04-14 19:46:41","23049RAD8C","14","Xiaomi",34,"1.7.4.1","154.83.90.120","","","MY","","","Kuala Lumpur","3.1412","101.685","","","OWS"
