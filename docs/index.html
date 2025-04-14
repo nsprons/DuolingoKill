@@ -1058,9 +1058,13 @@
                 versionCounts[stat.android_version] += parseInt(stat.open_count) || 0;
 
                 // 按地区统计
+                let regionKey = '未知地区';
                 if (stat.city || stat.region_name || stat.country_name) {
-                    const regionKey = stat.city && stat.region && stat.country ?
-                        `${stat.city}, ${stat.region}, ${stat.country}` : '未知地区';
+                    const parts = [];
+                    if (stat.city) parts.push(stat.city);
+                    if (stat.region_name) parts.push(stat.region_name);
+                    if (stat.country_name) parts.push(stat.country_name);
+                    regionKey = parts.join(', ') || '未知地区';
                 }
 
                 if (!regionCounts[regionKey]) {
