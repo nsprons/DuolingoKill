@@ -53,7 +53,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","bcc52e49c73a5c66",3,"2025-04-14 21:57:23","RMX5010","15","realme",35,"1.7.4.3","45.153.5.163","unknown","Taiwan","TW","Taoyuan","TAO","Taoyuan","24.9977","121.2965","Asia/Taipei","unknown","Apple Network, LLC"
 "2025-04-14","cae17d951e7a1733",4,"2025-04-14 21:59:34","Redmi K30 Pro Zoom Edition","12","Xiaomi",31,"1.7.4.2","42.84.238.21","ipv4","中国","CN","辽宁省","LN","大连市","","","Asia/Shanghai","2025-04-14T21:59:35+08:00","China Unicom china169 Backbone"
 "2025-04-14","7c161a49ce78d626",37,"2025-04-14 21:04:19","23028RN4DG","13","Xiaomi",33,"1.7.4.3","180.252.175.96","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","unknown","PT Telekomunikasi Indonesia"
-"2025-04-14","eab2026a72353943",1,"2025-04-14 22:04:44","GM1910","11","OnePlus",30,"","142.171.230.111","","","US","","","Los Angeles","34.0544","-118.2441","","","MULTA-ASN1"
 "2025-04-14","35c24c1e355bfce2",8,"2025-04-14 22:05:41","A065","15","Nothing",35,"1.7.4.2","","","","","","","","","","","",""
 "2025-04-14","b3904204b82c8fe4",8,"2025-04-14 17:08:59","ASUS_I01WD","13","samsung",33,"","149.50.234.201","","","TR","","","","41.0214","28.9948","","","Veganet Teknolojileri ve Hizmetleri LTD STI"
 "2025-04-14","3efb0a0abcecbeb5",26,"2025-04-14 22:09:25","M2007J1SC","15","Xiaomi",35,"","185.241.40.230","","","HK","","","","22.2578","114.1657","","",""
@@ -113,3 +112,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","1e139f26a9114a0f",3,"2025-04-14 23:43:38","2304FPN6DC","15","Xiaomi",35,"","","","","","","","","","","","",""
 "2025-04-14","be3b9fd6dd01dfc1",13,"2025-04-14 23:43:46","GM1910","12","OnePlus",31,"1.7.4.3","212.107.31.94","unknown","Japan","JP","Tokyo","13","Tokyo","35.6668","139.6726","Asia/Tokyo","unknown","Kirino LLC"
 "2025-04-14","3e72ab716b659832",17,"2025-04-14 23:44:15","M2007J3SC","12","Xiaomi",31,"","112.81.59.184","","","CN","","","Shanghai","31.2222","121.4581","","","CHINA UNICOM China169 Backbone"
+"2025-04-14","eab2026a72353943",2,"2025-04-14 23:44:45","GM1910","11","OnePlus",30,"","142.171.230.111","","","US","","","Los Angeles","34.0544","-118.2441","","","MULTA-ASN1"
