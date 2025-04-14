@@ -76,3 +76,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","2f4c516c9518fb7e",1,"2025-04-14 08:56:49","sPQrxEO3TC0h9","6","Google",33,"102.17.119.230","Madagascar","MG","","Antananarivo",-18.913,47.5296,"Indian/Antananarivo","Telecom-Malagasy"
 "2025-04-14","7c161a49ce78d626",8,"2025-04-14 12:56:56","23028RN4DG","13","Xiaomi",33,"180.252.175.96","Indonesia","ID","Jakarta","Jakarta",-6.2114,106.8446,"Asia/Jakarta","PT Telekomunikasi Indonesia"
 "2025-04-14","ded0d9b082536dfd",20,"2025-04-14 12:57:26","22101316G","14","Xiaomi",34,"58.187.59.210","Vietnam","VN","Hanoi","Hanoi",21.0292,105.8526,"Asia/Bangkok","FPT Telecom Company"
+"2025-04-14","b084ab91a7f15f27",1,"2025-04-14 12:58:52","2109119BC","13","Xiaomi",33,"42.1.85.65","Vietnam","VN","Ho Chi Minh","Ho Chi Minh City",10.822,106.6257,"Asia/Ho_Chi_Minh",""
