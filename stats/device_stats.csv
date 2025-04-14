@@ -40,7 +40,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","61d0e8ccc353914d",3,"2025-04-14 08:22:43","22041211AC","15","Xiaomi",35,"104.28.247.68","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","CLOUDFLARENET"
 "2025-04-14","efd315634b0a7c26",1,"2025-04-14 08:31:57","22127RK46C","14","Xiaomi",34,"77.111.111.113","Hungary","HU","","",47.4919,19.05,"Europe/Budapest","Dravanet Co Ltd."
 "2025-04-14","2648aed174b231b0",6,"2025-04-14 08:44:13","SM-S9280","13","samsung",33,"220.200.108.43","China","CN","Fujian","Fuzhou",26.0492,119.2906,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
-"2025-04-14","3b09ec7c1ddb23b2",5,"2025-04-14 07:45:01","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","b2cf5ad036aba98a",12,"2025-04-14 08:46:45","PGP110","15","OnePlus",35,"39.144.109.128","China","CN","Shandong","",36.1155,120.3024,"Asia/Shanghai","Shandong Mobile Communication Company Limited"
 "2025-04-14","ebd0e46ac8c3986c",3,"2025-04-14 08:55:53","XQ-AS72","14","Sony",34,"31.223.184.200","Japan","JP","","",35.6897,139.6895,"Asia/Tokyo","G-Core Labs S.A."
 "2025-04-14","80d93c54fe8c28a7",4,"2025-04-14 08:57:30","Mi 10 Pro","13","Xiaomi",33,"223.73.217.183","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
@@ -48,3 +47,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","833d606ef4ad4f75",2,"2025-04-14 08:59:00","23127PN0CC","14","Xiaomi",34,"147.182.225.151","United States","US","California","Santa Clara",37.3931,-121.962,"America/Los_Angeles","DIGITALOCEAN-ASN"
 "2025-04-14","3e1920fa07f76b88",2,"2025-04-14 09:00:21","24031PN0DC","15","Xiaomi",35,"38.175.103.151","United States","US","Washington","Seattle",47.6144,-122.3447,"America/Los_Angeles","MISAKA"
 "2025-04-14","4e2b605822045ef1",4,"2025-04-14 03:06:38","SM-A715F","13","samsung",33,"85.90.135.83","Austria","AT","Vienna","Vienna",48.1535,16.3855,"Europe/Vienna","Telekom Austria"
+"2025-04-14","3b09ec7c1ddb23b2",6,"2025-04-14 08:08:40","SM-S908B","14","samsung",34,"null","null","null","null","null",null,null,"null","null"
