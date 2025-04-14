@@ -3,7 +3,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","3b2c7bde652b6038",1,"2025-04-14 00:13:31","M2002J9E","11","Xiaomi",30,"111.25.4.6","China","CN","Jilin","Changchun",43.88,125.3247,"Asia/Shanghai","China Mobile Group JiLin communications corporation"
 "2025-04-14","1e139f26a9114a0f",1,"2025-04-14 00:16:16","2304FPN6DC","15","Xiaomi",35,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","81632d4990e19f79",1,"2025-04-14 01:13:10","RMX3888","15","realme",35,"null","null","null","null","null",null,null,"null","null"
-"2025-04-13","a7acf0af8e2f44b8",3,"2025-04-13 19:23:04","M2007J3SG","15","Xiaomi",35,"90.116.57.200","France","FR","Alpes-Maritimes","Nice",43.7045,7.2597,"Europe/Paris","Orange"
 "2025-04-14","bbc5836195993428",1,"2025-04-14 02:27:42","PJD110","15","OnePlus",35,"89.185.27.170","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Hytron Network Services Limited"
 "2025-04-14","d756375c547a53b1",3,"2025-04-14 02:48:55","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"null","null","null","null","null",null,null,"null","null"
 "2025-04-14","85f072daf1e3e579",1,"2025-04-14 03:13:51","21051182C","13","Xiaomi",33,"171.106.108.153","China","CN","","",34.7732,113.722,"Asia/Shanghai","Chinanet"
@@ -74,3 +73,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-14","741180d6cb9b9201",4,"2025-04-14 13:29:02","PHJ110","13","OPPO",33,"218.26.158.182","China","CN","Guangdong","Guangzhou",23.1181,113.2539,"Asia/Shanghai","CHINA UNICOM China169 Backbone"
 "2025-04-14","683d43af967763fc",13,"2025-04-14 13:31:05","2304FPN6DC","15","Xiaomi",35,"117.165.33.56","China","CN","Jiangxi","Ganzhou",25.8443,114.929,"Asia/Shanghai","China Mobile Communications Group Co., Ltd."
 "2025-04-14","80745194cb145da1",1,"2025-04-14 13:32:04","PJX110","15","OnePlus",35,"8.212.7.77","Hong Kong","HK","","Hong Kong",22.2842,114.1759,"Asia/Hong_Kong","Alibaba US Technology Co., Ltd."
+"2025-04-14","a7acf0af8e2f44b8",2,"2025-04-14 07:33:53","M2007J3SG","15","Xiaomi",35,"151.19.89.156","Italy","IT","Rome","Rome",41.8904,12.5126,"Europe/Rome","Wind Tre S.p.A."
