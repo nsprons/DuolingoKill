@@ -39,7 +39,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","f8836ce13643c62e",1,"2025-04-16 03:36:05","PKG110","15","OnePlus",35,"1.7.4.4","209.209.48.16","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","",""
 "٢٠٢٥-٠٤-١٥","53854893937ee474",2,"٢٠٢٥-٠٤-١٥ ٢٢:٤٢:٠٦","SM-A305F","10","samsung",29,"1.7.4.4","","","","","","","","","","","",""
 "2025-04-16","ae57d1d7710950da",4,"2025-04-16 03:45:29","GGX8B","15","google",35,"1.7.4.4","182.160.7.197","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","HUAWEI CLOUDS"
-"2025-04-15","a7191571d3b8c46a",59,"2025-04-15 22:01:48","moto g82 5G","13","motorola",33,"1.7.4.4","31.0.59.243","unknown","Poland","PL","","","","52.2394","21.0362","Europe/Warsaw","","Polkomtel Sp. z o.o."
 "2025-04-16","ab11108cbb0dad7a",5,"2025-04-16 04:07:20","SM-S9010","14","samsung",34,"1.7.4.4","213.218.255.70","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","BAGE"
 "2025-04-16","ba542807f88161a8",6,"2025-04-16 04:08:36","KB2000","13","OnePlus",33,"1.7.4.4","74.176.190.47","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","MICROSOFT-CORP-MSN-AS-BLOCK"
 "2025-04-15","aa5f6f54109e5d68",13,"2025-04-15 21:16:26","M2007J1SC","13","Xiaomi",33,"1.7.4.4","86.149.21.53","unknown","United Kingdom","GB","West Dunbartonshire","WDU","Clydebank","55.9135","-4.4084","Europe/London","","British Telecommunications PLC"
@@ -54,3 +53,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","4e6f9f907d4d9455",1,"2025-04-16 04:31:22","NX679J","13","nubia",33,"1.7.4.4","218.250.142.94","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","HKT Limited"
 "2025-04-16","3e72ab716b659832",3,"2025-04-16 04:46:18","M2007J3SC","12","Xiaomi",31,"1.7.4.4","8.212.43.233","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","Alibaba US Technology Co., Ltd."
 "2025-04-16","24f18c96d960fba6",69,"2025-04-16 04:56:38","PJA110","13","OnePlus",33,"1.7.4.4","117.151.235.229","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-16T04:25:21+08:00","China Mobile Communications Group Co. Ltd."
+"2025-04-15","a7191571d3b8c46a",60,"2025-04-15 23:01:27","moto g82 5G","13","motorola",33,"1.7.4.4","31.0.59.243","unknown","Poland","PL","","","","52.2394","21.0362","Europe/Warsaw","","Polkomtel Sp. z o.o."
