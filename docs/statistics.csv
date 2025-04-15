@@ -1,3 +1,3 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
 "2025-04-15","24f18c96d960fba6",43,"2025-04-15 22:34:31","PJA110","13","OnePlus",33,"1.7.4.4","129.150.42.215","unknown","Singapore","SG","","","Kampong Loyang","1.3759","103.9639","Asia/Singapore","","ORACLE-BMC-31898"
-"2025-04-15","4b8135fc03a4dca1",17,"2025-04-15 22:35:34","23127PN0CG","15","Xiaomi",35,"1.7.4.4","101.10.4.27","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Taiwan Mobile Co., Ltd."
+"2025-04-15","4b8135fc03a4dca1",18,"2025-04-15 22:35:40","23127PN0CG","15","Xiaomi",35,"1.7.4.4","101.10.4.27","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Taiwan Mobile Co., Ltd."
