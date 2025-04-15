@@ -66,10 +66,8 @@ jobs:
           # 在 Process stats data 步骤中添加检测和转换函数
           convert_if_arabic() {
               local input="$1"
-              # 使用更可靠的正则检测东阿拉伯数字（٠-٩）
-              if [[ "$input" =~ [٠-٩] ]]; then
-                  # 直接替换字符（避免 Unicode 编码问题）
-                  echo "$input" | sed -e 'y/٠١٢٣٤٥٦٧٨٩/0123456789/'
+              if [[ "$input" =~ [٠-٩۰-۹] ]]; then
+                  echo "$input" | tr '٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹' '01234567890123456789'
               else
                   echo "$input"
               fi
