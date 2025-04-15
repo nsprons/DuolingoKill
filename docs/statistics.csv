@@ -41,7 +41,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","ab11108cbb0dad7a",5,"2025-04-16 04:07:20","SM-S9010","14","samsung",34,"1.7.4.4","213.218.255.70","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","BAGE"
 "2025-04-16","ba542807f88161a8",6,"2025-04-16 04:08:36","KB2000","13","OnePlus",33,"1.7.4.4","74.176.190.47","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","MICROSOFT-CORP-MSN-AS-BLOCK"
 "2025-04-15","aa5f6f54109e5d68",13,"2025-04-15 21:16:26","M2007J1SC","13","Xiaomi",33,"1.7.4.4","86.149.21.53","unknown","United Kingdom","GB","West Dunbartonshire","WDU","Clydebank","55.9135","-4.4084","Europe/London","","British Telecommunications PLC"
-"2025-04-16","3b09ec7c1ddb23b2",10,"2025-04-16 03:16:47","SM-S908B","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
 "2025-04-16","ba8b33eb4b894d1e",4,"2025-04-16 06:17:43","ASUS_I005DC","13","asus",33,"1.7.4.4","193.119.104.10","unknown","Australia","AU","New South Wales","NSW","Sydney","-33.8418","150.998","Australia/Sydney","","TPG Telecom Limited"
 "٢٠٢٥-٠٤-١٥","3618cfb92c5ef7a6",15,"٢٠٢٥-٠٤-١٥ ٢٣:٢٠:٠٤","SM-A155F","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
 "2025-04-16","YpyGLX0ADs11",18,"2025-04-16 06:23:41","22041216C","15","Xiaomi",35,"1.7.4.4","45.118.67.135","unknown","Australia","AU","South Australia","SA","Adelaide","-34.7348","138.6837","Australia/Adelaide","","Superloop"
@@ -54,3 +53,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","24f18c96d960fba6",69,"2025-04-16 04:56:38","PJA110","13","OnePlus",33,"1.7.4.4","117.151.235.229","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-16T04:25:21+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-15","a7191571d3b8c46a",60,"2025-04-15 23:01:27","moto g82 5G","13","motorola",33,"1.7.4.4","31.0.59.243","unknown","Poland","PL","","","","52.2394","21.0362","Europe/Warsaw","","Polkomtel Sp. z o.o."
 "2025-04-15","4e2b605822045ef1",57,"2025-04-15 23:09:46","SM-A715F","13","samsung",33,"1.7.4.4","85.90.135.83","unknown","Austria","AT","Vienna","9","Vienna","48.1535","16.3855","Europe/Vienna","","Telekom Austria"
+"2025-04-16","3b09ec7c1ddb23b2",11,"2025-04-16 04:10:29","SM-S908B","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
