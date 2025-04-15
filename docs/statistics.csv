@@ -6,3 +6,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-15","a8e96c15f290a700",2,"2025-04-15 23:00:05","22081212C","13","Xiaomi",33,"1.7.4.4","185.241.41.145","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","",""
 "2025-04-15","839b06d58627e5aa",8,"2025-04-15 12:02:27","SM-S906E","14","samsung",34,"1.7.4.4","189.32.113.24","unknown","Brazil","BR","Amapá","AP","Macapá","0.0331","-51.0634","America/Belem","","Claro NXT Telecomunicacoes Ltda"
 "2025-04-15","cf05d4ae08ef999f",2,"2025-04-15 23:03:22","RMX5010","15","realme",35,"1.7.4.4","182.107.103.39","ipv4","中国","CN","江西省","JX","宜春市","27.792999267578125","114.37100219726562","Asia/Shanghai","2025-04-15T23:03:23+08:00","Chinanet"
+"2025-04-15","3c88599d78199168",2,"2025-04-15 23:05:48","23078RKD5C","15","Xiaomi",35,"1.7.4.4","210.79.151.21","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Radishcloud Technology LLC"
