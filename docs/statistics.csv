@@ -37,3 +37,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-15","4e2b605822045ef1",53,"2025-04-15 19:17:24","SM-A715F","13","samsung",33,"1.7.4.4","85.90.135.83","unknown","Austria","AT","Vienna","9","Vienna","48.1535","16.3855","Europe/Vienna","","Telekom Austria"
 "2025-04-16","3b09ec7c1ddb23b2",2,"2025-04-16 00:37:24","SM-S908B","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
 "2025-04-16","78d3797e951fa7d4",1,"2025-04-16 01:38:56","MEIZU 20 Pro","13","meizu",33,"1.7.4.4","113.84.194.160","ipv4","中国","CN","广东省","GD","廣州市","23.124719619750977","113.23860931396484","Asia/Shanghai","2025-04-16T01:38:59+08:00","Chinanet Guangdong Province Shenzhen Man Network"
+"2025-04-16","663b667553dcb1e5",4,"2025-04-16 01:39:32","PGP110","14","OnePlus",34,"1.7.4.4","5.2.78.29","unknown","The Netherlands","NL","Drenthe","DR","Meppel","52.6896","6.176","Europe/Amsterdam","","The Infrastructure Group B.V."
