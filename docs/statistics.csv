@@ -14,3 +14,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-15","dd6cc9aac008f3ff",4,"2025-04-15 23:14:11","M2011K2C","14","Xiaomi",34,"1.7.4.4","93.179.114.46","unknown","United States","US","California","CA","Los Angeles","34.0726","-118.261","America/Los_Angeles","","IT7NET"
 "2025-04-15","397a2fb6a65bc0cb",3,"2025-04-15 23:14:39","TB320FC","14","LENOVO",34,"1.7.4.4","45.78.38.72","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","xTom"
 "2025-04-15","6c5502ff9236363e",2,"2025-04-15 23:18:41","23049RAD8C","15","Xiaomi",35,"1.7.4.4","154.26.177.41","unknown","United States","US","California","CA","San Jose","37.1835","-121.7714","America/Los_Angeles","","COGENT-174"
+"2025-04-15","d178cdd355517176",2,"2025-04-15 23:20:13","Mi MIX 3","10","Xiaomi",29,"1.7.4.4","104.28.159.14","unknown","Germany","DE","Hesse","HE","Dreieich","50.0188","8.6956","Europe/Berlin","","CLOUDFLARENET"
