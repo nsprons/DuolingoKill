@@ -42,5 +42,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","6e490d89912071fb",15,"2025-04-16 00:40:40","M2002J9G","15","Xiaomi",35,"1.7.4.4","112.134.128.85","unknown","Sri Lanka","LK","Gampaha District","12","Wattala","6.9847","79.8838","Asia/Colombo","","Sri Lanka Telecom Internet"
 "2025-04-16","3b09ec7c1ddb23b2",8,"2025-04-16 02:15:15","SM-S908B","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
 "2025-04-15","9925e43c4238f4cd",27,"2025-04-15 21:16:47","Redmi Note 5","14","Xiaomi",34,"1.7.4.4","197.120.51.44","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
-"2025-04-16","24f18c96d960fba6",27,"2025-04-16 03:17:44","PJA110","13","OnePlus",33,"1.7.4.4","117.151.235.229","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-16T02:46:13+08:00","China Mobile Communications Group Co. Ltd."
 "٢٠٢٥-٠٤-١٥","3618cfb92c5ef7a6",13,"٢٠٢٥-٠٤-١٥ ٢٢:٣٠:٠٠","SM-A155F","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
+"2025-04-16","24f18c96d960fba6",28,"2025-04-16 03:31:20","PJA110","13","OnePlus",33,"1.7.4.4","117.151.235.229","ipv4","中国","CN","湖北省","HB","鄂州","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-16T03:31:21+08:00","China Mobile Communications Group Co. Ltd."
