@@ -29,3 +29,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "٢٠٢٥-٠٤-١٥","3618cfb92c5ef7a6",11,"٢٠٢٥-٠٤-١٥ ١٩:٠٦:١٤","SM-A155F","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
 "2025-04-16","3e72ab716b659832",1,"2025-04-16 00:07:28","M2007J3SC","12","Xiaomi",31,"1.7.4.4","8.223.8.245","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","",""
 "2025-04-16","3b2c7bde652b6038",1,"2025-04-16 00:09:34","M2002J9E","11","Xiaomi",30,"1.7.4.4","3.113.182.227","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
+"2025-04-15","c0a5df0100fb5f3b",1,"2025-04-15 21:47:32","RMX3371","13","realme",33,"1.7.4.4","152.59.102.213","unknown","India","IN","Rajasthan","RJ","Jaipur","26.9525","75.7105","Asia/Kolkata","","Reliance Jio Infocomm Limited"
