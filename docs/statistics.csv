@@ -1,4 +1,4 @@
-date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
+date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,language,lcountry,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
 "2025-04-15","5459cfd130507c08",2,"2025-04-15 22:55:11","M2101K6G","15","Xiaomi",35,"1.7.4.4","49.217.125.19","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","","Taiwan Mobile Co., Ltd."
 "2025-04-15","70de8741b2572949",3,"2025-04-15 23:07:05","PGBM10","14","OPPO",34,"1.7.4.4","106.224.103.54","ipv4","中国","CN","江西省","JX","南昌市","28.671499252319336","115.88899993896484","Asia/Shanghai","2025-04-15T23:07:08+08:00","Chinanet"
 "2025-04-15","cf05d4ae08ef999f",3,"2025-04-15 23:08:13","RMX5010","15","realme",35,"1.7.4.4","205.185.125.20","unknown","United States","US","Nevada","NV","Las Vegas","36.102","-115.1447","America/Los_Angeles","","PONYNET"
