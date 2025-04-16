@@ -105,3 +105,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","c6038de61703b212",15,"2025-04-16 14:00:22","M2102J20SG","13","Xiaomi",33,"1.7.4.4","176.59.164.76","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","T2 Mobile LLC"
 "2025-04-16","a197d92e5c4389fb",51,"2025-04-16 19:02:41","Pixel 6","15","Google",35,"1.7.4.4","1.170.203.146","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","","Data Communication Business Group"
 "2025-04-16","5db7d4623784c024",6,"2025-04-16 19:03:49","PKR110","15","OnePlus",35,"1.7.4.4","120.208.214.206","ipv4","中国","CN","Beijing Shi","BJ","北京市","39.91518020629883","116.37431335449219","Asia/Shanghai","2025-04-16T19:03:52+08:00","China Mobile Communications Corporation"
+"95919599-9199-9399","3618cfb92c5ef7a6",9,"95919599-9199-9399 9399:9199:9199","SM-A155F","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
