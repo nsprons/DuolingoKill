@@ -71,14 +71,16 @@ jobs:
 
           # Extract all fields
           DEVICE_ID=$(parse_field "device_id")
-          DATE=$(convert_if_arabic "$(parse_field "date")")
           OPEN_COUNT=$(parse_field "open_count")
+          DATE=$(convert_if_arabic "$(parse_field "date")")
           REPORT_TIME=$(convert_if_arabic "$(parse_field "report_time")")
           DEVICE_MODEL=$(parse_field "device_model")
           ANDROID_VERSION=$(parse_field "android_version")
           MANUFACTURER=$(parse_field "manufacturer")
           SDK_VERSION=$(parse_field "sdk_version")
           VERSION=$(parse_field "version")
+          LANGUAGE=$(parse_field "language")
+          LCOUNTRY=$(parse_field "country")
           IP_ADDRESS=$(parse_field "ip_address")
           IP_TYPE=$(parse_field "ip_type")
           COUNTRY=$(parse_field "country_name")
@@ -108,7 +110,7 @@ jobs:
 
           # Create CSV header if file doesn't exist
           if [ ! -f "$CSV_FILE" ]; then
-            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp" > "$CSV_FILE"
+            echo "date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,language,lcountry,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp" > "$CSV_FILE"
           fi
 
           # Process CSV data
@@ -118,7 +120,7 @@ jobs:
             awk -F, -v device_id="$DEVICE_ID" '
               NR > 1 && $2 != "\""device_id"\"" { print }
             ' "$CSV_FILE"
-            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$VERSION\",\"$IP_ADDRESS\",\"$IP_TYPE\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$REGION_CODE\",\"$CITY\",\"$LATITUDE\",\"$LONGITUDE\",\"$TIMEZONE\",\"$CURRENT_TIME\",\"$ISP\""
+            echo "\"$DATE\",\"$DEVICE_ID\",$OPEN_COUNT,\"$REPORT_TIME\",\"$DEVICE_MODEL\",\"$ANDROID_VERSION\",\"$MANUFACTURER\",$SDK_VERSION,\"$VERSION\",\"$LANGUAGE\",\"$LCOUNTRY\",\"$IP_ADDRESS\",\"$IP_TYPE\",\"$COUNTRY\",\"$COUNTRY_CODE\",\"$REGION\",\"$REGION_CODE\",\"$CITY\",\"$LATITUDE\",\"$LONGITUDE\",\"$TIMEZONE\",\"$CURRENT_TIME\",\"$ISP\""
           } > "$TEMP_FILE" && mv "$TEMP_FILE" "$CSV_FILE"
 
           # Commit changes
