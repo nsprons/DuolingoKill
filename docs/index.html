@@ -660,7 +660,7 @@
 
         // 加载数据
         function loadData() {
-            fetch('https://proxy.nspron.eu.org/proxy/https://raw.githubusercontent.com/nsprons/DuolingoKill/refs/heads/main/docs/statistics.csv')
+            fetch('https://raw.githubusercontent.com/nsprons/DuolingoKill/refs/heads/main/docs/statistics.csv')
                 .then(response => {
                     if (!response.ok) throw new Error('网络响应不正常');
                     return response.text();
