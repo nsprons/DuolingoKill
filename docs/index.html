@@ -586,7 +586,7 @@
                         <th>设备型号</th>
                         <th>制造商</th>
                         <th>Android版本</th>
-                        <th>SDK版本</th>
+                        <!-- <th>SDK版本</th> -->
                         <th>应用版本</th>
                         <th>地区</th>
                         <th>IP地址</th>
@@ -1385,9 +1385,9 @@
                 tr.appendChild(versionTd);
 
                 // SDK版本
-                const sdkTd = document.createElement('td');
-                sdkTd.textContent = stat.sdk_version ? `SDK ${stat.sdk_version}` : '--';
-                tr.appendChild(sdkTd);
+                //const sdkTd = document.createElement('td');
+                //sdkTd.textContent = stat.sdk_version ? `SDK ${stat.sdk_version}` : '--';
+                //tr.appendChild(sdkTd);
 
                 // 应用版本
                 const appVersionTd = document.createElement('td');
