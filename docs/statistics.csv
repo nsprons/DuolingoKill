@@ -138,4 +138,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","215e9a7554d0b952",5,"2025-04-16 21:40:51","Redmi K20 Pro","13","Xiaomi",33,"1.7.4.5","192.9.251.148","unknown","United States","US","California","CA","San Jose","37.2379","-121.7946","America/Los_Angeles","","ORACLE-BMC-31898"
 "2025-04-16","3b09ec7c1ddb23b2",61,"2025-04-16 20:41:00","SM-S908B","14","samsung",34,"1.7.4.4","","","","","","","","","","","",""
 "2025-04-16","06bce057bde5e4d1",12,"2025-04-16 15:41:03","22111317G","14","Xiaomi",34,"1.7.4.5","176.76.224.20","unknown","Slovenia","SI","Ljubljana","061","Ljubljana","46.0503","14.5046","Europe/Ljubljana","","Telemach UG d.o.o."
-"2025-04-16","d9316c3b46dd4068",13,"2025-04-16 21:41:04","22127RK46C","15","Xiaomi",35,"1.7.4.5","8.223.9.35","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","",""
+"2025-04-16","d9316c3b46dd4068",14,"2025-04-16 21:41:16","22127RK46C","15","Xiaomi",35,"1.7.4.5","8.223.20.176","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","",""
