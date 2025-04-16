@@ -1,0 +1,2 @@
+date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,language,lcountry,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
+"2025-04-17","229ba7308b0ecf94",4,"2025-04-17 01:07:04","23127PN0CC","15","Xiaomi",35,"1.7.4.4","","","14.154.196.24","ipv4","中国","CN","广东省","GD","廣州市","23.124719619750977","113.23860931396484","Asia/Shanghai","2025-04-17T01:07:06+08:00","Chinanet"
