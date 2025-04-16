@@ -1360,7 +1360,7 @@
                 // 设备ID
                 const deviceTd = document.createElement('td');
                 const deviceId = stat.device_id || '';
-                deviceTd.textContent = deviceId.slice(0, 8) + (deviceId.length > 8 ? '...' : '');
+                deviceTd.textContent = deviceId;
                 deviceTd.title = deviceId;
                 tr.appendChild(deviceTd);
 
