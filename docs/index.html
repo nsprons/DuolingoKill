@@ -1153,7 +1153,10 @@
             document.getElementById('regionCount').textContent = uniqueRegions.size.toLocaleString();
             document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length.toLocaleString();
             document.getElementById('ispCount').textContent = uniqueIsps.size.toLocaleString();
-            document.getElementById('newDevices').textContent = newDevicesCount.toLocaleString();
+            const sortedDates = Object.keys(newDeviceDates).sort();
+            const lastDate = sortedDates[sortedDates.length - 1];
+            const lastDayNewDevices = lastDate ? newDeviceDates[lastDate] : 0;
+            document.getElementById('newDevices').textContent = lastDayNewDevices.toLocaleString();
             document.getElementById('manufacturerCount').textContent = uniqueManufacturers.size.toLocaleString();
 
             // 准备日期排序
