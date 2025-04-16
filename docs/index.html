@@ -551,26 +551,6 @@
 
             <div class="card">
                 <div class="card-header">
-                    <span class="card-title">设备语言</span>
-                    <span class="card-value" id="languageCount">--</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="languageChart"></canvas>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">本地国家</span>
-                    <span class="card-value" id="lcountryCount">--</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="lcountryChart"></canvas>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
                     <span class="card-title">每日新增设备</span>
                     <span class="card-value" id="newDevices">--</span>
                 </div>
@@ -652,8 +632,6 @@
         let currentPage = 1;
         const itemsPerPage = 20;
         let debounceTimer = null;
-        let languages = new Set();
-        let lcountries = new Set();
         let sortColumn = 0; // 默认按日期排序
         let sortDirection = 'desc'; // 默认降序
 
@@ -663,8 +641,6 @@
         const regionChart = initDoughnutChart('regionChart', '地区分布');
         const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
         const ispChart = initDoughnutChart('ispChart', '运营商分布');
-        const languageChart = initDoughnutChart('languageChart', '设备语言分布');
-        const lcountryChart = initDoughnutChart('lcountryChart', '本地国家分布');
         const newDevicesChart = initBarChart('newDevicesChart', '每日新增设备', 'rgba(76, 201, 240, 0.7)');
         const trendChart = initLineChart('trendChart', '设备使用趋势');
         const manufacturerChart = initDoughnutChart('manufacturerChart', '设备制造商分布');
@@ -709,9 +685,6 @@
                             // 标准化Android版本号
                             entry.android_version = entry.android_version.toString().replace(/\.0$/, '');
                         }
-                        if (entry.language) languages.add(entry.language);
-                        if (entry.lcountry) lcountries.add(entry.lcountry);
-
                         return entry.date && entry.device_id && entry.open_count;
                     });
 
@@ -978,20 +951,6 @@
                 regionSelect.appendChild(option);
             });
 
-            languages.forEach(lang => {
-                const option = document.createElement('option');
-                option.value = lang;
-                option.textContent = lang;
-                languageSelect.appendChild(option);
-            });
-
-            lcountries.forEach(country => {
-                const option = document.createElement('option');
-                option.value = country;
-                option.textContent = country;
-                lcountrySelect.appendChild(option);
-            });
-
             // 添加运营商选项
             isps.forEach(isp => {
                 const option = document.createElement('option');
@@ -1103,10 +1062,6 @@
             const regionCounts = {};
             const ispCounts = {};
             const newDeviceDates = {};
-            const languageCounts = {};
-            const lcountryCounts = {};
-            let uniqueLanguages = new Set();
-            let uniqueLcountries = new Set();
             let totalOpens = 0;
             let uniqueDevices = new Set();
             let uniqueRegions = new Set();
@@ -1150,18 +1105,6 @@
                     deviceCounts[stat.device_model] = 0;
                 }
                 deviceCounts[stat.device_model] += parseInt(stat.open_count) || 0;
-
-                // 统计语言
-                if (stat.language) {
-                    uniqueLanguages.add(stat.language);
-                    languageCounts[stat.language] = (languageCounts[stat.language] || 0) + 1;
-                }
-
-                // 统计定位国家
-                if (stat.lcountry) {
-                    uniqueLcountries.add(stat.lcountry);
-                    lcountryCounts[stat.lcountry] = (lcountryCounts[stat.lcountry] || 0) + 1;
-                }
 
                 // 按Android版本统计
                 const cleanVersion = stat.android_version.toString().replace(/\.0$/, '');
@@ -1210,14 +1153,11 @@
             document.getElementById('regionCount').textContent = uniqueRegions.size.toLocaleString();
             document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length.toLocaleString();
             document.getElementById('ispCount').textContent = uniqueIsps.size.toLocaleString();
-            document.getElementById('languageCount').textContent = uniqueLanguages.size.toLocaleString();
-            document.getElementById('lcountryCount').textContent = uniqueLcountries.size.toLocaleString();
-            document.getElementById('manufacturerCount').textContent = uniqueManufacturers.size.toLocaleString();
             const sortedDates = Object.keys(newDeviceDates).sort();
             const lastDate = sortedDates[sortedDates.length - 1];
             const lastDayNewDevices = lastDate ? newDeviceDates[lastDate] : 0;
             document.getElementById('newDevices').textContent = lastDayNewDevices.toLocaleString();
-
+            document.getElementById('manufacturerCount').textContent = uniqueManufacturers.size.toLocaleString();
 
             // 准备日期排序
             const dates = Object.keys(dailyStats).sort();
@@ -1263,24 +1203,6 @@
             ispChart.data.labels = topIsps.map(i => i[0]);
             ispChart.data.datasets[0].data = topIsps.map(i => i[1]);
             ispChart.update();
-
-            // 更新语言分布图表
-            const topLanguages = Object.entries(languageCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 5);
-
-            languageChart.data.labels = topLanguages.map(l => l[0] || '未知语言');
-            languageChart.data.datasets[0].data = topLanguages.map(l => l[1]);
-            languageChart.update();
-
-            // 更新定位国家分布图表
-            const topLcountries = Object.entries(lcountryCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 5);
-
-            lcountryChart.data.labels = topLcountries.map(c => c[0] || '未知国家');
-            lcountryChart.data.datasets[0].data = topLcountries.map(c => c[1]);
-            lcountryChart.update();
 
             // 更新每日新增设备图表
             newDevicesChart.data.labels = newDeviceDatesSorted;
@@ -1630,14 +1552,6 @@
             <div class="ip-popup-row">
                 <div class="ip-popup-label">开启次数:</div>
                 <div class="ip-popup-value">${stat.open_count}</div>
-            </div>
-            <div class="ip-popup-row">
-            <div class="ip-popup-label">设备语言:</div>
-            <div class="ip-popup-value">${stat.language || '未知'}</div>
-            </div>
-            <div class="ip-popup-row">
-                <div class="ip-popup-label">本地国家:</div>
-                <div class="ip-popup-value">${stat.lcountry || '未知'}</div>
             </div>
             <div class="ip-popup-row">
                 <div class="ip-popup-label">当前时间:</div>
