@@ -18,11 +18,11 @@ jobs:
             const closeIssues = async () => {
               let page = 1;
               let closedCount = 0;
-              const perPage = 100;  # 每页最多 100 条
+              const perPage = 100;  // 每页最多 100 条
 
               try {
                 while (true) {
-                  # 分页获取 Issues
+                  // 分页获取 Issues
                   const { data: issues } = await github.rest.issues.listForRepo({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
@@ -31,11 +31,11 @@ jobs:
                     page: page
                   });
 
-                  if (issues.length === 0) break;  # 无更多 Issues 时退出循环
+                  if (issues.length === 0) break;  // 无更多 Issues 时退出循环
 
-                  # 批量关闭当前页的 Issues
+                  // 批量关闭当前页的 Issues
                   for (const issue of issues) {
-                    # 跳过 Pull Request（GitHub API 中 PR 也是 Issue 类型）
+                    // 跳过 Pull Request（GitHub API 中 PR 也是 Issue 类型）
                     if (issue.pull_request) continue;
 
                     await github.rest.issues.update({
@@ -50,7 +50,7 @@ jobs:
                   }
 
                   page++;
-                  await new Promise(resolve => setTimeout(resolve, 1000)); # 避免 API 速率限制
+                  await new Promise(resolve => setTimeout(resolve, 1000)); // 避免 API 速率限制
                 }
 
                 console.log(`✅ 成功关闭 ${closedCount} 个 Issues`);
@@ -62,7 +62,7 @@ jobs:
               }
             };
 
-            # 执行并处理结果
+            // 执行并处理结果
             const result = await closeIssues();
             if (!result.success) {
               core.setFailed(result.error);
