@@ -35,3 +35,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-17","7ec9405e139f070e",4,"2025-04-17 02:41:46","SM-S9110","14","samsung",34,"1.7.4.5","","","23.177.40.9","unknown","United States","US","","","","37.751","-97.822","America/Chicago","",""
 "2025-04-16","df9d613d9b98b47f",22,"2025-04-16 20:41:52","21091116UG","13","Xiaomi",33,"1.7.4.4","","","89.244.84.239","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-04-17","ab11108cbb0dad7a",8,"2025-04-17 02:42:05","SM-S9010","14","samsung",34,"1.7.4.5","","","213.218.255.70","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","BAGE"
+"2025-04-16","aa28c2e85bf4d556",1,"2025-04-16 15:45:54","2201117TL","13","Xiaomi",33,"1.7.4.5","","","177.65.180.146","unknown","Brazil","BR","Pará","PA","Belém","-1.4537","-48.5078","America/Belem","","Claro NXT Telecomunicacoes Ltda"
