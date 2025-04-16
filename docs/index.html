@@ -476,6 +476,19 @@
             </div>
 
             <div class="filter-group">
+                <label class="filter-label">系统语言</label>
+                <select id="languageFilter">
+                    <option value="all">全部语言</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">国家代码</label>
+                <select id="lcountryFilter">
+                    <option value="all">全部国家代码</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
                 <label class="filter-label">运营商</label>
                 <select id="ispFilter">
                     <option value="all">全部运营商</option>
@@ -983,6 +996,8 @@
             const isp = document.getElementById('ispFilter').value;
             const searchTerm = document.getElementById('deviceSearch').value.toLowerCase();
             const manufacturer = document.getElementById('manufacturerFilter').value;
+            const language = document.getElementById('languageFilter').value;
+            const lcountry = document.getElementById('lcountryFilter').value;
 
             // 计算日期范围
             let minDate = null;
@@ -1032,6 +1047,14 @@
                     if (location !== region) {
                         return false;
                     }
+                }
+
+                if (language !== 'all' && stat.language !== language) {
+                    return false;
+                }
+
+                if (lcountry !== 'all' && stat.lcountry !== lcountry) {
+                    return false;
                 }
 
                 // 运营商筛选
@@ -1536,6 +1559,10 @@
                 // 填充弹窗内容
                 content.innerHTML = `
             <div class="ip-popup-row">
+                <div class="ip-popup-label">开启次数:</div>
+                <div class="ip-popup-value">${stat.open_count}</div>
+            </div>
+            <div class="ip-popup-row">
                 <div class="ip-popup-label">IP地址:</div>
                 <div class="ip-popup-value">${stat.ip_address || '未知'}</div>
             </div>
@@ -1587,10 +1614,6 @@
             <div class="ip-popup-row">
                 <div class="ip-popup-label">应用版本:</div>
                 <div class="ip-popup-value">${stat.version || '未知'}</div>
-            </div>
-            <div class="ip-popup-row">
-                <div class="ip-popup-label">开启次数:</div>
-                <div class="ip-popup-value">${stat.open_count}</div>
             </div>
             <div class="ip-popup-row">
                 <div class="ip-popup-label">系统语言:</div>
