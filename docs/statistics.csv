@@ -100,4 +100,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","75c5e45225083407",3,"2025-04-16 13:35:01","2211133G","15","Xiaomi",35,"1.7.4.4","84.17.86.4","unknown","Türkiye","TR","","","","41.0214","28.9948","Europe/Istanbul","",""
 "2025-04-16","229ba7308b0ecf94",1,"2025-04-16 18:35:57","23127PN0CC","15","Xiaomi",35,"1.7.4.4","14.154.196.24","ipv4","中国","CN","广东省","GD","廣州市","23.124719619750977","113.23860931396484","Asia/Shanghai","2025-04-16T18:35:59+08:00","Chinanet"
 "2025-04-16","6836d39d5b85523b",9,"2025-04-16 12:36:56","SM-S938B","15","samsung",35,"1.7.4.4","88.177.215.54","unknown","France","FR","Moselle","57","Sarrebourg","48.7334","7.049","Europe/Paris","","Free SAS"
-"2025-04-16","06bce057bde5e4d1",8,"2025-04-16 12:37:17","22111317G","14","Xiaomi",34,"1.7.4.4","153.5.82.17","unknown","Slovenia","SI","Oplotnica Municipality","171","Oplotnica","46.3871","15.4455","Europe/Ljubljana","","ARNES"
+"2025-04-16","06bce057bde5e4d1",9,"2025-04-16 12:37:55","22111317G","14","Xiaomi",34,"1.7.4.4","153.5.82.4","unknown","Slovenia","SI","Oplotnica Municipality","171","Oplotnica","46.3871","15.4455","Europe/Ljubljana","","ARNES"
