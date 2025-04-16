@@ -652,6 +652,8 @@
         let currentPage = 1;
         const itemsPerPage = 20;
         let debounceTimer = null;
+        let languages = new Set();
+        let lcountries = new Set();
         let sortColumn = 0; // 默认按日期排序
         let sortDirection = 'desc'; // 默认降序
 
