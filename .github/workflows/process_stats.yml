@@ -66,7 +66,7 @@ jobs:
           # 在 Process stats data 步骤中添加检测和转换函数
           convert_if_arabic() {
               local input="$1"
-              echo "$input" | tr '٠١٢٣٤٥٦٧٨٩' '0123456789'
+              echo "$input" | sed -e 'y/٠١٢٣٤٥٦٧٨٩/0123456789/'
           }
 
           # Extract all fields
