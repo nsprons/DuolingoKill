@@ -715,8 +715,7 @@
                     allStats.forEach(stat => {
                         if (stat.device_model) deviceModels.add(stat.device_model);
                         if (stat.android_version) androidVersions.add(stat.android_version);
-                        if (stat.language) languages.add(stat.language);
-                        if (stat.lcountry) lcountries.add(stat.lcountry);
+
                         const location = [stat.city, stat.region_name, stat.country_name].filter(Boolean).join(', ');
                         regions.add(location);
 
