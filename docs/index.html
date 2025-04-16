@@ -541,6 +541,16 @@
 
             <div class="card">
                 <div class="card-header">
+                    <span class="card-title">系统语言分布</span>
+                    <span class="card-value" id="languageCount">--</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="languageChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
                     <span class="card-title">运营商分布</span>
                     <span class="card-value" id="ispCount">--</span>
                 </div>
@@ -624,6 +634,8 @@
         let filteredStats = [];
         let deviceModels = new Set();
         let androidVersions = new Set();
+        let languages = new Set();
+        let lcountries = new Set();
         let regions = new Set();
         let isps = new Set();
         let manufacturers = new Set();
@@ -640,6 +652,7 @@
         const devicesChart = initDoughnutChart('devicesChart', '设备分布');
         const regionChart = initDoughnutChart('regionChart', '地区分布');
         const androidChart = initDoughnutChart('androidChart', 'Android版本分布');
+        const languageChart = initDoughnutChart('languageChart', '系统语言分布');
         const ispChart = initDoughnutChart('ispChart', '运营商分布');
         const newDevicesChart = initBarChart('newDevicesChart', '每日新增设备', 'rgba(76, 201, 240, 0.7)');
         const trendChart = initLineChart('trendChart', '设备使用趋势');
@@ -695,7 +708,8 @@
 
                         const location = [stat.city, stat.region_name, stat.country_name].filter(Boolean).join(', ');
                         regions.add(location);
-
+                        if (stat.language) languages.add(stat.language);
+                        if (stat.lcountry) lcountries.add(stat.lcountry);
                         if (stat.isp) isps.add(stat.isp);
                         if (stat.manufacturer && stat.manufacturer.trim() !== '') {
                             manufacturers.add(stat.manufacturer.trim());
@@ -1067,6 +1081,10 @@
             let uniqueRegions = new Set();
             let uniqueIsps = new Set();
             let newDevicesCount = 0;
+            let languageCounts = {};
+            let lcountryCounts = {};
+            let uniqueLanguages = new Set();
+            let uniqueLcountries = new Set();
 
             filteredStats.forEach(stat => {
                 // 统计总开启次数
@@ -1087,6 +1105,16 @@
                 // 记录唯一地区
                 if (stat.city && stat.region && stat.country) {
                     uniqueRegions.add(`${stat.city}, ${stat.region}, ${stat.country}`);
+                }
+
+                if (stat.language) {
+                    uniqueLanguages.add(stat.language);
+                    languageCounts[stat.language] = (languageCounts[stat.language] || 0) + (parseInt(stat.open_count) || 0);
+                }
+
+                if (stat.lcountry) {
+                    uniqueLcountries.add(stat.lcountry);
+                    lcountryCounts[stat.lcountry] = (lcountryCounts[stat.lcountry] || 0) + (parseInt(stat.open_count) || 0);
                 }
 
                 // 记录唯一运营商
@@ -1153,11 +1181,13 @@
             document.getElementById('regionCount').textContent = uniqueRegions.size.toLocaleString();
             document.getElementById('androidVersions').textContent = Object.keys(versionCounts).length.toLocaleString();
             document.getElementById('ispCount').textContent = uniqueIsps.size.toLocaleString();
+            document.getElementById('languageCount').textContent = uniqueLanguages.size.toLocaleString();
+            document.getElementById('manufacturerCount').textContent = uniqueManufacturers.size.toLocaleString();
             const sortedDates = Object.keys(newDeviceDates).sort();
             const lastDate = sortedDates[sortedDates.length - 1];
             const lastDayNewDevices = lastDate ? newDeviceDates[lastDate] : 0;
             document.getElementById('newDevices').textContent = lastDayNewDevices.toLocaleString();
-            document.getElementById('manufacturerCount').textContent = uniqueManufacturers.size.toLocaleString();
+
 
             // 准备日期排序
             const dates = Object.keys(dailyStats).sort();
@@ -1194,6 +1224,15 @@
             androidChart.data.labels = topVersions.map(v => `Android ${v[0]}` || '未知版本');
             androidChart.data.datasets[0].data = topVersions.map(v => v[1]);
             androidChart.update();
+
+            // 更新语言图表
+            const topLanguages = Object.entries(languageCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+
+            languageChart.data.labels = topLanguages.map(l => l[0] || '未知语言');
+            languageChart.data.datasets[0].data = topLanguages.map(l => l[1]);
+            languageChart.update();
 
             // 更新运营商分布图表
             const topIsps = Object.entries(ispCounts)
@@ -1552,6 +1591,14 @@
             <div class="ip-popup-row">
                 <div class="ip-popup-label">开启次数:</div>
                 <div class="ip-popup-value">${stat.open_count}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">系统语言:</div>
+                <div class="ip-popup-value">${stat.language || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">国家代码:</div>
+                <div class="ip-popup-value">${stat.lcountry || '未知'}</div>
             </div>
             <div class="ip-popup-row">
                 <div class="ip-popup-label">当前时间:</div>
