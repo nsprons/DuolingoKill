@@ -1,0 +1,2 @@
+date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,language,lcountry,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
+"2025-04-17","ab11108cbb0dad7a",3,"2025-04-17 01:03:39","SM-S9010","14","samsung",34,"1.7.4.5","","","213.218.255.70","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","BAGE"
