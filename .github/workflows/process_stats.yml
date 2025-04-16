@@ -67,7 +67,6 @@ jobs:
           convert_if_arabic() {
               local input="$1"
               echo "$input" | tr '٠١٢٣٤٥٦٧٨٩' '0123456789'
-              fi
           }
 
           # Extract all fields
