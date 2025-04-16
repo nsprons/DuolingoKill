@@ -144,3 +144,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","df9d613d9b98b47f",17,"2025-04-16 16:21:54","21091116UG","13","Xiaomi",33,"1.7.4.4","89.244.84.239","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-04-16","397a2fb6a65bc0cb",6,"2025-04-16 22:23:08","TB320FC","14","LENOVO",34,"1.7.4.5","45.78.38.72","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","xTom"
 "2025-04-16","524bab337d670732",2,"2025-04-16 22:23:24","SM-N9860","13","samsung",33,"1.7.4.5","65.75.193.143","unknown","United States","US","California","CA","San Jose","37.2379","-121.7946","America/Los_Angeles","","DMIT"
+"2025-04-16","e224c5016f68ef01",6,"2025-04-16 22:24:02","2410DPN6CC","15","Xiaomi",35,"1.7.4.5","91.149.239.234","unknown","unknown","US","California","CA","Los Angeles","34.0544","-118.244","","","unknown"
