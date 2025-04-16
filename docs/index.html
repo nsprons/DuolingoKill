@@ -789,6 +789,8 @@
         document.getElementById('androidVersion').addEventListener('change', applyFilters);
         document.getElementById('regionFilter').addEventListener('change', applyFilters);
         document.getElementById('ispFilter').addEventListener('change', applyFilters);
+        document.getElementById('languageFilter').addEventListener('change', applyFilters);
+        document.getElementById('lcountryFilter').addEventListener('change', applyFilters);
         document.getElementById('manufacturerFilter').addEventListener('change', applyFilters);
         document.getElementById('deviceSearch').addEventListener('input', function () {
             clearTimeout(debounceTimer);
@@ -943,6 +945,8 @@
             const regionSelect = document.getElementById('regionFilter');
             const ispSelect = document.getElementById('ispFilter');
             const manufacturerSelect = document.getElementById('manufacturerFilter');
+            const languageSelect = document.getElementById('languageFilter');
+            const lcountrySelect = document.getElementById('lcountryFilter');
 
             // 添加设备型号选项
             deviceModels.forEach(model => {
@@ -976,6 +980,22 @@
                 option.value = region;
                 option.textContent = region;
                 regionSelect.appendChild(option);
+            });
+
+            // 添加系统语言选项
+            languages.forEach(lang => {
+                const option = document.createElement('option');
+                option.value = lang;
+                option.textContent = lang;
+                languageSelect.appendChild(option);
+            });
+
+            // 添加国家语言选项
+            lcountries.forEach(lcountry => {
+                const option = document.createElement('option');
+                option.value = lcountry;
+                option.textContent = lcountry;
+                lcountrySelect.appendChild(option);
             });
 
             // 添加运营商选项
