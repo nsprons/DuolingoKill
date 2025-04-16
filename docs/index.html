@@ -707,6 +707,8 @@
                             // 标准化Android版本号
                             entry.android_version = entry.android_version.toString().replace(/\.0$/, '');
                         }
+                        if (entry.language) languages.add(entry.language);
+                        if (entry.lcountry) lcountries.add(entry.lcountry);
 
                         return entry.date && entry.device_id && entry.open_count;
                     });
