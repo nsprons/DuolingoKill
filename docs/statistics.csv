@@ -138,3 +138,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-16","3eeb019af0623585",6,"2025-04-16 21:33:14","Pixel 7","15","Google",35,"1.7.4.5","107.6.242.209","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","EVOCATIVE-GLOBAL"
 "2025-04-16","d9316c3b46dd4068",10,"2025-04-16 21:33:23","22127RK46C","15","Xiaomi",35,"1.7.4.5","8.223.19.2","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","",""
 "2025-04-16","fe25a27f27c87327",4,"2025-04-16 21:33:58","22127RK46b","13","Xiaomi",33,"1.7.4.5","108.61.180.177","unknown","Japan","JP","Tokyo","13","","35.6887","139.745","Asia/Tokyo","","AS-CHOOPA"
+"2025-04-16","215e9a7554d0b952",2,"2025-04-16 21:34:35","Redmi K20 Pro","13","Xiaomi",33,"1.7.4.5","192.9.251.148","unknown","United States","US","California","CA","San Jose","37.2379","-121.7946","America/Los_Angeles","","ORACLE-BMC-31898"
