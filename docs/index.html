@@ -605,7 +605,7 @@
                     <tr>
                         <th onclick="sortTable(0)">日期 ▼</th>
                         <th>设备ID</th>
-                        <th  onclick="sortTable(2)">开启次数</th>
+                        <th onclick="sortTable(2)">开启次数</th>
                         <th>设备型号</th>
                         <th>制造商</th>
                         <th>Android版本</th>
@@ -613,7 +613,7 @@
                         <th>应用版本</th>
                         <th>地区</th>
                         <th>IP地址</th>
-                        <!-- <th>运营商</th> -->
+                        <th>运营商</th>
                         <th onclick="sortTable(11)">报告时间 ▼</th>
                         <th>状态</th>
                     </tr>
@@ -1389,13 +1389,16 @@
                 if (sortColumn === 0) { // 日期列
                     valueA = new Date(a.date);
                     valueB = new Date(b.date);
+                } else if (sortColumn === 2) { // 开启次数列
+                    valueA = parseInt(a.open_count) || 0;
+                    valueB = parseInt(b.open_count) || 0;
                 } else if (sortColumn === 11) { // 报告时间列
                     valueA = a.report_time || '';
                     valueB = b.report_time || '';
                 }
 
                 // 执行比较
-                if (sortColumn === 0 || sortColumn === 11) {
+                if (sortColumn === 0 || sortColumn === 2 || sortColumn === 11) {
                     if (valueA < valueB) {
                         return sortDirection === 'asc' ? -1 : 1;
                     }
@@ -1486,9 +1489,9 @@
                 tr.appendChild(ipTd);
 
                 // 运营商
-                //const ispTd = document.createElement('td');
-                //ispTd.textContent = stat.isp || '--';
-                //tr.appendChild(ispTd);
+                const ispTd = document.createElement('td');
+                ispTd.textContent = stat.isp || '--';
+                tr.appendChild(ispTd);
 
                 // 报告时间
                 const timeTd = document.createElement('td');
