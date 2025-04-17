@@ -114,7 +114,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-17","88e9b79462a76951",21,"2025-04-17 12:36:53","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","203.175.14.48","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-04-17","232a4f7ddd3cea4b",5,"2025-04-17 12:50:29","PJX110","15","OnePlus",35,"1.7.4.5","","","106.224.210.192","ipv4","中国","CN","Jiangxi","JX","Nanchang","28.671499252319336","115.88899993896484","Asia/Shanghai","2025-04-17T12:46:20+08:00","Chinanet"
 "2025-04-17","a08089bc0c96990c",9,"2025-04-17 12:51:46","Pixel 8a","15","Google",35,"1.7.4.5","","","13.114.46.199","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
-"2025-04-17","ba542807f88161a8",6,"2025-04-17 12:52:09","KB2000","13","OnePlus",33,"1.7.4.5","","","31.59.111.4","unknown","Iran","IR","","","","35.698","51.4115","Asia/Tehran","","Gold Ip L.l.c-fz"
 "2025-04-17","69b7eb8e85f7c7b6",3,"2025-04-17 08:59:18","24030PN60G","14","Xiaomi",34,"1.7.4.5","","","46.18.67.114","unknown","Azerbaijan","AZ","Baku City","BA","Baku","40.3771","49.8875","Asia/Baku","","Ultel LLC"
 "2025-04-17","daa917a4c9e73b88",7,"2025-04-17 13:00:50","2210132C","13","Xiaomi",33,"1.7.4.5","","","141.11.131.80","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","IPXO"
 "2025-04-17","b75429cdbc1f33fe",3,"2025-04-17 01:02:38","NX721J","14","nubia",34,"1.7.4.5","","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
@@ -147,3 +146,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-17","4acaec7f09726c21",2,"2025-04-17 00:51:06","SM-S901E","14","samsung",34,"1.7.4.4","","","","","","","","","","","","","",""
 "2025-04-16","08e416c5c61b8b51",3,"2025-04-16 22:51:42","Pixel 7 Pro","15","Google",35,"1.7.4.5","","","47.149.249.202","unknown","unknown","US","California","CA","Moreno Valley","33.9339","-117.1851","","","unknown"
 "2025-04-17","3b09ec7c1ddb23b2",59,"2025-04-17 12:52:13","SM-S908B","14","samsung",34,"1.7.4.5","","","120.188.75.15","unknown","unknown","ID","East Java","JI","Sidoarjo","-7.4469","112.7181","","","unknown"
+"2025-04-17","ba542807f88161a8",7,"2025-04-17 13:52:12","KB2000","13","OnePlus",33,"1.7.4.5","","","31.59.111.4","unknown","Iran","IR","","","","35.698","51.4115","Asia/Tehran","","Gold Ip L.l.c-fz"
