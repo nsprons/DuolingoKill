@@ -213,3 +213,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-17","ebd0e46ac8c3986c",6,"2025-04-17 21:53:53","XQ-AS72","14","Sony",34,"1.7.4.5","","","95.85.94.17","unknown","Japan","JP","Tokyo","13","Tokyo","35.6289","139.7915","Asia/Tokyo","","G-Core Labs S.A."
 "2025-04-17","45393b9d31dd9c37",4,"2025-04-17 21:54:44","MEIZU 20","14","meizu",34,"1.7.4.5","","","52.194.238.220","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-04-17","77bd8a54a00e96be",11,"2025-04-17 21:56:21","Pixel 6 Pro","15","Google",35,"1.7.4.5","","","45.135.228.68","unknown","Singapore","SG","","","Singapore","1.3552","103.8859","Asia/Singapore","","G-Core Labs S.A."
+"2025-04-17","744d169bdbba5e44",1,"2025-04-17 21:58:54","RMX3850","15","realme",35,"1.7.4.5","","","154.3.33.48","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","DMIT"
