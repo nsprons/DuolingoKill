@@ -146,4 +146,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-17","4acaec7f09726c21",2,"2025-04-17 00:51:06","SM-S901E","14","samsung",34,"1.7.4.4","","","","","","","","","","","","","",""
 "2025-04-17","3b09ec7c1ddb23b2",59,"2025-04-17 12:52:13","SM-S908B","14","samsung",34,"1.7.4.5","","","120.188.75.15","unknown","unknown","ID","East Java","JI","Sidoarjo","-7.4469","112.7181","","","unknown"
 "2025-04-17","ba542807f88161a8",7,"2025-04-17 13:52:12","KB2000","13","OnePlus",33,"1.7.4.5","","","31.59.111.4","unknown","Iran","IR","","","","35.698","51.4115","Asia/Tehran","","Gold Ip L.l.c-fz"
-"2025-04-16","08e416c5c61b8b51",4,"2025-04-16 22:52:20","Pixel 7 Pro","15","Google",35,"1.7.4.5","","","47.149.249.202","unknown","unknown","US","California","CA","Moreno Valley","33.9339","-117.1851","","","unknown"
+"2025-04-16","08e416c5c61b8b51",5,"2025-04-16 22:52:50","Pixel 7 Pro","15","Google",35,"1.7.4.5","","","47.149.249.202","unknown","unknown","US","California","CA","Moreno Valley","33.9339","-117.1851","","","unknown"
