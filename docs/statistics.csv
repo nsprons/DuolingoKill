@@ -340,3 +340,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-18","b75429cdbc1f33fe",21,"2025-04-18 19:15:28","NX721J","14","nubia",34,"1.7.4.5","","","204.48.95.16","unknown","Canada","CA","Quebec","QC","Montreal","45.5909","-73.5655","America/Toronto","","VIDEOTRON"
 "2025-04-19","4e2b605822045ef1",4,"2025-04-19 01:16:48","SM-A715F","13","samsung",33,"1.7.4.5","","","85.90.135.83","unknown","Austria","AT","Vienna","9","Vienna","48.1535","16.3855","Europe/Vienna","","Telekom Austria"
 "2025-04-19","3b09ec7c1ddb23b2",17,"2025-04-19 06:18:29","SM-S908B","14","samsung",34,"1.7.4.5","","","120.188.87.244","unknown","unknown","ID","unknown","unknown","unknown","-6.175","106.8286","","","unknown"
+"2025-04-19","7e5f161c2ad511bf",1,"2025-04-19 07:20:46","23013RK75C","15","Xiaomi",35,"1.7.4.5","","","138.2.67.134","unknown","Singapore","SG","","","Kampong Loyang","1.3759","103.9639","Asia/Singapore","","ORACLE-BMC-31898"
