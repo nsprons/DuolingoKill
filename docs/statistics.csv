@@ -460,3 +460,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-20","7b93ed4e675b3b92",7,"2025-04-20 18:14:07","21051182G","13","Xiaomi",33,"1.7.4.5","","","170.83.206.7","unknown","Brazil","BR","Sergipe","SE","Estância","-11.2339","-37.4145","America/Maceio","","JF Solucoes Informatica Ltda."
 "2025-04-21","ce929cda0518469d",10,"2025-04-21 05:21:25","2211133C","13","Xiaomi",33,"1.7.4.5","","","89.116.88.10","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Nearoute Limited"
 "2025-04-21","bf8679a47bac01ee",7,"2025-04-21 05:23:20","23127PN0CC","15","Xiaomi",35,"1.7.4.5","","","178.157.60.149","unknown","Japan","JP","Ōsaka","27","Osaka","34.6946","135.5021","Asia/Tokyo","","IT7NET"
+"2025-04-20","2bfe78119e2aa2a2",5,"2025-04-20 23:32:50","2304FPN6DC","15","Xiaomi",35,"1.7.4.5","","","109.43.50.57","unknown","Germany","DE","Bavaria","BY","","48.1663","11.5683","Europe/Berlin","","Vodafone GmbH"
