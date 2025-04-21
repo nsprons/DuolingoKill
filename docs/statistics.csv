@@ -504,5 +504,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-22","c9caf8819b491cdb",1,"2025-04-22 06:58:10","Mi 10 Pro","13","Xiaomi",33,"1.7.4.4","","","101.249.172.9","ipv4","中国","CN","Xizang","XZ","Chengguan Qu","29.656200408935547","91.13690185546875","Asia/Shanghai","2025-04-22T06:58:11+08:00","Chinanet"
 "2025-04-22","833d606ef4ad4f75",21,"2025-04-22 07:02:16","23127PN0CC","14","Xiaomi",34,"1.7.5","zh","CN","138.19.103.185","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","Hong Kong Broadband Network Ltd."
 "2025-04-22","4e2b605822045ef1",4,"2025-04-22 01:03:00","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","",""
-"2025-04-22","c7243205a0e62ae4",6,"2025-04-22 00:04:27","RMX3834","13","realme",33,"1.7.4.5","","","105.235.129.174","unknown","Algeria","DZ","","","","36.7642","3.1468","Africa/Algiers","","wataniya-telecom-as"
 "2025-04-22","38bc700b558fa9de",3,"2025-04-22 01:04:47","IN2023","11","OnePlus",30,"1.7.5","en","US","156.203.64.82","unknown","Egypt","EG","Luxor","LX","Luxor","25.6955","32.6536","Africa/Cairo","","TE Data"
+"2025-04-22","c7243205a0e62ae4",7,"2025-04-22 00:05:04","RMX3834","13","realme",33,"1.7.4.5","","","105.235.129.174","unknown","Algeria","DZ","","","","36.7642","3.1468","Africa/Algiers","","wataniya-telecom-as"
