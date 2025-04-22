@@ -499,6 +499,11 @@
                 <label class="filter-label">搜索设备ID/IP</label>
                 <input type="text" id="deviceSearch" placeholder="输入设备ID或IP地址">
             </div>
+
+            <div class="filter-group"> <button id="sendDataBtn" style="padding: 8px 8px; margin: 27px; 
+            background-color: var(--primary-color); color: white; border: none; border-radius: 4px; 
+            cursor: pointer;">卡密生成</button>
+            </div>
         </div>
 
         <div class="dashboard">
@@ -634,6 +639,20 @@
             <!-- 内容将通过JavaScript动态填充 -->
         </div>
         <button class="ip-popup-close" id="ipPopupClose">关闭</button>
+    </div>
+    <!-- 添加弹窗HTML（放在页面底部，与其他弹窗一起） -->
+    <div class="overlay" id="idsOverlay"></div>
+    <div class="ip-popup" id="idsPopup">
+        <h3>发送设备数据</h3>
+        <div class="ip-popup-content">
+            <div class="filter-group" style="margin-bottom: 15px;">
+                <label class="filter-label">输入ID (用户ID,设备ID,过期日期)</label>
+                <input type="text" id="idsInput" placeholder="例如: user123,device456,2023-12-31" style="width: 100%;">
+            </div>
+            <div id="idsResponse" style="margin-top: 15px; padding: 10px; border-radius: 4px; display: none;"></div>
+        </div>
+        <button class="ip-popup-close" id="idsSubmit">发送</button>
+        <button class="ip-popup-close" style="background: #6c757d; margin-right: 10px;" id="idsPopupClose">取消</button>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1736,8 +1755,102 @@
             return '较旧';
         }
 
+        // 发送数据按钮事件
+        document.getElementById('sendIdsBtn').addEventListener('click', function () {
+            // 显示弹窗
+            document.getElementById('idsOverlay').style.display = 'block';
+            document.getElementById('idsPopup').style.display = 'block';
+
+            // 清空输入和响应
+            document.getElementById('idsInput').value = '';
+            document.getElementById('idsResponse').style.display = 'none';
+        });
+
+        // 弹窗关闭按钮
+        document.getElementById('idsPopupClose').addEventListener('click', function () {
+            document.getElementById('idsOverlay').style.display = 'none';
+            document.getElementById('idsPopup').style.display = 'none';
+        });
+
+        // 发送数据提交
+        document.getElementById('idsSubmit').addEventListener('click', function () {
+            const idsInput = document.getElementById('idsInput').value.trim();
+            const responseDiv = document.getElementById('idsResponse');
+            responseDiv.style.display = 'none';
+
+            // 验证输入
+            if (!idsInput) {
+                showError(responseDiv, '请输入ID信息');
+                return;
+            }
+
+            // 分割输入
+            const ids = idsInput.split(',').map(id => id.trim());
+            if (ids.length !== 3) {
+                showError(responseDiv, '请输入3个值，用逗号分隔');
+                return;
+            }
+
+            const [userId, deviceId, expiryDate] = ids;
+
+            // 验证日期格式
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(expiryDate)) {
+                showError(responseDiv, '日期格式应为YYYY-MM-DD');
+                return;
+            }
+
+            // 发送数据
+            sendIdsToApi(userId, deviceId, expiryDate);
+        });
+
+        // 显示错误消息
+        function showError(element, message) {
+            element.style.display = 'block';
+            element.style.backgroundColor = 'rgba(244, 67, 54, 0.1)';
+            element.style.color = 'var(--danger-color)';
+            element.innerHTML = message;
+        }
+
         // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', loadData);
+
+                // 发送数据到API
+                function sendIdsToApi(userId, deviceId, expiryDate) {
+            const responseDiv = document.getElementById('idsResponse');
+            responseDiv.style.display = 'block';
+            responseDiv.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
+            responseDiv.style.color = 'var(--success-color)';
+            responseDiv.innerHTML = '发送中...';
+
+            const apiUrl = 'https://api.nspron.eu.org/';
+            const requestBody = {
+                userId: userId,
+                deviceId: deviceId,
+                expiryDate: expiryDate
+            };
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestBody)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('HTTP错误: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    responseDiv.innerHTML = '数据发送成功: ' + JSON.stringify(data);
+                })
+                .catch(error => {
+                    responseDiv.style.backgroundColor = 'rgba(244, 67, 54, 0.1)';
+                    responseDiv.style.color = 'var(--danger-color)';
+                    responseDiv.innerHTML = '发送失败: ' + error.message;
+                });
+        }
     </script>
 </body>
 
