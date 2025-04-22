@@ -686,7 +686,7 @@
 
         // 加载数据
         function loadData() {
-            fetch('https://raw.githubusercontent.com/nsprons/DuolingoKill/refs/heads/main/docs/statistics.csv')
+            fetch('https://raw.githubusercontent.com/nsprons/DuolingoKill/refs/heads/main/docs/device_stats.csv')
                 .then(response => {
                     if (!response.ok) throw new Error('网络响应不正常');
                     return response.text();
