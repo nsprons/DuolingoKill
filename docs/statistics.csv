@@ -522,3 +522,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-22","4e2b605822045ef1",29,"2025-04-22 13:18:18","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","",""
 "2025-04-22","f43acb410bda7d55",27,"2025-04-22 19:18:40","SM-S9160","14","samsung",34,"1.7.5","en","US","1.164.123.130","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
 "2025-04-22","653552fb6fe9142a",38,"2025-04-22 19:18:29","2211133C","13","Xiaomi",33,"1.7.4.5","","","125.71.115.10","ipv4","中国","CN","Sichuan","SC","Chengdu","30.653060913085938","104.06749725341797","Asia/Shanghai","2025-04-22T19:18:31+08:00","Chinanet"
+"2025-04-22","1a5cfebfc237f2cb",3,"2025-04-22 14:20:21","w4lFc4s","9","OnePlus",33,"1.7.4.5","","","102.17.117.146","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
