@@ -75,3 +75,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-23","daa917a4c9e73b88",5,"2025-04-23 06:46:46","2210132C","13","Xiaomi",33,"1.7.5.1","zh","CN","error","141.11.131.80","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","IPXO"
 "2025-04-23","24f18c96d960fba6",22,"2025-04-23 06:49:28","PJA110","13","OnePlus",33,"1.7.5.1","zh","CN","1102796325","112.120.48.156","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","HKT Limited"
 "2025-04-23","c6038de61703b212",3,"2025-04-23 01:50:38","M2102J20SG","13","Xiaomi",33,"1.7.4.5","","","","46.138.80.4","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","PJSC Moscow city telephone network"
+"2025-04-23","75c5e45225083407",2,"2025-04-23 01:53:04","2211133G","15","Xiaomi",35,"1.7.4.4","","","","84.17.86.4","unknown","Türkiye","TR","","","","41.0214","28.9948","Europe/Istanbul","",""
