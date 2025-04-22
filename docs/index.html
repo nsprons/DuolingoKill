@@ -711,7 +711,7 @@
                             // 标准化Android版本号
                             entry.android_version = entry.android_version.toString().replace(/\.0$/, '');
                         }
-                        return entry.date && entry.device_id && entry.open_count;
+                        return entry.date && entry.device_id && entry.user_id && entry.open_count;
                     });
 
                     // 收集设备型号、Android版本、地区和运营商
@@ -1593,6 +1593,10 @@
             <div class="ip-popup-row">
                 <div class="ip-popup-label">运营商:</div>
                 <div class="ip-popup-value">${stat.isp || '未知'}</div>
+            </div>
+            <div class="ip-popup-row">
+                <div class="ip-popup-label">用户ID:</div>
+                <div class="ip-popup-value">${stat.user_id}</div>
             </div>
             <div class="ip-popup-row">
                 <div class="ip-popup-label">设备ID:</div>
