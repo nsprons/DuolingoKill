@@ -54,3 +54,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-22","df9d613d9b98b47f",21,"2025-04-22 22:34:12","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.194","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-04-22","9925e43c4238f4cd",23,"2025-04-22 22:34:29","Redmi Note 5","14","Xiaomi",34,"1.7.5","en","US","","154.236.118.99","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
 "2025-04-22","4e2b605822045ef1",66,"2025-04-22 22:35:54","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
+"2025-04-22","ef6df9189077683e",6,"2025-04-22 22:36:26","M2102J20SG","14","Xiaomi",34,"1.7.5","ar","EG","","197.57.153.140","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","TE Data"
