@@ -1,4 +1,4 @@
 date,device_id,open_count,report_time,device_model,android_version,manufacturer,sdk_version,version,language,lcountry,user_id,ip_address,ip_type,country_name,country_code,region_name,region_code,city,latitude,longitude,timezone_id,current_time,isp
 "2025-04-23","24f18c96d960fba6",4,"2025-04-23 01:25:55","PJA110","13","OnePlus",33,"1.7.5.1","zh","CN","1102796325","117.151.235.135","ipv4","中国","CN","Hubei","HB","Ezhou","30.3811092376709","114.8741683959961","Asia/Shanghai","2025-04-23T01:25:56+08:00","China Mobile Communications Group Co. Ltd."
-"2025-04-22","4e2b605822045ef1",57,"2025-04-22 19:28:43","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-04-23","7d9c23b0616fcb36",9,"2025-04-23 01:29:32","MI 8","10","Xiaomi",29,"1.7.4.5","","","","223.101.50.190","ipv4","中国","CN","Liaoning","LN","Shenyang","41.801021575927734","123.40206909179688","Asia/Shanghai","2025-04-23T01:29:27+08:00","China Mobile Communications Corporation"
+"2025-04-22","4e2b605822045ef1",58,"2025-04-22 19:32:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
