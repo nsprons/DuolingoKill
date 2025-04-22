@@ -30,3 +30,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-23","5a6e09679cc0e3b6",7,"2025-04-23 02:33:53","SM-S9210","14","samsung",34,"1.7.5","en","US","","156.231.102.210","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","OWS"
 "2025-04-22","3618cfb92c5ef7a6",31,"2025-04-22 21:34:14","SM-A155F","14","samsung",34,"1.7.5.1","ar","AE","error","209.198.144.56","unknown","Slovenia","SI","Ljubljana","061","Ljubljana","46.0503","14.5046","Europe/Ljubljana","","SPACEX-STARLINK"
 "2025-04-22","4e2b605822045ef1",60,"2025-04-22 20:35:27","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
+"2025-04-22","c6038de61703b212",24,"2025-04-22 21:37:32","M2102J20SG","13","Xiaomi",33,"1.7.4.5","","","","46.138.80.4","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","PJSC Moscow city telephone network"
