@@ -511,4 +511,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-22","6bb2023428ea9b39",8,"2025-04-22 14:34:07","PJZ110","15","OnePlus",35,"1.7.5","zh","CN","117.140.104.220","ipv4","中国","CN","Beijing Shi","BJ","Xicheng Qu","39.91518020629883","116.37431335449219","Asia/Shanghai","2025-04-22T14:34:08+08:00","China Mobile Communications Group Co. Ltd."
 "2025-04-22","ed9e3d7f182a7370",8,"2025-04-22 12:34:27","Infinix X6826C","12","INFINIX",31,"1.7.4.5","","","206.189.84.93","unknown","Singapore","SG","","","Singapore","1.3078","103.6818","Asia/Singapore","","DIGITALOCEAN-ASN"
 "2025-04-22","aa28c2e85bf4d556",44,"2025-04-22 03:35:01","2201117TL","13","Xiaomi",33,"1.7.5","pt","BR","177.195.222.20","unknown","Brazil","BR","","","","-22.8305","-43.2192","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
-"2025-04-22","4e2b605822045ef1",14,"2025-04-22 08:35:34","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","",""
+"2025-04-22","4e2b605822045ef1",15,"2025-04-22 08:36:10","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","",""
