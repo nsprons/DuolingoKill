@@ -500,9 +500,10 @@
                 <input type="text" id="deviceSearch" placeholder="输入设备ID或IP地址">
             </div>
 
-            <div class="filter-group"> <button id="sendDataBtn" style="padding: 8px 8px; margin: 27px; 
-            background-color: var(--primary-color); color: white; border: none; border-radius: 4px; 
-            cursor: pointer;">卡密生成</button>
+            <div class="filter-group">
+                <button id="sendIdsBtn" style="padding: 8px 8px; margin: 27px; 
+                background-color: var(--primary-color); color: white; border: none; border-radius: 4px; 
+                cursor: pointer;">卡密生成</button>
             </div>
         </div>
 
@@ -1755,6 +1756,7 @@
             return '较旧';
         }
 
+
         // 发送数据按钮事件
         document.getElementById('sendIdsBtn').addEventListener('click', function () {
             // 显示弹窗
@@ -1811,18 +1813,15 @@
             element.innerHTML = message;
         }
 
-        // 页面加载完成后初始化
-        document.addEventListener('DOMContentLoaded', loadData);
-
-                // 发送数据到API
-                function sendIdsToApi(userId, deviceId, expiryDate) {
+        // 发送数据到API
+        function sendIdsToApi(userId, deviceId, expiryDate) {
             const responseDiv = document.getElementById('idsResponse');
             responseDiv.style.display = 'block';
             responseDiv.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
             responseDiv.style.color = 'var(--success-color)';
             responseDiv.innerHTML = '发送中...';
 
-            const apiUrl = 'https://api.nspron.eu.org/';
+            const apiUrl = 'https://api.nspron.eu.org/appendData';
             const requestBody = {
                 userId: userId,
                 deviceId: deviceId,
@@ -1851,6 +1850,9 @@
                     responseDiv.innerHTML = '发送失败: ' + error.message;
                 });
         }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
 
