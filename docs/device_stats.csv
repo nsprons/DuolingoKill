@@ -371,4 +371,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-24","4e2b605822045ef1",28,"2025-04-24 11:25:33","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-04-24","9925e43c4238f4cd",8,"2025-04-24 11:25:38","Redmi Note 5","14","Xiaomi",34,"1.7.5","en","US","","41.176.228.240","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
 "2025-04-24","1f8fcc30013d9d04",34,"2025-04-24 12:25:58","SM-A325F","13","samsung",33,"1.7.4.5","","","","78.180.51.122","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
-"2025-04-24","ce929cda0518469d",21,"2025-04-24 17:26:58","2211133C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","89.116.88.10","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Nearoute Limited"
+"2025-04-24","ce929cda0518469d",22,"2025-04-24 17:27:02","2211133C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","89.116.88.10","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Nearoute Limited"
