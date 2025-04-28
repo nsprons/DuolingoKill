@@ -512,3 +512,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-04-28","4e2b605822045ef1",25,"2025-04-28 11:44:41","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-04-28","e0e682dc6982d90e",24,"2025-04-28 17:48:34","IN2020","15","OnePlus",35,"1.7.5.2","en","US","626810816","172.104.49.201","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","Akamai Connected Cloud"
 "2025-04-28","a197d92e5c4389fb",46,"2025-04-28 17:51:52","Pixel 6","15","Google",35,"1.0.0.0","zh","CN","error","146.190.169.146","unknown","United States","US","California","CA","San Francisco","37.7809","-122.4245","America/Los_Angeles","","DIGITALOCEAN-ASN"
+"2025-04-28","0cc5509add2ae044",1,"2025-04-28 17:53:12","PJF110","14","OnePlus",34,"1.7.4.5","","","","158.101.195.118","unknown","The Netherlands","NL","North Holland","NH","Amsterdam","52.352","4.9392","Europe/Amsterdam","","ORACLE-BMC-31898"
