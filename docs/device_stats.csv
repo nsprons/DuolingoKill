@@ -583,3 +583,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-02","776c8eb50ed7b37a",2,"2025-05-02 04:06:06","Mi 10","15","Xiaomi",35,"1.7.5.2","zh","CN","error","62.210.125.97","unknown","France","FR","","","","48.8582","2.3387","Europe/Paris","","Scaleway S.a.s."
 "2025-05-01","4e2b605822045ef1",72,"2025-05-01 22:07:27","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-02","d731f16acb55f131",1,"2025-05-02 03:11:45","PJZ110","15","OnePlus",35,"1.7.4.5","","","","202.65.227.105","unknown","Indonesia","ID","","","","-6.1728","106.8272","Asia/Jakarta","",""
+"2025-05-01","28a43787cb5bbe61",1,"2025-05-01 23:14:49","t98weS5YSJz4w","12","OnePlus",33,"1.7.5.1","en","US","","102.17.119.120","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
