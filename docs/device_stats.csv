@@ -583,5 +583,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-02","df9d613d9b98b47f",1,"2025-05-02 00:05:07","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.248","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-02","af4da5d99cf8c6a8",23,"2025-05-02 05:06:37","2201117PG","13","Xiaomi",33,"1.7.5.2","en","GB","1358489229","125.164.12.218","unknown","Indonesia","ID","East Java","JI","Surabaya","-7.2484","112.7419","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-02","7c161a49ce78d626",28,"2025-05-02 05:08:21","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.171.11","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
-"2025-05-02","4e2b605822045ef1",2,"2025-05-02 00:10:05","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-02","3618cfb92c5ef7a6",3,"2025-05-02 01:14:03","SM-A155F","14","samsung",34,"1.7.5.2","ar","AE","error","51.36.103.129","unknown","unknown","SA","Mecca Region","02","Makkah","21.423","39.821","","","unknown"
+"2025-05-02","4e2b605822045ef1",3,"2025-05-02 00:15:23","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
