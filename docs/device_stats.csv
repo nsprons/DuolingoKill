@@ -612,4 +612,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-03","4e2b605822045ef1",51,"2025-05-03 22:01:29","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-03","3618cfb92c5ef7a6",44,"2025-05-03 23:01:45","SM-A155F","14","samsung",34,"1.7.5.2","ar","AE","error","209.198.144.133","unknown","Sweden","SE","Stockholm County","AB","Stockholm","59.3241","18.0517","Europe/Stockholm","","SPACEX-STARLINK"
 "2025-05-04","7c161a49ce78d626",10,"2025-05-04 03:02:46","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","112.215.225.136","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT XL Axiata"
-"2025-05-03","4223b36134888672",187,"2025-05-03 17:05:03","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","191.246.251.233","unknown","Brazil","BR","Pará","PA","Belém","-1.345","-48.4219","America/Belem","","Claro SA"
+"2025-05-03","4223b36134888672",188,"2025-05-03 17:05:39","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","191.246.251.233","unknown","Brazil","BR","Pará","PA","Belém","-1.345","-48.4219","America/Belem","","Claro SA"
