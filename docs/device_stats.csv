@@ -625,7 +625,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-07","91ea8cda28a37010",3,"2025-05-07 00:30:53","23054RA19C","15","Xiaomi",35,"1.7.5","zh","CN","","14.154.189.126","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-07","741180d6cb9b9201",1,"2025-05-07 00:32:35","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","14.198.147.55","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","Hong Kong Broadband Network Ltd."
 "2025-05-07","653552fb6fe9142a",1,"2025-05-07 00:33:25","2211133C","13","Xiaomi",33,"1.7.4.5","","","","116.169.6.17","unknown","China","CN","Sichuan","SC","Deyang","31.131","104.3984","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
-"2025-05-06","4e2b605822045ef1",38,"2025-05-06 18:34:05","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-06","e768d4e58ec6883f",2,"2025-05-06 11:36:24","CPH2583","15","OnePlus",35,"1.7.4.5","","","","198.163.150.11","unknown","Canada","CA","Manitoba","MB","Winnipeg","49.9716","-97.1515","America/Winnipeg","","MERLIN-NET"
 "2025-05-07","09281d73da33c605",1,"2025-05-07 00:41:58","M2007J3SC","12","Xiaomi",31,"1.7.4.5","","","","36.5.245.218","unknown","China","CN","Anhui","AH","Hefei","31.8564","117.2661","Asia/Shanghai","","Chinanet"
 "2025-05-06","ded0d9b082536dfd",41,"2025-05-06 23:45:33","22101316G","14","Xiaomi",34,"1.7.5.3","en","US","521099897","58.187.66.211","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
@@ -664,3 +663,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-06","3618cfb92c5ef7a6",41,"2025-05-06 21:31:26","SM-A155F","14","samsung",34,"1.7.5.2","ar","AE","726967556","82.197.61.146","unknown","unknown","SA","Mecca Region","02","Jeddah","21.4913","39.1841","","","unknown"
 "2025-05-06","5b42e812e5c0959a",41,"2025-05-06 21:31:30","SM-J730F","10","samsung",29,"1.7.5","en","US","","92.241.33.159","unknown","Jordan","JO","Amman Governorate","AM","Amman","31.9555","35.9435","Asia/Amman","","Batelco Jordan"
 "2025-05-07","a80240e789b85a7b",9,"2025-05-07 01:36:30","M2010J19CG","14","Xiaomi",34,"1.7.4.5","","","","125.167.48.140","unknown","Indonesia","ID","South Sumatra","SS","Palembang","-2.9146","104.7535","Asia/Jakarta","","PT Telekomunikasi Indonesia"
+"2025-05-06","4e2b605822045ef1",42,"2025-05-06 20:37:32","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
