@@ -675,4 +675,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-08","a543e69b54111f9f",1,"2025-05-08 07:53:11","RMX3700","15","realme",35,"1.7.5.2","zh","CN","error","180.143.100.158","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-08","ebd0e46ac8c3986c",1,"2025-05-08 07:53:42","XQ-AS72","14","Sony",34,"1.7.5.2","zh","CN","error","31.223.184.41","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","G-Core Labs S.A."
 "2025-05-08","54a558bd11451703",1,"2025-05-08 07:53:39","24129PN74C","15","Xiaomi",35,"1.7.4.5","","","","171.12.70.124","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-08","39ecd963027f88f0",2,"2025-05-08 07:54:12","23049RAD8C","15","Xiaomi",35,"1.7.5","zh","CN","","61.171.231.155","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Telecom Group"
+"2025-05-08","39ecd963027f88f0",1,"2025-05-08 07:54:10","23049RAD8C","15","Xiaomi",35,"1.7.5","zh","CN","","61.171.231.155","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Telecom Group"
