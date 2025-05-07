@@ -665,4 +665,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-07","4e2b605822045ef1",13,"2025-05-07 04:20:32","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-07","7c161a49ce78d626",46,"2025-05-07 09:21:00","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.169.97","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-06","4223b36134888672",650,"2025-05-06 23:21:03","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","2804:14c:5988:86f8:8121:92ef:ef0d:bc4d","unknown","unknown","BR","Pará","PA","Belém","-1.345","-48.4219","","","unknown"
-"2025-05-07","c0f94bf8f79f86e1",12,"2025-05-07 11:24:48","RMX3366","11","realme",30,"1.7.4.5","","","","210.157.194.200","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Rakuten Mobile Network, Inc."
+"2025-05-07","c0f94bf8f79f86e1",13,"2025-05-07 11:24:52","RMX3366","11","realme",30,"1.7.4.5","","","","210.157.194.200","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Rakuten Mobile Network, Inc."
