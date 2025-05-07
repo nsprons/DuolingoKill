@@ -675,4 +675,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-07","d15e9912ab4338e6",5,"2025-05-07 18:26:23","21061110AG","13","Xiaomi",33,"1.7.4.5","","","","200.24.133.1","unknown","Ecuador","EC","Guayas","G","Guayaquil","-2.1978","-79.8764","America/Guayaquil","","SERVITRACTOR S.A."
 "2025-05-08","c7243205a0e62ae4",1,"2025-05-08 00:28:33","RMX3834","13","realme",33,"1.7.4.5","","","","105.235.131.134","unknown","Algeria","DZ","","","","36.7642","3.1468","Africa/Algiers","","wataniya-telecom-as"
 "2025-05-08","3618cfb92c5ef7a6",3,"2025-05-08 02:32:06","SM-A155F","14","samsung",34,"1.7.5.2","ar","AE","726967556","51.39.102.58","unknown","unknown","SA","Mecca Region","02","Makkah","21.423","39.821","","","unknown"
-"2025-05-08","833d606ef4ad4f75",19,"2025-05-08 07:34:37","23127PN0CC","14","Xiaomi",34,"1.0.0.1","zh","CN","","116.253.174.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-08","833d606ef4ad4f75",20,"2025-05-08 07:35:14","23127PN0CC","14","Xiaomi",34,"1.0.0.1","zh","CN","","116.253.174.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
