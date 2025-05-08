@@ -681,7 +681,7 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-08","889f7337f0f64914",8,"2025-05-08 19:13:16","RMX3311","14","realme",34,"1.7.5.2","tr","TR","695648575","78.190.27.21","unknown","Türkiye","TR","","","","41.0214","28.9948","Europe/Istanbul","","Turk Telekom"
 "2025-05-09","5a6e09679cc0e3b6",2,"2025-05-09 00:13:49","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","a9bf1648b9aa70aa",4,"2025-05-09 00:16:24","2201122C","15","Xiaomi",35,"1.7.5.2","zh","CN","error","120.225.239.60","unknown","China","CN","Shandong","SD","Qingdao","36.061","120.3814","Asia/Shanghai","","Shandong Mobile Communication Company Limited"
-"2025-05-08","4e2b605822045ef1",47,"2025-05-08 18:17:02","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","5382717ee3973f86",1,"2025-05-09 00:17:52","PJD110","14","OnePlus",34,"1.0.0.1","zh","CN","","74.48.141.190","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","MULTA-ASN1"
 "2025-05-09","0a2c906e6ae13dc0",5,"2025-05-09 06:20:39","M2011K2C","13","Xiaomi",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","93c14722a0db38b2",1,"2025-05-09 00:21:40","Redmi K30 5G Speed","12","Xiaomi",31,"1.7.4.5","","","","24.6.106.121","unknown","United States","US","California","CA","San Mateo","37.5428","-122.2971","America/Los_Angeles","","COMCAST-7922"
+"2025-05-08","4e2b605822045ef1",48,"2025-05-08 18:22:08","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
