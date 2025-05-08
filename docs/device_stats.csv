@@ -684,5 +684,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-08","4223b36134888672",351,"2025-05-08 18:49:44","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","191.246.242.134","unknown","Brazil","BR","Pará","PA","Belém","-1.345","-48.4219","America/Belem","","Claro SA"
 "2025-05-09","9925e43c4238f4cd",2,"2025-05-09 00:52:08","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","154.239.249.115","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
 "2025-05-08","4e2b605822045ef1",59,"2025-05-08 23:52:41","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-09","653552fb6fe9142a",1,"2025-05-09 05:53:06","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
 "2025-05-08","ea5820c10b319610",3,"2025-05-08 23:53:22","TANK 3","14","OBLUE",34,"1.7.4.5","","","","37.225.43.174","unknown","Poland","PL","Łódź Voivodeship","10","Lodz","51.7541","19.5447","Europe/Warsaw","","Orange Polska Spolka Akcyjna"
+"2025-05-09","653552fb6fe9142a",2,"2025-05-09 05:53:07","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
