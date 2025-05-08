@@ -677,3 +677,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-08","24f18c96d960fba6",12,"2025-05-08 08:47:53","PJA110","13","OnePlus",33,"1.0.0.1","zh","CN","","152.70.106.67","unknown","Japan","JP","Chiba","12","Inzai","35.8184","140.1232","Asia/Tokyo","","ORACLE-BMC-31898"
 "2025-05-08","3618cfb92c5ef7a6",4,"2025-05-08 03:54:10","SM-A155F","14","samsung",34,"1.7.5.2","ar","AE","726967556","51.39.102.58","unknown","unknown","SA","Mecca Region","02","Makkah","21.423","39.821","","","unknown"
 "2025-05-07","4223b36134888672",795,"2025-05-07 21:58:37","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","191.246.250.224","unknown","Brazil","BR","Pará","PA","Belém","-1.345","-48.4219","America/Belem","","Claro SA"
+"2025-05-08","70aecf46ea4b161c",1,"2025-05-08 08:58:57","2410CRP4CC","15","Xiaomi",35,"1.7.4.5","","","","182.142.108.212","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
