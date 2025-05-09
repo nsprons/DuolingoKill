@@ -672,7 +672,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","833d606ef4ad4f75",6,"2025-05-10 03:03:39","23127PN0CC","14","Xiaomi",34,"1.0.0.1","zh","CN","","116.253.75.182","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-10","5a6e09679cc0e3b6",10,"2025-05-10 03:09:32","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","1f8fcc30013d9d04",25,"2025-05-09 22:14:53","SM-A325F","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
-"2025-05-09","4e2b605822045ef1",53,"2025-05-09 21:17:04","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-10","ded0d9b082536dfd",6,"2025-05-10 02:17:20","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","42.118.48.185","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
 "2025-05-09","0000000000000000",14,"2025-05-09 22:19:47","fYPpmrkqK","13","Xiaomi",33,"1.7.5.1","en","US","","102.17.120.19","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
 "2025-05-10","d756375c547a53b1",4,"2025-05-10 03:25:23","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"1.0.0.1","zh","CN","","124.227.44.150","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
@@ -690,3 +689,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","653552fb6fe9142a",11,"2025-05-10 03:53:49","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
 "2025-05-10","88e9b79462a76951",14,"2025-05-10 03:54:58","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.48","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-10","a80240e789b85a7b",12,"2025-05-10 02:55:41","M2010J19CG","14","Xiaomi",34,"1.7.4.5","","","","114.10.99.219","unknown","Indonesia","ID","South Sumatra","SS","Palembang","-2.9146","104.7535","Asia/Jakarta","","INDOSAT Internet Network Provider"
+"2025-05-09","4e2b605822045ef1",54,"2025-05-09 21:56:20","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
