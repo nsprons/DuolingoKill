@@ -689,3 +689,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","dc9f9f6ecb09ce08",1,"2025-05-09 22:46:04","SM-S9180","15","samsung",35,"1.7.5","zh","CN","","188.253.117.48","unknown","Taiwan","TW","","","","24.0","121.0","Asia/Taipei","","Akari Networks"
 "2025-05-09","e0e682dc6982d90e",15,"2025-05-09 22:46:56","IN2020","15","OnePlus",35,"1.7.5.2","en","US","626810816","18.141.166.112","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
 "2025-05-09","4e2b605822045ef1",42,"2025-05-09 16:46:59","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
+"2025-05-09","2088430dea4b1190",1,"2025-05-09 22:49:53","23013RK75C","15","Xiaomi",35,"1.7.5","zh","CN","","18.141.247.237","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
