@@ -442,7 +442,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-08","24f224588d28746f",6,"2025-05-08 17:14:46","PJD110","14","OnePlus",34,"1.7.5","zh","CN","","39.144.111.223","unknown","China","CN","Shandong","SD","","36.1155","120.3024","Asia/Shanghai","","Shandong Mobile Communication Company Limited"
 "2025-05-08","cf47a6fb6648ad1b",2,"2025-05-08 18:06:37","LM-V405","15","LGE",35,"1.7.4.5","","","","175.13.30.37","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-08","24889b8f289cf40e",4,"2025-05-08 12:30:17","2312DRA50G","15","Xiaomi",35,"1.7.5.1","en","US","","94.254.231.28","unknown","Poland","PL","Mazovia","14","","52.2575","21.0133","Europe/Warsaw","","Play"
-"2025-05-08","75c5e45225083407",15,"2025-05-08 13:47:32","2211133G","15","Xiaomi",35,"1.7.4.4","","","","84.17.86.4","unknown","Türkiye","TR","","","","41.0214","28.9948","Europe/Istanbul","",""
 "2025-05-08","e241dec6afbc841a",2,"2025-05-08 18:54:33","2211133C","15","Xiaomi",35,"1.0.0.1","zh","CN","","1.65.218.187","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","HKT Limited"
 "2025-05-08","7486f6cf85bf2324",1,"2025-05-08 19:43:48","PJZ110","15","OnePlus",35,"1.7.4.5","","","","120.197.101.125","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Mobile communications corporation"
 "2025-05-08","72ebe6fc6c56bafb",4,"2025-05-08 19:51:34","PJF110","15","OnePlus",35,"1.0.0.1","zh","CN","","183.35.8.82","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
@@ -690,3 +689,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","4e2b605822045ef1",57,"2025-05-09 22:56:41","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","044c91edfff541b9",9,"2025-05-09 23:58:17","M2012K11AG","15","Xiaomi",35,"1.0.0.1","en","GB","","84.248.229.83","unknown","Finland","FI","Southwest Finland","19","Turku","60.4487","22.2704","Europe/Helsinki","","Telia Finland Oyj"
 "2025-05-09","77ca10f3531dd5a4",12,"2025-05-09 17:58:30","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","177.79.102.241","unknown","Brazil","BR","São Paulo","SP","Campinas","-22.895","-47.0439","America/Sao_Paulo","","TELEFONICA BRASIL S.A"
+"2025-05-10","75c5e45225083407",1,"2025-05-10 00:00:04","2211133G","15","Xiaomi",35,"1.7.4.4","","","","88.237.198.229","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0145","28.9533","Europe/Istanbul","","Turk Telekom"
