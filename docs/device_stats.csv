@@ -675,7 +675,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","5a6e09679cc0e3b6",31,"2025-05-09 14:39:50","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.153.148.210","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","2352e19e23a1286d",19,"2025-05-09 14:44:55","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","104.28.156.216","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","CLOUDFLARENET"
 "2025-05-09","a90f1a74dc295103",4,"2025-05-09 14:47:54","M2102J2SC","13","Xiaomi",33,"1.0.0.1","zh","CN","","222.92.182.146","unknown","China","CN","Jiangsu","JS","Suzhou","31.3093","120.602","Asia/Shanghai","","Chinanet"
-"2025-05-09","4e2b605822045ef1",20,"2025-05-09 08:55:57","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","5b42e812e5c0959a",11,"2025-05-09 09:59:10","SM-J730F","10","samsung",29,"1.7.5","en","US","","92.241.33.159","unknown","Jordan","JO","Amman Governorate","AM","Amman","31.9555","35.9435","Asia/Amman","","Batelco Jordan"
 "2025-05-09","bee2a64c84827e29",2,"2025-05-09 15:00:35","Pixel 5","13","Google",33,"1.7.4.5","","","","58.59.212.183","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","dd6cc9aac008f3ff",4,"2025-05-09 15:01:23","M2011K2C","14","Xiaomi",34,"1.7.5.1","zh","CN","","93.179.114.46","unknown","United States","US","California","CA","Los Angeles","34.0726","-118.261","America/Los_Angeles","","IT7NET"
@@ -688,3 +687,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","df9d613d9b98b47f",6,"2025-05-09 09:10:50","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.200","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-09","c04da3c3971acfc7",7,"2025-05-09 15:11:19","M2012K11AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","113.78.196.137","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
 "2025-05-09","11b933a16ef75786",6,"2025-05-09 02:15:19","moto g85 5G","14","motorola",34,"1.0.0.1","en","US","","191.102.198.150","unknown","Colombia","CO","Antioquia","ANT","Medellín","6.2529","-75.5646","America/Bogota","","DIRECTV COLOMBIA LTDA."
+"2025-05-09","4e2b605822045ef1",21,"2025-05-09 09:17:02","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
