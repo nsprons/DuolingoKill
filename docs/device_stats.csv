@@ -675,7 +675,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","b75429cdbc1f33fe",12,"2025-05-09 13:13:03","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-10","a80240e789b85a7b",1,"2025-05-10 00:18:23","M2010J19CG","14","Xiaomi",34,"1.7.4.5","","","","114.10.99.154","unknown","Indonesia","ID","South Sumatra","SS","Palembang","-2.9146","104.7535","Asia/Jakarta","","INDOSAT Internet Network Provider"
 "2025-05-10","5f86a6f214858e7a",2,"2025-05-10 01:18:28","V2243A","15","vivo",35,"1.0.0.0","zh","CN","error","110.53.234.57","unknown","China","CN","Hunan","HN","Yongzhou","26.4203","111.6065","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
-"2025-05-09","4e2b605822045ef1",49,"2025-05-09 19:20:03","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-10","d756375c547a53b1",2,"2025-05-10 01:20:43","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"1.0.0.1","zh","CN","","124.227.44.150","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-10","f43acb410bda7d55",3,"2025-05-10 01:22:39","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","1.164.114.20","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
 "2025-05-10","5ee0212f42e8a5c0",5,"2025-05-10 01:23:33","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","36.45.243.4","unknown","China","CN","Shaanxi","SN","Weinan","34.5025","109.5145","Asia/Shanghai","","Chinanet"
@@ -690,3 +689,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","c650a577f8eba164",9,"2025-05-09 18:40:24","SM-A515F","13","samsung",33,"1.0.0.1","en","US","","41.249.194.176","unknown","Morocco","MA","El-Jadida","JDI","El Jadida","33.2558","-8.5015","Africa/Casablanca","","MT-MPLS"
 "2025-05-09","5e9278cb1a6a8768",4,"2025-05-09 10:44:41","23049PCD8G","14","Xiaomi",34,"1.0.0.1","es","US","","189.182.28.21","unknown","Mexico","MX","Nayarit","NAY","Compostela","21.1423","-105.0742","America/Mazatlan","","UNINET"
 "2025-05-09","b18abdc4fd6ca230",13,"2025-05-09 22:47:48","ZS661KS","12","asus",31,"1.7.5.2","ru","RU","error","46.20.194.142","unknown","Tajikistan","TJ","","","","39.0015","71.0042","Asia/Dushanbe","","LLC Babilon-T"
+"2025-05-09","4e2b605822045ef1",50,"2025-05-09 19:53:21","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
