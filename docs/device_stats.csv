@@ -687,4 +687,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","4e2b605822045ef1",18,"2025-05-09 07:55:50","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","2bed6744416903b0",12,"2025-05-09 13:57:13","21051182C","13","Xiaomi",33,"1.7.4.5","","","","103.151.173.197","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","IKUUU NETWORK LTD"
 "2025-05-09","e3d63f6772c7637e",22,"2025-05-09 13:57:50","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","3.112.26.101","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
-"2025-05-09","8bc78664c1835a1a",11,"2025-05-09 13:57:51","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","220.205.232.235","unknown","China","CN","Anhui","AH","Bengbu","32.9422","117.3647","Asia/Shanghai","","UNICOM AnHui province network"
+"2025-05-09","8bc78664c1835a1a",12,"2025-05-09 13:57:53","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","220.205.232.235","unknown","China","CN","Anhui","AH","Bengbu","32.9422","117.3647","Asia/Shanghai","","UNICOM AnHui province network"
