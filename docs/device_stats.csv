@@ -669,7 +669,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","833d606ef4ad4f75",16,"2025-05-09 08:14:10","23127PN0CC","14","Xiaomi",34,"1.0.0.1","zh","CN","","116.253.174.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","992deb1d54e302c2",6,"2025-05-09 08:15:26","22081212C","15","Xiaomi",35,"1.0.0.1","zh","CN","","27.149.122.203","unknown","China","CN","Fujian","FJ","Longyan","25.0694","117.0127","Asia/Shanghai","","Chinanet"
 "2025-05-09","3c52baec1f77f0df",13,"2025-05-09 08:19:57","22011211C","14","Xiaomi",34,"1.7.4.5","","","","102.134.52.124","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","XNNET"
-"2025-05-09","718d047186e69eeb",2,"2025-05-09 08:22:29","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.139.231.227","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","4d7969ed390f715b",1,"2025-05-09 08:23:19","M2007J3SY","14","Xiaomi",34,"1.7.5.2","zh","TW","1758936425","223.137.190.241","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Mobile Business Group"
 "2025-05-09","00793426bd84d50d",2,"2025-05-09 08:25:03","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","1.162.191.79","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Data Communication Business Group"
 "2025-05-09","66f956d00913491d",2,"2025-05-09 08:27:35","PJE110","15","OnePlus",35,"1.7.5.2","zh","CN","error","111.183.73.176","unknown","China","CN","Hubei","HB","Wuhan","30.589","114.2681","Asia/Shanghai","","CHINATELECOM Hubei province Shengji 5G network"
@@ -687,3 +686,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","4e2b605822045ef1",8,"2025-05-09 02:52:49","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","91ea8cda28a37010",5,"2025-05-09 08:54:40","23054RA19C","15","Xiaomi",35,"1.7.4.4","","","","14.154.189.126","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-09","5a6e09679cc0e3b6",20,"2025-05-09 08:54:40","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-09","718d047186e69eeb",4,"2025-05-09 08:57:39","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.139.231.227","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
