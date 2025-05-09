@@ -690,4 +690,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","e9879da508480b27",1,"2025-05-10 00:00:51","M2102J20SG","14","Xiaomi",34,"1.0.0.1","en","GB","","80.239.189.48","unknown","Germany","DE","Hesse","HE","Frankfurt am Main","50.1189","8.6921","Europe/Berlin","","Arelion Sweden AB"
 "2025-05-10","040ce0d346fafff5",2,"2025-05-10 06:00:55","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","1025244416","14.146.21.210","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-10","4e2b605822045ef1",1,"2025-05-10 00:05:17","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-10","4bf2a1f03cbe7045",2,"2025-05-10 00:06:44","2210132G","15","Xiaomi",35,"1.0.0.1","en","GB","","193.42.99.233","unknown","Poland","PL","Mazovia","14","Warsaw","52.2296","21.0067","Europe/Warsaw","","TEFINCOM S.A."
+"2025-05-10","4bf2a1f03cbe7045",3,"2025-05-10 00:07:01","2210132G","15","Xiaomi",35,"1.0.0.1","en","GB","","193.42.99.233","unknown","Poland","PL","Mazovia","14","Warsaw","52.2296","21.0067","Europe/Warsaw","","TEFINCOM S.A."
