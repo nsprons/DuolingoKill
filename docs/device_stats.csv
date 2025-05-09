@@ -648,7 +648,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","92049df31c696699",50,"2025-05-09 21:32:26","S6","11","EEBBK",30,"1.7.5.1","zh","CN","1717785953","8.212.46.16","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","Alibaba US Technology Co., Ltd."
 "2025-05-09","77ca10f3531dd5a4",7,"2025-05-09 10:33:49","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-09","ce929cda0518469d",44,"2025-05-09 21:36:08","2211133C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","45.149.92.22","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","WAP.AC LTD"
-"2025-05-09","4e2b605822045ef1",40,"2025-05-09 15:36:25","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","25eeb7ae86f9e92d",3,"2025-05-09 16:41:53","Mi 10","11","Xiaomi",30,"1.7.4.5","","","","197.59.73.14","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","TE Data"
 "2025-05-09","daa917a4c9e73b88",5,"2025-05-09 21:44:16","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","141.11.131.80","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","IPXO"
 "2025-05-09","b2cf5ad036aba98a",2,"2025-05-09 21:44:40","PGP110","15","OnePlus",35,"1.7.5.1","zh","CN","error","182.32.56.181","unknown","China","CN","Shandong","SD","Dezhou","37.4454","116.3429","Asia/Shanghai","","Chinanet"
@@ -689,3 +688,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","f43acb410bda7d55",12,"2025-05-09 22:45:48","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","1.164.114.20","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
 "2025-05-09","dc9f9f6ecb09ce08",1,"2025-05-09 22:46:04","SM-S9180","15","samsung",35,"1.7.5","zh","CN","","188.253.117.48","unknown","Taiwan","TW","","","","24.0","121.0","Asia/Taipei","","Akari Networks"
 "2025-05-09","e0e682dc6982d90e",15,"2025-05-09 22:46:56","IN2020","15","OnePlus",35,"1.7.5.2","en","US","626810816","18.141.166.112","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
+"2025-05-09","4e2b605822045ef1",42,"2025-05-09 16:46:59","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
