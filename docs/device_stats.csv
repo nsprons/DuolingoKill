@@ -673,7 +673,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","ef3451876f8273e6",4,"2025-05-09 08:36:53","2211133C","15","Xiaomi",35,"1.7.4.5","","","","211.90.236.254","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-09","c9caf8819b491cdb",6,"2025-05-09 08:38:28","Mi 10 Pro","13","Xiaomi",33,"1.7.4.4","","","","101.249.169.224","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","ce929cda0518469d",8,"2025-05-09 08:40:29","2211133C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
-"2025-05-09","4e2b605822045ef1",8,"2025-05-09 02:52:49","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","5a6e09679cc0e3b6",20,"2025-05-09 08:54:40","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","718d047186e69eeb",3,"2025-05-09 08:57:37","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.139.231.227","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","5b42e812e5c0959a",5,"2025-05-09 03:59:05","SM-J730F","10","samsung",29,"1.7.5","en","US","","92.241.33.159","unknown","Jordan","JO","Amman Governorate","AM","Amman","31.9555","35.9435","Asia/Amman","","Batelco Jordan"
@@ -687,3 +686,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","5ee0212f42e8a5c0",8,"2025-05-09 09:10:26","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","36.45.243.4","unknown","China","CN","Shaanxi","SN","Weinan","34.5025","109.5145","Asia/Shanghai","","Chinanet"
 "2025-05-09","11bdbc9713c7de35",2,"2025-05-09 09:12:14","SM-G9980","11","samsung",30,"1.7.5.2","zh","CN","1720605687","118.79.109.94","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-09","229ba7308b0ecf94",6,"2025-05-09 09:13:16","23127PN0CC","15","Xiaomi",35,"1.7.5","zh","CN","","14.154.189.126","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
+"2025-05-09","4e2b605822045ef1",9,"2025-05-09 03:15:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
