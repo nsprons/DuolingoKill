@@ -666,7 +666,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","5ee0212f42e8a5c0",8,"2025-05-09 09:10:26","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","36.45.243.4","unknown","China","CN","Shaanxi","SN","Weinan","34.5025","109.5145","Asia/Shanghai","","Chinanet"
 "2025-05-09","11bdbc9713c7de35",2,"2025-05-09 09:12:14","SM-G9980","11","samsung",30,"1.7.5.2","zh","CN","1720605687","118.79.109.94","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-09","229ba7308b0ecf94",6,"2025-05-09 09:13:16","23127PN0CC","15","Xiaomi",35,"1.7.5","zh","CN","","14.154.189.126","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
-"2025-05-09","4e2b605822045ef1",9,"2025-05-09 03:15:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-09","5bb49f94b89b9da7",2,"2025-05-09 09:19:38","PJD110","15","OnePlus",35,"1.7.5.1","zh","CN","error","36.98.109.101","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","Chinanet"
 "2025-05-08","4223b36134888672",390,"2025-05-08 22:19:48","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","177.65.180.146","unknown","Brazil","BR","Pará","PA","Belém","-1.4537","-48.5078","America/Belem","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-09","3c52baec1f77f0df",14,"2025-05-09 09:21:32","22011211C","14","Xiaomi",34,"1.7.4.5","","","","102.134.52.124","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","XNNET"
@@ -687,3 +686,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","dd6cc9aac008f3ff",2,"2025-05-09 09:46:43","M2011K2C","14","Xiaomi",34,"1.7.5.1","zh","CN","","93.179.114.46","unknown","United States","US","California","CA","Los Angeles","34.0726","-118.261","America/Los_Angeles","","IT7NET"
 "2025-05-09","9d5f928f509be296",4,"2025-05-09 09:48:26","2211133C","14","Xiaomi",34,"1.0.0.1","zh","SG","","124.226.157.15","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","27a611e813775a16",1,"2025-05-09 02:53:24","Pixel 9 Pro XL","14","Google",34,"1.7.4.5","","","","160.178.1.38","unknown","Morocco","MA","Agadir-Ida-ou-Tnan","AGD","Agadir","30.4201","-9.5912","Africa/Casablanca","","MT-MPLS"
+"2025-05-09","4e2b605822045ef1",10,"2025-05-09 03:53:32","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
