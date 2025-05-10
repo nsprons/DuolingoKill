@@ -690,7 +690,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-11","87065064636954a0",1,"2025-05-11 03:10:04","PGP110","13","OnePlus",33,"1.7.4.5","","","","112.94.166.222","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-10","889f7337f0f64914",10,"2025-05-10 22:12:05","RMX3311","14","realme",34,"1.0.0.1","tr","TR","","78.190.27.21","unknown","Türkiye","TR","","","","41.0214","28.9948","Europe/Istanbul","","Turk Telekom"
 "2025-05-11","ded0d9b082536dfd",3,"2025-05-11 02:17:43","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","113.23.104.229","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","FPT Telecom Company"
-"2025-05-10","4e2b605822045ef1",37,"2025-05-10 21:18:53","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-11","bb4071acc72407f8",7,"2025-05-11 03:19:48","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","39.144.147.83","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Mobile Communications Group Co., Ltd."
 "2025-05-10","c650a577f8eba164",10,"2025-05-10 20:22:08","SM-A515F","13","samsung",33,"1.0.0.1","en","US","","196.65.27.209","unknown","Morocco","MA","El-Jadida","JDI","El Jadida","33.2558","-8.5015","Africa/Casablanca","","MT-MPLS"
 "2025-05-11","b18abdc4fd6ca230",1,"2025-05-11 00:25:22","ZS661KS","12","asus",31,"1.7.5.2","ru","RU","error","46.20.194.142","unknown","Tajikistan","TJ","","","","39.0015","71.0042","Asia/Dushanbe","","LLC Babilon-T"
@@ -700,3 +699,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","e9879da508480b27",12,"2025-05-10 21:30:42","M2102J20SG","14","Xiaomi",34,"1.0.0.1","en","GB","","45.156.240.107","unknown","Austria","AT","","","","48.2048","16.3801","Europe/Vienna","","TIMEWARP IT Consulting GmbH"
 "2025-05-11","5a6e09679cc0e3b6",8,"2025-05-11 03:33:03","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-11","f43acb410bda7d55",6,"2025-05-11 03:34:42","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","1.164.119.143","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
+"2025-05-10","4e2b605822045ef1",38,"2025-05-10 21:36:46","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
