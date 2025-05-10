@@ -690,4 +690,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","741180d6cb9b9201",11,"2025-05-10 11:10:32","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","64.176.37.248","unknown","Japan","JP","Ōsaka","27","Osaka","34.6837","135.5236","Asia/Tokyo","","AS-CHOOPA"
 "2025-05-10","e0e682dc6982d90e",6,"2025-05-10 11:14:47","IN2020","15","OnePlus",35,"1.7.5.2","en","US","626810816","18.141.166.112","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
 "2025-05-10","4d7969ed390f715b",1,"2025-05-10 11:14:54","M2007J3SY","14","Xiaomi",34,"1.7.5.2","zh","TW","1758936425","59.102.245.42","unknown","Taiwan","TW","Hsinchu County","HSZ","Zhubei","24.8351","121.0056","Asia/Taipei","","TBC"
-"2025-05-10","5a6e09679cc0e3b6",11,"2025-05-10 11:19:29","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-10","5a6e09679cc0e3b6",12,"2025-05-10 11:19:57","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
