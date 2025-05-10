@@ -493,7 +493,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-09","bee2a64c84827e29",2,"2025-05-09 15:00:35","Pixel 5","13","Google",33,"1.7.4.5","","","","58.59.212.183","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","3c8e66f29ce3b992",3,"2025-05-09 16:06:05","CPH2691","15","OnePlus",35,"1.7.4.5","","","","212.87.193.59","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","Akari Networks"
 "2025-05-09","8e33365f004215dc",1,"2025-05-09 16:32:45","CPH2653","15","OnePlus",35,"1.7.4.5","","","","113.84.210.2","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
-"2025-05-09","2f699d911785e0d8",1,"2025-05-09 16:38:26","ALN-AL00","12","HUAWEI",31,"1.7.4.5","","","","58.211.111.2","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","b62de823bf62da3b",10,"2025-05-09 14:49:50","Redmi K20 Pro","15","Xiaomi",35,"1.7.5.2","en","US","1758834721","223.185.202.12","unknown","unknown","IN","Tamil Nadu","TN","Chennai","13.0895","80.2739","","","unknown"
 "2025-05-09","2c48da33a0a0a6ac",2,"2025-05-09 18:01:01","V2307A","15","vivo",35,"1.7.5.1","zh","CN","error","14.31.17.159","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-09","8b3f7d4a51f3806f",2,"2025-05-09 18:05:19","22041211AC","13","Xiaomi",33,"1.7.4.5","","","","116.178.222.94","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
@@ -696,3 +695,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","f1e8367c25be8b17",29,"2025-05-10 18:56:49","M2011K2C","14","Xiaomi",34,"1.0.0.1","zh","CN","error","113.205.104.11","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-10","a197d92e5c4389fb",49,"2025-05-10 18:59:06","Pixel 6","15","Google",35,"1.0.0.1","zh","CN","","134.199.213.122","unknown","United States","US","","","","37.751","-97.822","America/Chicago","",""
 "2025-05-10","f024c9164e7e4acb",3,"2025-05-10 18:59:14","PKR110","15","OnePlus",35,"1.0.0.1","zh","CN","","192.124.176.147","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","ASNET"
+"2025-05-10","2f699d911785e0d8",6,"2025-05-10 19:00:06","ALN-AL00","12","HUAWEI",31,"1.7.4.5","","","","94.177.131.208","unknown","Japan","JP","Tokyo","13","Tokyo","35.6289","139.7915","Asia/Tokyo","","G-Core Labs S.A."
