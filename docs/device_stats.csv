@@ -694,5 +694,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","e3d63f6772c7637e",187,"2025-05-10 19:14:57","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","112.96.170.112","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-10","346a4758dcf12e85",4,"2025-05-10 19:15:33","23127PN0CC","15","Xiaomi",35,"1.0.0.1","zh","CN","","104.249.174.125","unknown","United States","US","Washington","WA","Seattle","47.6144","-122.3447","America/Los_Angeles","","Brain PEACE Science Foundation, Inc."
 "2025-05-10","93c14722a0db38b2",2,"2025-05-10 19:16:13","Redmi K30 5G Speed","12","Xiaomi",31,"1.7.4.5","","","","24.6.106.121","unknown","United States","US","California","CA","San Mateo","37.5428","-122.2971","America/Los_Angeles","","COMCAST-7922"
-"2025-05-10","4e2b605822045ef1",22,"2025-05-10 13:16:31","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-10","00793426bd84d50d",26,"2025-05-10 19:17:55","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","101.82.77.65","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
+"2025-05-10","4e2b605822045ef1",23,"2025-05-10 13:18:44","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
