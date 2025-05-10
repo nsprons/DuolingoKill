@@ -698,5 +698,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","889f7337f0f64914",10,"2025-05-10 22:12:05","RMX3311","14","realme",34,"1.0.0.1","tr","TR","","78.190.27.21","unknown","Türkiye","TR","","","","41.0214","28.9948","Europe/Istanbul","","Turk Telekom"
 "2025-05-11","ded0d9b082536dfd",3,"2025-05-11 02:17:43","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","113.23.104.229","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","FPT Telecom Company"
 "2025-05-10","4e2b605822045ef1",37,"2025-05-10 21:18:53","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-11","5a6e09679cc0e3b6",6,"2025-05-11 03:19:33","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-11","bb4071acc72407f8",7,"2025-05-11 03:19:48","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","39.144.147.83","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Mobile Communications Group Co., Ltd."
+"2025-05-11","5a6e09679cc0e3b6",7,"2025-05-11 03:20:21","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
