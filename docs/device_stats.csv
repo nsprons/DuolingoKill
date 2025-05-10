@@ -698,5 +698,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-11","88e9b79462a76951",3,"2025-05-11 01:11:53","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.48","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-11","741180d6cb9b9201",3,"2025-05-11 01:14:37","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","118.81.143.6","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-11","ded0d9b082536dfd",1,"2025-05-11 00:16:10","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","113.23.104.229","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","FPT Telecom Company"
-"2025-05-10","4e2b605822045ef1",31,"2025-05-10 19:16:20","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-11","232a4f7ddd3cea4b",1,"2025-05-11 01:16:22","PJX110","15","OnePlus",35,"1.7.4.5","","","","74.48.44.44","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","MULTA-ASN1"
+"2025-05-10","4e2b605822045ef1",32,"2025-05-10 19:16:53","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
