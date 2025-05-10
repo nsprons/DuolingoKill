@@ -611,7 +611,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","45393b9d31dd9c37",2,"2025-05-10 22:10:57","MEIZU 20","14","meizu",34,"1.7.4.5","","","","13.230.253.175","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-10","73756499124770cf",8,"2025-05-10 22:12:09","23049RAD8C","14","Xiaomi",34,"1.7.4.5","","","","171.82.57.49","unknown","China","CN","Hubei","HB","Wuhan","30.589","114.2681","Asia/Shanghai","","Chinanet"
 "2025-05-10","e0e682dc6982d90e",21,"2025-05-10 22:12:35","IN2020","15","OnePlus",35,"1.7.5.2","en","US","626810816","18.141.166.112","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
-"2025-05-10","4e2b605822045ef1",27,"2025-05-10 16:17:33","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-10","e3d63f6772c7637e",218,"2025-05-10 22:21:18","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","13.231.174.127","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-10","c4ad17ea16685f76",1,"2025-05-10 22:22:34","M2007J3SG","15","Xiaomi",35,"1.7.5","en","US","","212.102.38.112","unknown","Czechia","CZ","Prague","10","Prague","50.0883","14.4124","Europe/Prague","","Datacamp Limited"
 "2025-05-10","269381cc68288c6d",8,"2025-05-10 22:22:58","MI 8","13","Xiaomi",33,"1.7.4.5","","","","119.143.165.61","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","Chinanet"
@@ -700,3 +699,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-11","88e9b79462a76951",3,"2025-05-11 01:11:53","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.48","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-11","741180d6cb9b9201",3,"2025-05-11 01:14:37","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","118.81.143.6","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-11","ded0d9b082536dfd",1,"2025-05-11 00:16:10","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","113.23.104.229","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","FPT Telecom Company"
+"2025-05-10","4e2b605822045ef1",31,"2025-05-10 19:16:20","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
