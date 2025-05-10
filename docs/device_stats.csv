@@ -695,4 +695,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","a197d92e5c4389fb",49,"2025-05-10 18:59:06","Pixel 6","15","Google",35,"1.0.0.1","zh","CN","","134.199.213.122","unknown","United States","US","","","","37.751","-97.822","America/Chicago","",""
 "2025-05-10","f024c9164e7e4acb",3,"2025-05-10 18:59:14","PKR110","15","OnePlus",35,"1.0.0.1","zh","CN","","192.124.176.147","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","ASNET"
 "2025-05-10","2f699d911785e0d8",6,"2025-05-10 19:00:06","ALN-AL00","12","HUAWEI",31,"1.7.4.5","","","","94.177.131.208","unknown","Japan","JP","Tokyo","13","Tokyo","35.6289","139.7915","Asia/Tokyo","","G-Core Labs S.A."
-"2025-05-10","7f490a26ce49dc5a",7,"2025-05-10 19:00:16","23054RA19C","15","Xiaomi",35,"1.7.4.5","","","","212.87.194.76","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","Akari Networks"
+"2025-05-10","7f490a26ce49dc5a",8,"2025-05-10 19:00:19","23054RA19C","15","Xiaomi",35,"1.7.4.5","","","","212.87.194.76","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","Akari Networks"
