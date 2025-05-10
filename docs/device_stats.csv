@@ -695,4 +695,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","1a0cd074beb9aa8f",3,"2025-05-10 19:42:18","PKR110","15","OnePlus",35,"1.7.4.5","","","","193.122.124.47","unknown","South Korea","KR","Seoul","11","Seoul","37.545","126.8078","Asia/Seoul","","ORACLE-BMC-31898"
 "2025-05-10","ef3451876f8273e6",3,"2025-05-10 19:42:18","2211133C","15","Xiaomi",35,"1.7.4.5","","","","115.198.88.5","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","Chinanet"
 "2025-05-10","bbcbc0e94aab4ea0",6,"2025-05-10 19:43:15","PJX110","15","OnePlus",35,"1.7.5.2","zh","CN","1705710919","8.223.13.202","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","",""
-"2025-05-10","ebd0e46ac8c3986c",7,"2025-05-10 19:43:38","XQ-AS72","14","Sony",34,"1.7.5.2","zh","CN","error","31.223.184.200","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","G-Core Labs S.A."
+"2025-05-10","ebd0e46ac8c3986c",8,"2025-05-10 19:44:13","XQ-AS72","14","Sony",34,"1.7.5.2","zh","CN","error","31.223.184.200","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","G-Core Labs S.A."
