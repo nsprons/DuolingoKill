@@ -685,7 +685,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-10","b18abdc4fd6ca230",8,"2025-05-10 22:29:16","ZS661KS","12","asus",31,"1.7.5.2","ru","RU","error","46.20.194.142","unknown","Tajikistan","TJ","","","","39.0015","71.0042","Asia/Dushanbe","","LLC Babilon-T"
 "2025-05-10","27a611e813775a16",2,"2025-05-10 18:34:19","Pixel 9 Pro XL","14","Google",34,"1.7.4.5","","","","160.178.7.140","unknown","Morocco","MA","Agadir-Ida-ou-Tnan","AGD","Agadir","30.4201","-9.5912","Africa/Casablanca","","MT-MPLS"
 "2025-05-10","df9d613d9b98b47f",27,"2025-05-10 19:35:30","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.228","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
-"2025-05-10","4e2b605822045ef1",34,"2025-05-10 19:37:29","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-11","3c52baec1f77f0df",3,"2025-05-11 01:38:47","22011211C","14","Xiaomi",34,"1.7.4.5","","","","147.182.241.144","unknown","United States","US","California","CA","Santa Clara","37.3931","-121.962","America/Los_Angeles","","DIGITALOCEAN-ASN"
 "2025-05-10","1f8fcc30013d9d04",5,"2025-05-10 20:39:31","SM-A325F","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
 "2025-05-10","77ca10f3531dd5a4",14,"2025-05-10 14:41:26","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
@@ -700,3 +699,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-11","5a6e09679cc0e3b6",3,"2025-05-11 02:06:18","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-10","b75429cdbc1f33fe",19,"2025-05-10 14:10:44","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-10","4bf2a1f03cbe7045",8,"2025-05-10 20:12:09","2210132G","15","Xiaomi",35,"1.0.0.1","en","GB","","193.42.99.242","unknown","Poland","PL","Mazovia","14","Warsaw","52.2296","21.0067","Europe/Warsaw","","TEFINCOM S.A."
+"2025-05-10","4e2b605822045ef1",35,"2025-05-10 20:13:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
