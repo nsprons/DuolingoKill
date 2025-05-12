@@ -704,4 +704,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","5a6e09679cc0e3b6",50,"2025-05-12 23:15:08","SM-S9210","14","samsung",34,"1.7.5","en","US","","104.28.217.42","unknown","unknown","US","Kansas","KS","Wichita","37.6901","-97.3404","","","unknown"
 "2025-05-12","9925e43c4238f4cd",35,"2025-05-12 18:18:42","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","156.202.108.185","unknown","Egypt","EG","Red Sea","BA","Hurghada","27.2572","33.821","Africa/Cairo","","TE Data"
 "2025-05-12","00793426bd84d50d",31,"2025-05-12 23:19:01","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","101.82.77.65","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
-"2025-05-12","c2c7b69d35dd2aa1",13,"2025-05-12 23:18:57","MI 6X","11","Xiaomi",30,"1.7.5.2","zh","CN","error","171.106.117.63","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-12","c2c7b69d35dd2aa1",14,"2025-05-12 23:19:19","MI 6X","11","Xiaomi",30,"1.7.5.2","zh","CN","error","171.106.117.63","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
