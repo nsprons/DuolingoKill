@@ -702,4 +702,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","80c0c50f21549cbe",1,"2025-05-12 19:19:40","PKR110","15","OnePlus",35,"1.7.4.5","","","","199.15.78.87","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","JINX CO., LIMITED"
 "2025-05-12","e3d63f6772c7637e",150,"2025-05-12 19:21:19","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","112.96.170.22","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-12","4e2b605822045ef1",21,"2025-05-12 13:22:50","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-12","bb9ae4a36dc1be6d",2,"2025-05-12 19:24:25","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","117.83.203.141","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-12","bb9ae4a36dc1be6d",3,"2025-05-12 19:24:41","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","117.83.203.141","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
