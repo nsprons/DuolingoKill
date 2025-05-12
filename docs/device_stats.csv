@@ -685,7 +685,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","2e72bf8c8f28379e",13,"2025-05-12 11:59:46","SM-A146M","14","samsung",34,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
 "2025-05-13","71e6e9b31a485500",2,"2025-05-13 07:00:07","M2101K9C","13","Xiaomi",33,"1.7.4.4","","","","41.196.0.124","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","LINKdotNET"
 "2025-05-13","ef3e685e1ae77913",2,"2025-05-13 01:00:18","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","39.144.147.68","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Mobile Communications Group Co., Ltd."
-"2025-05-12","4e2b605822045ef1",39,"2025-05-12 19:02:01","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-12","4801a551504dda2e",1,"2025-05-12 20:02:47","Redmi Note 8","13","Xiaomi",33,"1.0.0.1","en","US","","102.17.119.29","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
 "2025-05-13","718d047186e69eeb",3,"2025-05-13 01:02:18","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","113.15.253.204","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-13","3c52baec1f77f0df",2,"2025-05-13 01:09:07","22011211C","14","Xiaomi",34,"1.7.4.5","","","","23.27.183.11","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","EGIHOSTING"
@@ -707,3 +706,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","7c161a49ce78d626",2,"2025-05-13 00:33:28","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.169.97","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-13","3b09ec7c1ddb23b2",1,"2025-05-13 00:33:33","SM-S908B","14","samsung",34,"1.0.0.1","en","US","","180.246.248.122","unknown","Indonesia","ID","East Java","JI","Surabaya","-7.2484","112.7419","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-13","ce989c32372d4dbf",1,"2025-05-13 01:34:02","2106118C","14","Xiaomi",34,"1.0.0.1","zh","CN","","8.219.42.142","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","Alibaba US Technology Co., Ltd."
+"2025-05-12","4e2b605822045ef1",40,"2025-05-12 19:35:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
