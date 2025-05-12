@@ -710,4 +710,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","4e2b605822045ef1",43,"2025-05-12 20:33:59","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-12","df9d613d9b98b47f",20,"2025-05-12 20:35:52","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.240","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-12","d418a2786a84350a",5,"2025-05-12 20:38:58","21051182C","15","Xiaomi",35,"1.0.0.1","zh","CN","","31.16.249.141","unknown","Germany","DE","Bavaria","BY","Nuremberg","49.4366","11.0914","Europe/Berlin","","Vodafone GmbH"
-"2025-05-13","fb7d8800cd3c1260",4,"2025-05-13 02:43:11","NOH-AN00","12","HUAWEI",31,"1.0.0.1","zh","CN","","8.219.42.142","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","Alibaba US Technology Co., Ltd."
+"2025-05-13","fb7d8800cd3c1260",5,"2025-05-13 02:45:17","NOH-AN00","12","HUAWEI",31,"1.0.0.1","zh","CN","","8.219.42.142","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","Alibaba US Technology Co., Ltd."
