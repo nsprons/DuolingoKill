@@ -661,7 +661,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","9f6e129eccd9830f",2,"2025-05-12 21:07:57","NX729J","15","nubia",35,"1.0.0.1","zh","CN","","89.185.25.181","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","Hytron Network Services Limited"
 "2025-05-12","f8836ce13643c62e",2,"2025-05-12 21:08:28","PKG110","15","OnePlus",35,"1.0.0.1","zh","CN","","103.82.168.66","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","SAITEIDC Limited"
 "2025-05-12","b75429cdbc1f33fe",8,"2025-05-12 09:10:17","NX721J","14","nubia",34,"1.7.5","en","CA","","204.48.78.126","unknown","Canada","CA","Quebec","QC","Montreal","45.58","-73.5313","America/Toronto","","VIDEOTRON"
-"2025-05-12","4e2b605822045ef1",25,"2025-05-12 15:15:32","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-12","378e38e3dab14109",2,"2025-05-12 21:20:13","23054RA19C","15","Xiaomi",35,"1.7.5.2","zh","CN","946021563","103.172.183.78","unknown","Singapore","SG","","","Singapore","1.2982","103.7836","Asia/Singapore","","Nearoute Limited."
 "2025-05-12","3b2c7bde652b6038",9,"2025-05-12 21:24:19","M2002J9E","11","Xiaomi",30,"1.0.0.1","zh","TW","","18.183.131.250","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-12","077d1302370df3d7",5,"2025-05-12 20:28:53","Mi 9T Pro","13","Xiaomi",33,"1.0.0.1","vi","VN","","14.230.242.68","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","VNPT Corp"
@@ -705,3 +704,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","5ee0212f42e8a5c0",81,"2025-05-12 22:32:04","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","113.135.245.157","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-12","7c161a49ce78d626",75,"2025-05-12 21:33:50","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","140.213.136.152","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT XL Axiata"
 "2025-05-12","5459cfd130507c08",1,"2025-05-12 22:34:25","M2101K6G","15","Xiaomi",35,"1.0.0.1","zh","TW","","49.217.122.124","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","","Taiwan Mobile Co., Ltd."
+"2025-05-12","4e2b605822045ef1",28,"2025-05-12 16:34:47","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
