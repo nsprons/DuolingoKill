@@ -660,7 +660,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","c9caf8819b491cdb",4,"2025-05-12 17:40:20","Mi 10 Pro","13","Xiaomi",33,"1.7.4.4","","","","101.249.169.120","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-12","6331bdad3c96875f",2,"2025-05-12 17:40:33","23113RKC6C","15","Xiaomi",35,"1.0.0.1","zh","CN","","182.149.140.84","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Telecom Next Generation Carrier Network"
 "2025-05-12","b2cf5ad036aba98a",6,"2025-05-12 17:42:48","PGP110","15","OnePlus",35,"1.7.5.1","zh","CN","error","182.32.63.246","unknown","China","CN","Shandong","SD","Dezhou","37.4454","116.3429","Asia/Shanghai","","Chinanet"
-"2025-05-12","4e2b605822045ef1",13,"2025-05-12 11:45:00","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-12","e6b3f5a02a148944",2,"2025-05-12 17:51:21","2112123AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","124.64.22.197","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Unicom Beijing Province Network"
 "2025-05-12","8bc78664c1835a1a",23,"2025-05-12 17:58:05","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","36.32.218.245","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-12","d01c469ac9dc5b49",3,"2025-05-12 18:00:13","M2104K10AC","13","Xiaomi",33,"1.7.4.5","","","","120.84.12.212","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","China Unicom IP network China169 Guangdong province"
@@ -703,3 +702,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","e3d63f6772c7637e",141,"2025-05-12 18:47:40","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","18.183.10.224","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-12","66f956d00913491d",4,"2025-05-12 18:47:46","PJE110","15","OnePlus",35,"1.7.5.2","zh","CN","error","111.172.37.245","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-12","2ac62553207d6a5f",7,"2025-05-12 18:48:05","2210132C","15","Xiaomi",35,"1.7.5.2","zh","CN","425354741","58.250.106.108","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Unicom Shenzen network"
+"2025-05-12","4e2b605822045ef1",15,"2025-05-12 12:48:14","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
