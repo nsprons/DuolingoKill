@@ -631,7 +631,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","ef9117af46d9ff69",20,"2025-05-12 22:41:23","Redmi K20 Pro Premium Edition","11","Xiaomi",30,"1.0.0.1","zh","CN","","54.95.249.238","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-12","b4ea23c957aa8e16",6,"2025-05-12 22:41:55","22041211AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","118.212.198.68","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-12","af4f53af15649fec",13,"2025-05-12 22:42:32","2210132C","15","Xiaomi",35,"1.0.0.1","zh","CN","","182.33.224.158","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-12","4e2b605822045ef1",33,"2025-05-12 16:44:40","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-12","269381cc68288c6d",9,"2025-05-12 22:48:14","MI 8","13","Xiaomi",33,"1.7.4.5","","","","119.143.165.61","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","Chinanet"
 "2025-05-12","bb4071acc72407f8",1,"2025-05-12 22:50:54","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","39.144.147.68","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Mobile Communications Group Co., Ltd."
 "2025-05-12","bf509ce22ea207b1",5,"2025-05-12 22:53:54","24031PN0DC","15","Xiaomi",35,"1.0.0.0","zh","CN","error","182.86.161.70","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
@@ -705,3 +704,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","5a6e09679cc0e3b6",3,"2025-05-13 00:45:01","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-12","044c91edfff541b9",5,"2025-05-12 19:46:27","M2012K11AG","15","Xiaomi",35,"1.0.0.1","en","GB","","84.248.229.83","unknown","Finland","FI","Southwest Finland","19","Turku","60.4487","22.2704","Europe/Helsinki","","Telia Finland Oyj"
 "2025-05-12","af4da5d99cf8c6a8",150,"2025-05-12 23:47:24","2201117PG","13","Xiaomi",33,"1.0.0.1","en","GB","","104.28.215.132","unknown","Indonesia","ID","East Java","JI","Surabaya","-7.2484","112.7419","Asia/Jakarta","","CLOUDFLARENET"
+"2025-05-12","4e2b605822045ef1",38,"2025-05-12 18:48:11","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
