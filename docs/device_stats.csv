@@ -682,7 +682,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","5ee0212f42e8a5c0",27,"2025-05-13 12:17:39","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","222.90.12.176","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","Chinanet"
 "2025-05-13","00793426bd84d50d",13,"2025-05-13 12:18:33","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","101.82.77.65","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
 "2025-05-13","45393b9d31dd9c37",2,"2025-05-13 12:18:53","MEIZU 20","14","meizu",34,"1.7.4.5","","","","13.215.228.107","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
-"2025-05-13","4e2b605822045ef1",9,"2025-05-13 06:21:52","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-13","8939a2e4f435d9ad",16,"2025-05-13 12:23:57","M2007J3SC","12","Xiaomi",31,"1.0.0.1","zh","CN","","153.35.127.90","unknown","China","CN","Jiangsu","JS","Suzhou","31.3093","120.602","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-13","e9879da508480b27",4,"2025-05-13 06:24:11","M2102J20SG","14","Xiaomi",34,"1.0.0.1","en","GB","","195.12.232.226","unknown","Germany","DE","","","","51.2993","9.491","Europe/Berlin","","Arelion Sweden AB"
 "2025-05-13","0f8aa288b68388f1",9,"2025-05-13 12:29:11","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","14.216.89.107","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
@@ -715,3 +714,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-12","5e9278cb1a6a8768",1,"2025-05-12 22:13:41","23049PCD8G","14","Xiaomi",34,"1.0.0.1","es","US","","189.182.28.21","unknown","Mexico","MX","Nayarit","NAY","Compostela","21.1423","-105.0742","America/Mazatlan","","UNINET"
 "2025-05-13","ce7b3581565ed388",5,"2025-05-13 00:15:00","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
 "2025-05-13","e3d63f6772c7637e",11,"2025-05-13 13:16:36","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","43.207.223.4","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
+"2025-05-13","4e2b605822045ef1",10,"2025-05-13 07:17:19","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
