@@ -735,4 +735,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","c9caf8819b491cdb",1,"2025-05-14 07:03:03","Mi 10 Pro","13","Xiaomi",33,"1.7.4.4","","","","101.249.169.120","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","bfb5a4f8eeb6cb60",4,"2025-05-14 07:03:30","MEIZU 21 Pro","14","meizu",34,"1.0.0.1","en","US","","221.2.197.42","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-14","4e2b605822045ef1",4,"2025-05-14 01:06:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-14","8ce9353d8a17db62",2,"2025-05-14 07:10:30","PJZ110","15","OnePlus",35,"1.7.4.5","","","","111.183.133.226","unknown","China","CN","Hubei","HB","Wuhan","30.589","114.2681","Asia/Shanghai","","CHINATELECOM Hubei province Shengji 5G network"
+"2025-05-14","8ce9353d8a17db62",3,"2025-05-14 07:11:14","PJZ110","15","OnePlus",35,"1.7.4.5","","","","111.183.133.226","unknown","China","CN","Hubei","HB","Wuhan","30.589","114.2681","Asia/Shanghai","","CHINATELECOM Hubei province Shengji 5G network"
