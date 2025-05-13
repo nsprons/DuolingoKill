@@ -706,7 +706,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","63e7866797c677ca",1,"2025-05-14 00:59:30","2201117PG","13","Xiaomi",33,"1.0.0.1","en","US","","180.253.162.241","unknown","Indonesia","ID","East Java","JI","Surabaya","-7.2484","112.7419","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-14","88e9b79462a76951",4,"2025-05-14 02:05:14","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-14","992deb1d54e302c2",7,"2025-05-14 02:05:43","22081212C","15","Xiaomi",35,"1.0.0.1","zh","CN","","27.148.89.16","unknown","China","CN","Fujian","FJ","Zhangzhou","24.5027","117.6495","Asia/Shanghai","","Chinanet"
-"2025-05-13","4e2b605822045ef1",45,"2025-05-13 20:12:00","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-13","c650a577f8eba164",11,"2025-05-13 19:12:00","SM-A515F","13","samsung",33,"1.0.0.1","en","US","","196.64.223.5","unknown","Morocco","MA","El-Jadida","JDI","El Jadida","33.2558","-8.5015","Africa/Casablanca","","MT-MPLS"
 "2025-05-13","422855c0732a7f62",24,"2025-05-13 20:14:12","SM-N985F","13","samsung",33,"1.7.4.5","","","","89.244.84.217","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-13","1f8fcc30013d9d04",12,"2025-05-13 21:30:54","SM-S938U","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
@@ -731,3 +730,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","b75429cdbc1f33fe",23,"2025-05-13 15:08:39","NX721J","14","nubia",34,"1.7.5","en","CA","","204.48.76.119","unknown","Canada","CA","Quebec","QC","Montreal","45.58","-73.5313","America/Toronto","","VIDEOTRON"
 "2025-05-13","0000000000000000",7,"2025-05-13 21:09:54","unknown","15","unknown",35,"1.0.0.1","en","GB","","85.190.238.137","unknown","Denmark","DK","Capital Region","84","Copenhagen","55.6802","12.5892","Europe/Copenhagen","","TEFINCOM S.A."
 "2025-05-14","3c52baec1f77f0df",1,"2025-05-14 03:10:22","22011211C","14","Xiaomi",34,"1.7.4.5","","","","23.27.183.28","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","EGIHOSTING"
+"2025-05-13","4e2b605822045ef1",46,"2025-05-13 21:15:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
