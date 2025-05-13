@@ -718,5 +718,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","f71137ecfe2121ff",1,"2025-05-13 18:23:13","22021211RC","12","Xiaomi",31,"1.7.4.5","","","","43.250.244.216","unknown","China","CN","Guangxi","GX","Nanning","22.8111","108.3168","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-13","ce929cda0518469d",8,"2025-05-13 18:23:10","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
 "2025-05-13","b75429cdbc1f33fe",13,"2025-05-13 06:23:50","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
-"2025-05-13","e3d63f6772c7637e",28,"2025-05-13 18:25:26","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","35.78.88.2","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-13","4e2b605822045ef1",22,"2025-05-13 12:26:04","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
+"2025-05-13","e3d63f6772c7637e",29,"2025-05-13 18:26:15","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","35.78.88.2","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
