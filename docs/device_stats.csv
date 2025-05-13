@@ -729,3 +729,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","718d047186e69eeb",36,"2025-05-13 23:18:14","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.143.72.12","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-13","af4f53af15649fec",13,"2025-05-13 23:22:47","2210132C","15","Xiaomi",35,"1.0.0.1","zh","CN","","182.33.7.101","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-13","30abc7728b50b597",3,"2025-05-13 23:23:02","RMX5010","15","realme",35,"1.7.4.5","","","","119.126.114.219","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","Chinanet"
+"2025-05-13","56d2cdba13972771",18,"2025-05-13 18:23:36","Redmi Note 8","13","Xiaomi",33,"1.0.0.1","en","US","","102.16.88.121","unknown","Madagascar","MG","","","Toamasina","-18.1462","49.3969","Indian/Antananarivo","","Telecom-Malagasy"
