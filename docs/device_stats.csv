@@ -703,7 +703,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","f8836ce13643c62e",2,"2025-05-13 23:15:28","PKG110","15","OnePlus",35,"1.0.0.1","zh","CN","","103.82.168.66","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","SAITEIDC Limited"
 "2025-05-13","30d6646c382939e0",47,"2025-05-13 23:15:27","2210132C","13","Xiaomi",33,"1.7.5.3","zh","CN","1367987219","101.90.8.219","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
 "2025-05-13","df9d613d9b98b47f",16,"2025-05-13 17:17:01","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.217","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
-"2025-05-13","4e2b605822045ef1",34,"2025-05-13 17:17:36","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-13","6a012bf9124d2a28",8,"2025-05-13 23:17:25","23078RKD5C","13","Xiaomi",33,"1.7.4.5","","","","125.73.17.91","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-13","718d047186e69eeb",36,"2025-05-13 23:18:14","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.143.72.12","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-13","af4f53af15649fec",13,"2025-05-13 23:22:47","2210132C","15","Xiaomi",35,"1.0.0.1","zh","CN","","182.33.7.101","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
@@ -730,3 +729,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-13","00ad3145304e0196",1,"2025-05-13 23:39:33","MEIZU 20 Pro","14","meizu",34,"1.7.4.5","","","","106.224.168.184","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-13","4b53e83a9b59a3d0",2,"2025-05-13 23:40:20","23013RK75C","15","Xiaomi",35,"1.0.0.1","zh","CN","","103.20.199.34","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Nearoute Limited."
 "2025-05-13","1480d7f9ecfd78f1",10,"2025-05-13 23:40:51","Real Device","14","Real Manufacturer",34,"1.0.0.1","zh","CN","","157.254.20.81","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","Hytron Network Services Limited"
+"2025-05-13","4e2b605822045ef1",35,"2025-05-13 17:41:53","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
