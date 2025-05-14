@@ -734,7 +734,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","00793426bd84d50d",34,"2025-05-14 22:18:04","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","101.82.77.65","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
 "2025-05-14","4223b36134888672",94,"2025-05-14 11:21:50","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","191.246.247.217","unknown","Brazil","BR","Pará","PA","Belém","-1.345","-48.4219","America/Belem","","Claro SA"
 "2025-05-14","7c161a49ce78d626",70,"2025-05-14 21:24:03","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.164.254","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
-"2025-05-14","4e2b605822045ef1",34,"2025-05-14 16:24:41","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-14","dd6cc9aac008f3ff",12,"2025-05-14 22:25:32","M2011K2C","14","Xiaomi",34,"1.7.5.1","zh","CN","","93.179.114.46","unknown","United States","US","California","CA","Los Angeles","34.0726","-118.261","America/Los_Angeles","","IT7NET"
 "2025-05-14","b75429cdbc1f33fe",3,"2025-05-14 10:25:55","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-14","0f8aa288b68388f1",13,"2025-05-14 22:27:06","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","119.127.151.111","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
@@ -755,3 +754,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","3c88599d78199168",2,"2025-05-14 22:51:13","23078RKD5C","15","Xiaomi",35,"1.7.4.4","","","","210.79.151.21","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Radishcloud Technology LLC"
 "2025-05-14","a197d92e5c4389fb",52,"2025-05-14 22:53:38","Pixel 6","15","Google",35,"1.0.0.1","zh","CN","","160.16.133.185","unknown","Japan","JP","Tokyo","13","Tokyo","35.6887","139.745","Asia/Tokyo","","SAKURA Internet Inc."
 "2025-05-14","e6b3f5a02a148944",2,"2025-05-14 22:53:45","2112123AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","31.6.56.27","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","Hardcore Communication Co., Limited"
+"2025-05-14","4e2b605822045ef1",35,"2025-05-14 16:53:53","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
