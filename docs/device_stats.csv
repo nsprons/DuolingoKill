@@ -744,5 +744,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","741180d6cb9b9201",17,"2025-05-14 15:38:54","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","218.26.159.154","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-14","77630c413b9a5ace",10,"2025-05-14 10:46:29","Redmi Note 8","13","Xiaomi",33,"1.0.0.1","en","US","","102.16.88.121","unknown","Madagascar","MG","","","Toamasina","-18.1462","49.3969","Indian/Antananarivo","","Telecom-Malagasy"
 "2025-05-14","4e2b605822045ef1",22,"2025-05-14 09:47:37","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-14","bb4071acc72407f8",8,"2025-05-14 15:48:23","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","106.60.154.236","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","bfb5a4f8eeb6cb60",12,"2025-05-14 15:48:24","MEIZU 21 Pro","14","meizu",34,"1.0.0.1","en","US","","221.2.197.42","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
+"2025-05-14","bb4071acc72407f8",9,"2025-05-14 15:49:42","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","106.60.154.236","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
