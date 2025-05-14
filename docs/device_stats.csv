@@ -722,7 +722,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","8939a2e4f435d9ad",31,"2025-05-14 18:20:19","M2007J3SC","12","Xiaomi",31,"1.0.0.1","zh","CN","","112.81.59.249","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-14","d756375c547a53b1",10,"2025-05-14 18:20:49","Redmi K30 Pro Zoom Edition","14","Xiaomi",34,"1.0.0.1","zh","CN","","124.227.44.150","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","88e9b79462a76951",18,"2025-05-14 18:28:29","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
-"2025-05-14","4e2b605822045ef1",27,"2025-05-14 12:38:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-14","1c35072d7cb80a4c",4,"2025-05-14 18:38:43","CPH2653","15","OnePlus",35,"1.0.0.1","zh","JP","","45.196.236.234","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","LUOGELANG FRANCE LIMITED"
 "2025-05-14","8bc78664c1835a1a",15,"2025-05-14 18:39:26","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","220.205.249.98","unknown","China","CN","Anhui","AH","Bengbu","32.9422","117.3647","Asia/Shanghai","","UNICOM AnHui province network"
 "2025-05-14","9925e43c4238f4cd",17,"2025-05-14 13:41:33","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","156.202.51.175","unknown","Egypt","EG","Red Sea","BA","Hurghada","27.2572","33.821","Africa/Cairo","","TE Data"
@@ -754,3 +753,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","ded0d9b082536dfd",32,"2025-05-14 18:27:11","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","58.187.67.147","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
 "2025-05-14","2352e19e23a1286d",39,"2025-05-14 19:28:09","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","156.245.190.18","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","OWS"
 "2025-05-14","5c88b15c381f395a",17,"2025-05-14 19:28:15","PJD110","14","OnePlus",34,"1.7.4.5","","","","123.119.164.198","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Unicom Beijing Province Network"
+"2025-05-14","4e2b605822045ef1",28,"2025-05-14 13:29:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
