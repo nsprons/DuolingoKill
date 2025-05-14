@@ -754,4 +754,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","4e2b605822045ef1",44,"2025-05-14 18:38:43","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","f43acb410bda7d55",2,"2025-05-15 00:40:00","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","1.164.119.143","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
 "2025-05-15","a197d92e5c4389fb",3,"2025-05-15 00:40:10","Pixel 6","15","Google",35,"1.0.0.1","zh","CN","","143.198.130.157","unknown","United States","US","California","CA","Santa Clara","37.3931","-121.962","America/Los_Angeles","","DIGITALOCEAN-ASN"
-"2025-05-14","9925e43c4238f4cd",25,"2025-05-14 19:46:03","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","197.120.180.116","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
+"2025-05-14","9925e43c4238f4cd",26,"2025-05-14 19:47:20","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","197.120.180.116","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
