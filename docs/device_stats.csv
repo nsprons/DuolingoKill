@@ -734,5 +734,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","718d047186e69eeb",7,"2025-05-14 09:03:43","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.143.72.12","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","f1e8367c25be8b17",8,"2025-05-14 09:05:06","M2011K2C","14","Xiaomi",34,"1.0.0.1","zh","CN","error","123.147.251.69","unknown","China","CN","Chongqing","CQ","Chongqing","29.5689","106.5577","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-14","4e2b605822045ef1",9,"2025-05-14 03:07:22","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-14","ce929cda0518469d",7,"2025-05-14 09:08:05","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
 "2025-05-14","3c52baec1f77f0df",12,"2025-05-14 09:08:41","22011211C","14","Xiaomi",34,"1.7.4.5","","","","62.197.154.33","unknown","Macao","MO","","","","22.1592","113.5638","Asia/Macau","","Cyberzone S.A."
+"2025-05-14","ce929cda0518469d",8,"2025-05-14 09:08:36","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
