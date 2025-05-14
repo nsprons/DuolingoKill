@@ -736,4 +736,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","5c88b15c381f395a",5,"2025-05-14 12:09:19","PJD110","14","OnePlus",34,"1.7.4.5","","","","124.127.1.73","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Networks Inter-Exchange"
 "2025-05-14","1cdab5c2f1dd4648",3,"2025-05-14 12:10:43","Pixel 7 Pro","15","Google",35,"1.0.0.1","en","US","","154.29.150.117","unknown","United States","US","California","CA","Los Angeles","34.0515","-118.2707","America/Los_Angeles","","NETLAB-SDN"
 "2025-05-14","4e2b605822045ef1",14,"2025-05-14 06:10:58","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-14","e9305886eb2165c6",4,"2025-05-14 12:11:15","2203121C","15","Xiaomi",35,"1.0.0.1","zh","CN","","222.218.211.131","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-14","e9305886eb2165c6",5,"2025-05-14 12:11:28","2203121C","15","Xiaomi",35,"1.0.0.1","zh","CN","","222.218.211.131","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
