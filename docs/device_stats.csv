@@ -564,7 +564,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","27a611e813775a16",2,"2025-05-14 01:15:28","Pixel 9 Pro XL","14","Google",34,"1.7.4.5","","","","160.177.32.192","unknown","Morocco","MA","Agadir-Ida-ou-Tnan","AGD","Agadir","30.4201","-9.5912","Africa/Casablanca","","MT-MPLS"
 "2025-05-14","6836d39d5b85523b",9,"2025-05-14 02:21:58","SM-S938B","15","samsung",35,"1.0.0.1","fr","FR","","88.177.215.54","unknown","France","FR","Moselle","57","Sarrebourg","48.7334","7.049","Europe/Paris","","Free SAS"
 "2025-05-14","0eaaedd0069c00a8",1,"2025-05-14 08:28:17","2211133C","14","Xiaomi",34,"1.7.4.5","","","","104.28.157.196","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","CLOUDFLARENET"
-"2025-05-14","c9caf8819b491cdb",2,"2025-05-14 08:38:18","Mi 10 Pro","13","Xiaomi",33,"1.7.4.4","","","","101.249.169.120","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","bbc5836195993428",1,"2025-05-14 08:41:52","PJD110","15","OnePlus",35,"1.7.4.5","","","","112.96.227.160","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-14","a7acf0af8e2f44b8",2,"2025-05-14 03:11:18","M2007J3SG","15","Xiaomi",35,"1.7.4.5","","","","79.127.169.69","unknown","Czechia","CZ","","","","50.0853","14.411","Europe/Prague","","Ipex A.S"
 "2025-05-14","0f19546a08a4d8d8",1,"2025-05-14 09:35:05","22041211AC","14","Xiaomi",34,"1.7.5.2","zh","CN","error","110.176.11.174","unknown","China","CN","Shanxi","SX","Taiyuan","37.8648","112.5636","Asia/Shanghai","","Chinanet"
@@ -755,3 +754,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","df9d613d9b98b47f",22,"2025-05-14 20:05:04","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.231","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-14","4e2b605822045ef1",48,"2025-05-14 20:06:27","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-14","c6038de61703b212",25,"2025-05-14 21:08:53","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.244","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
+"2025-05-15","c9caf8819b491cdb",1,"2025-05-15 02:09:34","Mi 10 Pro","13","Xiaomi",33,"1.7.4.4","","","","101.249.169.120","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
