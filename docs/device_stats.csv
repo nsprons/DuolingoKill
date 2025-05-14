@@ -710,7 +710,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","00793426bd84d50d",26,"2025-05-14 19:20:56","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","101.82.77.65","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
 "2025-05-14","8b3c91539925400a",2,"2025-05-14 19:25:12","M2102J2SC","13","Xiaomi",33,"1.0.0.1","zh","CN","","183.42.226.206","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","Chinanet"
 "2025-05-14","ded0d9b082536dfd",32,"2025-05-14 18:27:11","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","58.187.67.147","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
-"2025-05-14","4e2b605822045ef1",28,"2025-05-14 13:29:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-14","24889b8f289cf40e",5,"2025-05-14 13:29:31","2312DRA50G","15","Xiaomi",35,"1.7.5.1","en","US","","185.186.158.94","unknown","Poland","PL","Lower Silesia","02","Iwiny","51.22","15.7207","Europe/Warsaw","","Treston s.c."
 "2025-05-14","4b8135fc03a4dca1",11,"2025-05-14 19:29:46","23127PN0CG","15","Xiaomi",35,"1.7.4.5","","","","101.10.166.243","unknown","Taiwan","TW","","","","24.0","121.0","Asia/Taipei","","Taiwan Mobile Co., Ltd."
 "2025-05-14","653552fb6fe9142a",52,"2025-05-14 19:34:43","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
@@ -754,3 +753,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","5c88b15c381f395a",20,"2025-05-14 20:48:27","PJD110","14","OnePlus",34,"1.7.4.5","","","","123.119.164.198","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Unicom Beijing Province Network"
 "2025-05-14","ebd0e46ac8c3986c",4,"2025-05-14 20:49:46","XQ-AS72","14","Sony",34,"1.7.5.2","zh","CN","error","31.223.184.200","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","G-Core Labs S.A."
 "2025-05-14","c0a5df0100fb5f3b",3,"2025-05-14 18:20:19","RMX3371","13","realme",33,"1.7.4.5","","","","152.58.100.161","unknown","India","IN","Rajasthan","RJ","Jaipur","26.9525","75.7105","Asia/Kolkata","","Reliance Jio Infocomm Limited"
+"2025-05-14","4e2b605822045ef1",31,"2025-05-14 14:50:22","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
