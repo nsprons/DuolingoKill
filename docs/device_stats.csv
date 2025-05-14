@@ -724,7 +724,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","bfb5a4f8eeb6cb60",6,"2025-05-14 09:02:05","MEIZU 21 Pro","14","meizu",34,"1.0.0.1","en","US","","221.2.197.42","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-14","718d047186e69eeb",7,"2025-05-14 09:03:43","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.143.72.12","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","f1e8367c25be8b17",8,"2025-05-14 09:05:06","M2011K2C","14","Xiaomi",34,"1.0.0.1","zh","CN","error","123.147.251.69","unknown","China","CN","Chongqing","CQ","Chongqing","29.5689","106.5577","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
-"2025-05-14","4e2b605822045ef1",9,"2025-05-14 03:07:22","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-14","3c52baec1f77f0df",12,"2025-05-14 09:08:41","22011211C","14","Xiaomi",34,"1.7.4.5","","","","62.197.154.33","unknown","Macao","MO","","","","22.1592","113.5638","Asia/Macau","","Cyberzone S.A."
 "2025-05-14","ce929cda0518469d",8,"2025-05-14 09:08:36","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
 "2025-05-14","a7acf0af8e2f44b8",2,"2025-05-14 03:11:18","M2007J3SG","15","Xiaomi",35,"1.7.4.5","","","","79.127.169.69","unknown","Czechia","CZ","","","","50.0853","14.411","Europe/Prague","","Ipex A.S"
@@ -736,3 +735,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","7c161a49ce78d626",27,"2025-05-14 08:22:19","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.164.254","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-14","d95cf8b001b3c7f2",11,"2025-05-14 09:22:59","SM-S9260","15","samsung",35,"1.7.5","zh","CN","","205.198.88.138","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","COGENT-174"
 "2025-05-13","ce7b3581565ed388",28,"2025-05-13 20:23:15","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
+"2025-05-14","4e2b605822045ef1",10,"2025-05-14 03:25:08","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
