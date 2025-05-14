@@ -682,7 +682,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","c0f94bf8f79f86e1",9,"2025-05-14 13:00:39","RMX3366","11","realme",30,"1.7.4.5","","","","133.106.178.135","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","","Rakuten Mobile Network, Inc."
 "2025-05-14","bb4071acc72407f8",2,"2025-05-14 12:04:31","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","106.60.97.131","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","ef3e685e1ae77913",5,"2025-05-14 12:05:01","22127RK46b","13","Xiaomi",33,"1.7.4.4","","","","106.60.97.131","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-14","4e2b605822045ef1",14,"2025-05-14 06:10:58","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-14","ef9117af46d9ff69",7,"2025-05-14 12:14:40","Redmi K20 Pro Premium Edition","11","Xiaomi",30,"1.0.0.1","zh","CN","","144.12.251.82","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-14","6a398bbd2883e2f0",1,"2025-05-14 12:17:14","XT2125-4","11","motorola",30,"1.0.0.1","zh","CN","","119.236.23.107","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","HKT Limited"
 "2025-05-14","66f956d00913491d",2,"2025-05-14 12:18:09","PJE110","15","OnePlus",35,"1.7.5.2","zh","CN","error","111.181.40.192","unknown","China","CN","Hubei","HB","Wuhan","30.589","114.2681","Asia/Shanghai","","CHINATELECOM Hubei province Shengji 5G network"
@@ -741,3 +740,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","653552fb6fe9142a",33,"2025-05-14 14:32:32","2211133C","13","Xiaomi",33,"1.7.4.5","","","","116.169.71.188","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-14","14f151766ee547e8",3,"2025-05-14 10:03:00","SM-N9750","12","samsung",31,"1.0.0.1","en","US","","45.149.173.209","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.244","America/Los_Angeles","","Clouvider Limited"
 "2025-05-14","11bdbc9713c7de35",8,"2025-05-14 14:32:23","SM-G9980","11","samsung",30,"1.7.5.2","zh","CN","1720605687","1.71.234.253","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-14","4e2b605822045ef1",17,"2025-05-14 08:34:46","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
