@@ -737,7 +737,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","8bc78664c1835a1a",19,"2025-05-14 20:42:56","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","36.32.218.245","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-14","5c88b15c381f395a",20,"2025-05-14 20:48:27","PJD110","14","OnePlus",34,"1.7.4.5","","","","123.119.164.198","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Unicom Beijing Province Network"
 "2025-05-14","ebd0e46ac8c3986c",4,"2025-05-14 20:49:46","XQ-AS72","14","Sony",34,"1.7.5.2","zh","CN","error","31.223.184.200","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","G-Core Labs S.A."
-"2025-05-14","4e2b605822045ef1",31,"2025-05-14 14:50:22","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-14","c0a5df0100fb5f3b",11,"2025-05-14 18:22:55","RMX3371","13","realme",33,"1.7.4.5","","","","152.58.100.161","unknown","India","IN","Rajasthan","RJ","Jaipur","26.9525","75.7105","Asia/Kolkata","","Reliance Jio Infocomm Limited"
 "2025-05-14","a12f39e0481fa0b2",4,"2025-05-14 20:53:18","PHK110","15","OnePlus",35,"1.7.5","zh","CN","","219.143.190.216","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Networks Inter-Exchange"
 "2025-05-14","7386eeedf570cf31",4,"2025-05-14 18:23:58","2201116SI","13","Xiaomi",33,"1.7.4.5","","","","157.49.169.31","unknown","India","IN","Tamil Nadu","TN","Coimbatore","11.0142","76.9941","Asia/Kolkata","","Reliance Jio Infocomm Limited"
@@ -754,3 +753,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","040ce0d346fafff5",6,"2025-05-14 21:11:08","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","1025244416","112.96.37.180","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-14","2352e19e23a1286d",50,"2025-05-14 21:13:23","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","156.245.190.18","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","OWS"
 "2025-05-14","dd6cc9aac008f3ff",11,"2025-05-14 21:13:55","M2011K2C","14","Xiaomi",34,"1.7.5.1","zh","CN","","93.179.114.46","unknown","United States","US","California","CA","Los Angeles","34.0726","-118.261","America/Los_Angeles","","IT7NET"
+"2025-05-14","4e2b605822045ef1",32,"2025-05-14 15:15:46","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
