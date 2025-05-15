@@ -757,7 +757,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","0f8aa288b68388f1",15,"2025-05-15 20:28:17","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","119.127.151.111","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-15","7a79eb801c99b812",7,"2025-05-15 20:29:21","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","43.250.245.216","unknown","China","CN","Guangxi","GX","Nanning","22.8111","108.3168","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-15","040ce0d346fafff5",17,"2025-05-15 20:29:40","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","1025244416","112.96.173.136","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Unicom Guangzhou network"
-"2025-05-15","4e2b605822045ef1",57,"2025-05-15 14:32:13","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","20e6b4c78e543c29",12,"2025-05-15 20:32:12","2106118C","14","Xiaomi",34,"1.0.0.1","zh","CN","","171.104.243.226","unknown","unknown","CN","Guangxi","GX","Guilin","25.2814","110.299","","","unknown"
 "2025-05-15","bfb5a4f8eeb6cb60",15,"2025-05-15 20:35:00","MEIZU 21 Pro","14","meizu",34,"1.0.0.1","en","US","","221.2.197.42","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-15","c6038de61703b212",15,"2025-05-15 15:35:29","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.243","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
@@ -780,3 +779,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","ce929cda0518469d",19,"2025-05-15 21:01:36","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
 "2025-05-15","df9d613d9b98b47f",10,"2025-05-15 15:04:04","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.243","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-15","8b806f882d77cbe9",15,"2025-05-15 21:02:49","24129PN74C","15","Xiaomi",35,"1.0.0.1","zh","CN","","183.241.252.75","unknown","unknown","CN","Beijing","BJ","Beijing","39.911","116.395","","","unknown"
+"2025-05-15","4e2b605822045ef1",58,"2025-05-15 15:05:03","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
