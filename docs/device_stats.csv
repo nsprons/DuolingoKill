@@ -782,5 +782,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","c6038de61703b212",19,"2025-05-15 18:25:45","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","176.59.174.83","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","T2 Mobile LLC"
 "2025-05-15","b75429cdbc1f33fe",14,"2025-05-15 11:26:25","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-15","e3d63f6772c7637e",119,"2025-05-15 23:27:51","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","54.65.54.33","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
-"2025-05-15","4e2b605822045ef1",82,"2025-05-15 17:28:07","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","4d7969ed390f715b",2,"2025-05-15 23:28:13","M2007J3SY","14","Xiaomi",34,"1.7.5.2","zh","TW","1758936425","42.73.113.228","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Mobile Business Group"
+"2025-05-15","4e2b605822045ef1",83,"2025-05-15 17:28:30","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
