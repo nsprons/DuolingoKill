@@ -778,5 +778,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","77ca10f3531dd5a4",4,"2025-05-15 08:56:17","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-15","11b933a16ef75786",9,"2025-05-15 06:56:24","moto g85 5G","14","motorola",34,"1.0.0.1","en","US","","191.156.121.230","unknown","Colombia","CO","","","","4.5981","-74.0799","America/Bogota","",""
 "2025-05-15","040ce0d346fafff5",16,"2025-05-15 19:59:47","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","1025244416","112.96.173.136","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Unicom Guangzhou network"
-"2025-05-15","4e2b605822045ef1",52,"2025-05-15 14:00:35","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","df9d613d9b98b47f",8,"2025-05-15 14:02:40","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","61.8.129.198","unknown","Germany","DE","","","","51.2993","9.491","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
+"2025-05-15","4e2b605822045ef1",53,"2025-05-15 14:05:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
