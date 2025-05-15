@@ -768,7 +768,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","ded0d9b082536dfd",21,"2025-05-15 17:10:09","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","42.118.48.99","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
 "2025-05-15","3c8e66f29ce3b992",2,"2025-05-15 18:15:02","CPH2691","15","OnePlus",35,"1.7.4.5","","","","212.87.193.59","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","Akari Networks"
 "2025-05-15","5a6e09679cc0e3b6",17,"2025-05-15 18:16:32","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.153.148.217","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-15","af4f53af15649fec",14,"2025-05-15 18:16:50","2210132C","15","Xiaomi",35,"1.0.0.1","zh","CN","","144.12.239.208","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-15","a197d92e5c4389fb",48,"2025-05-15 18:17:46","Pixel 6","15","Google",35,"1.0.0.1","zh","CN","","143.198.130.157","unknown","United States","US","California","CA","Santa Clara","37.3931","-121.962","America/Los_Angeles","","DIGITALOCEAN-ASN"
 "2025-05-15","00793426bd84d50d",25,"2025-05-15 18:17:55","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","101.82.77.65","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
 "2025-05-15","23b34b7f3511e555",3,"2025-05-15 18:20:20","2304FPN6DC","15","Xiaomi",35,"1.0.0.1","zh","CN","","129.227.235.106","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","ZEN-ECN"
@@ -778,3 +777,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","4e2b605822045ef1",44,"2025-05-15 12:22:46","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","1c35072d7cb80a4c",3,"2025-05-15 18:23:38","CPH2653","15","OnePlus",35,"1.0.0.1","zh","JP","","205.198.84.52","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","COGENT-174"
 "2025-05-15","a80240e789b85a7b",29,"2025-05-15 17:23:45","M2010J19CG","14","Xiaomi",34,"1.7.4.5","","","","125.167.48.205","unknown","Indonesia","ID","South Sumatra","SS","Palembang","-2.9146","104.7535","Asia/Jakarta","","PT Telekomunikasi Indonesia"
+"2025-05-15","af4f53af15649fec",16,"2025-05-15 18:23:49","2210132C","15","Xiaomi",35,"1.0.0.1","zh","CN","","182.33.238.13","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
