@@ -639,7 +639,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","0a2c906e6ae13dc0",1,"2025-05-15 05:36:42","M2011K2C","13","Xiaomi",33,"1.7.4.4","","","","176.97.192.218","unknown","Nigeria","NG","Lagos","LA","Lagos","6.4474","3.3903","Africa/Lagos","","Melbikomas UAB"
 "2025-05-14","45393b9d31dd9c37",1,"2025-05-14 23:42:03","MEIZU 20","15","meizu",35,"1.7.4.5","","","","223.19.156.50","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","HGC Global Communications Limited"
 "2025-05-14","96561aab209cf963",2,"2025-05-14 23:44:12","2211133C","15","Xiaomi",35,"1.0.0.1","zh","CN","","89.185.25.181","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","Hytron Network Services Limited"
-"2025-05-14","59437950c8c682ef",1,"2025-05-14 23:46:27","PJZ110","15","OnePlus",35,"1.7.5.1","zh","CN","error","188.253.116.105","unknown","Taiwan","TW","","","","24.0","121.0","Asia/Taipei","","Akari Networks"
 "2025-05-14","1bc4eccb8def352d",3,"2025-05-14 23:48:55","V2199A","14","vivo",34,"1.7.5","zh","CN","","36.18.2.102","unknown","China","CN","Zhejiang","ZJ","Jiaxing","30.7488","120.7486","Asia/Shanghai","","Chinanet"
 "2025-05-15","YpyGLX0ADs11",3,"2025-05-15 01:49:03","22041216C","15","Xiaomi",35,"1.0.0.1","en","AU","","45.118.67.135","unknown","Australia","AU","South Australia","SA","Adelaide","-34.7348","138.6837","Australia/Adelaide","","Superloop"
 "2025-05-14","38fb812803f00236",2,"2025-05-14 23:50:01","PJX110","15","OnePlus",35,"1.7.5.2","zh","CN","error","62.3.15.66","unknown","United States","US","California","CA","San Jose","37.1835","-121.7714","America/Los_Angeles","","XTOM"
@@ -757,3 +756,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","6a398bbd2883e2f0",1,"2025-05-15 10:03:03","XT2125-4","11","motorola",30,"1.0.0.1","zh","CN","","119.236.23.107","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","HKT Limited"
 "2025-05-15","4e2b605822045ef1",9,"2025-05-15 04:05:17","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","52147671ede76e07",1,"2025-05-15 10:06:50","RMX5010","15","realme",35,"1.0.0.1","en","US","","116.7.47.200","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
+"2025-05-15","59437950c8c682ef",1,"2025-05-15 10:07:01","PJZ110","15","OnePlus",35,"1.7.5.1","zh","CN","error","188.253.116.106","unknown","Taiwan","TW","","","","24.0","121.0","Asia/Taipei","","Akari Networks"
