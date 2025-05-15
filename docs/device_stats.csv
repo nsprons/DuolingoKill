@@ -775,7 +775,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","00ad3145304e0196",2,"2025-05-15 23:41:49","MEIZU 20 Pro","14","meizu",34,"1.7.4.5","","","","113.84.0.198","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-15","4acaec7f09726c21",6,"2025-05-15 10:42:22","SM-S901E","14","samsung",34,"1.7.4.5","","","","186.99.28.81","unknown","unknown","CO","Departamento de Bolívar","BOL","Cartagena","10.3956","-75.5117","","","unknown"
 "2025-05-15","ded0d9b082536dfd",36,"2025-05-15 22:43:15","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","42.118.48.99","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
-"2025-05-15","4e2b605822045ef1",89,"2025-05-15 17:43:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","a80240e789b85a7b",60,"2025-05-15 22:44:58","M2010J19CG","14","Xiaomi",34,"1.7.4.5","","","","125.167.48.205","unknown","Indonesia","ID","South Sumatra","SS","Palembang","-2.9146","104.7535","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-15","7425050dd41a6127",2,"2025-05-15 23:45:04","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","182.143.193.140","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-15","3b2c7bde652b6038",21,"2025-05-15 23:47:22","M2002J9E","11","Xiaomi",30,"1.0.0.1","zh","TW","","13.112.102.8","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
@@ -784,3 +783,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","269381cc68288c6d",8,"2025-05-15 23:51:40","MI 8","13","Xiaomi",33,"1.7.4.5","","","","85.237.206.10","unknown","Taiwan","TW","New Taipei City","NWT","","25.0355","121.5232","Asia/Taipei","","WAP.AC LTD"
 "2025-05-15","c4ad17ea16685f76",3,"2025-05-15 23:56:08","M2007J3SG","15","Xiaomi",35,"1.7.5","en","US","","212.102.38.112","unknown","Czechia","CZ","Prague","10","Prague","50.0883","14.4124","Europe/Prague","","Datacamp Limited"
 "2025-05-15","4b53e83a9b59a3d0",1,"2025-05-15 23:56:39","23013RK75C","15","Xiaomi",35,"1.0.0.1","zh","CN","","23.165.104.195","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","SNAJU"
+"2025-05-15","4e2b605822045ef1",90,"2025-05-15 17:57:34","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
