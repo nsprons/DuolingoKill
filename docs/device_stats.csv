@@ -766,7 +766,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","2ac62553207d6a5f",5,"2025-05-16 00:04:41","2210132C","15","Xiaomi",35,"1.7.5.2","zh","CN","425354741","116.30.142.182","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-15","9925e43c4238f4cd",20,"2025-05-15 19:07:51","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","154.236.151.179","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
 "2025-05-16","59437950c8c682ef",1,"2025-05-16 00:11:45","PJZ110","15","OnePlus",35,"1.7.5.1","zh","CN","error","154.92.130.72","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","OWS"
-"2025-05-15","4e2b605822045ef1",93,"2025-05-15 18:10:50","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","077d1302370df3d7",4,"2025-05-15 23:14:17","Mi 9T Pro","13","Xiaomi",33,"1.0.0.1","vi","VN","","14.230.242.68","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","VNPT Corp"
 "2025-05-16","c0f94bf8f79f86e1",7,"2025-05-16 01:16:12","RMX3366","11","realme",30,"1.7.4.5","","","","133.106.162.179","unknown","Japan","JP","Tokyo","13","Minamisuna","35.703","139.8308","Asia/Tokyo","","Rakuten Mobile Network, Inc."
 "2025-05-15","df9d613d9b98b47f",13,"2025-05-15 18:16:53","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.243","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
@@ -784,3 +783,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","0f8aa288b68388f1",1,"2025-05-16 00:29:53","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","119.127.151.111","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-15","4223b36134888672",132,"2025-05-15 13:30:43","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","error","177.65.189.248","unknown","Brazil","BR","Pará","PA","Belém","-1.4537","-48.5078","America/Belem","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-15","b75429cdbc1f33fe",17,"2025-05-15 12:31:36","NX721J","14","nubia",34,"1.7.5","en","CA","","204.48.94.99","unknown","Canada","CA","Quebec","QC","Montreal","45.5909","-73.5655","America/Toronto","","VIDEOTRON"
+"2025-05-15","4e2b605822045ef1",94,"2025-05-15 18:32:40","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
