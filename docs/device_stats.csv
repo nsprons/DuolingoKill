@@ -731,7 +731,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","52147671ede76e07",2,"2025-05-15 10:54:27","RMX5010","15","realme",35,"1.0.0.1","en","US","","116.7.47.200","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-15","992deb1d54e302c2",5,"2025-05-15 10:56:34","22081212C","15","Xiaomi",35,"1.0.0.1","zh","CN","","27.149.40.119","unknown","China","CN","Fujian","FJ","Quanzhou","24.9051","118.5707","Asia/Shanghai","","Chinanet"
 "2025-05-15","87065064636954a0",3,"2025-05-15 10:57:54","PGP110","13","OnePlus",33,"1.7.4.5","","","","14.31.163.21","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-15","4e2b605822045ef1",10,"2025-05-15 05:02:36","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","eaaea3c44dc1de66",7,"2025-05-15 11:05:42","23046RP50C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","112.36.232.20","unknown","China","CN","Shandong","SD","Jinan","36.6756","117.0211","Asia/Shanghai","","Shandong Mobile Communication Company Limited"
 "2025-05-15","4ecd95ff3ef09735",5,"2025-05-15 11:06:45","23116PN5BC","15","Xiaomi",35,"1.0.0.1","zh","CN","","188.253.121.35","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","Akari Networks"
 "2025-05-15","c04da3c3971acfc7",4,"2025-05-15 11:13:19","M2012K11AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","113.78.196.137","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
@@ -757,3 +756,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","ce929cda0518469d",10,"2025-05-15 11:57:57","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","unknown","US","California","CA","Los Angeles","34.0544","-118.244","","","unknown"
 "2025-05-15","88e9b79462a76951",15,"2025-05-15 11:58:56","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-15","f1e8367c25be8b17",10,"2025-05-15 12:01:55","M2011K2C","14","Xiaomi",34,"1.0.0.1","zh","CN","error","123.147.236.189","unknown","China","CN","Chongqing","CQ","Chongqing","29.5689","106.5577","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
+"2025-05-15","4e2b605822045ef1",11,"2025-05-15 06:02:46","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
