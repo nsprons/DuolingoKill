@@ -766,7 +766,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","87065064636954a0",8,"2025-05-15 19:01:04","PGP110","13","OnePlus",33,"1.7.4.5","","","","112.94.166.96","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-15","0f8aa288b68388f1",13,"2025-05-15 19:00:15","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","119.127.151.111","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-15","741180d6cb9b9201",14,"2025-05-15 19:04:55","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","172.233.92.235","unknown","Japan","JP","Ōsaka","27","Osaka","34.6946","135.5021","Asia/Tokyo","","Akamai Connected Cloud"
-"2025-05-15","4e2b605822045ef1",47,"2025-05-15 13:05:40","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","8939a2e4f435d9ad",22,"2025-05-15 19:05:51","M2007J3SC","12","Xiaomi",31,"1.0.0.1","zh","CN","","121.238.244.139","unknown","China","CN","Jiangsu","JS","Zhangjiagang","31.8731","120.5425","Asia/Shanghai","","CHINATELECOM Jiangsu province Suzhou 5G network"
 "2025-05-15","20e6b4c78e543c29",11,"2025-05-15 19:07:29","2106118C","14","Xiaomi",34,"1.0.0.1","zh","CN","","171.104.243.226","unknown","unknown","CN","Guangxi","GX","Guilin","25.2814","110.299","","","unknown"
 "2025-05-15","f0b82e1adb6e6834",20,"2025-05-15 14:08:52","Redmi Note 8","13","Xiaomi",33,"1.0.0.1","en","US","","102.16.88.121","unknown","Madagascar","MG","","","Toamasina","-18.1462","49.3969","Indian/Antananarivo","","Telecom-Malagasy"
@@ -779,3 +778,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","c6038de61703b212",13,"2025-05-15 14:26:06","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.243","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-15","b75429cdbc1f33fe",10,"2025-05-15 07:26:23","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-15","0ebbab501f19b5a7",14,"2025-05-15 19:27:28","Pixel 6 Pro","14","Google",34,"1.7.4.5","","","","61.242.135.17","unknown","China","CN","Hubei","HB","Wuhan","30.589","114.2681","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
+"2025-05-15","4e2b605822045ef1",48,"2025-05-15 13:29:21","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
