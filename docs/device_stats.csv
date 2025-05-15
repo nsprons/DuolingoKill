@@ -772,7 +772,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","9925e43c4238f4cd",16,"2025-05-15 17:39:18","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","197.120.208.3","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
 "2025-05-15","34b49fd5ed88f8da",196,"2025-05-15 22:39:36","2201123C","15","Xiaomi",35,"1.7.4.5","","","","120.84.9.203","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","China Unicom IP network China169 Guangdong province"
 "2025-05-15","3b09ec7c1ddb23b2",84,"2025-05-15 21:40:36","SM-S908B","14","samsung",34,"1.0.0.1","en","US","","158.140.167.49","unknown","Indonesia","ID","East Java","JI","Surabaya","-7.2484","112.7419","Asia/Jakarta","","PT. Eka Mas Republik"
-"2025-05-15","4e2b605822045ef1",74,"2025-05-15 16:41:43","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","7c161a49ce78d626",73,"2025-05-15 21:42:18","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.164.254","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-15","e967b98653353a6c",21,"2025-05-15 22:42:29","22101317C","13","Xiaomi",33,"1.7.5.1","zh","CN","1599366788","140.224.138.97","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","Chinanet"
 "2025-05-15","ce7b3581565ed388",10,"2025-05-15 09:43:28","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
@@ -782,3 +781,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","52147671ede76e07",3,"2025-05-15 22:50:55","RMX5010","15","realme",35,"1.0.0.1","en","US","","113.84.3.149","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-15","e3d63f6772c7637e",116,"2025-05-15 22:54:10","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","54.65.54.33","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-15","cf47a6fb6648ad1b",11,"2025-05-15 22:54:23","LM-V405","15","LGE",35,"1.7.4.5","","","","175.13.24.243","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-15","4e2b605822045ef1",75,"2025-05-15 16:54:51","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
