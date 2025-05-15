@@ -706,7 +706,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-14","d15e9912ab4338e6",5,"2025-05-14 18:06:42","21061110AG","13","Xiaomi",33,"1.7.4.5","","","","200.24.133.1","unknown","Ecuador","EC","Guayas","G","Guayaquil","-2.1978","-79.8764","America/Guayaquil","","SERVITRACTOR S.A."
 "2025-05-15","9925e43c4238f4cd",3,"2025-05-15 02:07:39","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","197.120.180.116","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
 "2025-05-15","41eb04801928282a",1,"2025-05-15 07:10:11","RMX3888","15","realme",35,"1.7.4.5","","","","122.193.66.13","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
-"2025-05-15","4e2b605822045ef1",3,"2025-05-15 01:15:36","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-15","1f8fcc30013d9d04",2,"2025-05-15 02:18:04","SM-S938U","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
 "2025-05-14","ce7b3581565ed388",38,"2025-05-14 18:20:04","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
 "2025-05-15","93c14722a0db38b2",1,"2025-05-15 07:22:01","Redmi K30 5G Speed","12","Xiaomi",31,"1.7.4.5","","","","74.48.44.44","unknown","unknown","US","California","CA","Los Angeles","34.0544","-118.244","","","unknown"
@@ -757,3 +756,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","653552fb6fe9142a",22,"2025-05-15 08:53:52","2211133C","13","Xiaomi",33,"1.7.4.5","","","","116.169.10.61","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-15","7c161a49ce78d626",13,"2025-05-15 07:56:23","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","112.215.224.23","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT XL Axiata"
 "2025-05-15","ee8282874ac69177",3,"2025-05-15 09:00:02","24122RKC7C","15","Xiaomi",35,"1.0.0.1","zh","CN","","180.165.22.141","unknown","China","CN","Shanghai","SH","Shanghai","31.2222","121.4581","Asia/Shanghai","","China Telecom Group"
+"2025-05-15","4e2b605822045ef1",6,"2025-05-15 03:02:32","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
