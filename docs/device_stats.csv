@@ -782,3 +782,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-15","9aae7c063598e561",1,"2025-05-15 22:57:54","SM-W9023","14","samsung",34,"1.7.5.2","zh","CN","error","36.98.88.1","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-15","52147671ede76e07",4,"2025-05-15 22:58:03","RMX5010","15","realme",35,"1.0.0.1","en","US","","113.84.3.149","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-15","ded0d9b082536dfd",34,"2025-05-15 21:58:13","22101316G","14","Xiaomi",34,"1.0.0.1","en","US","","42.118.48.99","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
+"2025-05-15","7acd480d2032a541",1,"2025-05-15 22:58:32","GLA-AL00","12","HUAWEI",31,"1.0.0.1","zh","CN","","18.166.69.100","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","AMAZON-02"
