@@ -798,4 +798,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","c6038de61703b212",22,"2025-05-16 20:30:16","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.198.247","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-16","0073942f371165a4",12,"2025-05-16 20:30:31","TECNO LH7n","14","TECNO",34,"1.0.0.1","en","US","","51.235.187.0","unknown","unknown","SA","Eastern Province","04","Dammam","26.4336","50.1116","","","unknown"
 "2025-05-17","3b2c7bde652b6038",5,"2025-05-17 01:30:43","M2002J9E","11","Xiaomi",30,"1.0.0.1","zh","TW","","18.183.252.88","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
-"2025-05-17","718d047186e69eeb",5,"2025-05-17 01:30:48","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.143.102.183","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-17","718d047186e69eeb",6,"2025-05-17 01:30:53","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","180.143.102.183","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
