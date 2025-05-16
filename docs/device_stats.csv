@@ -759,7 +759,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","93c14722a0db38b2",5,"2025-05-16 20:09:49","Redmi K30 5G Speed","12","Xiaomi",31,"1.7.4.5","","","","74.48.44.44","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","MULTA-ASN1"
 "2025-05-16","5a6e09679cc0e3b6",36,"2025-05-16 20:12:28","SM-S9210","14","samsung",34,"1.7.5","en","US","","157.254.198.9","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AS-SHARON"
 "2025-05-16","c0f94bf8f79f86e1",41,"2025-05-16 21:17:05","RMX3366","11","realme",30,"1.7.4.5","","","","133.106.148.104","unknown","Japan","JP","Tokyo","13","Jingūmae","35.6708","139.701","Asia/Tokyo","","Rakuten Mobile Network, Inc."
-"2025-05-16","4e2b605822045ef1",21,"2025-05-16 14:17:32","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-16","d178cdd355517176",1,"2025-05-16 20:18:15","Mi MIX 3","15","Xiaomi",35,"1.0.0.1","zh","CN","","104.28.161.71","unknown","United States","US","Washington","WA","Kent","47.3822","-122.2415","America/Los_Angeles","","CLOUDFLARENET"
 "2025-05-16","d95cf8b001b3c7f2",26,"2025-05-16 20:20:12","SM-S9260","15","samsung",35,"1.7.5","zh","CN","","205.198.88.138","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","COGENT-174"
 "2025-05-16","c6038de61703b212",16,"2025-05-16 15:23:37","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.247","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
@@ -795,3 +794,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","77ca10f3531dd5a4",6,"2025-05-16 10:12:26","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-16","34b49fd5ed88f8da",369,"2025-05-16 21:12:41","2201123C","15","Xiaomi",35,"1.7.4.5","","","","113.99.140.144","unknown","unknown","CN","Guangdong","GD","Dongguan","23.0177","113.7506","","","unknown"
 "2025-05-16","653552fb6fe9142a",33,"2025-05-16 21:14:48","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
+"2025-05-16","4e2b605822045ef1",22,"2025-05-16 15:15:39","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
