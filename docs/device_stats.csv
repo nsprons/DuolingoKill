@@ -799,6 +799,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","77ca10f3531dd5a4",13,"2025-05-16 17:39:50","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","177.79.101.34","unknown","Brazil","BR","São Paulo","SP","Campinas","-22.895","-47.0439","America/Sao_Paulo","","TELEFONICA BRASIL S.A"
 "2025-05-17","f43acb410bda7d55",8,"2025-05-17 04:42:08","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","1.164.119.143","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
 "2025-05-17","2bed6744416903b0",9,"2025-05-17 04:44:38","21051182C","13","Xiaomi",33,"1.7.4.5","","","","14.145.212.108","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","Chinanet"
-"2025-05-16","4e2b605822045ef1",39,"2025-05-16 22:48:22","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-16","c6038de61703b212",26,"2025-05-16 23:48:22","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.243","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-16","26c24cf1325d136e",1,"2025-05-16 23:53:00","ELI-NX9","15","HONOR",35,"1.7.4.5","","","","217.107.127.86","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","Rostelecom"
+"2025-05-16","4e2b605822045ef1",40,"2025-05-16 22:56:00","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
