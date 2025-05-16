@@ -787,5 +787,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","7c161a49ce78d626",20,"2025-05-16 10:43:34","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.164.254","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-16","df9d613d9b98b47f",4,"2025-05-16 05:49:51","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","61.8.130.5","unknown","Germany","DE","","","","51.2993","9.491","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-16","524bab337d670732",1,"2025-05-16 11:50:05","SM-N9860","13","samsung",33,"1.7.5.2","zh","CN","error","139.159.170.15","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","CHINANET Guangdong province network"
-"2025-05-16","4e2b605822045ef1",6,"2025-05-16 05:52:03","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-16","0ebbab501f19b5a7",6,"2025-05-16 11:52:32","Pixel 6 Pro","14","Google",34,"1.7.4.5","","","","183.95.251.47","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
+"2025-05-16","4e2b605822045ef1",7,"2025-05-16 05:52:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
