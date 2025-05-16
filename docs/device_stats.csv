@@ -796,6 +796,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","8e33365f004215dc",2,"2025-05-16 23:35:27","CPH2653","15","OnePlus",35,"1.7.4.5","","","","103.190.178.177","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","Akari Networks"
 "2025-05-16","4e2b605822045ef1",25,"2025-05-16 17:36:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-16","80c0c50f21549cbe",1,"2025-05-16 23:37:27","PKR110","15","OnePlus",35,"1.7.4.5","","","","199.15.78.87","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","JINX CO., LIMITED"
-"2025-05-16","00ad3145304e0196",1,"2025-05-16 23:37:38","MEIZU 20 Pro","14","meizu",34,"1.7.4.5","","","","113.84.0.198","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-16","77ca10f3531dd5a4",8,"2025-05-16 12:38:14","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-16","5ee0212f42e8a5c0",72,"2025-05-16 23:38:55","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","36.43.211.10","unknown","China","CN","Shaanxi","SN","Xianyang","34.334","108.7042","Asia/Shanghai","","Chinanet"
+"2025-05-16","00ad3145304e0196",2,"2025-05-16 23:39:09","MEIZU 20 Pro","14","meizu",34,"1.7.4.5","","","","113.84.0.198","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
