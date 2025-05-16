@@ -802,3 +802,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","26c24cf1325d136e",1,"2025-05-16 23:53:00","ELI-NX9","15","HONOR",35,"1.7.4.5","","","","217.107.127.86","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","Rostelecom"
 "2025-05-16","4e2b605822045ef1",40,"2025-05-16 22:56:00","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-17","e3d63f6772c7637e",63,"2025-05-17 04:57:31","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","112.96.170.27","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","China Unicom Guangzhou network"
+"2025-05-17","c15b3e0858d5deca",1,"2025-05-17 00:00:37","9qJTpW9d5eSx0t","14","Xiaomi",33,"1.0.0.1","en","US","","41.74.209.8","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Orange Madagascar"
