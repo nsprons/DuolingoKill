@@ -740,7 +740,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","318f122b1db92f17",1,"2025-05-16 18:33:48","863vGJoEB","9","Google",33,"1.0.0.1","en","US","","102.16.88.121","unknown","Madagascar","MG","","","Toamasina","-18.1462","49.3969","Indian/Antananarivo","","Telecom-Malagasy"
 "2025-05-16","5c91428d3f1807a7",4,"2025-05-16 23:34:56","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","36.21.145.103","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","Chinanet"
 "2025-05-16","8e33365f004215dc",2,"2025-05-16 23:35:27","CPH2653","15","OnePlus",35,"1.7.4.5","","","","103.190.178.177","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","Akari Networks"
-"2025-05-16","4e2b605822045ef1",25,"2025-05-16 17:36:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-16","77ca10f3531dd5a4",8,"2025-05-16 12:38:14","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-16","00ad3145304e0196",2,"2025-05-16 23:39:09","MEIZU 20 Pro","14","meizu",34,"1.7.4.5","","","","113.84.0.198","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-16","80c0c50f21549cbe",2,"2025-05-16 23:40:45","PKR110","15","OnePlus",35,"1.7.4.5","","","","199.15.78.87","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","JINX CO., LIMITED"
@@ -799,3 +798,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","1f8fcc30013d9d04",6,"2025-05-16 20:23:37","SM-S938U","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
 "2025-05-17","5a6e09679cc0e3b6",4,"2025-05-17 01:25:00","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.197","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-17","0000000000000000",5,"2025-05-17 01:25:56","M2007J3SC","12","Xiaomi",31,"1.0.0.1","zh","CN","","8.212.39.48","unknown","unknown","HK","unknown","unknown","Hong Kong","22.2842","114.1759","","","unknown"
+"2025-05-16","4e2b605822045ef1",27,"2025-05-16 19:26:23","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
