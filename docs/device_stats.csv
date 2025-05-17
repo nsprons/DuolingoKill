@@ -809,4 +809,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-17","99044082da66030c",1,"2025-05-17 23:28:03","PJZ110","15","OnePlus",35,"1.0.0.1","zh","CN","","124.127.144.152","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Networks Inter-Exchange"
 "2025-05-17","1bc4eccb8def352d",1,"2025-05-17 23:29:28","V2199A","14","vivo",34,"1.7.5","zh","CN","","115.231.49.4","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-17","00ad3145304e0196",1,"2025-05-17 23:30:14","MEIZU 20 Pro","14","meizu",34,"1.7.4.5","","","","113.84.136.234","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
-"2025-05-17","af4f53af15649fec",12,"2025-05-17 23:30:44","2210132C","15","Xiaomi",35,"1.0.0.1","zh","CN","","144.12.167.65","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-17","af4f53af15649fec",13,"2025-05-17 23:30:48","2210132C","15","Xiaomi",35,"1.0.0.1","zh","CN","","144.12.167.65","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
