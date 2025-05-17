@@ -796,7 +796,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","7c161a49ce78d626",8,"2025-05-18 00:38:12","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.164.254","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-18","c04da3c3971acfc7",2,"2025-05-18 01:39:54","M2012K11AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","113.78.196.201","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
 "2025-05-18","0ea7d6eb7a878b8f",3,"2025-05-18 01:49:42","M2105K81AC","15","Xiaomi",35,"1.7.4.5","","","","62.60.232.77","unknown","Iran","IR","","","","35.698","51.4115","Asia/Tehran","","Amwaj Alkhyr Commercial Brokers Co."
-"2025-05-17","4e2b605822045ef1",30,"2025-05-17 19:53:39","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-18","e3d63f6772c7637e",16,"2025-05-18 01:55:00","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","35.78.186.226","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-17","e9879da508480b27",15,"2025-05-17 19:58:46","M2102J20SG","14","Xiaomi",34,"1.0.0.1","en","GB","","109.43.176.209","unknown","Germany","DE","Baden-Wurttemberg","BW","Stuttgart","48.767","9.1827","Europe/Berlin","","Vodafone GmbH"
 "2025-05-18","040ce0d346fafff5",5,"2025-05-18 01:59:59","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","1025244416","14.146.21.158","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
@@ -810,3 +809,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-17","97264dedd7ea9c6d",4,"2025-05-17 21:11:19","M2007J3SG","12","Xiaomi",31,"1.7.4.5","","","","196.132.54.4","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Vodafone-EG"
 "2025-05-18","a197d92e5c4389fb",6,"2025-05-18 02:12:38","Pixel 6","15","Google",35,"1.0.0.1","zh","CN","","143.198.130.157","unknown","United States","US","California","CA","Santa Clara","37.3931","-121.962","America/Los_Angeles","","DIGITALOCEAN-ASN"
 "2025-05-17","0000000000000000",6,"2025-05-17 20:14:20","unknown","15","unknown",35,"1.0.0.1","en","GB","","85.190.238.83","unknown","Denmark","DK","Capital Region","84","Copenhagen","55.6802","12.5892","Europe/Copenhagen","","TEFINCOM S.A."
+"2025-05-17","4e2b605822045ef1",31,"2025-05-17 20:14:26","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
