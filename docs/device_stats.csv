@@ -788,7 +788,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-17","0073942f371165a4",7,"2025-05-17 20:02:56","TECNO LH7n","14","TECNO",34,"1.0.0.1","en","US","","5.246.186.108","unknown","unknown","SA","Eastern Province","04","Dammam","26.4336","50.1116","","","unknown"
 "2025-05-17","11b933a16ef75786",19,"2025-05-17 12:03:43","moto g85 5G","14","motorola",34,"1.0.0.1","en","US","","191.102.196.222","unknown","Colombia","CO","Antioquia","ANT","Medellín","6.2529","-75.5646","America/Bogota","","DIRECTV COLOMBIA LTDA."
 "2025-05-18","88e9b79462a76951",2,"2025-05-18 01:04:16","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
-"2025-05-17","4e2b605822045ef1",29,"2025-05-17 19:07:05","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-18","ef9117af46d9ff69",2,"2025-05-18 01:10:12","Redmi K20 Pro Premium Edition","11","Xiaomi",30,"1.0.0.1","zh","CN","","54.238.57.53","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-18","fccbc379d21b72b5",4,"2025-05-18 01:14:08","PJZ110","15","OnePlus",35,"1.0.0.1","zh","CN","","45.137.183.145","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","Akari Networks"
 "2025-05-17","97264dedd7ea9c6d",3,"2025-05-17 20:15:28","M2007J3SG","12","Xiaomi",31,"1.7.4.5","","","","196.132.73.195","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Vodafone-EG"
@@ -810,3 +809,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","0ea7d6eb7a878b8f",3,"2025-05-18 01:49:42","M2105K81AC","15","Xiaomi",35,"1.7.4.5","","","","62.60.232.77","unknown","Iran","IR","","","","35.698","51.4115","Asia/Tehran","","Amwaj Alkhyr Commercial Brokers Co."
 "2025-05-18","e3d63f6772c7637e",15,"2025-05-18 01:51:37","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","35.78.186.226","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-17","c6038de61703b212",28,"2025-05-17 20:52:05","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.198.247","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
+"2025-05-17","4e2b605822045ef1",30,"2025-05-17 19:53:39","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
