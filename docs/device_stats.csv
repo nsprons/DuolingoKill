@@ -765,7 +765,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","c650a577f8eba164",11,"2025-05-16 22:30:00","SM-A515F","13","samsung",33,"1.0.0.1","en","US","","196.64.218.103","unknown","Morocco","MA","El-Jadida","JDI","El Jadida","33.2558","-8.5015","Africa/Casablanca","","MT-MPLS"
 "2025-05-17","0c5a665a215211f5",1,"2025-05-17 05:44:59","M2102J2SC","15","Xiaomi",35,"1.7.4.5","","","","14.151.64.72","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","Chinanet"
 "2025-05-16","d418a2786a84350a",4,"2025-05-16 23:50:35","21051182C","15","Xiaomi",35,"1.0.0.1","zh","CN","","31.16.249.141","unknown","Germany","DE","Bavaria","BY","Nuremberg","49.4366","11.0914","Europe/Berlin","","Vodafone GmbH"
-"2025-05-16","4e2b605822045ef1",42,"2025-05-16 23:54:18","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-16","2e72bf8c8f28379e",56,"2025-05-16 16:54:18","SM-A146M","14","samsung",34,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
 "2025-05-17","a46f5bd5e25d3c04",2,"2025-05-17 05:10:44","MI 9","14","Xiaomi",34,"1.0.0.1","vi","VN","","42.114.171.20","unknown","Vietnam","VN","Hanoi","HN","Hanoi","21.0292","105.8526","Asia/Bangkok","","FPT Telecom Company"
 "2025-05-16","7b93ed4e675b3b92",11,"2025-05-16 19:23:24","21051182G","13","Xiaomi",33,"1.7.5","pt","BR","","170.83.207.19","unknown","Brazil","BR","Sergipe","SE","Estância","-11.2339","-37.4145","America/Maceio","","JF Solucoes Informatica Ltda."
@@ -804,3 +803,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-16","765cbe87fd568bce",37,"2025-05-16 20:00:06","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","104.28.158.205","unknown","United States","US","California","CA","East Los Angeles","34.0261","-118.1756","America/Los_Angeles","","CLOUDFLARENET"
 "2025-05-17","11bdbc9713c7de35",7,"2025-05-17 08:01:43","SM-G9980","11","samsung",30,"1.7.5.2","zh","CN","1720605687","1.71.234.253","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-17","8f442a365aa7ac46",1,"2025-05-17 08:04:04","SM-G9980","15","samsung",35,"1.0.0.1","zh","CN","","106.84.169.40","unknown","China","CN","Chongqing","CQ","Chongqing","29.5689","106.5577","Asia/Shanghai","","Chinanet"
+"2025-05-17","4e2b605822045ef1",4,"2025-05-17 02:07:47","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
