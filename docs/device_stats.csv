@@ -808,5 +808,5 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-17","7c161a49ce78d626",79,"2025-05-17 21:44:53","23028RN4DG","13","Xiaomi",33,"1.7.5","en","US","","180.252.164.254","unknown","Indonesia","ID","Jakarta","JK","Jakarta","-6.2114","106.8446","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-17","4e2b605822045ef1",25,"2025-05-17 16:46:34","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-17","a197d92e5c4389fb",40,"2025-05-17 22:46:42","Pixel 6","15","Google",35,"1.0.0.1","zh","CN","","172.104.114.36","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","Akamai Connected Cloud"
-"2025-05-17","d178cdd355517176",1,"2025-05-17 22:48:42","Mi MIX 3","15","Xiaomi",35,"1.0.0.1","zh","CN","","104.28.159.8","unknown","Germany","DE","Hesse","HE","Dreieich","50.0188","8.6956","Europe/Berlin","","CLOUDFLARENET"
 "2025-05-17","cf47a6fb6648ad1b",32,"2025-05-17 22:49:14","LM-V405","15","LGE",35,"1.7.4.5","","","","175.13.16.54","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-17","d178cdd355517176",2,"2025-05-17 22:50:00","Mi MIX 3","15","Xiaomi",35,"1.0.0.1","zh","CN","","104.28.159.17","unknown","Germany","DE","Hesse","HE","Dreieich","50.0188","8.6956","Europe/Berlin","","CLOUDFLARENET"
