@@ -807,6 +807,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","f43acb410bda7d55",4,"2025-05-18 06:52:12","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","1.164.119.143","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
 "2025-05-17","4223b36134888672",292,"2025-05-17 19:52:21","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","177.65.189.248","unknown","Brazil","BR","Pará","PA","Belém","-1.4537","-48.5078","America/Belem","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-18","e3d63f6772c7637e",26,"2025-05-18 06:55:31","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","112.96.176.174","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","China Unicom Guangzhou network"
-"2025-05-18","4e2b605822045ef1",4,"2025-05-18 01:00:26","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-18","c6038de61703b212",3,"2025-05-18 02:01:39","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.244","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-18","1658645402f5f68b",1,"2025-05-18 07:03:48","MI 9","11","Xiaomi",30,"1.7.5.3","zh","CN","error","182.204.35.39","unknown","China","CN","Liaoning","LN","Shenyang","41.7806","123.4314","Asia/Shanghai","","Chinanet"
+"2025-05-18","4e2b605822045ef1",5,"2025-05-18 01:03:58","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
