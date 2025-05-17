@@ -742,7 +742,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-17","bdc6c15e6bbe1c59",1,"2025-05-17 22:31:28","22127RK46C","14","Xiaomi",34,"1.0.0.1","zh","CN","","182.134.211.49","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-17","20e6b4c78e543c29",12,"2025-05-17 22:36:48","2106118C","14","Xiaomi",34,"1.0.0.1","zh","CN","","171.104.243.226","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-17","96561aab209cf963",4,"2025-05-17 22:40:40","2211133C","15","Xiaomi",35,"1.0.0.1","zh","CN","","89.185.25.181","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","Hytron Network Services Limited"
-"2025-05-17","4e2b605822045ef1",25,"2025-05-17 16:46:34","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-17","cf47a6fb6648ad1b",32,"2025-05-17 22:49:14","LM-V405","15","LGE",35,"1.7.4.5","","","","175.13.16.54","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-17","d178cdd355517176",2,"2025-05-17 22:50:00","Mi MIX 3","15","Xiaomi",35,"1.0.0.1","zh","CN","","104.28.159.17","unknown","Germany","DE","Hesse","HE","Dreieich","50.0188","8.6956","Europe/Berlin","","CLOUDFLARENET"
 "2025-05-17","45393b9d31dd9c37",1,"2025-05-17 22:55:10","MEIZU 20","15","meizu",35,"1.7.4.5","","","","52.221.174.25","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
@@ -810,3 +809,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","00793426bd84d50d",2,"2025-05-18 00:40:29","2210132C","13","Xiaomi",33,"1.0.0.1","en","US","","49.93.209.194","unknown","China","CN","Jiangsu","JS","Suzhou","31.3093","120.602","Asia/Shanghai","","Chinanet"
 "2025-05-17","c6038de61703b212",27,"2025-05-17 19:41:38","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.198.246","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-17","9925e43c4238f4cd",48,"2025-05-17 19:42:50","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","62.139.83.98","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
+"2025-05-17","4e2b605822045ef1",27,"2025-05-17 18:45:56","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
