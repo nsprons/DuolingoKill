@@ -810,4 +810,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","2088430dea4b1190",2,"2025-05-18 22:01:53","23013RK75C","15","Xiaomi",35,"1.7.5","zh","CN","","18.141.160.37","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","AMAZON-02"
 "2025-05-18","20e6b4c78e543c29",11,"2025-05-18 22:02:27","2106118C","14","Xiaomi",34,"1.0.0.1","zh","CN","","171.104.243.226","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-18","5a6e09679cc0e3b6",28,"2025-05-18 22:02:54","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.153.148.217","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-18","f1b31b58ed295e81",1,"2025-05-18 22:04:29","23127PN0CC","14","Xiaomi",34,"1.0.0.1","zh","CN","","175.13.110.72","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-18","f1b31b58ed295e81",2,"2025-05-18 22:04:32","23127PN0CC","14","Xiaomi",34,"1.0.0.1","zh","CN","","175.13.110.72","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
