@@ -747,7 +747,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","4d7969ed390f715b",1,"2025-05-18 14:28:33","M2007J3SY","14","Xiaomi",34,"1.7.5.2","zh","TW","1758936425","42.73.113.228","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Mobile Business Group"
 "2025-05-18","ef3451876f8273e6",3,"2025-05-18 14:34:56","2211133C","15","Xiaomi",35,"1.7.4.5","","","","124.160.200.5","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-18","b9fa6270a4793188",32,"2025-05-18 14:36:51","2211133C","15","Xiaomi",35,"1.7.4.4","","","","120.71.73.250","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-18","4e2b605822045ef1",17,"2025-05-18 08:41:09","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-18","70b9d91b10ecb86a",2,"2025-05-18 14:42:26","MEIZU 21","14","meizu",34,"1.7.4.5","","","","222.216.225.101","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-18","8bc78664c1835a1a",4,"2025-05-18 14:44:20","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","36.32.218.50","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-18","8ce9353d8a17db62",13,"2025-05-18 14:55:37","PJZ110","15","OnePlus",35,"1.7.4.5","","","","62.192.175.95","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","LSHIY-USER-CONTENT"
@@ -810,3 +809,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","0ebbab501f19b5a7",9,"2025-05-18 17:50:52","Pixel 6 Pro","14","Google",34,"1.7.4.5","","","","175.167.138.149","unknown","China","CN","Liaoning","LN","Shenyang","41.7806","123.4314","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-18","c9caf8819b491cdb",6,"2025-05-18 17:52:51","Mi 10 Pro","13","Xiaomi",33,"1.7.4.4","","","","101.249.172.147","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-18","e3d63f6772c7637e",78,"2025-05-18 17:53:26","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","112.96.65.91","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","China Unicom IP network China169 Guangdong province"
+"2025-05-18","4e2b605822045ef1",19,"2025-05-18 11:54:11","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
