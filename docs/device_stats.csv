@@ -800,7 +800,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","bbc5836195993428",2,"2025-05-19 05:20:51","PJD110","15","OnePlus",35,"1.7.4.5","","","","112.96.230.164","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-19","1f8fcc30013d9d04",1,"2025-05-19 00:23:56","SM-S938U","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
 "2025-05-19","97e9f1c54ef62ec7",1,"2025-05-19 05:25:07","CPH2645","15","OnePlus",35,"1.0.0.1","ja","HK","","124.226.157.23","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-18","4e2b605822045ef1",49,"2025-05-18 23:24:47","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","0f8aa288b68388f1",2,"2025-05-19 05:30:01","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","113.77.19.108","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
 "2025-05-18","2bfe78119e2aa2a2",19,"2025-05-18 23:37:15","2304FPN6DC","15","Xiaomi",35,"1.0.0.1","zh","CN","","31.16.249.141","unknown","Germany","DE","Bavaria","BY","Nuremberg","49.4366","11.0914","Europe/Berlin","","Vodafone GmbH"
 "2025-05-18","d418a2786a84350a",5,"2025-05-18 23:38:22","21051182C","15","Xiaomi",35,"1.0.0.1","zh","CN","","31.16.249.141","unknown","Germany","DE","Bavaria","BY","Nuremberg","49.4366","11.0914","Europe/Berlin","","Vodafone GmbH"
@@ -811,3 +810,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-18","ce7b3581565ed388",25,"2025-05-18 16:48:21","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
 "2025-05-18","4b6cabc22de77be9",10,"2025-05-18 18:48:32","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","177.79.96.36","unknown","Brazil","BR","São Paulo","SP","Campinas","-22.895","-47.0439","America/Sao_Paulo","","TELEFONICA BRASIL S.A"
 "2025-05-18","2e72bf8c8f28379e",40,"2025-05-18 16:49:56","SM-A146M","14","samsung",34,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
+"2025-05-18","4e2b605822045ef1",50,"2025-05-18 23:50:11","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
