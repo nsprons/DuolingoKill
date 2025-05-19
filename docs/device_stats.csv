@@ -815,4 +815,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","c6038de61703b212",22,"2025-05-19 19:52:13","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.198.244","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-19","4e2b605822045ef1",41,"2025-05-19 18:55:20","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-20","0f19546a08a4d8d8",1,"2025-05-20 00:55:28","22041211AC","14","Xiaomi",34,"1.7.5.2","zh","CN","1745656029","110.176.55.45","unknown","China","CN","Shanxi","SX","Taiyuan","37.8648","112.5636","Asia/Shanghai","","Chinanet"
-"2025-05-19","765cbe87fd568bce",18,"2025-05-19 12:56:16","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","104.28.162.101","unknown","Austria","AT","","","","48.2048","16.3801","Europe/Vienna","","CLOUDFLARENET"
+"2025-05-19","765cbe87fd568bce",19,"2025-05-19 12:56:53","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","104.28.162.101","unknown","Austria","AT","","","","48.2048","16.3801","Europe/Vienna","","CLOUDFLARENET"
