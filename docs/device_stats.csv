@@ -794,7 +794,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","7a79eb801c99b812",6,"2025-05-19 23:17:37","23049RAD8C","13","Xiaomi",33,"1.0.0.1","zh","CN","","220.200.127.117","unknown","China","CN","Guangxi","GX","Nanning","22.8111","108.3168","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-19","741180d6cb9b9201",28,"2025-05-19 23:18:02","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","167.179.81.210","unknown","Japan","JP","Tokyo","13","","35.6887","139.745","Asia/Tokyo","","AS-CHOOPA"
 "2025-05-19","b9fa6270a4793188",15,"2025-05-19 23:19:35","2211133C","15","Xiaomi",35,"1.7.4.4","","","","","","","","","","","","","","",""
-"2025-05-19","4e2b605822045ef1",32,"2025-05-19 17:20:52","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","43d4e6243464751b",2,"2025-05-19 23:21:56","NOH-AN00","12","HUAWEI",31,"1.0.0.1","zh","CN","","182.145.85.235","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-19","4b53e83a9b59a3d0",1,"2025-05-19 23:22:05","23013RK75C","15","Xiaomi",35,"1.0.0.1","zh","CN","","23.165.104.195","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","SNAJU"
 "2025-05-19","653552fb6fe9142a",39,"2025-05-19 23:26:59","2211133C","13","Xiaomi",33,"1.7.4.5","","","","116.169.6.52","unknown","China","CN","Sichuan","SC","Deyang","31.131","104.3984","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
@@ -816,3 +815,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","0000000000000000",33,"2025-05-19 23:44:05","M2007J3SC","12","Xiaomi",31,"1.0.0.1","zh","CN","","49.75.73.46","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINATELECOM Jiangsu province Suzhou 5G network"
 "2025-05-19","88e9b79462a76951",66,"2025-05-19 23:44:26","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-19","2e72bf8c8f28379e",17,"2025-05-19 10:49:08","SM-A146M","14","samsung",34,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
+"2025-05-19","4e2b605822045ef1",33,"2025-05-19 17:49:38","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
