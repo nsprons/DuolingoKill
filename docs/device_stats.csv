@@ -811,4 +811,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","df2a4a98aa04b485",5,"2025-05-19 14:32:16","M2012K11AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","112.228.102.120","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-19","4e2b605822045ef1",14,"2025-05-19 08:37:55","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","5ee0212f42e8a5c0",35,"2025-05-19 14:38:19","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","113.135.247.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-19","8bc78664c1835a1a",4,"2025-05-19 14:38:52","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","220.205.224.57","unknown","China","CN","Anhui","AH","Bengbu","32.9422","117.3647","Asia/Shanghai","","UNICOM AnHui province network"
+"2025-05-19","8bc78664c1835a1a",5,"2025-05-19 14:38:54","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","220.205.224.57","unknown","China","CN","Anhui","AH","Bengbu","32.9422","117.3647","Asia/Shanghai","","UNICOM AnHui province network"
