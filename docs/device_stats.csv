@@ -784,7 +784,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","8f442a365aa7ac46",5,"2025-05-19 10:35:55","SM-G9980","15","samsung",35,"1.0.0.1","zh","CN","","213.130.142.59","unknown","United Kingdom","GB","","","","51.4964","-0.1224","Europe/London","","Spike Telecom LLC"
 "2025-05-19","ce929cda0518469d",7,"2025-05-19 10:42:12","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","1.202.121.142","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Networks Inter-Exchange"
 "2025-05-19","e424ce076a305b4f",1,"2025-05-19 10:48:59","2211133C","15","Xiaomi",35,"1.7.4.5","","","","1.28.47.101","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
-"2025-05-19","4e2b605822045ef1",7,"2025-05-19 04:51:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-18","4223b36134888672",624,"2025-05-18 23:54:32","2201117TL","13","Xiaomi",33,"1.7.5.2","pt","BR","67764880","2804:14c:5988:8d52:e877:459:ba24:bfce","unknown","unknown","BR","Pará","PA","Belém","-1.345","-48.4219","","","unknown"
 "2025-05-19","f1e8367c25be8b17",8,"2025-05-19 11:01:27","M2011K2C","14","Xiaomi",34,"1.0.0.1","zh","CN","error","123.147.249.174","unknown","China","CN","Chongqing","CQ","Chongqing","29.5689","106.5577","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-19","c6038de61703b212",6,"2025-05-19 06:05:55","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.198.244","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
@@ -812,3 +811,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","9925e43c4238f4cd",13,"2025-05-19 06:50:32","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","102.62.24.57","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
 "2025-05-19","73b2850cdc0b23f7",1,"2025-05-19 11:50:37","CPH2653","15","OnePlus",35,"1.0.0.1","zh","CN","","23.249.26.172","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","",""
 "2025-05-19","88e9b79462a76951",33,"2025-05-19 11:51:30","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
+"2025-05-19","4e2b605822045ef1",8,"2025-05-19 05:52:44","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
