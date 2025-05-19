@@ -796,7 +796,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","0f8aa288b68388f1",2,"2025-05-20 01:30:36","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","113.77.255.204","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
 "2025-05-20","218f9b0d422381e5",4,"2025-05-20 02:36:29","CPH2653","15","OnePlus",35,"1.0.0.1","ja","JP","","59.158.105.193","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","","ARTERIA Networks Corporation"
 "2025-05-19","1f8fcc30013d9d04",11,"2025-05-19 20:37:51","SM-S938U","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
-"2025-05-19","4e2b605822045ef1",44,"2025-05-19 19:45:03","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-20","c191e66e09b1c276",1,"2025-05-20 01:46:30","Pixel 6 Pro","15","Google",35,"1.7.4.5","","","","109.110.162.54","unknown","Hong Kong","HK","Kwai Tsing","NKT","Ha Kwai Chung","22.3539","114.1342","Asia/Hong_Kong","","Apple Network, LLC"
 "2025-05-19","2e72bf8c8f28379e",22,"2025-05-19 12:47:43","SM-A146M","14","samsung",34,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
 "2025-05-20","5a6e09679cc0e3b6",4,"2025-05-20 01:54:34","SM-S9210","14","samsung",34,"1.7.5","en","US","","157.254.198.9","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AS-SHARON"
@@ -816,3 +815,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","718d047186e69eeb",2,"2025-05-20 02:33:50","22041216C","14","Xiaomi",34,"1.7.5","zh","CN","","171.111.174.31","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-19","df9d613d9b98b47f",11,"2025-05-19 20:34:25","21091116UG","13","Xiaomi",33,"1.7.5","de","DE","","89.244.84.240","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-20","c0f94bf8f79f86e1",13,"2025-05-20 03:37:35","RMX3366","11","realme",30,"1.7.4.5","","","","210.157.220.253","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Rakuten Mobile Network, Inc."
+"2025-05-19","4e2b605822045ef1",45,"2025-05-19 20:38:26","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
