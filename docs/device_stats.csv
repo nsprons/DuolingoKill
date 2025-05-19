@@ -813,4 +813,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","4e2b605822045ef1",22,"2025-05-19 13:08:21","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","eaaea3c44dc1de66",16,"2025-05-19 19:09:10","23046RP50C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","112.36.231.140","unknown","China","CN","Shandong","SD","Jinan","36.6756","117.0211","Asia/Shanghai","","Shandong Mobile Communication Company Limited"
 "2025-05-19","66f956d00913491d",1,"2025-05-19 19:11:25","PJE110","15","OnePlus",35,"1.7.5.2","zh","CN","error","221.225.43.63","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINATELECOM Jiangsu province Suzhou 5G network"
-"2025-05-19","5ee0212f42e8a5c0",55,"2025-05-19 19:11:55","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","113.135.247.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-19","5ee0212f42e8a5c0",56,"2025-05-19 19:12:03","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","113.135.247.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
