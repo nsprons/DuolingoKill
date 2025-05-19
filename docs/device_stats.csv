@@ -784,7 +784,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","88e9b79462a76951",59,"2025-05-19 21:43:21","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-19","040ce0d346fafff5",18,"2025-05-19 21:43:42","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","1025244416","14.146.20.164","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-19","0000000000000000",30,"2025-05-19 21:44:02","M2007J3SC","12","Xiaomi",31,"1.0.0.1","zh","CN","","2408:843f:5620:526c:dd0c:2507:1480:d432","unknown","unknown","CN","Jiangsu","JS","Suzhou","31.3093","120.602","","","unknown"
-"2025-05-19","4e2b605822045ef1",28,"2025-05-19 15:48:59","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","edead6942f2e5aaf",6,"2025-05-19 21:49:25","22081212C","15","Xiaomi",35,"1.0.0.1","zh","CN","","113.101.93.214","unknown","China","CN","Guangdong","GD","Chaozhou","23.6372","116.6362","Asia/Shanghai","","Chinanet"
 "2025-05-19","df686c80dad0c42d",2,"2025-05-19 21:51:25","M2007J17C","12","Xiaomi",31,"1.7.4.5","","","","27.216.147.108","unknown","China","CN","Shandong","SD","Yantai","37.4852","121.4569","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-19","ee8282874ac69177",4,"2025-05-19 21:52:03","24122RKC7C","15","Xiaomi",35,"1.0.0.1","zh","CN","","206.237.1.102","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","XNNET"
@@ -816,3 +815,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","7425050dd41a6127",2,"2025-05-19 22:17:45","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","171.220.149.198","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-19","34b49fd5ed88f8da",64,"2025-05-19 22:19:45","2201123C","15","Xiaomi",35,"1.7.4.5","","","","120.84.9.203","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","China Unicom IP network China169 Guangdong province"
 "2025-05-19","9925e43c4238f4cd",27,"2025-05-19 17:20:16","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","197.192.137.69","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
+"2025-05-19","4e2b605822045ef1",29,"2025-05-19 16:20:46","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
