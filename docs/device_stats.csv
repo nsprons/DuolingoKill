@@ -653,7 +653,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","2ac62553207d6a5f",3,"2025-05-20 00:10:09","2210132C","15","Xiaomi",35,"1.7.5.2","zh","CN","425354741","116.30.142.38","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-20","90d501cfd7d40723",1,"2025-05-20 00:16:58","PJZ110","15","OnePlus",35,"1.7.5.3","zh","CN","error","23.132.124.130","unknown","unknown","US","California","CA","Los Angeles","34.0614","-118.3072","","","unknown"
 "2025-05-20","98f9f8043986bb35",1,"2025-05-20 00:18:22","PKR110","15","OnePlus",35,"1.7.5.2","zh","CN","1764699412","113.65.204.11","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","Chinanet"
-"2025-05-20","3b2c7bde652b6038",3,"2025-05-20 00:33:20","M2002J9E","11","Xiaomi",30,"1.0.0.1","zh","TW","","43.206.116.101","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
 "2025-05-19","c0a5df0100fb5f3b",3,"2025-05-19 22:19:28","RMX3371","13","realme",33,"1.7.4.5","","","","152.59.102.78","unknown","India","IN","Rajasthan","RJ","Jaipur","26.9525","75.7105","Asia/Kolkata","","Reliance Jio Infocomm Limited"
 "2025-05-20","a18acf44b36954e9",3,"2025-05-20 01:08:55","23127PN0CC","15","Xiaomi",35,"1.0.0.1","zh","CN","","49.112.138.57","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-19","97264dedd7ea9c6d",3,"2025-05-19 20:22:11","M2007J3SG","12","Xiaomi",31,"1.7.4.5","","","","217.52.0.58","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
@@ -826,3 +825,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","4e2b605822045ef1",26,"2025-05-20 15:50:42","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-20","0073942f371165a4",5,"2025-05-20 16:50:57","TECNO LH7n","14","TECNO",34,"1.0.0.1","en","US","","2a02:9b0:8008:b72:e431:cdae:145:722a","unknown","unknown","SA","Eastern Province","04","Dammam","26.4336","50.1116","","","unknown"
 "2025-05-20","df686c80dad0c42d",1,"2025-05-20 21:50:57","M2007J17C","12","Xiaomi",31,"1.7.4.5","","","","119.180.84.203","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
+"2025-05-20","3b2c7bde652b6038",6,"2025-05-20 21:51:53","M2002J9E","11","Xiaomi",30,"1.0.0.1","zh","TW","","35.76.114.109","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
