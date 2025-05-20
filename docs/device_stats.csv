@@ -833,3 +833,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","a7acf0af8e2f44b8",6,"2025-05-20 18:21:10","M2007J3SG","15","Xiaomi",35,"1.7.4.5","","","","149.102.245.175","unknown","France","FR","Bouches-du-Rhône","13","Marseille","43.2951","5.3861","Europe/Paris","","Datacamp Limited"
 "2025-05-20","b75429cdbc1f33fe",14,"2025-05-20 12:21:38","NX721J","14","nubia",34,"1.7.5","en","CA","","204.48.94.242","unknown","Canada","CA","Quebec","QC","Montreal","45.5909","-73.5655","America/Toronto","","VIDEOTRON"
 "2025-05-20","4e2b605822045ef1",39,"2025-05-20 18:24:21","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
+"2025-05-20","0499e95a8df91e28",15,"2025-05-20 19:24:59","otgHuvjdNVZWS","12","Oppo",33,"1.0.0.1","en","US","","102.17.120.251","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
