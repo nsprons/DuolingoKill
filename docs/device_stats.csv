@@ -832,6 +832,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-21","ce929cda0518469d",6,"2025-05-21 06:07:10","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
 "2025-05-20","b75429cdbc1f33fe",22,"2025-05-20 18:07:58","NX721J","14","nubia",34,"1.7.5","en","CA","","204.48.77.247","unknown","Canada","CA","Quebec","QC","Montreal","45.58","-73.5313","America/Toronto","","VIDEOTRON"
 "2025-05-21","776c8eb50ed7b37a",7,"2025-05-21 06:07:59","Mi 10","15","Xiaomi",35,"1.7.5.2","zh","CN","error","62.210.125.97","unknown","France","FR","","","","48.8582","2.3387","Europe/Paris","","Scaleway S.a.s."
-"2025-05-21","4e2b605822045ef1",1,"2025-05-21 00:11:12","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-21","741180d6cb9b9201",1,"2025-05-21 06:14:08","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","218.26.159.159","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-20","ce7b3581565ed388",28,"2025-05-20 17:14:59","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
+"2025-05-21","4e2b605822045ef1",2,"2025-05-21 00:17:20","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
