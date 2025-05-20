@@ -820,3 +820,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","a0f194a28b68d0fd",8,"2025-05-20 18:03:40","21091116UC","13","Xiaomi",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-20","653552fb6fe9142a",24,"2025-05-20 18:05:32","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
 "2025-05-20","c6038de61703b212",5,"2025-05-20 13:06:33","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.244","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
+"2025-05-20","44acf9fac62c9281",4,"2025-05-20 13:06:33","eZiS6YGsT","%random%","ROG",33,"1.0.0.1","en","US","","102.16.88.121","unknown","Madagascar","MG","","","Toamasina","-18.1462","49.3969","Indian/Antananarivo","","Telecom-Malagasy"
