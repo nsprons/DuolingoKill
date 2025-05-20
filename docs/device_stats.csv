@@ -831,3 +831,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-21","040ce0d346fafff5",1,"2025-05-21 00:10:28","23049RAD8C","13","Xiaomi",33,"1.7.5.2","zh","CN","1025244416","14.146.16.204","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-21","a18acf44b36954e9",1,"2025-05-21 00:11:31","23127PN0CC","15","Xiaomi",35,"1.0.0.1","zh","CN","","49.112.138.56","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-21","992deb1d54e302c2",1,"2025-05-21 00:12:49","22081212C","15","Xiaomi",35,"1.0.0.1","zh","CN","","140.224.222.99","unknown","China","CN","Fujian","FJ","Zhangzhou","24.5027","117.6495","Asia/Shanghai","","Chinanet"
+"2025-05-20","524323b6d8a5e6ec",13,"2025-05-20 19:14:53","AYAEYJF","13","Oppo",33,"1.0.0.1","en","US","","102.17.120.151","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
