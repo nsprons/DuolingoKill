@@ -818,4 +818,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-19","b75429cdbc1f33fe",20,"2025-05-19 20:29:49","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-20","4e2b605822045ef1",6,"2025-05-20 02:30:29","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","5e9278cb1a6a8768",3,"2025-05-19 17:30:52","23049PCD8G","14","Xiaomi",34,"1.0.0.1","es","US","","189.182.80.49","unknown","Mexico","MX","Nayarit","NAY","Compostela","21.1423","-105.0742","America/Mazatlan","","UNINET"
-"2025-05-20","066c7d67587543b6",1,"2025-05-20 08:31:48","Redmi K30 Pro","12","Xiaomi",31,"1.0.0.1","zh","CN","","221.235.93.227","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-20","066c7d67587543b6",2,"2025-05-20 08:31:49","Redmi K30 Pro","12","Xiaomi",31,"1.0.0.1","zh","CN","","221.235.93.227","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
