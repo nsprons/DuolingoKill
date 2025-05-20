@@ -774,7 +774,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","9003be2955b80f92",1,"2025-05-20 17:52:34","MEIZU 21","14","meizu",34,"1.7.4.5","","","","124.160.200.101","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-20","eaaea3c44dc1de66",9,"2025-05-20 17:56:39","23046RP50C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","112.36.231.140","unknown","China","CN","Shandong","SD","Jinan","36.6756","117.0211","Asia/Shanghai","","Shandong Mobile Communication Company Limited"
 "2025-05-20","0c9226db55be55ff",2,"2025-05-20 17:58:48","PHK110","15","OnePlus",35,"1.7.4.4","","","","3.115.82.155","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","","AMAZON-02"
-"2025-05-20","a0f194a28b68d0fd",8,"2025-05-20 18:03:40","21091116UC","13","Xiaomi",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-20","c6038de61703b212",5,"2025-05-20 13:06:33","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.244","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-20","44acf9fac62c9281",4,"2025-05-20 13:06:33","eZiS6YGsT","%random%","ROG",33,"1.0.0.1","en","US","","102.16.88.121","unknown","Madagascar","MG","","","Toamasina","-18.1462","49.3969","Indian/Antananarivo","","Telecom-Malagasy"
 "2025-05-20","3c52baec1f77f0df",3,"2025-05-20 18:07:44","22011211C","14","Xiaomi",34,"1.7.4.5","","","","138.199.62.25","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","Datacamp Limited"
@@ -821,3 +820,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","8bc78664c1835a1a",6,"2025-05-20 19:22:46","M2102K1C","14","Xiaomi",34,"1.7.4.5","","","","36.32.218.50","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-20","653552fb6fe9142a",28,"2025-05-20 19:24:56","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
 "2025-05-20","6c5502ff9236363e",5,"2025-05-20 19:25:28","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","74.48.17.47","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","MULTA-ASN1"
+"2025-05-20","a0f194a28b68d0fd",9,"2025-05-20 19:27:35","21091116UC","13","Xiaomi",33,"1.7.4.4","","","","","","","","","","","","","","",""
