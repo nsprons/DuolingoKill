@@ -815,7 +815,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","665514755ba2147f",3,"2025-05-20 18:06:45","23117RA68G","15","Xiaomi",35,"1.0.0.1","en","GB","","188.132.167.4","unknown","Türkiye","TR","","","","41.0214","28.9948","Europe/Istanbul","","High Speed Telekomunikasyon ve Hab. Hiz. Ltd. Sti."
 "2025-05-20","f8836ce13643c62e",1,"2025-05-20 23:10:27","PKG110","15","OnePlus",35,"1.0.0.1","zh","CN","","141.11.43.110","unknown","France","FR","","","","48.8582","2.3387","Europe/Paris","","STRTEC"
 "2025-05-20","5a6e09679cc0e3b6",59,"2025-05-20 23:11:20","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.153.148.217","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-20","653552fb6fe9142a",36,"2025-05-20 23:12:49","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
 "2025-05-20","70b9d91b10ecb86a",3,"2025-05-20 23:13:28","MEIZU 21","14","meizu",34,"1.7.4.5","","","","222.216.225.101","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-20","00ad3145304e0196",2,"2025-05-20 23:15:19","MEIZU 20 Pro","14","meizu",34,"1.7.4.5","","","","113.84.139.73","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-20","4b53e83a9b59a3d0",1,"2025-05-20 23:15:49","23013RK75C","15","Xiaomi",35,"1.0.0.1","zh","CN","","23.165.104.195","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","SNAJU"
@@ -828,3 +827,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","27a611e813775a16",5,"2025-05-20 16:26:27","Pixel 9 Pro XL","14","Google",34,"1.7.4.5","","","","105.157.22.168","unknown","Morocco","MA","Agadir-Ida-ou-Tnan","AGD","Agadir","30.4201","-9.5912","Africa/Casablanca","","MT-MPLS"
 "2025-05-20","88e9b79462a76951",32,"2025-05-20 23:27:09","2304FPN6DC","14","Xiaomi",34,"1.7.4.5","","","","203.175.14.46","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Goalnow Network Technology Co Limited"
 "2025-05-20","4e2b605822045ef1",32,"2025-05-20 17:27:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
+"2025-05-20","653552fb6fe9142a",38,"2025-05-20 23:28:00","2211133C","13","Xiaomi",33,"1.7.4.5","","","","222.210.189.48","unknown","China","CN","Sichuan","SC","Chengdu","30.6498","104.0555","Asia/Shanghai","","Chinanet"
