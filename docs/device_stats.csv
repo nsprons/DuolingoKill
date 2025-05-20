@@ -751,7 +751,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","a18acf44b36954e9",3,"2025-05-20 01:08:55","23127PN0CC","15","Xiaomi",35,"1.0.0.1","zh","CN","","49.112.138.57","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-20","141b511a1351c753",1,"2025-05-20 01:13:30","PKR110","15","OnePlus",35,"1.0.0.1","zh","CN","","89.58.45.95","unknown","Germany","DE","Bavaria","BY","Nuremberg","49.4423","11.0191","Europe/Berlin","","netcup GmbH"
 "2025-05-19","97264dedd7ea9c6d",3,"2025-05-19 20:22:11","M2007J3SG","12","Xiaomi",31,"1.7.4.5","","","","217.52.0.58","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
-"2025-05-20","5ee0212f42e8a5c0",7,"2025-05-20 01:30:05","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","113.135.247.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-20","218f9b0d422381e5",4,"2025-05-20 02:36:29","CPH2653","15","OnePlus",35,"1.0.0.1","ja","JP","","59.158.105.193","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","","ARTERIA Networks Corporation"
 "2025-05-19","1f8fcc30013d9d04",11,"2025-05-19 20:37:51","SM-S938U","13","samsung",33,"1.7.4.5","","","","78.180.49.125","unknown","Türkiye","TR","Istanbul","34","Istanbul","41.0256","28.8859","Europe/Istanbul","","Turk Telekom"
 "2025-05-20","c191e66e09b1c276",1,"2025-05-20 01:46:30","Pixel 6 Pro","15","Google",35,"1.7.4.5","","","","109.110.162.54","unknown","Hong Kong","HK","Kwai Tsing","NKT","Ha Kwai Chung","22.3539","114.1342","Asia/Hong_Kong","","Apple Network, LLC"
@@ -819,3 +818,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","ee8282874ac69177",3,"2025-05-20 07:55:53","24122RKC7C","15","Xiaomi",35,"1.0.0.1","zh","CN","","188.253.112.77","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Akari Networks"
 "2025-05-20","4e2b605822045ef1",5,"2025-05-20 01:57:45","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","4b6cabc22de77be9",17,"2025-05-19 20:57:54","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
+"2025-05-20","5ee0212f42e8a5c0",9,"2025-05-20 08:04:13","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","","","","","","","","","","","",""
