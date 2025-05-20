@@ -802,7 +802,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","a543e69b54111f9f",1,"2025-05-20 07:50:06","RMX3700","15","realme",35,"1.7.5.2","zh","CN","error","180.139.225.198","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-20","c7243205a0e62ae4",26,"2025-05-20 00:50:44","RMX3834","13","realme",33,"1.7.4.5","","","","105.235.128.154","unknown","Algeria","DZ","","","","36.7642","3.1468","Africa/Algiers","","wataniya-telecom-as"
 "2025-05-20","ee8282874ac69177",3,"2025-05-20 07:55:53","24122RKC7C","15","Xiaomi",35,"1.0.0.1","zh","CN","","188.253.112.77","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Akari Networks"
-"2025-05-20","4e2b605822045ef1",5,"2025-05-20 01:57:45","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-19","4b6cabc22de77be9",17,"2025-05-19 20:57:54","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-20","5ee0212f42e8a5c0",9,"2025-05-20 08:04:13","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-20","ce929cda0518469d",6,"2025-05-20 08:05:59","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","108.181.9.93","unknown","United States","US","California","CA","Los Angeles","34.0544","-118.2441","America/Los_Angeles","","AS40676"
@@ -819,3 +818,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-20","5c88b15c381f395a",1,"2025-05-20 08:28:33","PJD110","14","OnePlus",34,"1.7.4.5","","","","124.127.73.16","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Networks Inter-Exchange"
 "2025-05-20","0eaaedd0069c00a8",1,"2025-05-20 08:29:17","2211133C","14","Xiaomi",34,"1.7.4.5","","","","113.29.230.248","unknown","South Korea","KR","Gyeonggi-do","41","Seongnam-si","37.377","127.1091","Asia/Seoul","",""
 "2025-05-19","b75429cdbc1f33fe",20,"2025-05-19 20:29:49","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
+"2025-05-20","4e2b605822045ef1",6,"2025-05-20 02:30:29","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
