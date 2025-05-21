@@ -835,4 +835,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-21","a0f194a28b68d0fd",8,"2025-05-21 18:00:58","21091116UC","13","Xiaomi",33,"1.7.4.4","","","","82.163.16.240","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","AKILE LTD"
 "2025-05-21","683d43af967763fc",13,"2025-05-21 18:01:11","2304FPN6DC","15","Xiaomi",35,"1.7.5.2","zh","CN","error","218.87.158.153","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-21","c04da3c3971acfc7",11,"2025-05-21 18:02:42","M2012K11AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","113.78.198.54","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
-"2025-05-21","7491d062a14c445f",41,"2025-05-21 18:05:48","21091116UC","13","Xiaomi",33,"1.7.4.5","","","","46.3.240.109","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Akari Networks"
+"2025-05-21","7491d062a14c445f",40,"2025-05-21 18:05:47","21091116UC","13","Xiaomi",33,"1.7.4.5","","","","46.3.240.109","unknown","unknown","HK","Kwai Tsing","NKT","Ha Kwai Chung","22.3539","114.1342","","","unknown"
