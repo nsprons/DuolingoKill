@@ -810,7 +810,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","6b8173a3ac222e64",8,"2025-05-22 03:07:24","2304FPN6DC","15","Xiaomi",35,"1.7.5","zh","CN","","218.26.158.241","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-22","22e7879826f3c1b1",4,"2025-05-22 03:15:16","Pixel 7 Pro","15","Google",35,"1.0.0.1","zh","TW","","36.232.1.231","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","","Data Communication Business Group"
 "2025-05-21","21b7728f89981ff6",2,"2025-05-21 21:15:46","SM-SxxxB","15","samsung_pirv",35,"1.7.5.1","pl","PL","","188.33.14.53","unknown","Poland","PL","Opole Voivodeship","16","Opole","50.6703","17.9175","Europe/Warsaw","","Play"
-"2025-05-21","4e2b605822045ef1",65,"2025-05-21 21:17:01","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-22","bf509ce22ea207b1",2,"2025-05-22 03:28:09","24031PN0DC","15","Xiaomi",35,"1.0.0.0","zh","CN","error","182.86.162.252","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-21","d15e9912ab4338e6",2,"2025-05-21 14:50:05","21061110AG","13","Xiaomi",33,"1.7.4.5","","","","200.24.133.1","unknown","Ecuador","EC","Guayas","G","Guayaquil","-2.1978","-79.8764","America/Guayaquil","","SERVITRACTOR S.A."
 "2025-05-21","9925e43c4238f4cd",38,"2025-05-21 22:53:43","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","197.120.144.117","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
@@ -838,3 +837,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","044c91edfff541b9",4,"2025-05-22 00:49:37","M2012K11AG","15","Xiaomi",35,"1.0.0.1","en","GB","","84.248.234.31","unknown","Finland","FI","Southwest Finland","19","Turku","60.4487","22.2704","Europe/Helsinki","","Telia Finland Oyj"
 "2025-05-21","c7243205a0e62ae4",9,"2025-05-21 22:49:40","RMX3834","13","realme",33,"1.7.4.5","","","","105.235.129.189","unknown","Algeria","DZ","","","","36.7642","3.1468","Africa/Algiers","","wataniya-telecom-as"
 "2025-05-22","79d5c95c36acaf60",1,"2025-05-22 00:49:46","Redmi Note 8","13","Xiaomi",33,"1.7.5.3","en","US","error","156.203.107.66","unknown","Egypt","EG","Luxor","LX","Luxor","25.6955","32.6536","Africa/Cairo","","TE Data"
+"2025-05-21","4e2b605822045ef1",69,"2025-05-21 23:52:43","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
