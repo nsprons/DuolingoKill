@@ -834,7 +834,7 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","044c91edfff541b9",4,"2025-05-22 00:49:37","M2012K11AG","15","Xiaomi",35,"1.0.0.1","en","GB","","84.248.234.31","unknown","Finland","FI","Southwest Finland","19","Turku","60.4487","22.2704","Europe/Helsinki","","Telia Finland Oyj"
 "2025-05-21","c7243205a0e62ae4",9,"2025-05-21 22:49:40","RMX3834","13","realme",33,"1.7.4.5","","","","105.235.129.189","unknown","Algeria","DZ","","","","36.7642","3.1468","Africa/Algiers","","wataniya-telecom-as"
 "2025-05-22","79d5c95c36acaf60",1,"2025-05-22 00:49:46","Redmi Note 8","13","Xiaomi",33,"1.7.5.3","en","US","error","156.203.107.66","unknown","Egypt","EG","Luxor","LX","Luxor","25.6955","32.6536","Africa/Cairo","","TE Data"
-"2025-05-21","4e2b605822045ef1",70,"2025-05-21 23:53:19","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-22","c6038de61703b212",1,"2025-05-22 00:53:22","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.230.244","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-21","d418a2786a84350a",5,"2025-05-21 23:55:34","21051182C","15","Xiaomi",35,"1.0.0.1","zh","CN","","31.16.249.141","unknown","Germany","DE","Bavaria","BY","Nuremberg","49.4366","11.0914","Europe/Berlin","","Vodafone GmbH"
 "2025-05-21","2bfe78119e2aa2a2",23,"2025-05-21 23:57:52","2304FPN6DC","15","Xiaomi",35,"1.0.0.1","zh","CN","","31.16.249.141","unknown","Germany","DE","Bavaria","BY","Nuremberg","49.4366","11.0914","Europe/Berlin","","Vodafone GmbH"
+"2025-05-22","4e2b605822045ef1",1,"2025-05-22 00:01:04","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
