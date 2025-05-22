@@ -825,7 +825,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","f43acb410bda7d55",34,"2025-05-22 12:19:38","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","104.28.198.10","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","CLOUDFLARENET"
 "2025-05-22","4b6cabc22de77be9",1,"2025-05-22 01:20:05","M2102K1G","13","Xiaomi",33,"1.0.0.1","pt","BR","","187.180.191.191","unknown","Brazil","BR","São Paulo","SP","Sorocaba","-23.4996","-47.4518","America/Sao_Paulo","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-22","941d511058c983dc",1,"2025-05-22 12:20:19","23113RKC6C","15","Xiaomi",35,"1.7.4.5","","","","114.246.238.240","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Unicom Beijing Province Network"
-"2025-05-22","4e2b605822045ef1",11,"2025-05-22 06:21:13","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-22","21b7728f89981ff6",1,"2025-05-22 06:26:21","SM-SxxxB","15","samsung_pirv",35,"1.7.5.1","pl","PL","","188.33.14.53","unknown","Poland","PL","Opole Voivodeship","16","Opole","50.6703","17.9175","Europe/Warsaw","","Play"
 "2025-05-22","0f8aa288b68388f1",8,"2025-05-22 12:29:21","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","14.218.95.146","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-22","3c52baec1f77f0df",5,"2025-05-22 12:31:49","22011211C","14","Xiaomi",34,"1.7.4.5","","","","64.23.200.35","unknown","United States","US","California","CA","San Francisco","37.7809","-122.4245","America/Los_Angeles","","DIGITALOCEAN-ASN"
@@ -838,3 +837,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","90d501cfd7d40723",1,"2025-05-22 12:41:54","PJZ110","15","OnePlus",35,"1.7.5.3","zh","CN","error","23.132.124.130","unknown","unknown","US","California","CA","Los Angeles","34.0614","-118.3072","","","unknown"
 "2025-05-22","9925e43c4238f4cd",19,"2025-05-22 07:46:50","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","41.199.139.94","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
 "2025-05-22","b9fa6270a4793188",6,"2025-05-22 12:47:12","2211133C","15","Xiaomi",35,"1.7.4.4","","","","120.71.72.208","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-22","4e2b605822045ef1",12,"2025-05-22 06:48:15","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
