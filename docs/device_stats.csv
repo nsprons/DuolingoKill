@@ -841,4 +841,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","b75429cdbc1f33fe",18,"2025-05-22 19:42:47","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-23","4e2b605822045ef1",6,"2025-05-23 01:44:55","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-23","a543e69b54111f9f",1,"2025-05-23 07:48:21","RMX3700","15","realme",35,"1.7.5.2","zh","CN","error","171.111.160.8","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-23","39ecd963027f88f0",1,"2025-05-23 07:51:35","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","118.167.7.64","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Data Communication Business Group"
+"2025-05-23","39ecd963027f88f0",2,"2025-05-23 07:51:37","23049RAD8C","15","Xiaomi",35,"1.0.0.1","zh","CN","","118.167.7.64","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Data Communication Business Group"
