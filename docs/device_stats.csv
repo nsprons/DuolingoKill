@@ -824,7 +824,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","992deb1d54e302c2",9,"2025-05-22 19:47:57","22081212C","15","Xiaomi",35,"1.0.0.1","zh","CN","","110.87.7.57","unknown","China","CN","Fujian","FJ","Xiamen","24.4793","118.0673","Asia/Shanghai","","Chinanet"
 "2025-05-22","598f636071f5e325",4,"2025-05-22 14:49:05","CPH2653","15","OnePlus",35,"1.0.0.1","ru","UA","","94.153.32.227","unknown","Ukraine","UA","Kyiv Oblast","32","Brovary","50.5182","30.8041","Europe/Kyiv","","Kyivstar PJSC"
 "2025-05-22","e9305886eb2165c6",3,"2025-05-22 19:49:51","2203121C","15","Xiaomi",35,"1.0.0.1","zh","CN","","222.218.211.100","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-22","4e2b605822045ef1",28,"2025-05-22 13:51:02","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-22","20e6b4c78e543c29",6,"2025-05-22 19:58:57","2106118C","14","Xiaomi",34,"1.0.0.1","zh","CN","","171.104.243.226","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-22","ce7b3581565ed388",12,"2025-05-22 07:00:27","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
 "2025-05-22","59437950c8c682ef",2,"2025-05-22 20:00:56","PJZ110","15","OnePlus",35,"1.7.5.1","zh","CN","error","188.253.116.108","unknown","Taiwan","TW","","","","24.0","121.0","Asia/Taipei","","Akari Networks"
@@ -839,3 +838,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","8760b7409c8b7e75",1,"2025-05-22 20:17:52","Real Device","14","Real Manufacturer",34,"1.0.0.1","zh","CN","","120.84.11.139","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","China Unicom IP network China169 Guangdong province"
 "2025-05-22","8fff5c1cf03aa20e",4,"2025-05-22 20:19:22","M2105K81AC","15","Xiaomi",35,"1.7.4.5","","","","133.18.163.16","unknown","Japan","JP","Ōsaka","27","Osaka","34.6946","135.5021","Asia/Tokyo","","KAGOYA JAPAN Inc."
 "2025-05-22","9925e43c4238f4cd",52,"2025-05-22 15:19:53","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","41.199.139.94","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
+"2025-05-22","4e2b605822045ef1",29,"2025-05-22 14:20:48","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
