@@ -813,7 +813,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","b75429cdbc1f33fe",2,"2025-05-22 09:41:34","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-22","bf509ce22ea207b1",4,"2025-05-22 21:42:36","24031PN0DC","15","Xiaomi",35,"1.0.0.0","zh","CN","error","182.86.165.86","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-22","43a3bbb4435a5dee",3,"2025-05-22 21:48:06","meizu 17 Pro","11","meizu",30,"1.0.0.1","zh","CN","","140.235.140.170","unknown","unknown","US","unknown","unknown","unknown","37.751","-97.822","","","unknown"
-"2025-05-22","4e2b605822045ef1",32,"2025-05-22 15:49:13","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-22","73b2850cdc0b23f7",4,"2025-05-22 21:49:35","CPH2653","15","OnePlus",35,"1.0.0.1","zh","CN","","159.223.84.198","unknown","Singapore","SG","","","Singapore","1.3078","103.6818","Asia/Singapore","","DIGITALOCEAN-ASN"
 "2025-05-22","c04da3c3971acfc7",8,"2025-05-22 21:53:55","M2012K11AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","113.78.198.54","unknown","China","CN","Guangdong","GD","Dongguan","23.0177","113.7506","Asia/Shanghai","","Chinanet"
 "2025-05-22","077d1302370df3d7",2,"2025-05-22 20:54:48","Mi 9T Pro","13","Xiaomi",33,"1.0.0.1","vi","VN","","14.230.242.68","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","VNPT Corp"
@@ -839,3 +838,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","5ee0212f42e8a5c0",72,"2025-05-22 22:20:38","23054RA19C","13","Xiaomi",33,"1.7.4.4","","","","36.45.253.90","unknown","China","CN","Shaanxi","SN","Weinan","34.5025","109.5145","Asia/Shanghai","","Chinanet"
 "2025-05-22","f43acb410bda7d55",56,"2025-05-22 22:20:50","SM-S9160","14","samsung",34,"1.0.0.1","en","US","","1.164.119.143","unknown","Taiwan","TW","Hsinchu City","HSQ","Hsinchu","24.8065","120.9706","Asia/Taipei","","Data Communication Business Group"
 "2025-05-22","5459cfd130507c08",3,"2025-05-22 22:21:27","M2101K6G","15","Xiaomi",35,"1.0.0.1","zh","TW","","49.217.57.29","unknown","Taiwan","TW","Taichung City","TXG","Taichung","24.144","120.6844","Asia/Taipei","","Taiwan Mobile Co., Ltd."
+"2025-05-22","4e2b605822045ef1",33,"2025-05-22 16:21:34","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
