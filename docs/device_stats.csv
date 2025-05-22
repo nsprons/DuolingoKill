@@ -784,7 +784,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-23","ce929cda0518469d",6,"2025-05-23 02:17:07","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","38.207.137.250","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Nearoute Limited"
 "2025-05-22","24889b8f289cf40e",8,"2025-05-22 20:38:38","2312DRA50G","15","Xiaomi",35,"1.7.5.1","en","US","","185.186.158.94","unknown","Poland","PL","Lower Silesia","02","Iwiny","51.22","15.7207","Europe/Warsaw","","Treston s.c."
 "2025-05-23","3c52baec1f77f0df",2,"2025-05-23 02:49:51","22011211C","14","Xiaomi",34,"1.7.4.5","","","","146.70.9.214","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","M247 Europe SRL"
-"2025-05-22","4e2b605822045ef1",43,"2025-05-22 20:51:12","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-23","80c0c50f21549cbe",1,"2025-05-23 02:53:00","PKR110","15","OnePlus",35,"1.7.4.5","","","","199.15.78.87","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","JINX CO., LIMITED"
 "2025-05-22","e9879da508480b27",21,"2025-05-22 21:22:37","M2102J20SG","14","Xiaomi",34,"1.0.0.1","en","GB","","109.43.176.201","unknown","Germany","DE","Baden-Wurttemberg","BW","Stuttgart","48.767","9.1827","Europe/Berlin","","Vodafone GmbH"
 "2025-05-22","9222c457311db464",7,"2025-05-22 13:29:07","SM-S938B","15","samsung",35,"1.7.5","en","AU","","186.151.64.177","unknown","unknown","GT","Guatemala","01","Guatemala City","14.6419","-90.5133","","","unknown"
@@ -842,3 +841,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","765cbe87fd568bce",14,"2025-05-22 19:24:23","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","91.149.239.234","unknown","unknown","US","California","CA","Los Angeles","34.0544","-118.244","","","unknown"
 "2025-05-23","ea5820c10b319610",2,"2025-05-23 01:26:06","TANK 3","14","OBLUE",34,"1.7.4.5","","","","37.225.13.120","unknown","Poland","PL","Łódź Voivodeship","10","Lodz","51.7248","19.4633","Europe/Warsaw","","Orange Polska Spolka Akcyjna"
 "2025-05-22","2e72bf8c8f28379e",92,"2025-05-22 18:27:33","SM-A146M","14","samsung",34,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
+"2025-05-23","4e2b605822045ef1",4,"2025-05-23 01:30:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
