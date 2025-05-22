@@ -839,3 +839,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-23","3c52baec1f77f0df",2,"2025-05-23 02:49:51","22011211C","14","Xiaomi",34,"1.7.4.5","","","","146.70.9.214","unknown","Hong Kong","HK","","","Hong Kong","22.2842","114.1759","Asia/Hong_Kong","","M247 Europe SRL"
 "2025-05-22","4e2b605822045ef1",43,"2025-05-22 20:51:12","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-23","80c0c50f21549cbe",1,"2025-05-23 02:53:00","PKR110","15","OnePlus",35,"1.7.4.5","","","","199.15.78.87","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","JINX CO., LIMITED"
+"2025-05-22","621b2bab1b00f52b",1,"2025-05-22 15:54:26","2201117TG","15","Xiaomi",35,"1.0.0.1","pt","BR","","177.65.189.248","unknown","Brazil","BR","Pará","PA","Belém","-1.4537","-48.5078","America/Belem","","Claro NXT Telecomunicacoes Ltda"
