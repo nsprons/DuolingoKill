@@ -815,7 +815,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","422855c0732a7f62",16,"2025-05-22 12:17:53","SM-N985F","13","samsung",33,"1.7.4.5","","","","89.244.84.223","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-22","741180d6cb9b9201",11,"2025-05-22 18:18:43","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","218.26.158.1","unknown","China","CN","Guangdong","GD","Guangzhou","23.1181","113.2539","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-22","1c35072d7cb80a4c",4,"2025-05-22 18:20:14","CPH2653","15","OnePlus",35,"1.0.0.1","zh","JP","","220.249.152.132","unknown","China","CN","Fujian","FJ","Fuzhou","26.0492","119.2906","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
-"2025-05-22","4e2b605822045ef1",25,"2025-05-22 12:20:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-22","23b34b7f3511e555",14,"2025-05-22 18:23:08","2304FPN6DC","15","Xiaomi",35,"1.0.0.1","zh","CN","","129.227.235.104","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","ZEN-ECN"
 "2025-05-22","ea5820c10b319610",1,"2025-05-22 12:25:39","TANK 3","14","OBLUE",34,"1.7.4.5","","","","37.225.13.120","unknown","Poland","PL","Łódź Voivodeship","10","Lodz","51.7248","19.4633","Europe/Warsaw","","Orange Polska Spolka Akcyjna"
 "2025-05-22","73b2850cdc0b23f7",2,"2025-05-22 18:25:45","CPH2653","15","OnePlus",35,"1.0.0.1","zh","CN","","23.249.26.140","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","",""
@@ -839,3 +838,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-22","5bb49f94b89b9da7",11,"2025-05-22 19:05:33","PJD110","15","OnePlus",35,"1.7.5.1","zh","CN","1761427992","36.98.138.0","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-22","9925e43c4238f4cd",37,"2025-05-22 14:06:23","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","41.199.139.94","unknown","Egypt","EG","Cairo Governorate","C","Cairo","30.0588","31.2268","Africa/Cairo","","Etisalat Misr"
 "2025-05-22","bfb5a4f8eeb6cb60",14,"2025-05-22 19:06:52","MEIZU 21 Pro","14","meizu",34,"1.0.0.1","en","US","","112.224.163.155","unknown","China","CN","Shandong","SD","Qingdao","36.061","120.3814","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
+"2025-05-22","4e2b605822045ef1",26,"2025-05-22 13:07:50","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
