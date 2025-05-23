@@ -834,7 +834,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","7491d062a14c445f",13,"2025-05-24 05:06:52","21091116UC","13","Xiaomi",33,"1.7.4.5","","","","46.3.240.109","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Akari Networks"
 "2025-05-24","ce929cda0518469d",6,"2025-05-24 05:12:10","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","38.207.137.250","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","Nearoute Limited"
 "2025-05-24","9925e43c4238f4cd",1,"2025-05-24 00:13:40","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","217.52.229.226","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
-"2025-05-23","4e2b605822045ef1",43,"2025-05-23 23:18:17","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-24","b2cf5ad036aba98a",2,"2025-05-24 05:18:39","PGP110","15","OnePlus",35,"1.7.5.1","zh","CN","error","123.171.233.123","unknown","China","CN","Guangdong","GD","Shenzhen","22.5559","114.0577","Asia/Shanghai","","Chinanet"
 "2025-05-24","b087997c69a3b214",3,"2025-05-24 00:33:17","Redmi Note 8","13","Xiaomi",33,"1.0.0.1","en","US","","102.17.117.231","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
 "2025-05-24","5a6e09679cc0e3b6",11,"2025-05-24 05:34:07","SM-S9210","14","samsung",34,"1.7.5","en","US","","104.28.217.52","unknown","United States","US","Kansas","KS","Wichita","37.6965","-97.3435","America/Chicago","","CLOUDFLARENET"
@@ -847,3 +846,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","c6038de61703b212",1,"2025-05-24 00:47:01","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.198.246","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-24","077d1302370df3d7",1,"2025-05-24 04:54:34","Mi 9T Pro","13","Xiaomi",33,"1.0.0.1","vi","VN","","14.230.242.68","unknown","Vietnam","VN","Ho Chi Minh","SG","Ho Chi Minh City","10.822","106.6257","Asia/Ho_Chi_Minh","","VNPT Corp"
 "2025-05-24","8136a80b8d5f0be8",1,"2025-05-24 05:55:11","PJE110","15","OnePlus",35,"1.7.5.2","zh","CN","1420772143","2408:8471:5a0c:5e7a:1c55:80ff:fe79:5dc1","unknown","unknown","CN","Shaanxi","SN","Weinan","34.5025","109.5145","","","unknown"
+"2025-05-23","4e2b605822045ef1",44,"2025-05-23 23:57:10","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
