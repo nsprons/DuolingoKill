@@ -842,4 +842,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-23","4e2b605822045ef1",14,"2025-05-23 07:48:17","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-23","e3d63f6772c7637e",11,"2025-05-23 13:53:15","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","112.96.42.76","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-23","ce7b3581565ed388",3,"2025-05-23 00:54:31","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.1.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
-"2025-05-23","6a012bf9124d2a28",11,"2025-05-23 13:58:18","23078RKD5C","13","Xiaomi",33,"1.7.4.5","","","","171.108.109.167","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-23","6a012bf9124d2a28",12,"2025-05-23 13:58:24","23078RKD5C","13","Xiaomi",33,"1.7.4.5","","","","171.108.109.167","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
