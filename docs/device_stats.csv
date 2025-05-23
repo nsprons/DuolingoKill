@@ -816,7 +816,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","f77ebc3b1e53f77e",2,"2025-05-24 01:57:17","23013RK75C","14","Xiaomi",34,"1.7.4.5","","","","8.223.13.87","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","",""
 "2025-05-24","741180d6cb9b9201",2,"2025-05-24 02:01:24","PHJ110","13","OPPO",33,"1.0.0.1","zh","CN","","183.184.57.120","unknown","China","CN","Shanxi","SX","Taiyuan","37.8648","112.5636","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-24","e6b3f5a02a148944",2,"2025-05-24 02:10:55","2112123AC","13","Xiaomi",33,"1.0.0.1","zh","CN","","221.218.142.148","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Unicom Beijing Province Network"
-"2025-05-23","4e2b605822045ef1",38,"2025-05-23 20:17:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-23","879550e4e4fd218b",3,"2025-05-23 15:29:28","Redmi Note 8 Pro","11","Xiaomi",30,"1.0.0.1","pt","BR","","177.127.61.95","unknown","Brazil","BR","Alagoas","AL","Maceió","-9.6497","-35.709","America/Maceio","","Claro NXT Telecomunicacoes Ltda"
 "2025-05-24","3c52baec1f77f0df",3,"2025-05-24 02:33:10","22011211C","14","Xiaomi",34,"1.7.4.5","","","","161.35.232.88","unknown","United States","US","California","CA","Santa Clara","37.3931","-121.962","America/Los_Angeles","","DIGITALOCEAN-ASN"
 "2025-05-23","b18abdc4fd6ca230",10,"2025-05-23 23:38:18","ZS661KS","12","asus",31,"1.0.0.1","ru","RU","","46.20.194.142","unknown","Tajikistan","TJ","","","","39.0015","71.0042","Asia/Dushanbe","","LLC Babilon-T"
@@ -846,3 +845,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","e3d63f6772c7637e",42,"2025-05-24 04:08:20","Redmi Note 10 5G","14","Xiaomi",34,"1.7.4.5","","","","112.96.43.76","unknown","China","CN","Guangdong","GD","Foshan","23.0261","113.1371","Asia/Shanghai","","China Unicom Guangzhou network"
 "2025-05-24","43d4e6243464751b",5,"2025-05-24 04:12:53","NOH-AN00","12","HUAWEI",31,"1.0.0.1","zh","CN","","8.219.42.142","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","Alibaba US Technology Co., Ltd."
 "2025-05-23","9925e43c4238f4cd",28,"2025-05-23 23:13:08","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","217.52.229.226","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
+"2025-05-23","4e2b605822045ef1",41,"2025-05-23 22:14:01","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
