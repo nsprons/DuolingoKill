@@ -842,4 +842,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-23","4e2b605822045ef1",33,"2025-05-23 16:49:19","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-23","141b511a1351c753",1,"2025-05-23 22:52:43","PKR110","15","OnePlus",35,"1.0.0.1","zh","CN","","192.124.176.147","unknown","Singapore","SG","","","","1.3673","103.8014","Asia/Singapore","","ASNET"
 "2025-05-23","5b14abc72fc84dc1",5,"2025-05-23 22:53:28","2304FPN6DC","15","Xiaomi",35,"1.0.0.1","zh","CN","","124.160.200.202","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
-"2025-05-23","24f18c96d960fba6",17,"2025-05-23 22:54:30","PJA110","13","OnePlus",33,"1.0.0.1","zh","CN","","129.150.42.215","unknown","Singapore","SG","","","Kampong Loyang","1.3759","103.9639","Asia/Singapore","","ORACLE-BMC-31898"
+"2025-05-23","24f18c96d960fba6",18,"2025-05-23 22:54:53","PJA110","13","OnePlus",33,"1.0.0.1","zh","CN","","129.150.42.215","unknown","Singapore","SG","","","Kampong Loyang","1.3759","103.9639","Asia/Singapore","","ORACLE-BMC-31898"
