@@ -807,7 +807,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","e9305886eb2165c6",2,"2025-05-24 19:46:42","2203121C","15","Xiaomi",35,"1.0.0.1","zh","CN","","222.218.211.100","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-24","9925e43c4238f4cd",11,"2025-05-24 14:47:37","Redmi Note 5","14","Xiaomi",34,"1.0.0.1","en","US","","62.139.78.167","unknown","Egypt","EG","","","","30.0352","31.2241","Africa/Cairo","","Etisalat Misr"
 "2025-05-24","c32798ade55a6517",1,"2025-05-24 14:50:08","KLP9GRjKHvQoj","7","ROG",33,"1.0.0.1","en","United States","","102.17.118.191","unknown","Madagascar","MG","","","Antananarivo","-18.913","47.5296","Indian/Antananarivo","","Telecom-Malagasy"
-"2025-05-24","4e2b605822045ef1",23,"2025-05-24 13:52:07","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-24","1f8fcc30013d9d04",4,"2025-05-24 14:59:34","SM-S938U","13","samsung",33,"1.7.4.5","","","","85.97.164.229","unknown","Türkiye","TR","Istanbul","34","Ümraniye","41.0448","29.1162","Europe/Istanbul","","Turk Telekom"
 "2025-05-24","4b8135fc03a4dca1",9,"2025-05-24 20:01:33","23127PN0CG","15","Xiaomi",35,"1.7.4.5","","","","101.10.79.114","unknown","Taiwan","TW","Taipei City","TPE","Taipei","25.0504","121.5324","Asia/Taipei","","Taiwan Mobile Co., Ltd."
 "2025-05-24","43a3bbb4435a5dee",8,"2025-05-24 20:02:56","meizu 17 Pro","11","meizu",30,"1.0.0.1","zh","CN","","140.235.140.170","unknown","unknown","US","unknown","unknown","unknown","37.751","-97.822","","","unknown"
@@ -856,3 +855,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","ef3451876f8273e6",4,"2025-05-24 21:30:09","2211133C","15","Xiaomi",35,"1.7.4.5","","","","211.90.235.158","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","CHINA UNICOM China169 Backbone"
 "2025-05-24","26c24cf1325d136e",1,"2025-05-24 16:30:41","ELI-NX9","15","HONOR",35,"1.7.4.5","","","","85.172.76.131","unknown","Russia","RU","","","","55.7386","37.6068","Europe/Moscow","","Rostelecom"
 "2025-05-24","ce7b3581565ed388",18,"2025-05-24 08:34:16","M2102J20SG","12","Xiaomi",31,"1.0.0.1","es","ES","","179.6.8.245","unknown","Peru","PE","Lima Province","LMA","Lima","-12.0432","-77.0282","America/Lima","","America Movil Peru S.A.C."
+"2025-05-24","4e2b605822045ef1",27,"2025-05-24 15:35:34","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
