@@ -847,4 +847,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","a80240e789b85a7b",11,"2025-05-24 09:26:19","M2010J19CG","14","Xiaomi",34,"1.7.4.5","","","","125.167.50.129","unknown","Indonesia","ID","South Sumatra","SS","Palembang","-2.9146","104.7535","Asia/Jakarta","","PT Telekomunikasi Indonesia"
 "2025-05-24","4e2b605822045ef1",11,"2025-05-24 04:27:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-24","232a4f7ddd3cea4b",1,"2025-05-24 10:27:30","PJX110","15","OnePlus",35,"1.0.0.1","zh","CN","","106.224.129.130","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
-"2025-05-24","4ecd95ff3ef09735",2,"2025-05-24 10:27:55","23116PN5BC","15","Xiaomi",35,"1.0.0.1","zh","CN","","188.253.121.35","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","Akari Networks"
+"2025-05-24","4ecd95ff3ef09735",3,"2025-05-24 10:28:07","23116PN5BC","15","Xiaomi",35,"1.0.0.1","zh","CN","","188.253.121.35","unknown","Singapore","SG","","","Singapore","1.2868","103.8503","Asia/Singapore","","Akari Networks"
