@@ -858,4 +858,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","4e2b605822045ef1",44,"2025-05-24 21:48:56","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-24","422855c0732a7f62",25,"2025-05-24 21:50:42","SM-N985F","13","samsung",33,"1.7.4.5","","","","89.244.84.197","unknown","Germany","DE","Hesse","HE","Rüsselsheim am Main","49.9874","8.4232","Europe/Berlin","","1&1 Versatel Deutschland GmbH"
 "2025-05-24","e9879da508480b27",19,"2025-05-24 21:52:01","M2102J20SG","14","Xiaomi",34,"1.0.0.1","en","GB","","109.43.176.137","unknown","Germany","DE","Baden-Wurttemberg","BW","Stuttgart","48.767","9.1827","Europe/Berlin","","Vodafone GmbH"
-"2025-05-25","5a6e09679cc0e3b6",13,"2025-05-25 03:52:14","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.194","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
+"2025-05-25","5a6e09679cc0e3b6",14,"2025-05-25 03:53:01","SM-S9210","14","samsung",34,"1.7.5","en","US","","61.130.109.194","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
