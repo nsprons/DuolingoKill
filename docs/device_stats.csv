@@ -843,7 +843,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","4e2b605822045ef1",28,"2025-05-24 15:54:06","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-24","b75429cdbc1f33fe",4,"2025-05-24 09:57:11","NX721J","14","nubia",34,"1.7.5","en","CA","","66.131.200.223","unknown","Canada","CA","Quebec","QC","Montreal","45.5365","-73.6242","America/Toronto","","VIDEOTRON"
 "2025-05-24","6a012bf9124d2a28",15,"2025-05-24 22:00:17","23078RKD5C","13","Xiaomi",33,"1.7.4.5","","","","208.87.242.79","unknown","United States","US","","","","37.751","-97.822","America/Chicago","","AS40676"
-"2025-05-24","765cbe87fd568bce",7,"2025-05-24 10:02:34","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","104.28.152.144","unknown","United States","US","California","CA","East Los Angeles","34.0261","-118.1756","America/Los_Angeles","","CLOUDFLARENET"
 "2025-05-24","2bed6744416903b0",15,"2025-05-24 22:03:15","21051182C","13","Xiaomi",33,"1.7.4.5","","","","103.151.173.97","unknown","Japan","JP","","","","35.6897","139.6895","Asia/Tokyo","","IKUUU NETWORK LTD"
 "2025-05-24","73b2850cdc0b23f7",6,"2025-05-24 22:03:19","CPH2653","15","OnePlus",35,"1.0.0.1","zh","CN","","23.249.26.131","unknown","Japan","JP","Tokyo","13","Tokyo","35.6893","139.6899","Asia/Tokyo","",""
 "2025-05-24","8ce9353d8a17db62",5,"2025-05-24 22:03:29","PJZ110","15","OnePlus",35,"1.7.4.5","","","","27.26.185.90","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
@@ -856,3 +855,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","776c8eb50ed7b37a",2,"2025-05-24 22:20:53","Mi 10","15","Xiaomi",35,"1.7.5.2","zh","CN","error","62.210.125.97","unknown","France","FR","","","","48.8582","2.3387","Europe/Paris","","Scaleway S.a.s."
 "2025-05-24","5f86a6f214858e7a",4,"2025-05-24 22:22:16","V2243A","15","vivo",35,"1.0.0.0","zh","CN","error","118.254.120.109","unknown","China","CN","","","","34.7732","113.722","Asia/Shanghai","","Chinanet"
 "2025-05-24","3b09ec7c1ddb23b2",129,"2025-05-24 21:23:03","SM-S908B","14","samsung",34,"1.0.0.1","en","US","","36.82.74.39","unknown","Indonesia","ID","East Java","JI","Surabaya","-7.2484","112.7419","Asia/Jakarta","","PT Telekomunikasi Indonesia"
+"2025-05-24","765cbe87fd568bce",8,"2025-05-24 10:23:34","21051182G","13","Xiaomi",33,"1.0.0.1","en","US","","104.28.158.106","unknown","United States","US","California","CA","East Los Angeles","34.0261","-118.1756","America/Los_Angeles","","CLOUDFLARENET"
