@@ -823,7 +823,6 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","45393b9d31dd9c37",3,"2025-05-24 09:43:15","MEIZU 20","15","meizu",35,"1.7.4.5","","","","119.237.255.22","unknown","Hong Kong","HK","","","","22.2908","114.1501","Asia/Hong_Kong","","HKT Limited"
 "2025-05-24","97e9f1c54ef62ec7",4,"2025-05-24 09:46:04","CPH2645","15","OnePlus",35,"1.0.0.1","en","HK","","160.16.132.119","unknown","Japan","JP","Tokyo","13","Tokyo","35.6887","139.745","Asia/Tokyo","","SAKURA Internet Inc."
 "2025-05-24","0f8aa288b68388f1",7,"2025-05-24 09:47:47","2210132C","13","Xiaomi",33,"1.7.5.2","zh","CN","error","202.86.77.67","unknown","Hong Kong","HK","","","","22.2578","114.1657","Asia/Hong_Kong","","Citic Telecom International Data Limited."
-"2025-05-24","4e2b605822045ef1",10,"2025-05-24 03:49:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
 "2025-05-24","5a6e09679cc0e3b6",15,"2025-05-24 09:49:22","SM-S9210","14","samsung",34,"1.7.5","en","US","","104.28.217.52","unknown","United States","US","Kansas","KS","Wichita","37.6965","-97.3435","America/Chicago","","CLOUDFLARENET"
 "2025-05-24","c6038de61703b212",5,"2025-05-24 04:57:26","M2102J20SG","13","Xiaomi",33,"1.0.0.1","ru","RU","","104.28.198.246","unknown","Russia","RU","Moscow","MOW","Moscow","55.7483","37.6171","Europe/Moscow","","CLOUDFLARENET"
 "2025-05-24","75e3928f24476308",3,"2025-05-24 09:58:44","24129PN74C","15","Xiaomi",35,"1.0.0.1","zh","CN","","183.159.105.25","unknown","China","CN","Zhejiang","ZJ","Hangzhou","30.2994","120.1612","Asia/Shanghai","","Chinanet"
@@ -848,3 +847,4 @@ date,device_id,open_count,report_time,device_model,android_version,manufacturer,
 "2025-05-24","218f9b0d422381e5",3,"2025-05-24 11:22:19","CPH2653","15","OnePlus",35,"1.0.0.1","ja","JP","","59.158.105.193","unknown","Japan","JP","Tokyo","13","Tokyo","35.6837","139.6805","Asia/Tokyo","","ARTERIA Networks Corporation"
 "2025-05-24","ce929cda0518469d",9,"2025-05-24 10:24:17","2211133C","13","Xiaomi",33,"1.0.0.1","zh","CN","","1.202.123.45","unknown","China","CN","Beijing","BJ","Beijing","39.911","116.395","Asia/Shanghai","","China Networks Inter-Exchange"
 "2025-05-24","a80240e789b85a7b",11,"2025-05-24 09:26:19","M2010J19CG","14","Xiaomi",34,"1.7.4.5","","","","125.167.50.129","unknown","Indonesia","ID","South Sumatra","SS","Palembang","-2.9146","104.7535","Asia/Jakarta","","PT Telekomunikasi Indonesia"
+"2025-05-24","4e2b605822045ef1",11,"2025-05-24 04:27:24","SM-A715F","13","samsung",33,"1.7.4.4","","","","","","","","","","","","","","",""
